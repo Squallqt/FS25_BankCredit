@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+
+    <GuiElement profile="wizDialogBg" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+
+            <BoxLayout profile="wizMainBox">
+
+                <!-- Title -->
+                <Text profile="wizMainTitle" text="$l10n_bank_wizard_title" id="mainTitleText"/>
+
+                <!-- Title separator: centered, 20px wider each side than title text -->
+                <GuiElement profile="wizTitleSepWrapper">
+                    <ThreePartBitmap profile="wizTitleSep" id="titleSep"/>
+                </GuiElement>
+
+                <!-- Spacer -->
+                <GuiElement profile="wizTitleSpacer"/>
+
+                <!-- Content area -->
+                <GuiElement profile="wizContentArea">
+
+                    <!-- ====== STEP 1 — Configuration ====== -->
+                    <GuiElement profile="wizStepPanel" id="stepPanel1">
+
+                        <!-- Step header (BALANCE SHEET style: accent bar + grey 16px title) -->
+                        <RoundCorner profile="wizSectionAccent" position="0px 0px"/>
+                        <Text profile="wizSectionTitle" position="12px 0px"
+                              text="$l10n_bank_wizard_step1_title"/>
+
+                        <!-- ===== LOAN TYPE ===== -->
+                        <RoundCorner profile="wizCardBg" position="0px -36px" size="560px 155px"/>
+                        <Text profile="wizCardLabel" position="0px -44px"
+                              text="$l10n_bank_wizard_label_loanType"/>
+                        <MultiTextOption profile="wizOptionCenter" id="optLoanType"
+                                         position="0px -80px" wrap="false"
+                                         onClick="onLoanTypeChanged"/>
+                        <Text profile="wizInfoText" id="textTypeDescription"
+                              position="0px -120px"/>
+
+                        <!-- ===== AMOUNT ===== -->
+                        <RoundCorner profile="wizCardBg" position="0px -209px" size="560px 120px"/>
+                        <Text profile="wizCardLabel" position="0px -217px"
+                              text="$l10n_bank_wizard_label_amount"/>
+                        <TextInput profile="wizInputCenter" id="inputAmount"
+                                   position="0px -253px"
+                                   onTextChanged="onAmountTextChanged"
+                                   onEnterPressed="onAmountEnterPressed"
+                                   enterWhenClickOutside="true">
+                            <ThreePartBitmap profile="wizInputOutline" absoluteSizeOffset="0px 0px"/>
+                            <ThreePartBitmap profile="wizInputIconBox">
+                                <Bitmap profile="wizInputIcon"/>
+                            </ThreePartBitmap>
+                        </TextInput>
+                        <Text profile="wizInfoLabel" id="textAmountLimit"
+                              position="0px -293px"/>
+
+                        <!-- ===== DURATION (hidden for Revolving) ===== -->
+                        <GuiElement profile="wizDuration" id="cardDuration"
+                                    position="0px -347px">
+                            <RoundCorner profile="wizCardBg" position="0px 0px" size="560px 154px"/>
+                            <Text profile="wizCardLabel" position="0px -8px"
+                                  text="$l10n_bank_wizard_label_duration"/>
+                            <TextInput profile="wizInputCenter" id="inputDuration"
+                                       position="0px -44px"
+                                       onTextChanged="onDurationTextChanged"
+                                       onEnterPressed="onDurationEnterPressed"
+                                       enterWhenClickOutside="true">
+                                <ThreePartBitmap profile="wizInputOutline" absoluteSizeOffset="0px 0px"/>
+                                <ThreePartBitmap profile="wizInputIconBox">
+                                    <Bitmap profile="wizInputIcon"/>
+                                </ThreePartBitmap>
+                            </TextInput>
+                            <Text profile="wizInfoLabel" id="textMonthlyPreview"
+                                  position="0px -84px"/>
+                            <Text profile="wizInfoLabel" id="textTotalCostPreview"
+                                  position="0px -104px"/>
+                            <Text profile="wizInfoSubLabel" id="textTotalInterestPreview"
+                                  position="0px -122px"/>
+                        </GuiElement>
+
+                    </GuiElement>
+
+                    <!-- ====== STEP 2 — Recap (Balance Sheet style) ====== -->
+                    <GuiElement profile="wizStepPanel" id="stepPanel2">
+
+                        <!-- Step header (BALANCE SHEET style) -->
+                        <RoundCorner profile="wizSectionAccent" position="0px 0px"/>
+                        <Text profile="wizSectionTitle" position="12px 0px"
+                              text="$l10n_bank_wizard_step2_title"/>
+
+                        <!-- ===== RATE ===== -->
+                        <RoundCorner profile="wizCardBg" position="0px -36px" size="560px 155px"/>
+                        <Button profile="wizCardButton" position="0px -44px"
+                                id="btnRecapRates" text="$l10n_bank_wizard_card_rates" onClick="onClickInfoRecapRates"/>
+
+                        <Button profile="bhd_dataButton" position="24px -78px"
+                                id="btnRecapBaseRate" text="$l10n_bank_wizard_recap_baseRate" onClick="onClickInfoRecapBaseRate"/>
+                        <Text profile="wizRecapValue" position="300px -78px"
+                              id="textRecapBaseRate"/>
+
+                        <Button profile="bhd_dataButton" position="24px -98px"
+                                id="btnRecapTypeSpread" text="$l10n_bank_wizard_recap_typeSpread" onClick="onClickInfoRecapTypeSpread"/>
+                        <Text profile="wizRecapValue" position="300px -98px"
+                              id="textRecapTypeSurcharge"/>
+
+                        <Button profile="bhd_dataButton" position="24px -118px"
+                                id="btnRecapSurcharge" text="$l10n_bank_wizard_recap_surcharge" onClick="onClickInfoRecapSurcharge"/>
+                        <Text profile="wizRecapValue" position="300px -118px"
+                              id="textRecapSurcharge"/>
+
+                        <RoundCorner profile="bhd_separator" position="24px -146px" size="512px 1px"/>
+
+                        <Button profile="bhd_dataButton" position="24px -151px"
+                                id="btnRecapEffRate" text="$l10n_bank_wizard_recap_effectiveRate" onClick="onClickInfoRecapEffRate"/>
+                        <Text profile="wizRecapValueHighlight" position="300px -151px"
+                              id="textRecapRate"/>
+
+                        <!-- ===== RISK ===== -->
+                        <RoundCorner profile="wizCardBg" position="0px -209px" size="560px 120px"/>
+                        <Button profile="wizCardButton" position="0px -217px"
+                                id="btnRecapRiskSection" text="$l10n_bank_wizard_recap_risk_section" onClick="onClickInfoRecapRiskSection"/>
+
+                        <Button profile="bhd_dataButton" position="24px -251px"
+                                id="btnRecapDSCR" text="$l10n_bank_wizard_recap_dscr" onClick="onClickInfoRecapDSCR"/>
+                        <Text profile="wizRecapValue" position="300px -251px"
+                              id="textRecapDSCR"/>
+
+                        <Button profile="bhd_dataButton" position="24px -271px"
+                                id="btnRecapLTV" text="$l10n_bank_wizard_recap_ltv" onClick="onClickInfoRecapLTV"/>
+                        <Text profile="wizRecapValue" position="300px -271px"
+                              id="textRecapLTV"/>
+
+                        <Button profile="bhd_dataButton" position="24px -291px"
+                                id="btnRecapRisk" text="$l10n_bank_wizard_recap_risk" onClick="onClickInfoRecapRisk"/>
+                        <Text profile="wizRecapRisk" position="300px -291px"
+                              id="textRecapRisk"/>
+
+                        <!-- ===== COST ===== -->
+                        <RoundCorner profile="wizCardBg" position="0px -347px" size="560px 120px"/>
+                        <Button profile="wizCardButton" position="0px -355px"
+                                id="btnRecapCost" text="$l10n_bank_wizard_card_cost" onClick="onClickInfoRecapCost"/>
+
+                        <Button profile="bhd_dataButton" position="24px -389px"
+                                id="btnRecapMonthly" text="$l10n_bank_wizard_recap_monthly" onClick="onClickInfoRecapMonthly"/>
+                        <Text profile="wizRecapValueHighlight" position="300px -389px"
+                              id="textRecapMonthly"/>
+
+                        <Button profile="bhd_dataButton" position="24px -409px"
+                                id="btnRecapTotalInterest" text="$l10n_bank_wizard_recap_totalInterest" onClick="onClickInfoRecapTotalInterest"/>
+                        <Text profile="wizRecapValue" position="300px -409px"
+                              id="textRecapTotalInterest"/>
+
+                        <Button profile="bhd_dataButton" position="24px -429px"
+                                id="btnRecapTotalCost" text="$l10n_bank_wizard_recap_totalCost" onClick="onClickInfoRecapTotalCost"/>
+                        <Text profile="wizRecapValue" position="300px -429px"
+                              id="textRecapTotalCost"/>
+
+                        <!-- Warning (conditional) -->
+                        <Text profile="wizWarning" id="textRecapWarning"
+                              position="0px -451px"/>
+
+                        <!-- Amount cap comparison (visible only when effective < requested) -->
+                        <Text profile="wizAmountComparison" id="textAmountComparison"
+                              position="0px -493px"/>
+
+                        <!-- Hint (always visible) -->
+                        <Text profile="bhd_hintText" id="textRecapHint"
+                              position="0px -519px" text="$l10n_bank_info_hint"/>
+
+                    </GuiElement>
+
+                </GuiElement>
+
+            </BoxLayout>
+
+        </GuiElement>
+
+        <!-- Button bar -->
+        <BoxLayout profile="fs25_dialogButtonBox">
+            <Button profile="buttonOK" id="btnConfirm"
+                    text="$l10n_bank_wizard_btn_confirm" onClick="onClickConfirm"/>
+            <Button profile="buttonMenuNext" id="btnNext"
+                    text="$l10n_bank_wizard_btn_next" onClick="onClickNext"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator" id="sepLeft"/>
+            <Button profile="buttonMenuPrev" id="btnPrev"
+                    text="$l10n_bank_wizard_btn_prev" onClick="onClickPrev"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator" id="sepRight"/>
+            <Button profile="buttonBack" text="$l10n_bank_btn_back" onClick="onClickBack"/>
+        </BoxLayout>
+    </GuiElement>
+
+    <GUIProfiles>
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!--  TakeLoanWizard layout                                        -->
+        <!--  Dialog: 640×695                                              -->
+        <!--  MainBox: 560px wide (40px margin each side)                  -->
+        <!--    Title:       560 × 40  (18px)                              -->
+        <!--    SepWrapper:  560 × 2dp                                     -->
+        <!--    TitleSep:    200 × 2dp centered                            -->
+        <!--    Spacer:      560 × 25                                      -->
+        <!--    ContentArea: 560 × 540                                     -->
+        <!--  Step headers use profiles: bhd_sectionAccent, bhd_sectionButton -->
+        <!--  Data labels use profile:   bhd_dataButton (golden accent bar)  -->
+        <!--  Card bg uses profile:      loanDetHeaderBg (RoundCorner 0 0 0 0.55) -->
+        <!--  Recap values use profile:  bhd_dataValue at x=300, right-aligned  -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- Dialog background -->
+        <Profile name="wizDialogBg" extends="fs25_dialogBg">
+            <size value="640px 695px"/>
+        </Profile>
+
+        <!-- Main layout (560px = 40px margin each side in 640px dialog) -->
+        <Profile name="wizMainBox" extends="emptyPanel" with="anchorTopCenter">
+            <size value="560px 607px"/>
+            <flowDirection value="vertical"/>
+            <alignmentX value="left"/>
+            <alignmentY value="top"/>
+            <elementSpacing value="0px"/>
+        </Profile>
+
+        <!-- Title (18px, uppercase, bold, centered) -->
+        <Profile name="wizMainTitle" extends="baseReference">
+            <size value="560px 40px"/>
+            <margin value="0px 4px 0px 0px"/>
+            <textSize value="18px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Title separator: centered, 20px wider each side than title text -->
+        <Profile name="wizTitleSepWrapper" extends="emptyPanel">
+            <size value="560px 2dp"/>
+        </Profile>
+
+        <Profile name="wizTitleSep" extends="fs25_lineSeparatorTopHighlighted" with="anchorTopCenter">
+            <size value="200px 2dp"/>
+        </Profile>
+
+        <!-- Spacer below title -->
+        <Profile name="wizTitleSpacer" extends="emptyPanel">
+            <size value="560px 25px"/>
+        </Profile>
+
+        <!-- Content area -->
+        <Profile name="wizContentArea" extends="emptyPanel">
+            <size value="560px 540px"/>
+        </Profile>
+
+        <!-- Step panel overlay -->
+        <Profile name="wizStepPanel" extends="emptyPanel" with="anchorTopLeft">
+            <position value="0px 0px"/>
+            <size value="560px 540px"/>
+        </Profile>
+
+        <!-- Section accent bar (3×26 golden, identical to bhd_sectionAccent) -->
+        <Profile name="wizSectionAccent" extends="baseReference" with="anchorTopLeft">
+            <size value="3px 26px"/>
+            <color value="$preset_fs25_colorMainHighlight"/>
+            <cornerSize value="0"/>
+        </Profile>
+
+        <!-- Section title (16px bold grey, identical to bhd_sectionButton) -->
+        <Profile name="wizSectionTitle" extends="baseReference" with="anchorTopLeft">
+            <size value="540px 26px"/>
+            <textSize value="16px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="0.60 0.60 0.60 1"/>
+            <textAlignment value="left"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Card background (RoundCorner dark, identical to loanDetHeaderBg) -->
+        <Profile name="wizCardBg" extends="baseReference" with="anchorTopLeft">
+            <color value="0 0 0 0.55"/>
+            <cornerSize value="0.35"/>
+        </Profile>
+
+        <!-- Card label (centered, 16px like step header) -->
+        <Profile name="wizCardLabel" extends="baseReference" with="anchorTopCenter">
+            <size value="500px 24px"/>
+            <textSize value="16px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_colorWhite_50"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Card label as Button (centered, clickable, transparent background) -->
+        <Profile name="wizCardButton" extends="wizCardLabel">
+            <imageColor value="0 0 0 0"/>
+            <imageFocusedColor value="0 0 0 0"/>
+            <imagePressedColor value="0 0 0 0"/>
+            <textFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <textHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+        </Profile>
+
+        <!-- Data label (14px white_50, identical to bhd_dataButton) -->
+        <Profile name="wizDataLabel" extends="baseReference" with="anchorTopLeft">
+            <size value="280px 24px"/>
+            <textSize value="14px"/>
+            <textBold value="false"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_colorWhite_50"/>
+            <textAlignment value="left"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- MultiTextOption (centered in parent via anchorTopCenter) -->
+        <Profile name="wizOptionCenter" extends="fs25_multiTextOption" with="anchorTopCenter">
+            <size value="500px 36px"/>
+        </Profile>
+
+        <Profile name="wizInputCenter" extends="fs25_textInput" with="anchorTopCenter">
+            <size value="500px 36px"/>
+            <applyProfanityFilter value="false"/>
+            <handleFocus value="true"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+            <textOffset value="0px 2px"/>
+            <imageSliceId value="noSlice"/>
+            <imageColor value="0 0 0 0"/>
+            <imageFocusedColor value="0 0 0 0"/>
+            <imageHighlightedColor value="0 0 0 0"/>
+            <imageDisabledColor value="0 0 0 0"/>
+        </Profile>
+
+        <Profile name="wizInputOutline" extends="baseReference">
+            <imageSliceId value="gui.3dShop_button_outline_middle"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <startImageSize value="6px 0"/>
+            <startImageSliceId value="gui.3dShop_button_outline_left"/>
+            <startImageColor value="$preset_fs25_colorGrey"/>
+            <startImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <endImageSize value="6px 0"/>
+            <endImageSliceId value="gui.3dShop_button_outline_right"/>
+            <endImageColor value="$preset_fs25_colorGrey"/>
+            <endImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+        </Profile>
+
+        <Profile name="wizInputIconBox" extends="baseReference" with="anchorMiddleCenter">
+            <size value="100% 99%"/>
+            <imageSliceId value="gui.empty"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <startImageSize value="18px 0"/>
+            <startImageSliceId value="gui.empty"/>
+            <startImageColor value="$preset_fs25_colorGrey"/>
+            <startImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <endImageSize value="18px 0"/>
+            <endImageSliceId value="gui.empty"/>
+            <endImageColor value="$preset_fs25_colorGrey"/>
+            <endImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+        </Profile>
+
+        <Profile name="wizInputIcon" extends="baseReference" with="anchorMiddleRight">
+            <position value="-10px 0px"/>
+            <size value="10px 10px"/>
+            <imageSliceId value="gui.icon_pen"/>
+            <imageColor value="$preset_fs25_colorGreyLight"/>
+            <imageHighlightedColor value="$preset_fs25_colorMainLight"/>
+            <imageFocusedColor value="$preset_fs25_colorMainLight"/>
+            <imageDisabledColor value="$preset_fs25_colorGreyDark"/>
+        </Profile>
+
+
+        <!-- Description text below selector (centered, multi-line, no truncation) -->
+        <Profile name="wizInfoText" extends="baseReference" with="anchorTopCenter">
+            <size value="520px 80px"/>
+            <textSize value="13px"/>
+            <textBold value="false"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="top"/>
+            <textWrapWidth value="520"/>
+        </Profile>
+
+        <!-- Info label below selector (gold, centered) -->
+        <Profile name="wizInfoLabel" extends="baseReference" with="anchorTopCenter">
+            <size value="500px 24px"/>
+            <textSize value="14px"/>
+            <textBold value="true"/>
+            <textColor value="$preset_fs25_colorMainHighlight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Info sub-label (smaller, white 50%, centered) -->
+        <Profile name="wizInfoSubLabel" extends="wizInfoLabel">
+            <textSize value="12px"/>
+            <textBold value="false"/>
+            <textColor value="$preset_colorWhite_50"/>
+        </Profile>
+
+        <!-- Duration wrapper (for visibility toggle) -->
+        <Profile name="wizDuration" extends="emptyPanel" with="anchorTopLeft">
+            <size value="560px 154px"/>
+        </Profile>
+
+        <!-- Recap value (right-aligned, 24px right margin symmetric with left) -->
+        <Profile name="wizRecapValue" extends="baseReference" with="anchorTopLeft">
+            <size value="236px 24px"/>
+            <textSize value="14px"/>
+            <textBold value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="right"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <Profile name="wizRecapValueHighlight" extends="wizRecapValue">
+            <textColor value="$preset_fs25_colorMainHighlight"/>
+        </Profile>
+
+        <Profile name="wizRecapRisk" extends="wizRecapValue">
+            <textSize value="16px"/>
+            <textUpperCase value="true"/>
+        </Profile>
+
+        <!-- TEG separator (thin line within rates section) -->
+        <Profile name="wizRecapSep" extends="baseReference" with="anchorTopLeft">
+            <size value="240px 1px"/>
+            <color value="0.25 0.25 0.25 1"/>
+            <cornerSize value="0"/>
+        </Profile>
+
+        <!-- Warning text -->
+        <Profile name="wizWarning" extends="baseReference" with="anchorTopLeft">
+            <size value="560px 36px"/>
+            <textSize value="14px"/>
+            <textBold value="true"/>
+            <textColor value="1.00 0.35 0.35 1"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="bottom"/>
+            <textWrapWidth value="560"/>
+        </Profile>
+
+        <!-- Amount cap comparison (orange, bold, centered) -->
+        <Profile name="wizAmountComparison" extends="baseReference" with="anchorTopLeft">
+            <size value="560px 20px"/>
+            <textSize value="13px"/>
+            <textBold value="true"/>
+            <textColor value="1.00 0.66 0.00 1"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+            <textWrapWidth value="560"/>
+        </Profile>
+
+    </GUIProfiles>
+</GUI>

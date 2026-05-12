@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bank &amp; Hitel" />
+        <e k="bank_label_interest" v="Kölcsön kamatai" />
+        <e k="bank_label_principal" v="Kölcsöntőke" />
+        <e k="finance_bankLoanInterest" v="Banki kamatok" />
+        <e k="finance_bankLoanPrincipal" v="Kölcsöntőke" />
+        <e k="bank_vanilla_loan_cleared" v="Egy meglévő %s összegű kölcsönt észleltünk és automatikusan törlesztettük.&#10;Az összeget levontuk az egyenlegéből.&#10;&#10;Használja a Bank menüt új kölcsön igényléséhez." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANK" />
+        <e k="bank_empty_list" v="Nincs aktív kölcsön a megjelenítéshez." />
+        <e k="bank_empty_paid" v="Nincs törlesztett kölcsön a megjelenítéshez." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktív kölcsönök" />
+        <e k="bank_tab_paid" v="Lezárt kölcsönök" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Rendelkezésre álló hitel" />
+        <e k="bank_dash_available_sub" v="(jóváhagyás függvényében)" />
+        <e k="bank_dash_outstanding" v="Jelenlegi tartozás" />
+        <e k="bank_dash_outstanding_sub" v="a hitelkeret %d%%-a felhasználva" />
+        <e k="bank_dash_monthlyTotal" v="Összes havi törlesztő" />
+        <e k="bank_dash_monthlyTotal_sub" v="(teljes havi levonás)" />
+        <e k="bank_dash_rate" v="Jelenlegi kamatláb" />
+        <e k="bank_dash_rate_sub" v="(alapkamatláb, felárak nélkül)" />
+        <e k="bank_dash_equity" v="Saját tőke" />
+        <e k="bank_dash_capacity" v="Teljes hitelkapacitás" />
+        <e k="bank_dash_outstanding_label" v="Teljes tartozás (minden gazdaság)" />
+        <e k="bank_dash_utilization" v="Kihasználtsági arány" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Banki mutatók"/>
+        <e k="bank_btn_indicators" v="Banki mutatók"/>
+        <e k="bank_dash_leverage" v="Tőkeáttétel" />
+        <e k="bank_dash_coverage" v="Kockázati fedezet" />
+        <e k="bank_dash_provision" v="Kockázati tartalék" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Mérleg" />
+        <e k="bank_health_sectionRisk" v="Portfólió &amp; Kockázat" />
+        <e k="bank_health_sectionPortfolio" v="Portfólió megoszlása" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Banki belső mutatók. A bank pénzügyi stabilitásának áttekintése: saját tőke, hitelkapacitás, kihasználtság és tőkeáttétel." />
+        <e k="bank_info_risk" v="Banki belső mutatók. Méri a bank képességét a potenciális veszteségek fedezésére, valamint a gazdaság koncentrációját a portfólióban." />
+        <e k="bank_info_portfolio" v="A folyamatban lévő kölcsönök megoszlása kockázati szint szerint. Több kockázatos kölcsön kevesebb elérhető hitelt jelent." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="A bank saját tőkéje, amelyet a kezdő tőke és a felhalmozott kamatbevételek alkotnak.&#10;Minden befizetett kamat megerősíti a bankot és növeli hitelkapacitását." />
+        <e k="bank_info_capacity" v="Az a maximális összeg, amelyet a bank az összes gazdaságnak kölcsönözhet.&#10;Egyenlő a saját tőkével szorozva a tőkeáttétellel.&#10;Ha kimerül, nem lehet új kölcsönt nyújtani." />
+        <e k="bank_info_outstanding" v="A szerver összes gazdaságának fennmaradó tőketartozásainak összege.&#10;A bank kihasználtsági arányának kiszámítására szolgál.&#10;Minél magasabb ez az összeg, annál alacsonyabb a rendelkezésre álló hitelkapacitás." />
+        <e k="bank_info_utilization" v="A jelenleg kölcsönadott teljes kapacitás százaléka.&#10;50% alatt = egészséges&#10;50-80% = szűkös&#10;80% felett = rendkívül korlátozott hitel" />
+        <e k="bank_info_leverage" v="A saját tőkére alkalmazott szorzó a hitelkapacitás meghatározásához.&#10;Pl. 10x = minden 1 € saját tőke 10 € kölcsönt támogat.&#10;A szerver adminisztrátora állítja be." />
+        <e k="bank_info_coverage" v="Megméri, hogy a banknak elegendő tartaléka van-e a hitelportfóliójának kockázatainak fedezéséhez.&#10;Számítás: Saját tőke ÷ Veszteségcéltartalékok.&#10;1,5x felett = egészséges&#10;1,0–1,5x = figyelem&#10;1,0x alatt = kritikus&#10;Túl alacsony arány blokkolhatja az új hitelek jóváhagyását." />
+        <e k="bank_info_provision" v="Lehetséges hitelkárok fedezésére félretett alapok.&#10;A magas kockázatú kölcsönök nagyobb céltartalékot igényelnek, ami közvetlenül csökkenti a bank tényleges hitelkapacitását.&#10;Ez a bank belső tartaléka, nem a játékos hiteleinek visszatérítése." />
+
+        <e k="bank_info_hint" v="Kattintson egy címre vagy mutatóra a részletekért" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Típus" />
+        <e k="bank_col_amount" v="Kezdeti összeg" />
+        <e k="bank_col_monthly" v="Havi törlesztő" />
+        <e k="bank_col_rate" v="Kamatláb" />
+        <e k="bank_col_remaining" v="Hátralévő futamidő" />
+        <e k="bank_col_rest" v="Hátralévő tőke" />
+        <e k="bank_col_status" v="Státusz" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktív" />
+        <e k="bank_status_paid" v="Törlesztve" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Új kölcsön" />
+        <e k="bank_btn_details" v="Kölcsön részletei" />
+        <e k="bank_btn_earlyRepay" v="Törlesztés" />
+        <e k="bank_btn_repayLine" v="Hitelkeret törlesztése" />
+        <e k="bank_btn_close" v="Hitelkeret lezárása" />
+        <e k="bank_btn_back" v="Bezárás" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Annuitásos" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Rulírozó" />
+        <e k="bank_loanType_annuity_desc" v="Rögzített havi törlesztő, minden hónapban ugyanannyi, kamatot és tőkét ötvöz.&#10;Az összeg soha nem változik a kölcsön teljes futamideje alatt." />
+        <e k="bank_loanType_bullet_desc" v="Havonta csak kamatfizetés.&#10;A tőke a futamidő végén egy összegben kerül visszafizetésre.&#10;Alacsony havi részletek, de tervezze meg a likviditást lejáratkor." />
+        <e k="bank_loanType_revolving_desc" v="Állandó hitelkeret a jóváhagyott limitig.&#10;Vegyen fel amennyit szükséges, fizesse vissza szabadon,&#10;rögzített részlet vagy lejárati dátum nélkül." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Lehívás" />
+        <e k="bank_revolving_status_open" v="Nyitott" />
+        <e k="bank_revolving_status_available" v="Rendelkezésre áll" />
+        <e k="bank_revolving_noDuration" v="Nincs rögzített futamidő" />
+        <e k="bank_revolving_variablePayment" v="Változó" />
+        <e k="bank_revolving_estimatedInterest" v="Becsült kamat (1 év)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / év max." />
+        <e k="bank_revolving_commitmentFee" v="Rendelkezésre tartási díj" />
+        <e k="bank_confirm_draw" v="Lehívandó összeg (max. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Visszafizetendő összeg (max. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Visszafizetendő összeg (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Lezárja ezt a hitelkeretet? Ez a művelet visszafordíthatatlan." />
+        <e k="bank_detail_revolving_limit" v="Hitelkeret" />
+        <e k="bank_detail_revolving_drawn" v="Lehívott egyenleg" />
+        <e k="bank_detail_revolving_available" v="Rendelkezésre álló" />
+        <e k="bank_detail_rev_utilization" v="Kihasználtság" />
+        <e k="bank_detail_rev_conditions" v="Feltételek" />
+        <e k="bank_detail_rev_interest_month" v="Kamat / hó" />
+        <e k="bank_detail_rev_interest_year" v="Kamat / év" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Évi 1%-os díj a hitelkeret le nem hívott részére. Havonta kerül felszámításra a felhasználatlan rendelkezésre álló összeg alapján. A maximális összeget jeleníti meg (teljesen le nem hívott keret esetén)." />
+        <e k="bank_detail_rev_duration" v="Futamidő" />
+        <e k="bank_detail_rev_payment" v="Fizetés" />
+        <e k="bank_detail_info_rev_utilization" v="A rulírozó hitelkeret felhasználásának részletezése.&#10;A limit a maximálisan engedélyezett összeg.&#10;A lehívott egyenleg a jelenleg kölcsönzött összeg." />
+        <e k="bank_detail_info_rev_limit" v="Az a maximális összeg, amelyet kölcsönözhet&#10;erről a rulírozó hitelkeretről." />
+        <e k="bank_detail_info_rev_drawn" v="Jelenleg kölcsönzött és felhasznált összeg&#10;ezen a hitelkereten." />
+        <e k="bank_detail_info_rev_available" v="Még lehívható összeg&#10;a hitelkeretén belül." />
+        <e k="bank_detail_info_rev_conditions" v="Erre a rulírozó hitelkeretre&#10;vonatkozó pénzügyi feltételek." />
+        <e k="bank_detail_info_rev_interest_month" v="Becsült havi kamat&#10;az aktuális lehívott egyenleg alapján." />
+        <e k="bank_detail_info_rev_interest_year" v="Becsült éves kamat&#10;az aktuális lehívott egyenleg alapján." />
+        <e k="bank_detail_info_rev_duration" v="A rulírozó hitelkereteknek nincs rögzített futamideje.&#10;Nyitva maradnak, amíg le nem zárják őket." />
+        <e k="bank_detail_info_rev_payment" v="A rulírozó kifizetések változóak:&#10;a lehívott egyenleg után fizet havi kamatot.&#10;A tőkét saját ütemében fizeti vissza." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Alacsony" />
+        <e k="bank_risk_moderate" v="Közepes" />
+        <e k="bank_risk_high" v="Magas" />
+        <e k="bank_risk_critical" v="Kritikus" />
+        <e k="bank_risk_refused" v="Elutasítva" />
+        <e k="bank_portfolio_scale_safe" v="Eg&#233;szs&#233;ges" />
+        <e k="bank_portfolio_scale_risky" v="Kock&#225;zatos" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d év" />
+        <e k="bank_format_monthsShort" v="%d hó" />
+        <e k="bank_format_yearsMonths" v="%d é. %d h." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Kölcsön igényléséhez gazdasággal kell rendelkeznie." />
+        <e k="bank_error_insufficientFunds" v="Nincs elegendő fedezet az előtörlesztéshez." />
+        <e k="bank_error_partialRepayMin" v="Minimális részleges törlesztés: %s (az eredeti tőke 10 %%-a)." />
+        <e k="bank_confirm_earlyRepay" v="%s visszafizetése %s büntetéssel?&#10;Összesen: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="KÖLCSÖN RÉSZLETEI" />
+        <e k="bank_detail_title" v="%d. KÖLCSÖN" />
+        <e k="bank_detail_label_amount" v="Összeg" />
+        <e k="bank_detail_label_rate" v="Kamatláb" />
+        <e k="bank_detail_label_type" v="Típus" />
+        <e k="bank_detail_label_risk" v="Kockázat" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="A kölcsönszerződés aláírásakor felvett teljes összeg. Ez az összeg nem változik a szerződés futamideje alatt." />
+        <e k="bank_detail_info_rate" v="Erre a kölcsönre alkalmazott éves kamatláb. Tartalmazza a bank alapkamatlábát és az esetleges kockázati szinthez kapcsolódó felárat." />
+        <e k="bank_detail_info_type" v="A kölcsön törlesztési módja&#10;Annuitásos: rögzített havi törlesztő, minden hónapban ugyanannyi&#10;Bullet: havonta csak kamat, tőke a futamidő végén&#10;Rulírozó: nyitott hitelkeret, rögzített futamidő nélkül" />
+        <e k="bank_detail_info_risk" v="A bank által jóváhagyáskor értékelt kockázati szint. A DSCR-től, az LTV-től és az előzményeitől függ. Magasabb kockázat kamatlábfelárhoz vezet." />
+        <e k="bank_detail_info_dscr" v="Adósságszolgálati fedezeti ráta&#10;Bevételek &#247; összes havi adósságtörlesztés.&#10;1,5 felett = kényelmes&#10;1,0&#8211;1,5 = szűkös&#10;1,0 alatt = a bevételek nem fedezik az adósságokat&#10;&#10;Javítási módok:&#10;Meglévő kölcsönök törlesztése (csökkenti a törlesztőket)&#10;Gazdaság bevételeinek növelése (értékesítés, növénytermesztés, állattenyésztés)&#10;Kisebb összeg igénylése&#10;Futamidő meghosszabbítása (csökkenti a törlesztőt)" />
+        <e k="bank_detail_info_ltv" v="Hitel/érték arány&#10;Kölcsönösszeg osztva vagyoneszközei értékével.&#10;Alacsonyabb biztonságosabb a banknak.&#10;80% felett = magas kockázat." />
+
+        <e k="bank_detail_info_hint" v="Kattintson egy mezőre a részletekért" />
+
+        <e k="bank_detail_col_period" v="Sz." />
+        <e k="bank_detail_col_payment" v="Törlesztő" />
+        <e k="bank_detail_col_interest" v="Kamat" />
+        <e k="bank_detail_col_principal" v="Tőke" />
+        <e k="bank_detail_col_balance" v="Maradék" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="ÚJ KÖLCSÖN" />
+        <e k="bank_wizard_step1_title" v="1. lépés — Kölcsön beállítása" />
+        <e k="bank_wizard_step2_title" v="2. lépés — Összefoglaló és megerősítés" />
+        <e k="bank_wizard_card_rates" v="KAMATOK" />
+        <e k="bank_wizard_card_cost" v="KÖLTSÉG" />
+        <e k="bank_wizard_label_loanType" v="Kölcsöntípus" />
+        <e k="bank_wizard_label_amount" v="Összeg" />
+        <e k="bank_wizard_label_duration" v="Futamidő" />
+        <e k="bank_wizard_limit" v="Rendelkezésre álló limit (jóváhagyás függvényében): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Becsült havi törlesztő: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Alapkamatláb" />
+        <e k="bank_wizard_recap_typeSpread" v="Termékfelár" />
+        <e k="bank_wizard_recap_surcharge" v="Kockázati felár" />
+        <e k="bank_wizard_recap_monthly" v="Havi törlesztő" />
+        <e k="bank_wizard_recap_totalInterest" v="Összes kamat" />
+        <e k="bank_wizard_recap_totalCost" v="Teljes költség" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (törlesztőképesség)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (kölcsön / eszközök)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (teljes hiteldíjmutató)" />
+        <e k="bank_wizard_recap_risk" v="Kockázati szint" />
+        <e k="bank_wizard_recap_risk_section" v="Kockázat" />
+        <e k="bank_wizard_indicativeRate" v="Tájékoztató kamatláb: %s (kockázat nélkül)" />
+        <e k="bank_wizard_warn_limitExceeded" v="A kért összeg meghaladja az elérhető hitelkeretét." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="A kért összeg meghaladja a gazdaságonkénti kitettségi korlátot (a teljes banki kapacitás 25%-a)." />
+        <e k="bank_wizard_warn_refused" v="Kölcsön elutasítva: pénzügyi profilja nem felel meg a minimális követelményeknek." />
+        <e k="bank_wizard_warn_invalidAmount" v="Érvénytelen összeg: kérjük, válasszon pozitív értéket." />
+        <e k="bank_wizard_warn_critical50" v="Magas kockázat: a folyósított összeg a kért összeg 50%-ára lesz korlátozva." />
+        <e k="bank_wizard_hint_refused" v="Kattintson a DSCR-re vagy a Kockázati szintre az elutasítás okának megértéséhez." />
+        <e k="bank_wizard_totalCostPreview" v="Összes visszafizetendő: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="ebből ~%s kamat" />
+        <e k="bank_wizard_amountCapped" v="Igényelt: %s  &#8594;  Jóváhagyott: %s" />
+        <e k="bank_wizard_btn_prev" v="Előző" />
+        <e k="bank_wizard_btn_next" v="Következő" />
+        <e k="bank_wizard_btn_confirm" v="Megerősítés" />
+        <e k="bank_wizard_confirm_msg" v="Megerősíti a %s összegű kölcsönt %s kamatlábon?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="A kölcsönére alkalmazott kamatláb részletezése.&#10;A végső EIR az alapkamatláb, a termékfelár és a kockázati felár összege." />
+        <e k="bank_wizard_info_baseRate" v="A bank által meghatározott referencia-kamatláb, minden hitelfelvevőre azonos.&#10;A szerver beállításai alapján változik." />
+        <e k="bank_wizard_info_typeSpread" v="A választott kölcsöntípushoz kapcsolódó kamatfelár.&#10;Annuitásos = 0% : a tőke minden törlesztéssel csökken.&#10;Bullet: teljes tőke kitéve a lejáratig.&#10;Rulírozó: tőke állandóan rendelkezésre áll, fix lejárat nélkül." />
+        <e k="bank_wizard_info_surcharge" v="Az Ön kockázati szintje alapján alkalmazott felár.&#10;Minél kockázatosabb a profilja, annál magasabb ez a felár." />
+        <e k="bank_wizard_info_effectiveRate" v="Teljes hiteldíjmutató: kölcsönének valódi éves költsége.&#10;Az alapkamatlábat, a termékfelárát és a kockázati felárat kombinálja." />
+        <e k="bank_wizard_info_risk_section" v="A bank kockázatértékelése a kölcsönéről.&#10;Ezek a mutatók határozzák meg, hogy a kölcsönt megadják-e és milyen feltételekkel." />
+        <e k="bank_wizard_info_cost" v="A kölcsöne teljes költségének összefoglalása.&#10;Összehasonlítja a havi törlesztőt, a halmozott kamatot és a teljes visszafizetendő összeget." />
+        <e k="bank_wizard_info_monthly" v="Havonta a pénzforgalmából levont összeg.&#10;Annuitásos kölcsön esetén tartalmazza a tőkét és a kamatot.&#10;Bullet kölcsön esetén csak a kamat kerül levonásra." />
+        <e k="bank_wizard_info_totalInterest" v="Az összes kamat összege, amelyet a kölcsön futamideje alatt fizet.&#10;Minél hosszabb a futamidő, annál magasabb ez az összeg." />
+        <e k="bank_wizard_info_totalCost" v="A kölcsön végéig visszafizetett teljes összeg.&#10;Egyenlő a felvett tőkével plusz az összes kamattal." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bank &amp; Hitel" />
+        <e k="bank_setting_initialCapital" v="Kezdő tőke" />
+        <e k="bank_toolTip_initialCapital" v="Az egyes gazdaságok banki műveleteihez rendelkezésre bocsátott kezdeti hitelösszeg." />
+        <e k="bank_setting_leverageRatio" v="Tőkeáttételi arány" />
+        <e k="bank_toolTip_leverageRatio" v="Meghatározza a rendelkezésre álló saját tőkéhez viszonyított maximális adóssági szorzót. Pl. 10x → max. hitel = a saját tőke 10-szerese." />
+        <e k="bank_setting_dynamicRate" v="Dinamikus kamatláb" />
+        <e k="bank_toolTip_dynamicRate" v="Bekapcsolva: az alapkamatláb évente változik (±0,25%, tartomány 1–12%). A kockázati felárak mindig érvényesek." />
+        <e k="bank_setting_baseInterestRate" v="Alapkamatláb" />
+        <e k="bank_toolTip_baseInterestRate" v="Az összes kölcsönre alkalmazott éves alapkamatláb a kockázati felár előtt." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Előtörlesztési díj" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="A fennmaradó tőke százaléka, amelyet büntetésként számítanak fel előtörlesztés esetén." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="%d. év — %s" />
+        <e k="bank_report_title_default" v="ÉVES JELENTÉS" />
+        <e k="bank_report_section_costs" v="Pénzügyi áramlatok" />
+        <e k="bank_report_section_activity" v="Tevékenység" />
+        <e k="bank_report_interestPaid" v="· Fizetett kamatok" />
+        <e k="bank_report_principalPaid" v="· Visszafizetett tőke" />
+        <e k="bank_report_totalPaid" v="Összesen fizetve" />
+        <e k="bank_report_avgMonthly" v="· Átlagos havi törlesztő" />
+        <e k="bank_report_loansOpened" v="· Felvett kölcsönök" />
+        <e k="bank_report_loansClosed" v="· Lezárt kölcsönök" />
+        <e k="bank_report_loansActive" v="· Aktív kölcsönök" />
+        <e k="bank_report_outstanding" v="Teljes tartozás" />
+        <e k="bank_report_noData" v="Nem áll rendelkezésre éves jelentési adat." />
+        <e k="bank_report_btnNext" v="Év +" />
+        <e k="bank_report_btnPrev" v="Év -" />
+        <e k="bank_btn_report" v="Éves jelentés" />
+    </elements>
+</l10n>

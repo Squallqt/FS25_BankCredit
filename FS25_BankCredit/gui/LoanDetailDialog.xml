@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+
+    <GuiElement profile="fs25_dialogBg" id="dialogElement" size="1000px 760px">
+        <ThreePartBitmap profile="fs25_dialogBgMiddle"/>
+        <ThreePartBitmap profile="fs25_dialogBgTop"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+
+            <BoxLayout profile="loanDetMainBox">
+
+                <!-- Title -->
+                <Text profile="loanDetMainTitle" text="$l10n_bank_detail_dialog_title" id="mainTitleText"/>
+
+                <!-- Title separator -->
+                <GuiElement profile="loanDetTitleSepWrapper">
+                    <ThreePartBitmap profile="loanDetTitleSep" id="titleSep"/>
+                </GuiElement>
+
+                <!-- Spacer -->
+                <GuiElement profile="loanDetTitleSpacer"/>
+
+                <!-- Content area -->
+                <GuiElement profile="loanDetContentArea">
+
+                    <!-- Info card -->
+                    <RoundCorner profile="loanDetHeaderBg" position="0px 0px"/>
+
+                    <Button profile="loanDetHeaderLabelBtn" position="0px -12px"    size="154px 22px" id="btnAmount" text="$l10n_bank_detail_label_amount" onClick="onClickInfoAmount"/>
+                    <Text   profile="loanDetHeaderValue"    position="0px -40px"    size="154px 32px" id="textAmount"/>
+
+                    <Button profile="loanDetHeaderLabelBtn" position="154px -12px"  size="153px 22px" id="btnRate" text="$l10n_bank_detail_label_rate" onClick="onClickInfoRate"/>
+                    <Text   profile="loanDetHeaderValue"    position="154px -40px"  size="153px 32px" id="textRate"/>
+
+                    <Button profile="loanDetHeaderLabelBtn" position="307px -12px"  size="153px 22px" id="btnType" text="$l10n_bank_detail_label_type" onClick="onClickInfoType"/>
+                    <Text   profile="loanDetHeaderValue"    position="307px -40px"  size="153px 32px" id="textType"/>
+
+                    <Button profile="loanDetHeaderLabelBtn" position="460px -12px"  size="153px 22px" id="btnRisk" text="$l10n_bank_detail_label_risk" onClick="onClickInfoRisk"/>
+                    <Text   profile="loanDetHeaderRisk"     position="460px -40px"  size="153px 32px" id="textRisk"/>
+
+                    <Button profile="loanDetHeaderLabelBtn" position="613px -12px"  size="153px 22px" id="btnDSCR" text="$l10n_bank_detail_label_dscr" onClick="onClickInfoDSCR"/>
+                    <Text   profile="loanDetHeaderValue"    position="613px -40px"  size="153px 32px" id="textDSCR"/>
+
+                    <Button profile="loanDetHeaderLabelBtn" position="766px -12px"  size="154px 22px" id="btnLTV" text="$l10n_bank_detail_label_ltv" onClick="onClickInfoLTV"/>
+                    <Text   profile="loanDetHeaderValue"    position="766px -40px"  size="154px 32px" id="textLTV"/>
+
+                    <!-- Separator -->
+                    <Bitmap profile="loanDetSepHeader"/>
+
+                    <!-- Column headers (hidden for revolving) -->
+                    <GuiElement id="scheduleHeaders">
+                        <Text profile="loanDetColHeader" position="20px -117px"  size="90px 25px"  text="$l10n_bank_detail_col_period"/>
+                        <Text profile="loanDetColHeader" position="120px -117px" size="190px 25px" text="$l10n_bank_detail_col_payment"/>
+                        <Text profile="loanDetColHeader" position="320px -117px" size="190px 25px" text="$l10n_bank_detail_col_interest"/>
+                        <Text profile="loanDetColHeader" position="520px -117px" size="190px 25px" text="$l10n_bank_detail_col_principal"/>
+                        <Text profile="loanDetColHeader" position="720px -117px" size="200px 25px" text="$l10n_bank_detail_col_balance"/>
+
+                        <!-- Accent separator -->
+                        <Bitmap profile="loanDetSepAccent"/>
+                    </GuiElement>
+
+                    <!-- Schedule list -->
+                    <SmoothList profile="loanDetList" id="listSchedule" listItemSpacing="0px" listItemLateralSpacing="0px" listSmoothingDisabled="true">
+                        <ListItem profile="loanDetListItem" name="templateItem">
+                            <ThreePartBitmap profile="loanDetItemGradient" name="alternating"/>
+                            <Text profile="loanDetCellPeriod"    position="20px 0px"  size="90px 32px"  name="cellPeriod"/>
+                            <Text profile="loanDetCellPayment"   position="120px 0px" size="190px 32px" name="cellPayment"/>
+                            <Text profile="loanDetCellInterest"  position="320px 0px" size="190px 32px" name="cellInterest"/>
+                            <Text profile="loanDetCellPrincipal" position="520px 0px" size="190px 32px" name="cellPrincipal"/>
+                            <Text profile="loanDetCellBalance"   position="720px 0px" size="200px 32px" name="cellBalance"/>
+                        </ListItem>
+                    </SmoothList>
+                    <ThreePartBitmap profile="loanDetSliderBox" id="sliderBox">
+                        <Slider profile="fs25_listSlider" dataElementId="listSchedule"/>
+                    </ThreePartBitmap>
+
+                    <!-- Revolving panel (shown instead of schedule for revolving loans) -->
+                    <GuiElement id="revolvingPanel" visible="false">
+
+                        <!-- ===== UTILISATION (left card) ===== -->
+                        <RoundCorner profile="loanDetRevCardBg" position="0px -120px" size="445px 280px"/>
+                        <Button profile="loanDetRevSectionBtn" position="0px -130px" size="445px 26px"
+                                id="btnRevUtilSection" text="$l10n_bank_detail_rev_utilization" onClick="onClickInfoRevUtil"/>
+
+                        <!-- Progress bar -->
+                        <RoundCorner profile="loanDetRevBarBg" position="24px -168px"/>
+                        <RoundCorner profile="loanDetRevBarFill" position="24px -168px" id="revBarFill"/>
+                        <Text profile="loanDetRevBarPct" position="24px -167px" size="397px 16px" id="textRevUtilPct"/>
+
+                        <!-- Data rows -->
+                        <Button profile="loanDetRevDataBtn" position="24px -202px"
+                                id="btnRevLimit" onClick="onClickInfoRevLimit"/>
+                        <Text profile="loanDetRevDataVal" position="250px -202px" size="171px 22px"
+                              id="textRevLimit"/>
+
+                        <Button profile="loanDetRevDataBtn" position="24px -224px"
+                                id="btnRevDrawn" onClick="onClickInfoRevDrawn"/>
+                        <Text profile="loanDetRevDataVal" position="250px -224px" size="171px 22px"
+                              id="textRevDrawn"/>
+
+                        <Button profile="loanDetRevDataBtn" position="24px -246px"
+                                id="btnRevAvailable" onClick="onClickInfoRevAvail"/>
+                        <Text profile="loanDetRevDataVal" position="250px -246px" size="171px 22px"
+                              id="textRevAvailable"/>
+
+                        <!-- ===== CONDITIONS (right card) ===== -->
+                        <RoundCorner profile="loanDetRevCardBg" position="475px -120px" size="445px 280px"/>
+                        <Button profile="loanDetRevSectionBtn" position="475px -130px" size="445px 26px"
+                                id="btnRevCondSection" text="$l10n_bank_detail_rev_conditions" onClick="onClickInfoRevCond"/>
+
+                        <Button profile="loanDetRevDataBtn" position="499px -168px"
+                                id="btnRevRate" onClick="onClickInfoRevRate"/>
+                        <Text profile="loanDetRevDataVal" position="725px -168px" size="171px 22px"
+                              id="textRevRate"/>
+
+                        <Button profile="loanDetRevDataBtn" position="499px -190px"
+                                id="btnRevInterestMonth" onClick="onClickInfoRevIntMonth"/>
+                        <Text profile="loanDetRevDataVal" position="725px -190px" size="171px 22px"
+                              id="textRevInterestMonth"/>
+
+                        <Button profile="loanDetRevDataBtn" position="499px -212px"
+                                id="btnRevInterestYear" onClick="onClickInfoRevIntYear"/>
+                        <Text profile="loanDetRevDataHighlight" position="725px -212px" size="171px 22px"
+                              id="textRevInterestYear"/>
+
+                        <Button profile="loanDetRevDataBtn" position="499px -234px"
+                                id="btnRevCommitmentFee" onClick="onClickInfoRevCommitmentFee"/>
+                        <Text profile="loanDetRevDataVal" position="725px -234px" size="171px 22px"
+                              id="textRevCommitmentFee"/>
+
+                        <RoundCorner profile="loanDetRevSep" position="499px -266px" size="397px 1px"/>
+
+                        <Button profile="loanDetRevDataBtn" position="499px -276px"
+                                id="btnRevDuration" onClick="onClickInfoRevDuration"/>
+                        <Text profile="loanDetRevDataVal" position="725px -276px" size="171px 22px"
+                              id="textRevDuration"/>
+
+                        <Button profile="loanDetRevDataBtn" position="499px -298px"
+                                id="btnRevPayment" onClick="onClickInfoRevPayment"/>
+                        <Text profile="loanDetRevDataVal" position="725px -298px" size="171px 22px"
+                              id="textRevPayment"/>
+
+                        <!-- Hint -->
+                        <Text profile="loanDetInfoHint" position="0px -420px" text="$l10n_bank_detail_info_hint"/>
+                    </GuiElement>
+
+                    <!-- Hint -->
+                    <Text profile="loanDetInfoHint" position="0px -585px" text="$l10n_bank_detail_info_hint" id="mainHint"/>
+
+                </GuiElement>
+
+            </BoxLayout>
+
+        </GuiElement>
+
+        <!-- Button bar -->
+        <BoxLayout profile="fs25_dialogButtonBox" size="940px 60px">
+            <Button profile="buttonActivate" text="$l10n_bank_btn_earlyRepay" onClick="onClickRevRepay" id="btnRevRepay" visible="false"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator" id="sepRevRepay" visible="false"/>
+            <Button profile="loanDetBtnCancel" text="$l10n_bank_btn_close" onClick="onClickRevClose" id="btnRevClose" visible="false"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator" id="sepRevClose" visible="false"/>
+            <Button profile="buttonOK" text="$l10n_bank_revolving_draw" onClick="onClickRevDraw" id="btnRevDraw" visible="false"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator" id="sepRevDraw" visible="false"/>
+            <Button profile="buttonBack" text="$l10n_bank_btn_back" onClick="onClickBack"/>
+        </BoxLayout>
+    </GuiElement>
+
+    <GUIProfiles>
+        <Profile name="loanDetBtnCancel" extends="buttonOK">
+            <inputAction value="MENU_CANCEL"/>
+        </Profile>
+
+        <!-- Layout -->
+        <Profile name="loanDetMainBox" extends="emptyPanel" with="anchorTopCenter">
+            <size value="920px 640px"/>
+            <flowDirection value="vertical"/>
+            <alignmentX value="left"/>
+            <alignmentY value="top"/>
+            <elementSpacing value="0px"/>
+        </Profile>
+
+        <!-- Title -->
+        <Profile name="loanDetMainTitle" extends="baseReference">
+            <size value="920px 40px"/>
+            <margin value="0px 4px 0px 0px"/>
+            <textSize value="20px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Title separator -->
+        <Profile name="loanDetTitleSepWrapper" extends="emptyPanel">
+            <size value="920px 2dp"/>
+        </Profile>
+
+        <Profile name="loanDetTitleSep" extends="fs25_lineSeparatorTopHighlighted" with="anchorTopCenter">
+            <size value="260px 2dp"/>
+        </Profile>
+
+        <!-- Spacer -->
+        <Profile name="loanDetTitleSpacer" extends="emptyPanel">
+            <size value="920px 25px"/>
+        </Profile>
+
+        <!-- Content area -->
+        <Profile name="loanDetContentArea" extends="emptyPanel">
+            <size value="920px 569px"/>
+        </Profile>
+
+        <!-- Header info card background -->
+        <Profile name="loanDetHeaderBg" extends="baseReference" with="anchorTopLeft">
+            <size value="920px 80px"/>
+            <color value="0 0 0 0.55"/>
+            <cornerSize value="0.35"/>
+        </Profile>
+
+        <!-- Header label button: clickable, highlights on focus/hover -->
+        <Profile name="loanDetHeaderLabelBtn" extends="baseReference" with="anchorTopLeft">
+            <size value="150px 22px"/>
+            <textSize value="13px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_colorWhite_50"/>
+            <textFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <textHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+            <imageColor value="0 0 0 0"/>
+            <imageFocusedColor value="0 0 0 0"/>
+            <imagePressedColor value="0 0 0 0"/>
+        </Profile>
+
+        <Profile name="loanDetHeaderValue" extends="baseReference" with="anchorTopLeft">
+            <size value="150px 32px"/>
+            <textSize value="18px"/>
+            <textBold value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <Profile name="loanDetHeaderRisk" extends="loanDetHeaderValue">
+            <textColor value="$preset_fs25_colorMainHighlight"/>
+        </Profile>
+
+        <!-- Info hint -->
+        <Profile name="loanDetInfoHint" extends="baseReference" with="anchorTopLeft">
+            <size value="920px 18px"/>
+            <textSize value="12px"/>
+            <textBold value="false"/>
+            <textColor value="0.40 0.40 0.40 1"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Separator -->
+        <Profile name="loanDetSepHeader" extends="baseReference" with="anchorTopLeft">
+            <position value="0px -105px"/>
+            <size value="920px 1dp"/>
+            <imageColor value="0.35 0.35 0.35 0.7"/>
+        </Profile>
+
+        <!-- Column headers -->
+        <Profile name="loanDetColHeader" extends="baseReference" with="anchorTopLeft">
+            <textSize value="13px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_colorWhite_50"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <Profile name="loanDetSepAccent" extends="baseReference" with="anchorTopLeft">
+            <position value="0px -145px"/>
+            <size value="920px 1dp"/>
+            <imageColor value="$preset_fs25_colorMainHighlight"/>
+        </Profile>
+
+        <!-- List -->
+        <Profile name="loanDetList" extends="emptyPanel" with="anchorTopLeft">
+            <position value="0px -151px"/>
+            <size value="920px 430px"/>
+        </Profile>
+
+        <Profile name="loanDetSliderBox" extends="fs25_listSliderBox" with="anchorTopLeft">
+            <position value="914px -151px"/>
+            <size value="6px 430px"/>
+        </Profile>
+
+        <Profile name="loanDetListItem" extends="fs25_calendarListItem">
+            <hideSelection value="true"/>
+            <height value="32px"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+            <alternateBackgroundColor value="$preset_fs25_colorGreyDark_50"/>
+        </Profile>
+
+        <Profile name="loanDetItemGradient" extends="fs25_calendarListItemBg">
+            <imageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+        </Profile>
+
+        <!-- Row cells -->
+        <Profile name="loanDetCellPeriod" extends="baseReference">
+            <textSize value="14px"/>
+            <textBold value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textSelectedColor value="$preset_fs25_colorMainDark"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <Profile name="loanDetCellPayment" extends="loanDetCellPeriod">
+            <textBold value="true"/>
+            <textAlignment value="center"/>
+        </Profile>
+
+        <Profile name="loanDetCellInterest" extends="loanDetCellPeriod">
+            <textBold value="false"/>
+            <textAlignment value="center"/>
+        </Profile>
+
+        <Profile name="loanDetCellPrincipal" extends="loanDetCellPeriod">
+            <textBold value="false"/>
+            <textAlignment value="center"/>
+        </Profile>
+
+        <Profile name="loanDetCellBalance" extends="loanDetCellPeriod">
+            <textBold value="true"/>
+            <textAlignment value="center"/>
+        </Profile>
+
+        <!-- Revolving card background -->
+        <Profile name="loanDetRevCardBg" extends="baseReference" with="anchorTopLeft">
+            <color value="0 0 0 0.55"/>
+            <cornerSize value="0.35"/>
+        </Profile>
+
+        <!-- Revolving section button (centered, clickable) -->
+        <Profile name="loanDetRevSectionBtn" extends="baseReference" with="anchorTopLeft">
+            <size value="445px 26px"/>
+            <textSize value="16px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_colorWhite_50"/>
+            <textFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <textHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+            <imageColor value="0 0 0 0"/>
+            <imageFocusedColor value="0 0 0 0"/>
+            <imagePressedColor value="0 0 0 0"/>
+        </Profile>
+
+        <!-- Revolving data button (label, clickable) -->
+        <Profile name="loanDetRevDataBtn" extends="baseReference" with="anchorTopLeft">
+            <size value="220px 22px"/>
+            <textSize value="14px"/>
+            <textBold value="false"/>
+            <textUpperCase value="true"/>
+            <textColor value="$preset_colorWhite_50"/>
+            <textFocusedColor value="$preset_fs25_colorMainLight"/>
+            <textHighlightedColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="left"/>
+            <textVerticalAlignment value="middle"/>
+            <imageColor value="0 0 0 0"/>
+            <imageFocusedColor value="0 0 0 0"/>
+            <imagePressedColor value="0 0 0 0"/>
+        </Profile>
+
+        <!-- Revolving data value (right-aligned) -->
+        <Profile name="loanDetRevDataVal" extends="baseReference" with="anchorTopLeft">
+            <size value="171px 22px"/>
+            <textSize value="14px"/>
+            <textBold value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="right"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+
+        <!-- Revolving data value highlight (gold) -->
+        <Profile name="loanDetRevDataHighlight" extends="loanDetRevDataVal">
+            <textColor value="$preset_fs25_colorMainHighlight"/>
+        </Profile>
+
+        <!-- Revolving separator -->
+        <Profile name="loanDetRevSep" extends="baseReference" with="anchorTopLeft">
+            <size value="397px 1px"/>
+            <color value="0.25 0.25 0.25 1"/>
+            <cornerSize value="0"/>
+        </Profile>
+
+        <!-- Progress bar background -->
+        <Profile name="loanDetRevBarBg" extends="baseReference" with="anchorTopLeft">
+            <size value="397px 16px"/>
+            <color value="$preset_fs25_colorGreyDark"/>
+            <cornerSize value="0.5"/>
+        </Profile>
+
+        <!-- Progress bar fill -->
+        <Profile name="loanDetRevBarFill" extends="baseReference" with="anchorTopLeft">
+            <size value="397px 16px"/>
+            <color value="$preset_fs25_colorGreen"/>
+            <cornerSize value="0.5"/>
+        </Profile>
+
+        <!-- Progress bar percentage text -->
+        <Profile name="loanDetRevBarPct" extends="baseReference" with="anchorTopLeft">
+            <size value="397px 16px"/>
+            <textSize value="11px"/>
+            <textBold value="true"/>
+            <textColor value="$preset_fs25_colorMainDark"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+        </Profile>
+    </GUIProfiles>
+</GUI>

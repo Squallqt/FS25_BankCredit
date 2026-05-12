@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bancă &amp; Credit" />
+        <e k="bank_label_interest" v="Dobânzi împrumut" />
+        <e k="bank_label_principal" v="Capital împrumut" />
+        <e k="finance_bankLoanInterest" v="Dobânzi bancare" />
+        <e k="finance_bankLoanPrincipal" v="Capital împrumut" />
+        <e k="bank_vanilla_loan_cleared" v="S-a detectat un împrumut existent de %s care a fost lichidat automat.&#10;Suma a fost dedusă din soldul dvs.&#10;&#10;Folosiți meniul Bancă pentru a solicita un nou împrumut." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANCĂ" />
+        <e k="bank_empty_list" v="Nu există împrumuturi active de afișat." />
+        <e k="bank_empty_paid" v="Nu există împrumuturi rambursate de afișat." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Împrumuturi active" />
+        <e k="bank_tab_paid" v="Împrumuturi finalizate" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Credit disponibil" />
+        <e k="bank_dash_available_sub" v="(supus aprobării)" />
+        <e k="bank_dash_outstanding" v="Datorie curentă" />
+        <e k="bank_dash_outstanding_sub" v="%d%% din plafonul de împrumut utilizat" />
+        <e k="bank_dash_monthlyTotal" v="Total rate lunare" />
+        <e k="bank_dash_monthlyTotal_sub" v="(prelevare lunară totală)" />
+        <e k="bank_dash_rate" v="Rată curentă" />
+        <e k="bank_dash_rate_sub" v="(rată de bază, fără majorări)" />
+        <e k="bank_dash_equity" v="Capital propriu" />
+        <e k="bank_dash_capacity" v="Capacitate totală de creditare" />
+        <e k="bank_dash_outstanding_label" v="Datorie totală (toate fermele)" />
+        <e k="bank_dash_utilization" v="Grad de utilizare" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Indicatori bancari"/>
+        <e k="bank_btn_indicators" v="Indicatori bancari"/>
+        <e k="bank_dash_leverage" v="Efect de levier" />
+        <e k="bank_dash_coverage" v="Acoperire riscuri" />
+        <e k="bank_dash_provision" v="Rezervă de risc" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Bilanț" />
+        <e k="bank_health_sectionRisk" v="Portofoliu &amp; Risc" />
+        <e k="bank_health_sectionPortfolio" v="Distribuția portofoliului" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Metrici interne ale băncii. Prezentare generală a solidității financiare a băncii: capital propriu, capacitate de creditare, utilizare și efect de levier." />
+        <e k="bank_info_risk" v="Metrici interne ale băncii. Măsoară capacitatea băncii de a acoperi potențialele pierderi și concentrarea fermei dvs. în portofoliu." />
+        <e k="bank_info_portfolio" v="Distribuția împrumuturilor active pe nivel de risc. Mai multe împrumuturi riscante înseamnă mai puțin credit disponibil." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Capitalul propriu al băncii, format din capitalul inițial și veniturile din dobânzi acumulate.&#10;Fiecare dobândă plătită consolidează banca și îi crește capacitatea de creditare." />
+        <e k="bank_info_capacity" v="Suma maximă pe care banca o poate împrumuta tuturor fermelor la un loc.&#10;Egală cu capitalul propriu înmulțit cu efectul de levier.&#10;Când este epuizată, nu mai pot fi acordate împrumuturi noi." />
+        <e k="bank_info_outstanding" v="Suma tuturor capitalurilor rămase datorate de toate fermele de pe server.&#10;Utilizat pentru a calcula gradul de utilizare al băncii.&#10;Cu cât această sumă este mai mare, cu atât capacitatea de creditare disponibilă este mai redusă." />
+        <e k="bank_info_utilization" v="Procentul din capacitatea totală împrumutată în prezent.&#10;Sub 50% = sănătos&#10;50-80% = tensionat&#10;Peste 80% = creditul este foarte limitat" />
+        <e k="bank_info_leverage" v="Multiplicatorul aplicat capitalului propriu pentru a determina capacitatea de creditare.&#10;Ex. 10x = fiecare 1 € de capital susține 10 € de împrumuturi.&#10;Setat de administratorul serverului." />
+        <e k="bank_info_coverage" v="Măsoară dacă banca dispune de rezerve suficiente pentru a acoperi riscurile portofoliului său de credite.&#10;Calcul: Capital propriu ÷ Provizioane pentru pierderi.&#10;Peste 1,5x = sănătos&#10;1,0–1,5x = atenție&#10;Sub 1,0x = critic&#10;Un raport prea scăzut poate bloca aprobarea de noi împrumuturi." />
+        <e k="bank_info_provision" v="Fonduri rezervate pentru acoperirea posibilelor nerambursări de împrumuturi.&#10;Împrumuturile cu risc ridicat necesită provizioane mai mari, reducând direct capacitatea efectivă de creditare a băncii.&#10;Aceasta este o rezervă internă a băncii, nu o rambursare a împrumuturilor jucătorului." />
+
+        <e k="bank_info_hint" v="Faceți clic pe un titlu sau indicator pentru mai multe detalii" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Tip" />
+        <e k="bank_col_amount" v="Sumă inițială" />
+        <e k="bank_col_monthly" v="Rată lunară" />
+        <e k="bank_col_rate" v="Rată dobândă" />
+        <e k="bank_col_remaining" v="Perioadă rămasă" />
+        <e k="bank_col_rest" v="Capital rămas" />
+        <e k="bank_col_status" v="Stare" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Activ" />
+        <e k="bank_status_paid" v="Rambursat" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Împrumut nou" />
+        <e k="bank_btn_details" v="Detalii împrumut" />
+        <e k="bank_btn_earlyRepay" v="Rambursează" />
+        <e k="bank_btn_repayLine" v="Rambursează linia" />
+        <e k="bank_btn_close" v="Închide linia de credit" />
+        <e k="bank_btn_back" v="Închide" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Anuitate" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Revolving" />
+        <e k="bank_loanType_annuity_desc" v="Rată lunară fixă, aceeași în fiecare lună, combinând dobânzi și capital.&#10;Suma nu se modifică niciodată pe durata împrumutului." />
+        <e k="bank_loanType_bullet_desc" v="Plată lunară numai a dobânzilor.&#10;Întregul capital este rambursat dintr-o dată la scadență.&#10;Rate lunare mici, dar planificați fluxul de numerar pentru scadență." />
+        <e k="bank_loanType_revolving_desc" v="Linie de credit permanentă până la maximul aprobat.&#10;Trageți cât aveți nevoie, rambursați liber,&#10;fără rată fixă sau scadență." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Tragere" />
+        <e k="bank_revolving_status_open" v="Deschisă" />
+        <e k="bank_revolving_status_available" v="Disponibilă" />
+        <e k="bank_revolving_noDuration" v="Fără durată fixă" />
+        <e k="bank_revolving_variablePayment" v="Variabilă" />
+        <e k="bank_revolving_estimatedInterest" v="Dobânzi est. (1 an)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / an max." />
+        <e k="bank_revolving_commitmentFee" v="Comision de angajament" />
+        <e k="bank_confirm_draw" v="Sumă de tras (max. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Sumă de rambursat (max. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Sumă de rambursat (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Închideți această linie de credit? Operațiunea este ireversibilă." />
+        <e k="bank_detail_revolving_limit" v="Limită credit" />
+        <e k="bank_detail_revolving_drawn" v="Sold utilizat" />
+        <e k="bank_detail_revolving_available" v="Disponibil" />
+        <e k="bank_detail_rev_utilization" v="Utilizare" />
+        <e k="bank_detail_rev_conditions" v="Condiții" />
+        <e k="bank_detail_rev_interest_month" v="Dobânzi / lună" />
+        <e k="bank_detail_rev_interest_year" v="Dobânzi / an" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Comision anual de 1% din partea neutilizată a liniei de credit. Facturat lunar pe suma disponibilă neutilizată. Afișează suma maximă (linie complet neutilizată)." />
+        <e k="bank_detail_rev_duration" v="Durată" />
+        <e k="bank_detail_rev_payment" v="Plată" />
+        <e k="bank_detail_info_rev_utilization" v="Detaliul utilizării liniei de credit revolving.&#10;Limita este suma maximă aprobată.&#10;Soldul utilizat este suma împrumutată în prezent." />
+        <e k="bank_detail_info_rev_limit" v="Suma maximă pe care o puteți împrumuta&#10;din această linie de credit revolving." />
+        <e k="bank_detail_info_rev_drawn" v="Suma împrumutată și utilizată în prezent&#10;în cadrul acestei linii de credit." />
+        <e k="bank_detail_info_rev_available" v="Suma care mai poate fi trasă&#10;în limita creditului aprobat." />
+        <e k="bank_detail_info_rev_conditions" v="Condițiile de finanțare aplicabile&#10;acestei linii de credit revolving." />
+        <e k="bank_detail_info_rev_interest_month" v="Dobânzile lunare estimate&#10;pe baza soldului utilizat curent." />
+        <e k="bank_detail_info_rev_interest_year" v="Dobânzile anuale estimate&#10;pe baza soldului utilizat curent." />
+        <e k="bank_detail_info_rev_duration" v="Liniile de credit revolving nu au o durată fixă.&#10;Rămân deschise până la închidere." />
+        <e k="bank_detail_info_rev_payment" v="Plățile revolving sunt variabile:&#10;plătiți dobânzi lunare la soldul utilizat.&#10;Capitalul se rambursează în propriul ritm." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Scăzut" />
+        <e k="bank_risk_moderate" v="Moderat" />
+        <e k="bank_risk_high" v="Ridicat" />
+        <e k="bank_risk_critical" v="Critic" />
+        <e k="bank_risk_refused" v="Refuzat" />
+        <e k="bank_portfolio_scale_safe" v="S&#259;n&#259;tos" />
+        <e k="bank_portfolio_scale_risky" v="Riscant" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d an(i)" />
+        <e k="bank_format_monthsShort" v="%d lună(i)" />
+        <e k="bank_format_yearsMonths" v="%d a. %d l." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Trebuie să dețineți o fermă pentru a solicita un împrumut." />
+        <e k="bank_error_insufficientFunds" v="Fonduri insuficiente pentru rambursarea anticipată." />
+        <e k="bank_error_partialRepayMin" v="Rambursare parțială minimă: %s (10 %% din capitalul inițial)." />
+        <e k="bank_confirm_earlyRepay" v="Rambursați %s cu o penalitate de %s?&#10;Total: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="DETALII ÎMPRUMUT" />
+        <e k="bank_detail_title" v="ÎMPRUMUT NR. %d" />
+        <e k="bank_detail_label_amount" v="Sumă" />
+        <e k="bank_detail_label_rate" v="Rată" />
+        <e k="bank_detail_label_type" v="Tip" />
+        <e k="bank_detail_label_risk" v="Risc" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Suma totală împrumutată la semnarea contractului. Această sumă nu se modifică pe durata contractului." />
+        <e k="bank_detail_info_rate" v="Rata anuală aplicată acestui împrumut. Include rata de bază a băncii și o eventuală primă de risc." />
+        <e k="bank_detail_info_type" v="Modalitatea de rambursare a împrumutului&#10;Anuitate: rată lunară fixă, aceeași în fiecare lună&#10;Bullet: numai dobânzi lunare, capitalul la final&#10;Revolving: linie de credit deschisă, fără durată fixă" />
+        <e k="bank_detail_info_risk" v="Nivelul de risc evaluat de bancă la aprobare. Depinde de DSCR, LTV și istoricul dvs. Risc mai mare aduce o primă de rată." />
+        <e k="bank_detail_info_dscr" v="Raport de acoperire a serviciului datoriei&#10;Venituri &#247; rate lunare totale ale datoriilor.&#10;Peste 1,5 = confortabil&#10;1,0&#8211;1,5 = tensionat&#10;Sub 1,0 = veniturile nu acoperă datoriile&#10;&#10;Pentru a-l îmbunătăți:&#10;Rambursați împrumuturile existente (reduce ratele)&#10;Creșteți veniturile fermei (vânzări, culturi, zootehnie)&#10;Solicitați o sumă mai mică&#10;Prelungiți durata (reduce rata)" />
+        <e k="bank_detail_info_ltv" v="Raportul împrumut/valoare&#10;Suma împrumutată împărțită la valoarea activelor dvs.&#10;Mai mic este mai sigur pentru bancă.&#10;Peste 80% = risc ridicat." />
+
+        <e k="bank_detail_info_hint" v="Faceți clic pe un câmp pentru mai multe detalii" />
+
+        <e k="bank_detail_col_period" v="Nr." />
+        <e k="bank_detail_col_payment" v="Rată" />
+        <e k="bank_detail_col_interest" v="Dobândă" />
+        <e k="bank_detail_col_principal" v="Capital" />
+        <e k="bank_detail_col_balance" v="Sold" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="ÎMPRUMUT NOU" />
+        <e k="bank_wizard_step1_title" v="Pasul 1 — Configurare împrumut" />
+        <e k="bank_wizard_step2_title" v="Pasul 2 — Rezumat și confirmare" />
+        <e k="bank_wizard_card_rates" v="DOBÂNZI" />
+        <e k="bank_wizard_card_cost" v="COST" />
+        <e k="bank_wizard_label_loanType" v="Tip împrumut" />
+        <e k="bank_wizard_label_amount" v="Sumă" />
+        <e k="bank_wizard_label_duration" v="Durată" />
+        <e k="bank_wizard_limit" v="Limită disponibilă (supusă aprobării): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Rată lunară estimată: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Rată de bază" />
+        <e k="bank_wizard_recap_typeSpread" v="Primă de produs" />
+        <e k="bank_wizard_recap_surcharge" v="Primă de risc" />
+        <e k="bank_wizard_recap_monthly" v="Rată lunară" />
+        <e k="bank_wizard_recap_totalInterest" v="Total dobânzi" />
+        <e k="bank_wizard_recap_totalCost" v="Cost total" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (capacitate de rambursare)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (împrumut / active)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (rata anuală efectivă)" />
+        <e k="bank_wizard_recap_risk" v="Nivel de risc" />
+        <e k="bank_wizard_recap_risk_section" v="Risc" />
+        <e k="bank_wizard_indicativeRate" v="Rată indicativă: %s (fără risc)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Suma solicitată depășește limita de credit disponibilă." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Suma solicitată depășește limita de expunere per fermă (25% din capacitatea bancară totală)." />
+        <e k="bank_wizard_warn_refused" v="Împrumut refuzat: profilul dvs. financiar nu îndeplinește cerințele minime." />
+        <e k="bank_wizard_warn_invalidAmount" v="Sumă invalidă: selectați o valoare pozitivă." />
+        <e k="bank_wizard_warn_critical50" v="Risc ridicat: suma acordată va fi limitată la 50% din cererea dvs." />
+        <e k="bank_wizard_hint_refused" v="Faceți clic pe DSCR sau Nivel de risc pentru a înțelege motivul refuzului." />
+        <e k="bank_wizard_totalCostPreview" v="Total de rambursat: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="din care ~%s dobânzi" />
+        <e k="bank_wizard_amountCapped" v="Solicitat: %s  &#8594;  Aprobat: %s" />
+        <e k="bank_wizard_btn_prev" v="Înapoi" />
+        <e k="bank_wizard_btn_next" v="Înainte" />
+        <e k="bank_wizard_btn_confirm" v="Confirmă" />
+        <e k="bank_wizard_confirm_msg" v="Confirmați împrumutul de %s la o rată de %s?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Detaliul ratei aplicate împrumutului dvs.&#10;EIR final este suma ratei de bază, primei de produs și primei de risc." />
+        <e k="bank_wizard_info_baseRate" v="Rata de referință stabilită de bancă, aceeași pentru toți debitorii.&#10;Variază în funcție de setările serverului." />
+        <e k="bank_wizard_info_typeSpread" v="Spread-ul de rată asociat tipului de împrumut ales.&#10;Anuitate = 0% : capitalul scade cu fiecare rată.&#10;Bullet: capital integral expus până la scadență.&#10;Revolving: capital permanent disponibil fără dată de scadență fixă." />
+        <e k="bank_wizard_info_surcharge" v="Suplimentul aplicat în funcție de nivelul dvs. de risc.&#10;Cu cât profilul este mai riscant, cu atât suplimentul este mai mare." />
+        <e k="bank_wizard_info_effectiveRate" v="Rata anuală efectivă (DAE): costul anual real al împrumutului dvs.&#10;Combină rata de bază, prima de produs și prima de risc." />
+        <e k="bank_wizard_info_risk_section" v="Evaluarea riscului băncii privind împrumutul dvs.&#10;Acești indicatori determină dacă împrumutul este acordat și în ce condiții." />
+        <e k="bank_wizard_info_cost" v="Rezumatul costului total al împrumutului dvs.&#10;Compară rata lunară, dobânzile cumulate și totalul de rambursat." />
+        <e k="bank_wizard_info_monthly" v="Suma dedusă din fluxul de numerar lunar.&#10;Pentru un împrumut cu anuitate, include capitalul și dobânzile.&#10;Pentru un împrumut bullet, se deduc numai dobânzile." />
+        <e k="bank_wizard_info_totalInterest" v="Suma tuturor dobânzilor plătite pe durata împrumutului.&#10;Cu cât durata este mai mare, cu atât suma este mai mare." />
+        <e k="bank_wizard_info_totalCost" v="Suma totală rambursată la finalul împrumutului.&#10;Egală cu capitalul împrumutat plus totalul dobânzilor." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bancă &amp; Credit" />
+        <e k="bank_setting_initialCapital" v="Capital inițial" />
+        <e k="bank_toolTip_initialCapital" v="Suma inițială de credit pusă la dispoziție pentru operațiuni bancare per fermă." />
+        <e k="bank_setting_leverageRatio" v="Efect de levier" />
+        <e k="bank_toolTip_leverageRatio" v="Definește multiplicatorul maxim de îndatorare față de capitalul propriu disponibil. Ex. 10x → credit max. = 10× capital propriu." />
+        <e k="bank_setting_dynamicRate" v="Rată dinamică" />
+        <e k="bank_toolTip_dynamicRate" v="Activat: rata de bază se modifică anual (±0,25%, interval 1–12%). Primele de risc se aplică întotdeauna." />
+        <e k="bank_setting_baseInterestRate" v="Rată de bază" />
+        <e k="bank_toolTip_baseInterestRate" v="Rata anuală de bază aplicată tuturor împrumuturilor înainte de prima de risc." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Penalitate rambursare anticipată" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Procentul din capitalul rămas perceput ca penalitate pentru rambursarea anticipată a împrumutului." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Anul %d — %s" />
+        <e k="bank_report_title_default" v="RAPORT ANUAL" />
+        <e k="bank_report_section_costs" v="Fluxuri financiare" />
+        <e k="bank_report_section_activity" v="Activitate" />
+        <e k="bank_report_interestPaid" v="· Dobânzi plătite" />
+        <e k="bank_report_principalPaid" v="· Capital rambursat" />
+        <e k="bank_report_totalPaid" v="Total plătit" />
+        <e k="bank_report_avgMonthly" v="· Rată lunară medie" />
+        <e k="bank_report_loansOpened" v="· Împrumuturi deschise" />
+        <e k="bank_report_loansClosed" v="· Împrumuturi închise" />
+        <e k="bank_report_loansActive" v="· Împrumuturi active" />
+        <e k="bank_report_outstanding" v="Datorie totală" />
+        <e k="bank_report_noData" v="Nu sunt disponibile date pentru raportul anual." />
+        <e k="bank_report_btnNext" v="An +" />
+        <e k="bank_report_btnPrev" v="An -" />
+        <e k="bank_btn_report" v="Raport anual" />
+    </elements>
+</l10n>

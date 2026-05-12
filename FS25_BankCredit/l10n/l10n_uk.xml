@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Банк &amp; Кредит" />
+        <e k="bank_label_interest" v="Відсотки за кредитом" />
+        <e k="bank_label_principal" v="Основна сума кредиту" />
+        <e k="finance_bankLoanInterest" v="Банківські відсотки" />
+        <e k="finance_bankLoanPrincipal" v="Основна сума кредиту" />
+        <e k="bank_vanilla_loan_cleared" v="Виявлено наявний кредит на суму %s, який було автоматично погашено.&#10;Суму знято з вашого балансу.&#10;&#10;Скористайтеся меню Банку для оформлення нового кредиту." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="БАНК" />
+        <e k="bank_empty_list" v="Немає активних кредитів для відображення." />
+        <e k="bank_empty_paid" v="Немає погашених кредитів для відображення." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Активні кредити" />
+        <e k="bank_tab_paid" v="Завершені кредити" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Доступний кредит" />
+        <e k="bank_dash_available_sub" v="(залежить від рішення банку)" />
+        <e k="bank_dash_outstanding" v="Поточна заборгованість" />
+        <e k="bank_dash_outstanding_sub" v="%d%% кредитного ліміту використано" />
+        <e k="bank_dash_monthlyTotal" v="Загальний щомісячний платіж" />
+        <e k="bank_dash_monthlyTotal_sub" v="(загальне щомісячне списання)" />
+        <e k="bank_dash_rate" v="Поточна ставка" />
+        <e k="bank_dash_rate_sub" v="(базова ставка, без надбавок)" />
+        <e k="bank_dash_equity" v="Власний капітал" />
+        <e k="bank_dash_capacity" v="Загальний кредитний ліміт" />
+        <e k="bank_dash_outstanding_label" v="Загальна заборгованість (всі ферми)" />
+        <e k="bank_dash_utilization" v="Ступінь використання" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Показники банку"/>
+        <e k="bank_btn_indicators" v="Показники банку"/>
+        <e k="bank_dash_leverage" v="Фінансовий важіль" />
+        <e k="bank_dash_coverage" v="Покриття ризиків" />
+        <e k="bank_dash_provision" v="Резерв ризиків" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Баланс" />
+        <e k="bank_health_sectionRisk" v="Портфель &amp; Ризик" />
+        <e k="bank_health_sectionPortfolio" v="Розподіл портфеля" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Внутрішні показники банку. Огляд фінансової стійкості банку: власний капітал, кредитний ліміт, використання та фінансовий важіль." />
+        <e k="bank_info_risk" v="Внутрішні показники банку. Вимірює здатність банку покривати потенційні збитки та концентрацію вашої ферми в портфелі." />
+        <e k="bank_info_portfolio" v="Розподіл активних кредитів за рівнем ризику. Більше ризикових кредитів означає менше доступного кредиту." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Власний капітал банку, що складається з початкового капіталу та накопичених відсоткових доходів.&#10;Кожен сплачений відсоток зміцнює банк і збільшує його кредитний ліміт." />
+        <e k="bank_info_capacity" v="Максимальна сума, яку банк може позичити всім фермам загалом.&#10;Дорівнює власному капіталу, помноженому на фінансовий важіль.&#10;Після вичерпання нові кредити видати неможливо." />
+        <e k="bank_info_outstanding" v="Сума всіх залишків основного боргу за всіма фермами на сервері.&#10;Використовується для розрахунку ступеня використання банку.&#10;Що вища ця сума, то нижчий доступний кредитний ліміт." />
+        <e k="bank_info_utilization" v="Відсоток від загального ліміту, позиченого наразі.&#10;Нижче 50% = здоровий&#10;50–80% = напружений&#10;Вище 80% = кредит дуже обмежений" />
+        <e k="bank_info_leverage" v="Множник, що застосовується до власного капіталу для визначення кредитного ліміту.&#10;Напр. 10x = кожен 1 € капіталу забезпечує 10 € кредитів.&#10;Встановлюється адміністратором сервера." />
+        <e k="bank_info_coverage" v="Вимірює, чи має банк достатньо резервів для покриття ризиків свого кредитного портфеля.&#10;Розрахунок: Власний капітал ÷ Резерви під збитки.&#10;Вище 1,5x = здоровий&#10;1,0–1,5x = увага&#10;Нижче 1,0x = критичний&#10;Занадто низький коефіцієнт може заблокувати схвалення нових кредитів." />
+        <e k="bank_info_provision" v="Кошти, зарезервовані для покриття можливих дефолтів за кредитами.&#10;Кредити з високим ризиком вимагають більших резервів, що безпосередньо зменшує ефективний кредитний ліміт банку.&#10;Це внутрішній резерв банку, а не погашення кредитів гравця." />
+
+        <e k="bank_info_hint" v="Натисніть на заголовок або показник для отримання додаткової інформації" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Тип" />
+        <e k="bank_col_amount" v="Початкова сума" />
+        <e k="bank_col_monthly" v="Щомісячний платіж" />
+        <e k="bank_col_rate" v="Ставка" />
+        <e k="bank_col_remaining" v="Залишковий строк" />
+        <e k="bank_col_rest" v="Залишок боргу" />
+        <e k="bank_col_status" v="Статус" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Активний" />
+        <e k="bank_status_paid" v="Погашений" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Новий кредит" />
+        <e k="bank_btn_details" v="Деталі кредиту" />
+        <e k="bank_btn_earlyRepay" v="Погасити" />
+        <e k="bank_btn_repayLine" v="Погасити лінію" />
+        <e k="bank_btn_close" v="Закрити кредитну лінію" />
+        <e k="bank_btn_back" v="Закрити" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Ануїтет" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Відновлювальний" />
+        <e k="bank_loanType_annuity_desc" v="Фіксований щомісячний платіж, однаковий кожного місяця, що включає відсотки та основну суму.&#10;Сума ніколи не змінюється протягом усього строку кредиту." />
+        <e k="bank_loanType_bullet_desc" v="Щомісячна оплата лише відсотків.&#10;Вся основна сума повертається одноразово в дату погашення.&#10;Низькі щомісячні платежі, але плануйте грошовий потік до дати погашення." />
+        <e k="bank_loanType_revolving_desc" v="Постійна кредитна лінія до затвердженого максимуму.&#10;Беріть скільки потрібно, погашайте вільно,&#10;без фіксованого платежу або дати погашення." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Вибірка" />
+        <e k="bank_revolving_status_open" v="Відкрита" />
+        <e k="bank_revolving_status_available" v="Доступна" />
+        <e k="bank_revolving_noDuration" v="Без фіксованого строку" />
+        <e k="bank_revolving_variablePayment" v="Змінний" />
+        <e k="bank_revolving_estimatedInterest" v="Розр. відсотки (1 рік)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / р. макс." />
+        <e k="bank_revolving_commitmentFee" v="Комісія за зобов'язання" />
+        <e k="bank_confirm_draw" v="Сума для вибірки (макс. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Сума для погашення (макс. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Сума до погашення (мін %s — макс %s):" />
+        <e k="bank_confirm_closeLine" v="Закрити цю кредитну лінію? Операцію не можна скасувати." />
+        <e k="bank_detail_revolving_limit" v="Кредитний ліміт" />
+        <e k="bank_detail_revolving_drawn" v="Використаний залишок" />
+        <e k="bank_detail_revolving_available" v="Доступно" />
+        <e k="bank_detail_rev_utilization" v="Використання" />
+        <e k="bank_detail_rev_conditions" v="Умови" />
+        <e k="bank_detail_rev_interest_month" v="Відсотки / міс." />
+        <e k="bank_detail_rev_interest_year" v="Відсотки / рік" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Щорічна комісія 1% від невикористаної частини кредитної лінії. Нараховується щомісяця на невикористану доступну суму. Показує максимальну суму (лінія повністю не використана)." />
+        <e k="bank_detail_rev_duration" v="Строк" />
+        <e k="bank_detail_rev_payment" v="Платіж" />
+        <e k="bank_detail_info_rev_utilization" v="Деталізація використання відновлювальної кредитної лінії.&#10;Ліміт — це затверджена максимальна сума.&#10;Використаний залишок — сума, позичена наразі." />
+        <e k="bank_detail_info_rev_limit" v="Максимальна сума, яку ви можете позичити&#10;з цієї відновлювальної кредитної лінії." />
+        <e k="bank_detail_info_rev_drawn" v="Сума, позичена та використовувана наразі&#10;в рамках цієї кредитної лінії." />
+        <e k="bank_detail_info_rev_available" v="Сума, яку ще можна вибрати&#10;в межах кредитного ліміту." />
+        <e k="bank_detail_info_rev_conditions" v="Умови фінансування, що застосовуються&#10;до цієї відновлювальної кредитної лінії." />
+        <e k="bank_detail_info_rev_interest_month" v="Розрахункові щомісячні відсотки&#10;на основі поточного використаного залишку." />
+        <e k="bank_detail_info_rev_interest_year" v="Розрахункові річні відсотки&#10;на основі поточного використаного залишку." />
+        <e k="bank_detail_info_rev_duration" v="Відновлювальні кредитні лінії не мають фіксованого строку.&#10;Вони залишаються відкритими до закриття." />
+        <e k="bank_detail_info_rev_payment" v="Відновлювальні платежі є змінними:&#10;ви сплачуєте щомісячні відсотки з використаного залишку.&#10;Основна сума погашається у власному темпі." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Низький" />
+        <e k="bank_risk_moderate" v="Помірний" />
+        <e k="bank_risk_high" v="Високий" />
+        <e k="bank_risk_critical" v="Критичний" />
+        <e k="bank_risk_refused" v="Відмова" />
+        <e k="bank_portfolio_scale_safe" v="Безпечний" />
+        <e k="bank_portfolio_scale_risky" v="Ризиковий" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d р." />
+        <e k="bank_format_monthsShort" v="%d м." />
+        <e k="bank_format_yearsMonths" v="%d р. %d м." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Для отримання кредиту необхідно мати ферму." />
+        <e k="bank_error_insufficientFunds" v="Недостатньо коштів для дострокового погашення." />
+        <e k="bank_error_partialRepayMin" v="Мінімальне часткове погашення: %s (10 %% від початкового капіталу)." />
+        <e k="bank_confirm_earlyRepay" v="Погасити %s зі штрафом %s?&#10;Разом: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="ДЕТАЛІ КРЕДИТУ" />
+        <e k="bank_detail_title" v="КРЕДИТ № %d" />
+        <e k="bank_detail_label_amount" v="Сума" />
+        <e k="bank_detail_label_rate" v="Ставка" />
+        <e k="bank_detail_label_type" v="Тип" />
+        <e k="bank_detail_label_risk" v="Ризик" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Загальна сума, позичена під час підписання кредитного договору. Ця сума не змінюється протягом дії договору." />
+        <e k="bank_detail_info_rate" v="Річна ставка, що застосовується до цього кредиту. Включає базову ставку банку та можливу надбавку за рівень ризику." />
+        <e k="bank_detail_info_type" v="Спосіб погашення кредиту&#10;Ануїтет: фіксований щомісячний платіж, однаковий кожного місяця&#10;Bullet: лише щомісячні відсотки, основна сума в кінці&#10;Відновлювальний: відкрита кредитна лінія, без фіксованого строку" />
+        <e k="bank_detail_info_risk" v="Рівень ризику, оцінений банком при схваленні. Залежить від DSCR, LTV та вашої історії. Вищий ризик призводить до надбавки до ставки." />
+        <e k="bank_detail_info_dscr" v="Коефіцієнт покриття боргу&#10;Доходи &#247; загальні щомісячні платежі за боргами.&#10;Вище 1,5 = комфортно&#10;1,0&#8211;1,5 = напружено&#10;Нижче 1,0 = доходи не покривають борги&#10;&#10;Щоб покращити:&#10;Погасіть наявні кредити (зменшує платежі)&#10;Збільшіть доходи ферми (продажі, культури, тваринництво)&#10;Запросіть меншу суму&#10;Продовжте строк (зменшує платіж)" />
+        <e k="bank_detail_info_ltv" v="Співвідношення кредиту до вартості&#10;Сума кредиту, поділена на вартість ваших активів.&#10;Нижче — безпечніше для банку.&#10;Вище 80% = високий ризик." />
+
+        <e k="bank_detail_info_hint" v="Натисніть на поле для отримання додаткової інформації" />
+
+        <e k="bank_detail_col_period" v="№" />
+        <e k="bank_detail_col_payment" v="Платіж" />
+        <e k="bank_detail_col_interest" v="Відсотки" />
+        <e k="bank_detail_col_principal" v="Основна сума" />
+        <e k="bank_detail_col_balance" v="Залишок" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="НОВИЙ КРЕДИТ" />
+        <e k="bank_wizard_step1_title" v="Крок 1 — Налаштування кредиту" />
+        <e k="bank_wizard_step2_title" v="Крок 2 — Зведення та підтвердження" />
+        <e k="bank_wizard_card_rates" v="СТАВКИ" />
+        <e k="bank_wizard_card_cost" v="ВАРТІСТЬ" />
+        <e k="bank_wizard_label_loanType" v="Тип кредиту" />
+        <e k="bank_wizard_label_amount" v="Сума" />
+        <e k="bank_wizard_label_duration" v="Строк" />
+        <e k="bank_wizard_limit" v="Доступний ліміт (залежить від рішення банку): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Розрахунковий щомісячний платіж: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Базова ставка" />
+        <e k="bank_wizard_recap_typeSpread" v="Надбавка за продукт" />
+        <e k="bank_wizard_recap_surcharge" v="Надбавка за ризик" />
+        <e k="bank_wizard_recap_monthly" v="Щомісячний платіж" />
+        <e k="bank_wizard_recap_totalInterest" v="Всього відсотків" />
+        <e k="bank_wizard_recap_totalCost" v="Загальна вартість" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (платоспроможність)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (кредит / активи)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (ефективна річна ставка)" />
+        <e k="bank_wizard_recap_risk" v="Рівень ризику" />
+        <e k="bank_wizard_recap_risk_section" v="Ризик" />
+        <e k="bank_wizard_indicativeRate" v="Орієнтовна ставка: %s (без ризику)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Запитана сума перевищує ваш доступний кредитний ліміт." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Запитана сума перевищує ліміт концентрації на одну ферму (25% від загального ліміту банку)." />
+        <e k="bank_wizard_warn_refused" v="Відмова в кредиті: ваш фінансовий профіль не відповідає мінімальним вимогам." />
+        <e k="bank_wizard_warn_invalidAmount" v="Недійсна сума: оберіть позитивне значення." />
+        <e k="bank_wizard_warn_critical50" v="Високий ризик: виплачена сума буде обмежена 50% від вашого запиту." />
+        <e k="bank_wizard_hint_refused" v="Натисніть на DSCR або Рівень ризику, щоб зрозуміти причину відмови." />
+        <e k="bank_wizard_totalCostPreview" v="Разом до повернення: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="з яких ~%s відсотків" />
+        <e k="bank_wizard_amountCapped" v="Запитано: %s  &#8594;  Схвалено: %s" />
+        <e k="bank_wizard_btn_prev" v="Назад" />
+        <e k="bank_wizard_btn_next" v="Далі" />
+        <e k="bank_wizard_btn_confirm" v="Підтвердити" />
+        <e k="bank_wizard_confirm_msg" v="Підтвердити кредит на суму %s за ставкою %s?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Деталізація ставки, що застосовується до вашого кредиту.&#10;Підсумковий EIR — це сума базової ставки, надбавки за продукт та надбавки за ризик." />
+        <e k="bank_wizard_info_baseRate" v="Референсна ставка, встановлена банком, однакова для всіх позичальників.&#10;Змінюється залежно від налаштувань сервера." />
+        <e k="bank_wizard_info_typeSpread" v="Спред ставки, пов’язаний із вибраним типом кредиту.&#10;Ануїтет = 0% : капітал зменшується з кожним платежем.&#10;Bullet: весь капітал перебуває під ризиком до погашення.&#10;Відновлювальний: капітал постійно доступний без фіксованого терміну." />
+        <e k="bank_wizard_info_surcharge" v="Надбавка, що застосовується на основі вашого рівня ризику.&#10;Що ризикованіший ваш профіль, то вища ця надбавка." />
+        <e k="bank_wizard_info_effectiveRate" v="Ефективна річна процентна ставка (ЕРПС): реальна річна вартість вашого кредиту.&#10;Об'єднує базову ставку, надбавку за продукт та надбавку за ризик." />
+        <e k="bank_wizard_info_risk_section" v="Оцінка ризику банку щодо вашого кредиту.&#10;Ці показники визначають, чи буде кредит схвалений і на яких умовах." />
+        <e k="bank_wizard_info_cost" v="Зведення загальної вартості вашого кредиту.&#10;Порівнюються щомісячний платіж, накопичені відсотки та загальна сума до погашення." />
+        <e k="bank_wizard_info_monthly" v="Сума, що щомісяця вираховується з вашого грошового потоку.&#10;Для ануїтетного кредиту включає основну суму та відсотки.&#10;Для кредиту bullet вираховуються лише відсотки." />
+        <e k="bank_wizard_info_totalInterest" v="Сума всіх відсотків, сплачених протягом строку кредиту.&#10;Що довший строк, то вища ця сума." />
+        <e k="bank_wizard_info_totalCost" v="Загальна сума, повернута після закінчення кредиту.&#10;Дорівнює позиченому капіталу плюс загальна сума відсотків." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Банк &amp; Кредит" />
+        <e k="bank_setting_initialCapital" v="Початковий капітал" />
+        <e k="bank_toolTip_initialCapital" v="Початкова сума кредиту, доступна для банківських операцій на кожну ферму." />
+        <e k="bank_setting_leverageRatio" v="Фінансовий важіль" />
+        <e k="bank_toolTip_leverageRatio" v="Визначає максимальний множник заборгованості відносно доступного власного капіталу. Напр. 10x → макс. кредит = 10× власний капітал." />
+        <e k="bank_setting_dynamicRate" v="Динамічна ставка" />
+        <e k="bank_toolTip_dynamicRate" v="Увімкнено: базова ставка змінюється щороку (±0,25%, діапазон 1–12%). Надбавки за ризик застосовуються завжди." />
+        <e k="bank_setting_baseInterestRate" v="Базова ставка" />
+        <e k="bank_toolTip_baseInterestRate" v="Річна базова ставка, що застосовується до всіх кредитів до надбавки за ризик." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Штраф за дострокове погашення" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Відсоток від залишкового боргу, що стягується як штраф за дострокове погашення кредиту." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Рік %d — %s" />
+        <e k="bank_report_title_default" v="РІЧНИЙ ЗВІТ" />
+        <e k="bank_report_section_costs" v="Фінансові потоки" />
+        <e k="bank_report_section_activity" v="Активність" />
+        <e k="bank_report_interestPaid" v="· Сплачені відсотки" />
+        <e k="bank_report_principalPaid" v="· Погашена основна сума" />
+        <e k="bank_report_totalPaid" v="Разом сплачено" />
+        <e k="bank_report_avgMonthly" v="· Середній щомісячний платіж" />
+        <e k="bank_report_loansOpened" v="· Відкриті кредити" />
+        <e k="bank_report_loansClosed" v="· Закриті кредити" />
+        <e k="bank_report_loansActive" v="· Активні кредити" />
+        <e k="bank_report_outstanding" v="Загальна заборгованість" />
+        <e k="bank_report_noData" v="Немає даних річного звіту." />
+        <e k="bank_report_btnNext" v="Рік +" />
+        <e k="bank_report_btnPrev" v="Рік -" />
+        <e k="bank_btn_report" v="Річний звіт" />
+    </elements>
+</l10n>

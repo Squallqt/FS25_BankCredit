@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Pankki &amp; Luotto" />
+        <e k="bank_label_interest" v="Lainan korot" />
+        <e k="bank_label_principal" v="Lainapääoma" />
+        <e k="finance_bankLoanInterest" v="Pankkikorot" />
+        <e k="finance_bankLoanPrincipal" v="Lainapääoma" />
+        <e k="bank_vanilla_loan_cleared" v="Olemassa oleva laina %s havaittiin ja maksettiin automaattisesti takaisin.&#10;Summa on vähennetty saldostasi.&#10;&#10;Käytä Pankki-valikkoa ottaaksesi uuden lainan." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="PANKKI" />
+        <e k="bank_empty_list" v="Ei aktiivisia lainoja näytettäväksi." />
+        <e k="bank_empty_paid" v="Ei maksettuja lainoja näytettäväksi." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktiiviset lainat" />
+        <e k="bank_tab_paid" v="Päättyneet lainat" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Käytettävissä oleva luotto" />
+        <e k="bank_dash_available_sub" v="(hyväksymisen perusteella)" />
+        <e k="bank_dash_outstanding" v="Nykyinen velka" />
+        <e k="bank_dash_outstanding_sub" v="%d%% lainakatosta käytetty" />
+        <e k="bank_dash_monthlyTotal" v="Kuukausierät yhteensä" />
+        <e k="bank_dash_monthlyTotal_sub" v="(kuukausittainen kokonaisveloitus)" />
+        <e k="bank_dash_rate" v="Nykyinen korko" />
+        <e k="bank_dash_rate_sub" v="(peruskorko, ilman lisiä)" />
+        <e k="bank_dash_equity" v="Oma pääoma" />
+        <e k="bank_dash_capacity" v="Kokonaisluottokapasiteetti" />
+        <e k="bank_dash_outstanding_label" v="Kokonaisvelka (kaikki tilat)" />
+        <e k="bank_dash_utilization" v="Käyttöaste" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Pankin tunnusluvut"/>
+        <e k="bank_btn_indicators" v="Pankin tunnusluvut"/>
+        <e k="bank_dash_leverage" v="Velkaantumisaste" />
+        <e k="bank_dash_coverage" v="Riskin kattavuus" />
+        <e k="bank_dash_provision" v="Riskivaraus" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Tase" />
+        <e k="bank_health_sectionRisk" v="Salkku &amp; Riski" />
+        <e k="bank_health_sectionPortfolio" v="Salkun jakautuminen" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Pankin sisäiset tunnusluvut. Yleiskatsaus pankin taloudellisesta vakavaraisuudesta: oma pääoma, luottokapasiteetti, käyttöaste ja velkaantumisaste." />
+        <e k="bank_info_risk" v="Pankin sisäiset tunnusluvut. Mittaa pankin kykyä kattaa mahdollisia tappioita ja tilasi keskittymistä salkussa." />
+        <e k="bank_info_portfolio" v="Käynnissä olevien lainojen jakautuminen riskitason mukaan. Enemmän riskialttiita lainoja tarkoittaa vähemmän käytettävissä olevaa luottoa." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Pankin oma pääoma, joka koostuu alkupääomasta ja kertyneistä korkotuotoista.&#10;Jokainen maksamasi korko vahvistaa pankkia ja lisää sen luottokapasiteettia." />
+        <e k="bank_info_capacity" v="Enimmäismäärä, jonka pankki voi lainata kaikille tiloille yhteensä.&#10;Yhtä suuri kuin oma pääoma kerrottuna velkaantumisasteella.&#10;Kun se on kulunut loppuun, uusia lainoja ei voi myöntää." />
+        <e k="bank_info_outstanding" v="Summa kaikista jäljellä olevista pääomista palvelimen kaikilla tiloilla.&#10;Käytetään pankin käyttöasteen laskemiseen.&#10;Mitä suurempi tämä summa on, sitä pienempi käytettävissä oleva luottokapasiteetti on." />
+        <e k="bank_info_utilization" v="Prosenttiosuus kokonaiskapasiteetista, joka on tällä hetkellä lainattu.&#10;Alle 50 % = terve&#10;50-80 % = tiukka&#10;Yli 80 % = luotto erittäin rajallinen" />
+        <e k="bank_info_leverage" v="Omaan pääomaan sovellettava kerroin luottokapasiteetin määrittämiseksi.&#10;Esim. 10x = jokainen 1 € omaa pääomaa tukee 10 € lainoja.&#10;Palvelimen ylläpitäjä asettaa tämän." />
+        <e k="bank_info_coverage" v="Mittaa, onko pankilla riittävästi varauksia kattaakseen lainasalkkunsa riskit.&#10;Laskelma: Oma pääoma ÷ Luottotappiovaraukset.&#10;Yli 1,5x = terve&#10;1,0–1,5x = varoitus&#10;Alle 1,0x = kriittinen&#10;Liian matala suhde voi estää uusien lainojen hyväksymisen." />
+        <e k="bank_info_provision" v="Mahdollisten lainamaksujen laiminlyöntien kattamiseksi varatut varat.&#10;Korkean riskin lainat edellyttävät suurempia varauksia, mikä suoraan vähentää pankin tehokasta luottokapasiteettia.&#10;Tämä on pankin sisäinen varaus, ei pelaajan lainojen hyvitys." />
+
+        <e k="bank_info_hint" v="Napsauta otsikkoa tai tunnuslukua saadaksesi lisätietoja" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Tyyppi" />
+        <e k="bank_col_amount" v="Alkuperäinen summa" />
+        <e k="bank_col_monthly" v="Kuukausierä" />
+        <e k="bank_col_rate" v="Korko" />
+        <e k="bank_col_remaining" v="Jäljellä oleva aika" />
+        <e k="bank_col_rest" v="Jäljellä oleva pääoma" />
+        <e k="bank_col_status" v="Tila" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktiivinen" />
+        <e k="bank_status_paid" v="Maksettu" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Uusi laina" />
+        <e k="bank_btn_details" v="Lainan tiedot" />
+        <e k="bank_btn_earlyRepay" v="Maksaa" />
+        <e k="bank_btn_repayLine" v="Maksa linja takaisin" />
+        <e k="bank_btn_close" v="Sulje luottolinja" />
+        <e k="bank_btn_back" v="Sulje" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Annuiteetti" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Revolving" />
+        <e k="bank_loanType_annuity_desc" v="Kiinteä kuukausierä, joka on sama joka kuukausi, yhdistäen korot ja pääoman.&#10;Summa ei muutu koskaan koko laina-ajan." />
+        <e k="bank_loanType_bullet_desc" v="Vain korkojen maksu kuukausittain.&#10;Koko pääoma maksetaan takaisin kerralla eräpäivänä.&#10;Pienet kuukausierät, mutta suunnittele kassavirta eräpäivälle." />
+        <e k="bank_loanType_revolving_desc" v="Pysyvä luottolinja hyväksyttyyn enimmäismäärään asti.&#10;Nosta tarvitsemasi, maksa vapaasti takaisin,&#10;ei kiinteää erää eikä eräpäivää." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Nosta" />
+        <e k="bank_revolving_status_open" v="Auki" />
+        <e k="bank_revolving_status_available" v="Käytettävissä" />
+        <e k="bank_revolving_noDuration" v="Ei kiinteää kestoa" />
+        <e k="bank_revolving_variablePayment" v="Vaihteleva" />
+        <e k="bank_revolving_estimatedInterest" v="Arv. korot (1 v.)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / v. max" />
+        <e k="bank_revolving_commitmentFee" v="Provisiomaksu" />
+        <e k="bank_confirm_draw" v="Nostosumma (enintään %s):" />
+        <e k="bank_confirm_repay_revolving" v="Takaisinmaksusumma (enintään %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Takaisinmaksusumma (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Sulje tämä luottolinja? Tätä toimintoa ei voi peruuttaa." />
+        <e k="bank_detail_revolving_limit" v="Luottoraja" />
+        <e k="bank_detail_revolving_drawn" v="Nostettu saldo" />
+        <e k="bank_detail_revolving_available" v="Käytettävissä" />
+        <e k="bank_detail_rev_utilization" v="Käyttö" />
+        <e k="bank_detail_rev_conditions" v="Ehdot" />
+        <e k="bank_detail_rev_interest_month" v="Korot / kk" />
+        <e k="bank_detail_rev_interest_year" v="Korot / v." />
+        <e k="bank_detail_info_rev_commitment_fee" v="Vuotuinen 1 %:n maksu nostamattomasta osasta luottolinjaa. Veloitetaan kuukausittain käyttämättömästä käytettävissä olevasta summasta. Näyttää enimmäismäärän (linja täysin nostamaton)." />
+        <e k="bank_detail_rev_duration" v="Kesto" />
+        <e k="bank_detail_rev_payment" v="Maksu" />
+        <e k="bank_detail_info_rev_utilization" v="Revolving-luottolinjan käytön erittely.&#10;Raja on hyväksytty enimmäismäärä.&#10;Nostettu saldo on tällä hetkellä lainattu summa." />
+        <e k="bank_detail_info_rev_limit" v="Enimmäismäärä, jonka voit lainata&#10;tältä revolving-luottolinjalta." />
+        <e k="bank_detail_info_rev_drawn" v="Tällä hetkellä lainattu ja käytössä oleva summa&#10;tällä luottolinjalla." />
+        <e k="bank_detail_info_rev_available" v="Vielä nostettavissa oleva summa&#10;luottorajan sisällä." />
+        <e k="bank_detail_info_rev_conditions" v="Tälle revolving-luottolinjalle&#10;sovellettavat rahoitusehdot." />
+        <e k="bank_detail_info_rev_interest_month" v="Arvioitu kuukausittainen korko&#10;nykyisen nostetun saldon perusteella." />
+        <e k="bank_detail_info_rev_interest_year" v="Arvioitu vuosittainen korko&#10;nykyisen nostetun saldon perusteella." />
+        <e k="bank_detail_info_rev_duration" v="Revolving-luottolinjoilla ei ole kiinteää kestoa.&#10;Ne pysyvät auki, kunnes ne suljetaan." />
+        <e k="bank_detail_info_rev_payment" v="Revolving-maksut ovat vaihtelevia:&#10;maksat kuukausittaista korkoa nostetusta saldosta.&#10;Pääoma maksetaan takaisin omaan tahtiin." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Matala" />
+        <e k="bank_risk_moderate" v="Kohtalainen" />
+        <e k="bank_risk_high" v="Korkea" />
+        <e k="bank_risk_critical" v="Kriittinen" />
+        <e k="bank_risk_refused" v="Hylätty" />
+        <e k="bank_portfolio_scale_safe" v="Terve" />
+        <e k="bank_portfolio_scale_risky" v="Riskialtis" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d v." />
+        <e k="bank_format_monthsShort" v="%d kk" />
+        <e k="bank_format_yearsMonths" v="%d v. %d kk" />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Sinun täytyy omistaa tila voidaksesi hakea lainaa." />
+        <e k="bank_error_insufficientFunds" v="Riittämättömät varat ennenaikaiseen takaisinmaksuun." />
+        <e k="bank_error_partialRepayMin" v="Osittainen enimmäislyhennys: %s (10 %% alkuperäisestä pääomasta)." />
+        <e k="bank_confirm_earlyRepay" v="Maksaa %s takaisin %s:n sanktiolla?&#10;Yhteensä: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="LAINAN TIEDOT" />
+        <e k="bank_detail_title" v="LAINA NRO %d" />
+        <e k="bank_detail_label_amount" v="Summa" />
+        <e k="bank_detail_label_rate" v="Korko" />
+        <e k="bank_detail_label_type" v="Tyyppi" />
+        <e k="bank_detail_label_risk" v="Riski" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Lainasopimusta allekirjoitettaessa lainattu kokonaissumma. Tämä summa ei muutu sopimuksen voimassaoloaikana." />
+        <e k="bank_detail_info_rate" v="Tähän lainaan sovellettava vuosikorko. Se sisältää pankin peruskoron sekä mahdollisen riskitasoon liittyvän lisämaksun." />
+        <e k="bank_detail_info_type" v="Lainan takaisinmaksutapa&#10;Annuiteetti: kiinteä kuukausierä, sama joka kuukausi&#10;Bullet: vain korot kuukausittain, pääoma maksetaan lopussa&#10;Revolving: avoin luottolinja, ei kiinteää kestoa" />
+        <e k="bank_detail_info_risk" v="Pankin hyväksynnän yhteydessä arvioitu riskitaso. Riippuu DSCR:stä, LTV:stä ja historiastasi. Korkeampi riski tarkoittaa koronlisää." />
+        <e k="bank_detail_info_dscr" v="Velanhoitokate&#10;Tulot &#247; kuukausittaiset velkaerät yhteensä.&#10;Yli 1,5 = mukava&#10;1,0&#8211;1,5 = tiukka&#10;Alle 1,0 = tulot eivät kata velkoja&#10;&#10;Parantamiseksi:&#10;Maksa olemassa olevia lainoja takaisin (vähentää kuukausieriä)&#10;Kasvata tilan tuloja (myynnit, viljelmät, karjanhoito)&#10;Pyydä pienempää summaa&#10;Pidennä kestoa (vähentää kuukausierää)" />
+        <e k="bank_detail_info_ltv" v="Lainasuhde&#10;Lainasumma jaettuna varojesi arvolla.&#10;Pienempi on turvallisempaa pankille.&#10;Yli 80 % = korkea riski." />
+
+        <e k="bank_detail_info_hint" v="Napsauta kenttää saadaksesi lisätietoja" />
+
+        <e k="bank_detail_col_period" v="Nro" />
+        <e k="bank_detail_col_payment" v="Erä" />
+        <e k="bank_detail_col_interest" v="Korot" />
+        <e k="bank_detail_col_principal" v="Pääoma" />
+        <e k="bank_detail_col_balance" v="Jäljellä" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="UUSI LAINA" />
+        <e k="bank_wizard_step1_title" v="Vaihe 1 — Lainan määrittely" />
+        <e k="bank_wizard_step2_title" v="Vaihe 2 — Yhteenveto ja vahvistus" />
+        <e k="bank_wizard_card_rates" v="KOROT" />
+        <e k="bank_wizard_card_cost" v="KUSTANNUS" />
+        <e k="bank_wizard_label_loanType" v="Lainatyyppi" />
+        <e k="bank_wizard_label_amount" v="Summa" />
+        <e k="bank_wizard_label_duration" v="Kesto" />
+        <e k="bank_wizard_limit" v="Käytettävissä oleva raja (hyväksynnän perusteella): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Arvioitu kuukausierä: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Peruskorko" />
+        <e k="bank_wizard_recap_typeSpread" v="Tuotepreemio" />
+        <e k="bank_wizard_recap_surcharge" v="Riskipreemio" />
+        <e k="bank_wizard_recap_monthly" v="Kuukausierä" />
+        <e k="bank_wizard_recap_totalInterest" v="Korot yhteensä" />
+        <e k="bank_wizard_recap_totalCost" v="Kokonaiskustannus" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (maksukyky)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (laina / varat)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (todellinen vuosikorko)" />
+        <e k="bank_wizard_recap_risk" v="Riskitaso" />
+        <e k="bank_wizard_recap_risk_section" v="Riski" />
+        <e k="bank_wizard_indicativeRate" v="Viitekorko: %s (ilman riskiä)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Pyydetty summa ylittää käytettävissä olevan luottorajasi." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Pyydetty summa ylittää tilakohtaisen altistusrajan (25 % kokonaispankkikapasiteetista)." />
+        <e k="bank_wizard_warn_refused" v="Laina hylätty: talousprofiilisi ei täytä vähimmäisvaatimuksia." />
+        <e k="bank_wizard_warn_invalidAmount" v="Virheellinen summa: valitse positiivinen arvo." />
+        <e k="bank_wizard_warn_critical50" v="Korkea riski: maksettu summa rajoitetaan 50 %:iin pyynöstäsi." />
+        <e k="bank_wizard_hint_refused" v="Napsauta DSCR tai Riskitaso ymmärtääksesi hylkäämisen syyn." />
+        <e k="bank_wizard_totalCostPreview" v="Takaisinmaksu yhteensä: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="josta ~%s korkoa" />
+        <e k="bank_wizard_amountCapped" v="Pyydetty: %s  &#8594;  Hyväksytty: %s" />
+        <e k="bank_wizard_btn_prev" v="Edellinen" />
+        <e k="bank_wizard_btn_next" v="Seuraava" />
+        <e k="bank_wizard_btn_confirm" v="Vahvista" />
+        <e k="bank_wizard_confirm_msg" v="Vahvistetaanko %s:n laina %s:n korolla?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Lainaasi sovellettavan koron erittely.&#10;Lopullinen EIR on peruskoron, tuotepreemion ja riskipreemion summa." />
+        <e k="bank_wizard_info_baseRate" v="Pankin asettama viitekorko, sama kaikille lainanottajille.&#10;Muuttuu palvelinasetusten mukaan." />
+        <e k="bank_wizard_info_typeSpread" v="Valittuun lainatyyppiin liittyvä koronlisä.&#10;Annuiteetti = 0 % : pääoma vähenee jokaisen maksun myötä.&#10;Bullet: koko pääoma altistuneena eräpäivään asti.&#10;Revolving: pääoma jatkuvasti saatavilla ilman kiinteää eräpäivää." />
+        <e k="bank_wizard_info_surcharge" v="Riskitasosi perusteella sovellettava lisämaksu.&#10;Mitä riskialttiimpi profiilisi, sitä suurempi tämä lisämaksu." />
+        <e k="bank_wizard_info_effectiveRate" v="Todellinen vuosikorko: lainasi todelliset vuosikustannukset.&#10;Yhdistää peruskoron, tuotepreemion ja riskipreemion." />
+        <e k="bank_wizard_info_risk_section" v="Pankin riskiarvio lainastasi.&#10;Nämä indikaattorit määräävät, myönnetäänkö laina ja millä ehdoilla." />
+        <e k="bank_wizard_info_cost" v="Yhteenveto lainasi kokonaiskustannuksista.&#10;Vertaa kuukausierää, kertyneitä korkoja ja kokonaistakaisinmaksumäärää." />
+        <e k="bank_wizard_info_monthly" v="Kassastasi kuukausittain vähennetty summa.&#10;Annuiteettilainassa se sisältää pääoman ja korot.&#10;Bullet-lainassa vähennetään vain korot." />
+        <e k="bank_wizard_info_totalInterest" v="Kaikkien laina-aikana maksettavien korkojen summa.&#10;Mitä pidempi kesto, sitä suurempi tämä summa." />
+        <e k="bank_wizard_info_totalCost" v="Kokonaissumma, jonka olet maksanut takaisin lainan lopussa.&#10;Yhtä suuri kuin lainattu pääoma plus korot yhteensä." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Pankki &amp; Luotto" />
+        <e k="bank_setting_initialCapital" v="Alkupääoma" />
+        <e k="bank_toolTip_initialCapital" v="Kullekin tilalle pankkitoimintaa varten asetettu alkuperäinen luottomäärä." />
+        <e k="bank_setting_leverageRatio" v="Velkaantumisaste" />
+        <e k="bank_toolTip_leverageRatio" v="Määrittää maksimilainakerroin suhteessa omaan pääomaan. Esim. 10x → maksimiluotto = 10× oma pääoma." />
+        <e k="bank_setting_dynamicRate" v="Dynaaminen korko" />
+        <e k="bank_toolTip_dynamicRate" v="Käytössä: peruskorko muuttuu vuosittain (±0,25 %, alue 1–12 %). Riskipreemiot ovat aina voimassa." />
+        <e k="bank_setting_baseInterestRate" v="Peruskorko" />
+        <e k="bank_toolTip_baseInterestRate" v="Kaikkiin lainoihin sovellettava vuotuinen peruskorko ennen riskipreemiota." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Ennenaikaisen takaisinmaksun sanktio" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Prosenttiosuus jäljellä olevasta pääomasta, joka peritään sanktiomaksuna ennenaikaisesta lainan takaisinmaksusta." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Vuosi %d — %s" />
+        <e k="bank_report_title_default" v="VUOSIKERTOMUS" />
+        <e k="bank_report_section_costs" v="Rahavirrat" />
+        <e k="bank_report_section_activity" v="Toiminta" />
+        <e k="bank_report_interestPaid" v="· Maksetut korot" />
+        <e k="bank_report_principalPaid" v="· Maksettu pääoma" />
+        <e k="bank_report_totalPaid" v="Maksettu yhteensä" />
+        <e k="bank_report_avgMonthly" v="· Keskimääräinen kuukausierä" />
+        <e k="bank_report_loansOpened" v="· Avatut lainat" />
+        <e k="bank_report_loansClosed" v="· Suljetut lainat" />
+        <e k="bank_report_loansActive" v="· Aktiiviset lainat" />
+        <e k="bank_report_outstanding" v="Kokonaisvelka" />
+        <e k="bank_report_noData" v="Vuosikertomustietoja ei ole saatavilla." />
+        <e k="bank_report_btnNext" v="Vuosi +" />
+        <e k="bank_report_btnPrev" v="Vuosi -" />
+        <e k="bank_btn_report" v="Vuosikertomus" />
+    </elements>
+</l10n>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+
+    <GuiElement profile="bankHealthDialogBg" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+            <BoxLayout profile="bhd_mainBox">
+
+                <!-- Main title -->
+                <Text profile="bhd_title" text="$l10n_bank_dash_bankTitle" id="mainTitleText"/>
+
+                <!-- Title separator -->
+                <GuiElement profile="bhd_titleSepWrapper">
+                    <ThreePartBitmap profile="bhd_titleSep" id="titleSep"/>
+                </GuiElement>
+
+                <!-- Spacer -->
+                <GuiElement profile="bhd_titleSpacer"/>
+
+                <!-- Content area -->
+                <GuiElement profile="bhd_contentArea">
+
+                    <!-- ===== BALANCE SHEET ===== -->
+                    <RoundCorner profile="bhd_sectionAccent" position="0px 0px"/>
+                    <Button profile="bhd_sectionButton" position="12px 0px" id="btnBalance" text="$l10n_bank_health_sectionBalance" onClick="onClickInfoBalance"/>
+
+                    <Button profile="bhd_dataButton" position="12px -34px"  id="btnEquity" text="$l10n_bank_dash_equity" onClick="onClickInfoEquity"/>
+                    <Text   profile="bhd_dataValue"  position="300px -34px" id="healthEquityValue"/>
+
+                    <Button profile="bhd_dataButton" position="12px -58px"  id="btnCapacity" text="$l10n_bank_dash_capacity" onClick="onClickInfoCapacity"/>
+                    <Text   profile="bhd_dataValue"  position="300px -58px" id="healthCapacityValue"/>
+
+                    <Button profile="bhd_dataButton" position="12px -82px"  id="btnOutstanding" text="$l10n_bank_dash_outstanding_label" onClick="onClickInfoOutstanding"/>
+                    <Text   profile="bhd_dataValue"  position="300px -82px" id="healthOutstandingValue"/>
+
+                    <Button profile="bhd_dataButton" position="12px -106px" id="btnUtilization" text="$l10n_bank_dash_utilization" onClick="onClickInfoUtilization"/>
+                    <Text   profile="bhd_dataValue"  position="300px -106px" id="healthUtilizationValue"/>
+
+                    <Button profile="bhd_dataButton" position="12px -130px" id="btnLeverage" text="$l10n_bank_dash_leverage" onClick="onClickInfoLeverage"/>
+                    <Text   profile="bhd_dataValue"  position="300px -130px" id="healthLeverageValue"/>
+
+                    <RoundCorner profile="bhd_separator" position="0px -164px"/>
+
+                    <!-- ===== PORTFOLIO & RISK ===== -->
+                    <RoundCorner profile="bhd_sectionAccent" position="0px -177px"/>
+                    <Button profile="bhd_sectionButton" position="12px -177px" id="btnRisk" text="$l10n_bank_health_sectionRisk" onClick="onClickInfoRisk"/>
+
+                    <Button profile="bhd_dataButton" position="12px -211px"  id="btnCoverage" text="$l10n_bank_dash_coverage" onClick="onClickInfoCoverage"/>
+                    <Text   profile="bhd_dataValue"  position="300px -211px" id="healthCoverageValue"/>
+
+                    <Button profile="bhd_dataButton" position="12px -235px"  id="btnProvision" text="$l10n_bank_dash_provision" onClick="onClickInfoProvision"/>
+                    <Text   profile="bhd_dataValue"  position="300px -235px" id="healthProvisionValue"/>
+
+                    <RoundCorner profile="bhd_separator" position="0px -269px"/>
+
+                    <!-- ===== PORTFOLIO DISTRIBUTION ===== -->
+                    <RoundCorner profile="bhd_sectionAccent" position="0px -282px"/>
+                    <Button profile="bhd_sectionButton" position="12px -282px" id="btnPortfolio" text="$l10n_bank_health_sectionPortfolio" onClick="onClickInfoPortfolio"/>
+
+                    <!-- [SAIN 50px][8px][BAR 444px][8px][RISQUÉ 50px] = 560px -->
+                    <Text profile="bhd_portfolioScaleSafe"  position="0px -323px" text="$l10n_bank_portfolio_scale_safe"/>
+                    <RoundCorner profile="bhd_portfolioBarBg"   position="58px -325px" id="healthPortfolioBarBg"/>
+                    <RoundCorner profile="bhd_portfolioBarFill" position="58px -325px" id="healthPortfolioBarFill"/>
+                    <Text profile="bhd_portfolioScaleRisky" position="510px -323px" text="$l10n_bank_portfolio_scale_risky"/>
+
+                    <!-- Status label: tier name + color, centered below bar -->
+                    <Text profile="bhd_portfolioStatus" position="0px -359px" id="healthPortfolioStatus"/>
+
+                    <!-- Hint -->
+                    <Text profile="bhd_hintText" position="0px -385px" text="$l10n_bank_info_hint"/>
+
+                </GuiElement>
+
+            </BoxLayout>
+        </GuiElement>
+
+        <BoxLayout profile="fs25_dialogButtonBox">
+            <Button profile="buttonBack" id="btnClose" text="$l10n_button_close" onClick="onClickBack"/>
+        </BoxLayout>
+    </GuiElement>
+</GUI>

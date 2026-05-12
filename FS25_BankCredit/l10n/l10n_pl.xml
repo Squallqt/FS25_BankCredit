@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bank &amp; Kredyt" />
+        <e k="bank_label_interest" v="Odsetki od pożyczki" />
+        <e k="bank_label_principal" v="Kapitał pożyczki" />
+        <e k="finance_bankLoanInterest" v="Odsetki bankowe" />
+        <e k="finance_bankLoanPrincipal" v="Kapitał pożyczki" />
+        <e k="bank_vanilla_loan_cleared" v="Wykryto istniejącą pożyczkę w wysokości %s i automatycznie ją spłacono.&#10;Kwota została odjęta od salda.&#10;&#10;Użyj menu Banku, aby ubiegać się o nową pożyczkę." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANK" />
+        <e k="bank_empty_list" v="Brak aktywnych pożyczek do wyświetlenia." />
+        <e k="bank_empty_paid" v="Brak spłaconych pożyczek do wyświetlenia." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktywne pożyczki" />
+        <e k="bank_tab_paid" v="Zakończone pożyczki" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Dostępny kredyt" />
+        <e k="bank_dash_available_sub" v="(zależnie od decyzji kredytowej)" />
+        <e k="bank_dash_outstanding" v="Bieżące zadłużenie" />
+        <e k="bank_dash_outstanding_sub" v="%d%% limitu kredytowego wykorzystane" />
+        <e k="bank_dash_monthlyTotal" v="Łączna rata miesięczna" />
+        <e k="bank_dash_monthlyTotal_sub" v="(łączne obciążenie miesięczne)" />
+        <e k="bank_dash_rate" v="Aktualne oprocentowanie" />
+        <e k="bank_dash_rate_sub" v="(stopa bazowa, bez dopłat)" />
+        <e k="bank_dash_equity" v="Kapitał własny" />
+        <e k="bank_dash_capacity" v="Łączna zdolność kredytowa" />
+        <e k="bank_dash_outstanding_label" v="Łączne zadłużenie (wszystkie gospodarstwa)" />
+        <e k="bank_dash_utilization" v="Stopień wykorzystania" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Wskaźniki banku"/>
+        <e k="bank_btn_indicators" v="Wskaźniki banku"/>
+        <e k="bank_dash_leverage" v="Dźwignia finansowa" />
+        <e k="bank_dash_coverage" v="Pokrycie ryzyka" />
+        <e k="bank_dash_provision" v="Rezerwa ryzyka" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Bilans" />
+        <e k="bank_health_sectionRisk" v="Portfel &amp; Ryzyko" />
+        <e k="bank_health_sectionPortfolio" v="Rozkład portfela" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Wewnętrzne wskaźniki banku. Przegląd stabilności finansowej banku: kapitał własny, zdolność kredytowa, wykorzystanie i dźwignia." />
+        <e k="bank_info_risk" v="Wewnętrzne wskaźniki banku. Mierzy zdolność banku do pokrycia potencjalnych strat oraz koncentrację Twojego gospodarstwa w portfelu." />
+        <e k="bank_info_portfolio" v="Rozkład aktywnych pożyczek według poziomu ryzyka. Im więcej ryzykownych pożyczek, tym mniej dostępnego kredytu." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Kapitał własny banku, składający się z kapitału początkowego i skumulowanych przychodów odsetkowych.&#10;Każda zapłacona rata wzmacnia bank i zwiększa jego zdolność kredytową." />
+        <e k="bank_info_capacity" v="Maksymalna kwota, jaką bank może pożyczyć wszystkim gospodarstwom łącznie.&#10;Równa kapitałowi własnemu pomnożonemu przez dźwignię finansową.&#10;Po wyczerpaniu nie można udzielać nowych pożyczek." />
+        <e k="bank_info_outstanding" v="Suma wszystkich pozostałych kapitałów należnych od wszystkich gospodarstw na serwerze.&#10;Wykorzystywana do obliczenia stopnia wykorzystania banku.&#10;Im wyższa ta kwota, tym niższa dostępna zdolność kredytowa." />
+        <e k="bank_info_utilization" v="Procent całkowitej zdolności aktualnie pożyczonej.&#10;Poniżej 50% = zdrowy&#10;50-80% = napięty&#10;Powyżej 80% = kredyt bardzo ograniczony" />
+        <e k="bank_info_leverage" v="Mnożnik stosowany do kapitału własnego w celu określenia zdolności kredytowej.&#10;Np. 10x = każde 1 € kapitału własnego wspiera 10 € pożyczek.&#10;Ustawiony przez administratora serwera." />
+        <e k="bank_info_coverage" v="Mierzy, czy bank posiada wystarczające rezerwy do pokrycia ryzyk swojego portfela kredytowego.&#10;Obliczenie: Kapitał własny ÷ Rezerwy na straty kredytowe.&#10;Powyżej 1,5x = zdrowy&#10;1,0–1,5x = ostrzeżenie&#10;Poniżej 1,0x = krytyczny&#10;Zbyt niski wskaźnik może zablokować zatwierdzenie nowych pożyczek." />
+        <e k="bank_info_provision" v="Środki zarezerwowane na pokrycie możliwych strat z tytułu pożyczek.&#10;Pożyczki wysokiego ryzyka wymagają większych rezerw, co bezpośrednio zmniejsza efektywną zdolność kredytową banku.&#10;To wewnętrzna rezerwa banku, a nie zwrot pożyczek gracza." />
+
+        <e k="bank_info_hint" v="Kliknij nagłówek lub wskaźnik, aby uzyskać więcej szczegółów" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Typ" />
+        <e k="bank_col_amount" v="Kwota początkowa" />
+        <e k="bank_col_monthly" v="Rata miesięczna" />
+        <e k="bank_col_rate" v="Oprocentowanie" />
+        <e k="bank_col_remaining" v="Pozostały okres" />
+        <e k="bank_col_rest" v="Pozostały kapitał" />
+        <e k="bank_col_status" v="Status" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktywna" />
+        <e k="bank_status_paid" v="Spłacona" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Nowa pożyczka" />
+        <e k="bank_btn_details" v="Szczegóły pożyczki" />
+        <e k="bank_btn_earlyRepay" v="Spłać" />
+        <e k="bank_btn_repayLine" v="Spłać linię" />
+        <e k="bank_btn_close" v="Zamknij linię kredytową" />
+        <e k="bank_btn_back" v="Zamknij" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Annuitetowa" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Odnawialna" />
+        <e k="bank_loanType_annuity_desc" v="Stała miesięczna rata, taka sama co miesiąc, łącząca odsetki i kapitał.&#10;Kwota nigdy się nie zmienia przez cały okres kredytowania." />
+        <e k="bank_loanType_bullet_desc" v="Miesięczna spłata tylko odsetek.&#10;Cały kapitał zwracany jest jednorazowo w terminie wymagalności.&#10;Niskie miesięczne raty, ale zaplanuj przepływ gotówki na termin wymagalności." />
+        <e k="bank_loanType_revolving_desc" v="Stała linia kredytowa do zatwierdzonego maksimum.&#10;Pobierz potrzebną kwotę, spłacaj swobodnie,&#10;bez stałej raty ani terminu wymagalności." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Pobierz" />
+        <e k="bank_revolving_status_open" v="Otwarta" />
+        <e k="bank_revolving_status_available" v="Dostępna" />
+        <e k="bank_revolving_noDuration" v="Bez stałego okresu" />
+        <e k="bank_revolving_variablePayment" v="Zmienna" />
+        <e k="bank_revolving_estimatedInterest" v="Szac. odsetki (1 rok)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / rok maks." />
+        <e k="bank_revolving_commitmentFee" v="Prowizja za gotowość" />
+        <e k="bank_confirm_draw" v="Kwota do pobrania (maks. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Kwota do spłaty (maks. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Kwota do spłaty (min %s — maks %s):" />
+        <e k="bank_confirm_closeLine" v="Zamknąć tę linię kredytową? Tej operacji nie można cofnąć." />
+        <e k="bank_detail_revolving_limit" v="Limit kredytowy" />
+        <e k="bank_detail_revolving_drawn" v="Wykorzystane saldo" />
+        <e k="bank_detail_revolving_available" v="Dostępne" />
+        <e k="bank_detail_rev_utilization" v="Wykorzystanie" />
+        <e k="bank_detail_rev_conditions" v="Warunki" />
+        <e k="bank_detail_rev_interest_month" v="Odsetki / mies." />
+        <e k="bank_detail_rev_interest_year" v="Odsetki / rok" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Roczna opłata 1% od niepobranej części linii kredytowej. Naliczana miesięcznie od niewykorzystanej dostępnej kwoty. Pokazuje kwotę maksymalną (linia całkowicie niepodjęta)." />
+        <e k="bank_detail_rev_duration" v="Okres" />
+        <e k="bank_detail_rev_payment" v="Spłata" />
+        <e k="bank_detail_info_rev_utilization" v="Szczegóły wykorzystania odnawialnej linii kredytowej.&#10;Limit to zatwierdzona maksymalna kwota.&#10;Wykorzystane saldo to aktualnie pożyczona kwota." />
+        <e k="bank_detail_info_rev_limit" v="Maksymalna kwota, jaką możesz pożyczyć&#10;z tej odnawialnej linii kredytowej." />
+        <e k="bank_detail_info_rev_drawn" v="Aktualnie pożyczona i używana kwota&#10;w ramach tej linii kredytowej." />
+        <e k="bank_detail_info_rev_available" v="Kwota, którą można jeszcze pobrać&#10;w ramach limitu kredytowego." />
+        <e k="bank_detail_info_rev_conditions" v="Warunki finansowania mające zastosowanie&#10;do tej odnawialnej linii kredytowej." />
+        <e k="bank_detail_info_rev_interest_month" v="Szacowane miesięczne odsetki&#10;na podstawie aktualnego wykorzystanego salda." />
+        <e k="bank_detail_info_rev_interest_year" v="Szacowane roczne odsetki&#10;na podstawie aktualnego wykorzystanego salda." />
+        <e k="bank_detail_info_rev_duration" v="Odnawialne linie kredytowe nie mają stałego okresu.&#10;Pozostają otwarte do momentu zamknięcia." />
+        <e k="bank_detail_info_rev_payment" v="Spłaty odnawialne są zmienne:&#10;płacisz miesięczne odsetki od wykorzystanego salda.&#10;Kapitał spłacasz we własnym tempie." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Niskie" />
+        <e k="bank_risk_moderate" v="Umiarkowane" />
+        <e k="bank_risk_high" v="Wysokie" />
+        <e k="bank_risk_critical" v="Krytyczne" />
+        <e k="bank_risk_refused" v="Odmowa" />
+        <e k="bank_portfolio_scale_safe" v="Bezpieczny" />
+        <e k="bank_portfolio_scale_risky" v="Ryzykowny" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d l." />
+        <e k="bank_format_monthsShort" v="%d mies." />
+        <e k="bank_format_yearsMonths" v="%d l. %d m." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Musisz posiadać gospodarstwo, aby ubiegać się o pożyczkę." />
+        <e k="bank_error_insufficientFunds" v="Niewystarczające środki na wcześniejszą spłatę." />
+        <e k="bank_error_partialRepayMin" v="Minimalna częściowa spłata: %s (10 %% kapitału początkowego)." />
+        <e k="bank_confirm_earlyRepay" v="Spłacić %s z karą w wysokości %s?&#10;Łącznie: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="SZCZEGÓŁY POŻYCZKI" />
+        <e k="bank_detail_title" v="POŻYCZKA NR %d" />
+        <e k="bank_detail_label_amount" v="Kwota" />
+        <e k="bank_detail_label_rate" v="Oprocentowanie" />
+        <e k="bank_detail_label_type" v="Typ" />
+        <e k="bank_detail_label_risk" v="Ryzyko" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Całkowita kwota pożyczona w momencie podpisania umowy kredytowej. Kwota ta nie zmienia się przez cały okres obowiązywania umowy." />
+        <e k="bank_detail_info_rate" v="Roczna stopa procentowa zastosowana do tej pożyczki. Obejmuje stopę bazową banku i ewentualną premię za poziom ryzyka." />
+        <e k="bank_detail_info_type" v="Sposób spłaty pożyczki&#10;Annuitetowa: stała miesięczna rata, taka sama każdego miesiąca&#10;Bullet: tylko miesięczne odsetki, kapitał na końcu&#10;Odnawialna: otwarta linia kredytowa, bez stałego okresu" />
+        <e k="bank_detail_info_risk" v="Poziom ryzyka oceniony przez bank przy zatwierdzeniu. Zależy od DSCR, LTV i Twojej historii. Wyższe ryzyko powoduje premię za ryzyko do stopy procentowej." />
+        <e k="bank_detail_info_dscr" v="Wskaźnik pokrycia obsługi zadłużenia&#10;Dochody &#247; łączne miesięczne raty zadłużenia.&#10;Powyżej 1,5 = komfortowy&#10;1,0&#8211;1,5 = napięty&#10;Poniżej 1,0 = dochody nie pokrywają długów&#10;&#10;Aby poprawić:&#10;Spłać istniejące pożyczki (zmniejsza raty)&#10;Zwiększ dochody gospodarstwa (sprzedaż, uprawy, hodowla)&#10;Wnioskuj o niższą kwotę&#10;Wydłuż okres (zmniejsza ratę)" />
+        <e k="bank_detail_info_ltv" v="Wskaźnik kredyt/wartość&#10;Kwota pożyczki podzielona przez wartość Twoich aktywów.&#10;Niższy jest bezpieczniejszy dla banku.&#10;Powyżej 80% = wysokie ryzyko." />
+
+        <e k="bank_detail_info_hint" v="Kliknij pole, aby uzyskać więcej szczegółów" />
+
+        <e k="bank_detail_col_period" v="Nr" />
+        <e k="bank_detail_col_payment" v="Rata" />
+        <e k="bank_detail_col_interest" v="Odsetki" />
+        <e k="bank_detail_col_principal" v="Kapitał" />
+        <e k="bank_detail_col_balance" v="Saldo" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="NOWA POŻYCZKA" />
+        <e k="bank_wizard_step1_title" v="Krok 1 — Konfiguracja pożyczki" />
+        <e k="bank_wizard_step2_title" v="Krok 2 — Podsumowanie i potwierdzenie" />
+        <e k="bank_wizard_card_rates" v="OPROCENTOWANIE" />
+        <e k="bank_wizard_card_cost" v="KOSZT" />
+        <e k="bank_wizard_label_loanType" v="Typ pożyczki" />
+        <e k="bank_wizard_label_amount" v="Kwota" />
+        <e k="bank_wizard_label_duration" v="Okres" />
+        <e k="bank_wizard_limit" v="Dostępny limit (zależnie od decyzji kredytowej): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Szacowana rata miesięczna: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Stopa bazowa" />
+        <e k="bank_wizard_recap_typeSpread" v="Premia produktowa" />
+        <e k="bank_wizard_recap_surcharge" v="Premia za ryzyko" />
+        <e k="bank_wizard_recap_monthly" v="Rata miesięczna" />
+        <e k="bank_wizard_recap_totalInterest" v="Łączne odsetki" />
+        <e k="bank_wizard_recap_totalCost" v="Łączny koszt" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (zdolność spłaty)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (pożyczka / aktywa)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (rzeczywista roczna stopa oprocentowania)" />
+        <e k="bank_wizard_recap_risk" v="Poziom ryzyka" />
+        <e k="bank_wizard_recap_risk_section" v="Ryzyko" />
+        <e k="bank_wizard_indicativeRate" v="Stopa orientacyjna: %s (bez ryzyka)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Wnioskowana kwota przekracza dostępny limit kredytowy." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Wnioskowana kwota przekracza limit ekspozycji na jedno gospodarstwo (25% całkowitej zdolności bankowej)." />
+        <e k="bank_wizard_warn_refused" v="Odmowa pożyczki: Twój profil finansowy nie spełnia minimalnych wymagań." />
+        <e k="bank_wizard_warn_invalidAmount" v="Nieprawidłowa kwota: wybierz wartość dodatnią." />
+        <e k="bank_wizard_warn_critical50" v="Wysokie ryzyko: wypłacona kwota zostanie ograniczona do 50% Twojego wniosku." />
+        <e k="bank_wizard_hint_refused" v="Kliknij DSCR lub Poziom ryzyka, aby zrozumieć powód odmowy." />
+        <e k="bank_wizard_totalCostPreview" v="Łącznie do spłaty: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="w tym ~%s odsetek" />
+        <e k="bank_wizard_amountCapped" v="Wnioskowano: %s  &#8594;  Przyznano: %s" />
+        <e k="bank_wizard_btn_prev" v="Poprzedni" />
+        <e k="bank_wizard_btn_next" v="Następny" />
+        <e k="bank_wizard_btn_confirm" v="Potwierdź" />
+        <e k="bank_wizard_confirm_msg" v="Potwierdzić pożyczkę na kwotę %s przy oprocentowaniu %s?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Szczegóły oprocentowania zastosowanego do Twojej pożyczki.&#10;Końcowy EIR to suma stopy bazowej, premii produktowej i premii za ryzyko." />
+        <e k="bank_wizard_info_baseRate" v="Stopa referencyjna ustalona przez bank, jednakowa dla wszystkich kredytobiorców.&#10;Zmienia się zgodnie z ustawieniami serwera." />
+        <e k="bank_wizard_info_typeSpread" v="Spread oprocentowania powiązany z wybranym typem pożyczki.&#10;Annuitetowa = 0% : kapitał maleje z każdą ratą.&#10;Bullet: cały kapitał narażony do terminu zapadalności.&#10;Odnawialna: kapitał stale dostępny bez stałej daty zapadalności." />
+        <e k="bank_wizard_info_surcharge" v="Dopłata stosowana na podstawie Twojego poziomu ryzyka.&#10;Im bardziej ryzykowny Twój profil, tym wyższa ta dopłata." />
+        <e k="bank_wizard_info_effectiveRate" v="Rzeczywista roczna stopa oprocentowania (RRSO): faktyczny roczny koszt Twojej pożyczki.&#10;Łączy stopę bazową, premię produktową i premię za ryzyko." />
+        <e k="bank_wizard_info_risk_section" v="Ocena ryzyka banku dotycząca Twojej pożyczki.&#10;Te wskaźniki określają, czy pożyczka zostanie udzielona i na jakich warunkach." />
+        <e k="bank_wizard_info_cost" v="Podsumowanie łącznych kosztów Twojej pożyczki.&#10;Porównuje ratę miesięczną, skumulowane odsetki i łączną kwotę do spłaty." />
+        <e k="bank_wizard_info_monthly" v="Kwota odejmowana od przepływu gotówkowego co miesiąc.&#10;W przypadku pożyczki annuitetowej obejmuje kapitał i odsetki.&#10;W przypadku pożyczki bullet odejmowane są tylko odsetki." />
+        <e k="bank_wizard_info_totalInterest" v="Suma wszystkich odsetek zapłaconych przez cały okres pożyczki.&#10;Im dłuższy okres, tym wyższa ta kwota." />
+        <e k="bank_wizard_info_totalCost" v="Łączna kwota zwrócona na koniec pożyczki.&#10;Równa pożyczonemu kapitałowi plus łączne odsetki." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bank &amp; Kredyt" />
+        <e k="bank_setting_initialCapital" v="Kapitał początkowy" />
+        <e k="bank_toolTip_initialCapital" v="Początkowa kwota kredytu udostępniona na potrzeby bankowości dla każdego gospodarstwa." />
+        <e k="bank_setting_leverageRatio" v="Dźwignia finansowa" />
+        <e k="bank_toolTip_leverageRatio" v="Określa maksymalny mnożnik zadłużenia w stosunku do dostępnego kapitału własnego. Np. 10x → maks. kredyt = 10× kapitał własny." />
+        <e k="bank_setting_dynamicRate" v="Dynamiczne oprocentowanie" />
+        <e k="bank_toolTip_dynamicRate" v="Włączone: stopa bazowa zmienia się co roku (±0,25%, zakres 1–12%). Premie za ryzyko zawsze obowiązują." />
+        <e k="bank_setting_baseInterestRate" v="Stopa bazowa" />
+        <e k="bank_toolTip_baseInterestRate" v="Roczna stopa bazowa stosowana do wszystkich pożyczek przed premią za ryzyko." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Kara za wcześniejszą spłatę" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Procent pozostałego kapitału pobierany jako kara za wcześniejszą spłatę pożyczki." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Rok %d — %s" />
+        <e k="bank_report_title_default" v="RAPORT ROCZNY" />
+        <e k="bank_report_section_costs" v="Przepływy finansowe" />
+        <e k="bank_report_section_activity" v="Aktywność" />
+        <e k="bank_report_interestPaid" v="· Zapłacone odsetki" />
+        <e k="bank_report_principalPaid" v="· Spłacony kapitał" />
+        <e k="bank_report_totalPaid" v="Łącznie zapłacono" />
+        <e k="bank_report_avgMonthly" v="· Średnia rata miesięczna" />
+        <e k="bank_report_loansOpened" v="· Otwarte pożyczki" />
+        <e k="bank_report_loansClosed" v="· Zamknięte pożyczki" />
+        <e k="bank_report_loansActive" v="· Aktywne pożyczki" />
+        <e k="bank_report_outstanding" v="Łączne zadłużenie" />
+        <e k="bank_report_noData" v="Brak dostępnych danych raportu rocznego." />
+        <e k="bank_report_btnNext" v="Rok +" />
+        <e k="bank_report_btnPrev" v="Rok -" />
+        <e k="bank_btn_report" v="Raport roczny" />
+    </elements>
+</l10n>

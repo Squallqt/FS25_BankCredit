@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Banque &amp; Crédit" />
+        <e k="bank_label_interest" v="Intérêts d'emprunt" />
+        <e k="bank_label_principal" v="Capital (prêt)" />
+        <e k="finance_bankLoanInterest" v="Intérêts bancaires" />
+        <e k="finance_bankLoanPrincipal" v="Capital (prêt)" />
+        <e k="bank_vanilla_loan_cleared" v="Un prêt existant de %s a été détecté et automatiquement remboursé.&#10;Le montant a été déduit de votre solde.&#10;&#10;Utilisez le menu Banque pour souscrire un nouveau prêt." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANQUE" />
+        <e k="bank_empty_list" v="Aucun emprunt actif à afficher." />
+        <e k="bank_empty_paid" v="Aucun emprunt soldé à afficher." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Emprunts actifs" />
+        <e k="bank_tab_paid" v="Emprunts terminés" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Crédit disponible" />
+        <e k="bank_dash_available_sub" v="(sous réserve d'acceptation)" />
+        <e k="bank_dash_outstanding" v="Emprunts actifs" />
+        <e k="bank_dash_outstanding_sub" v="%d%% du plafond d'emprunt utilisé" />
+        <e k="bank_dash_monthlyTotal" v="Total mensualités" />
+        <e k="bank_dash_monthlyTotal_sub" v="(prélèvement mensuel total)" />
+        <e k="bank_dash_rate" v="Taux actuel" />
+        <e k="bank_dash_rate_sub" v="(taux de base, hors majorations)" />
+        <e k="bank_dash_equity" v="Fonds propres" />
+        <e k="bank_dash_capacity" v="Capacité totale de prêt" />
+        <e k="bank_dash_outstanding_label" v="Encours total (toutes fermes)" />
+        <e k="bank_dash_utilization" v="Taux d'utilisation" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Indicateurs bancaires"/>
+        <e k="bank_btn_indicators" v="Indicateurs bancaires"/>
+        <e k="bank_dash_leverage" v="Ratio de levier" />
+        <e k="bank_dash_coverage" v="Couverture des risques" />
+        <e k="bank_dash_provision" v="Réserve de risque" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Bilan" />
+        <e k="bank_health_sectionRisk" v="Portefeuille &amp; Risque" />
+        <e k="bank_health_sectionPortfolio" v="Répartition du portefeuille" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="M&#233;triques internes de la banque. Vue d'ensemble de la solidit&#233; financi&#232;re : fonds propres, capacit&#233; de pr&#234;t, utilisation et levier." />
+        <e k="bank_info_risk" v="M&#233;triques internes de la banque. Mesure la capacit&#233; de la banque &#224; couvrir les pertes potentielles et la concentration de ta ferme dans le portefeuille." />
+        <e k="bank_info_portfolio" v="Répartition des prêts en cours par niveau de risque. Plus de prêts risqués signifie moins de crédit disponible." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Capital propre de la banque, constitué du capital initial et des intérêts accumulés.&#10;Chaque intérêt payé renforce la banque et augmente sa capacité de prêt." />
+        <e k="bank_info_capacity" v="Montant maximum que la banque peut prêter à l'ensemble des fermes.&#10;Égal aux fonds propres multipliés par le ratio de levier.&#10;Si épuisé, aucun nouveau prêt ne peut être accordé." />
+        <e k="bank_info_outstanding" v="Somme de tous les capitaux restants dus sur l'ensemble des fermes du serveur.&#10;Utilisé pour calculer le taux d'utilisation de la banque.&#10;Plus ce montant est élevé, moins la capacité de prêt disponible est importante." />
+        <e k="bank_info_utilization" v="Pourcentage de la capacité totale actuellement prêté.&#10;En dessous de 50% = sain&#10;50-80% = serré&#10;Au-dessus de 80% = crédit très limité" />
+        <e k="bank_info_leverage" v="Multiplicateur appliqué aux fonds propres pour déterminer la capacité de prêt.&#10;Ex. 10x = chaque 1 € de fonds propres supporte 10 € de prêts.&#10;Défini par l'administrateur du serveur." />
+        <e k="bank_info_coverage" v="Mesure si la banque dispose de suffisamment de réserves pour couvrir les risques de son portefeuille de prêts.&#10;Calcul : Fonds propres ÷ Provisions pour pertes.&#10;Au-dessus de 1,5x = sain&#10;1,0–1,5x = vigilance&#10;En dessous de 1,0x = critique&#10;Un ratio trop bas peut bloquer l'approbation de nouveaux prêts." />
+        <e k="bank_info_provision" v="Fonds mis de côté pour absorber d'éventuels défauts de paiement.&#10;Les prêts à haut risque nécessitent des provisions plus élevées, ce qui réduit directement la capacité de prêt effective.&#10;Il s'agit d'une réserve interne de la banque, pas d'un remboursement de prêt pour le joueur." />
+
+        <e k="bank_info_hint" v="Cliquez sur un titre ou un indicateur pour plus de détails" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Type" />
+        <e k="bank_col_amount" v="Montant initial" />
+        <e k="bank_col_monthly" v="Mensualité" />
+        <e k="bank_col_rate" v="Taux" />
+        <e k="bank_col_remaining" v="Durée restante" />
+        <e k="bank_col_rest" v="Capital restant" />
+        <e k="bank_col_status" v="Statut" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Actif" />
+        <e k="bank_status_paid" v="Soldé" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Nouvel emprunt" />
+        <e k="bank_btn_details" v="Détails du prêt" />
+        <e k="bank_btn_earlyRepay" v="Rembourser" />
+        <e k="bank_btn_repayLine" v="Rembourser la ligne" />
+        <e k="bank_btn_close" v="Clôturer la ligne" />
+        <e k="bank_btn_back" v="Fermer" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Amortissable" />
+        <e k="bank_loanType_bullet" v="In Fine" />
+        <e k="bank_loanType_revolving" v="Revolving" />
+        <e k="bank_loanType_annuity_desc" v="Mensualité fixe, identique chaque mois, combinant intérêts et capital.&#10;Le montant ne varie jamais pendant toute la durée du prêt." />
+        <e k="bank_loanType_bullet_desc" v="Intérêts seuls chaque mois.&#10;Le capital emprunté est remboursé en une seule fois à l'échéance.&#10;Mensualités basses mais prévois la trésorerie au terme." />
+        <e k="bank_loanType_revolving_desc" v="Ligne de crédit permanente à hauteur du plafond accordé.&#10;Emprunte ce dont tu as besoin, rembourse librement,&#10;sans mensualité ni date de fin fixée." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Débloquer" />
+        <e k="bank_revolving_status_open" v="Ouvert" />
+        <e k="bank_revolving_status_available" v="Disponible" />
+        <e k="bank_revolving_noDuration" v="Pas de durée fixe" />
+        <e k="bank_revolving_variablePayment" v="Variable" />
+        <e k="bank_revolving_estimatedInterest" v="Intérêts est. (1 an)" />
+        <e k="bank_revolving_commitmentFee" v="Commission non-utilisation" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / an max" />
+        <e k="bank_confirm_draw" v="Montant à tirer (max %s) :" />
+        <e k="bank_confirm_repay_revolving" v="Montant à rembourser (max %s) :" />
+        <e k="bank_confirm_partialRepay_amount" v="Montant à rembourser (min %s — max %s) :" />
+        <e k="bank_confirm_closeLine" v="Fermer cette ligne de crédit ? Cette action est irréversible." />
+        <e k="bank_detail_revolving_limit" v="Plafond" />
+        <e k="bank_detail_revolving_drawn" v="Solde tiré" />
+        <e k="bank_detail_revolving_available" v="Disponible" />
+        <e k="bank_detail_rev_utilization" v="Utilisation" />
+        <e k="bank_detail_rev_conditions" v="Conditions" />
+        <e k="bank_detail_rev_interest_month" v="Intérêts / mois" />
+        <e k="bank_detail_rev_interest_year" v="Intérêts / an" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Commission annuelle de 1 % sur la portion non tirée de la ligne. Facturée mensuellement sur le montant disponible non utilisé. Affiche le montant maximum (ligne entièrement non tirée)." />
+        <e k="bank_detail_rev_duration" v="Durée" />
+        <e k="bank_detail_rev_payment" v="Échéance" />
+        <e k="bank_detail_info_rev_utilization" v="Utilisation de votre ligne de crédit revolving.&#10;Le plafond représente le montant maximum autorisé.&#10;Le solde tiré est le montant actuellement emprunté." />
+        <e k="bank_detail_info_rev_limit" v="Montant maximum que vous pouvez emprunter&#10;sur cette ligne de crédit revolving." />
+        <e k="bank_detail_info_rev_drawn" v="Montant actuellement emprunté et utilisé&#10;sur cette ligne de crédit." />
+        <e k="bank_detail_info_rev_available" v="Montant encore disponible à tirer&#10;sur votre plafond de crédit." />
+        <e k="bank_detail_info_rev_conditions" v="Conditions financières applicables&#10;à cette ligne de crédit revolving." />
+        <e k="bank_detail_info_rev_interest_month" v="Intérêts mensuels estimés basés&#10;sur le solde tiré actuel." />
+        <e k="bank_detail_info_rev_interest_year" v="Intérêts annuels estimés basés&#10;sur le solde tiré actuel." />
+        <e k="bank_detail_info_rev_duration" v="Les lignes de crédit revolving n'ont pas de durée fixe.&#10;Elles restent ouvertes tant qu'elles ne sont pas clôturées." />
+        <e k="bank_detail_info_rev_payment" v="Les échéances d'un revolving sont variables :&#10;vous payez les intérêts mensuels sur le solde tiré.&#10;Le capital se rembourse à votre rythme." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Faible" />
+        <e k="bank_risk_moderate" v="Modéré" />
+        <e k="bank_risk_high" v="Élevé" />
+        <e k="bank_risk_critical" v="Critique" />
+        <e k="bank_risk_refused" v="Refusé" />
+        <e k="bank_portfolio_scale_safe" v="Sain" />
+        <e k="bank_portfolio_scale_risky" v="Risqu&#233;" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d ans" />
+        <e k="bank_format_monthsShort" v="%d mois" />
+        <e k="bank_format_yearsMonths" v="%d an %d mois" />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Vous devez posséder une exploitation pour demander un emprunt." />
+        <e k="bank_error_insufficientFunds" v="Fonds insuffisants pour un remboursement anticipé." />
+        <e k="bank_error_partialRepayMin" v="Remboursement partiel minimum : %s (10 %% du capital initial)." />
+        <e k="bank_confirm_earlyRepay" v="Rembourser %s avec une pénalité de %s ?&#10;Total : %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="DÉTAIL DE L'EMPRUNT" />
+        <e k="bank_detail_title" v="EMPRUNT N°%d" />
+        <e k="bank_detail_label_amount" v="Montant" />
+        <e k="bank_detail_label_rate" v="Taux" />
+        <e k="bank_detail_label_type" v="Type" />
+        <e k="bank_detail_label_risk" v="Risque" />        
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Somme totale empruntée au moment de la signature du prêt. Ce montant ne change pas pendant la durée du contrat." />
+        <e k="bank_detail_info_rate" v="Taux d'intérêt annuel appliqué à ce prêt. Il inclut le taux de base de la banque plus une éventuelle surcharge liée au niveau de risque." />
+        <e k="bank_detail_info_type" v="Mode de remboursement du prêt&#10;Amortissable : mensualité fixe, identique chaque mois&#10;In Fine : intérêts mensuels, capital remboursé à la fin&#10;Revolving : ligne de crédit permanente, sans échéance" />
+        <e k="bank_detail_info_risk" v="Niveau de risque évalué par la banque au moment de l'accord. Il dépend du DSCR, du LTV et de votre historique. Un risque élevé entraîne une surcharge de taux." />
+        <e k="bank_detail_info_dscr" v="Ratio de couverture de dette&#10;Revenus &#247; mensualit&#233;s totales de dettes.&#10;Au-dessus de 1,5 = confortable&#10;1,0&#8211;1,5 = serr&#233;&#10;En dessous de 1,0 = les revenus ne couvrent pas les dettes&#10;&#10;Pour l'am&#233;liorer :&#10;Rembourser des pr&#234;ts existants (r&#233;duit les mensualit&#233;s)&#10;Augmenter les revenus de la ferme (ventes, cultures, &#233;levage)&#10;Demander un montant moins &#233;lev&#233;&#10;Allonger la dur&#233;e (r&#233;duit la mensualit&#233;)" />
+        <e k="bank_detail_info_ltv" v="Loan To Value&#10;Rapport entre le montant emprunté et la valeur de vos actifs.&#10;Plus il est bas, moins la banque prend de risque.&#10;Au-dessus de 80% = risque élevé." />
+
+        <e k="bank_detail_info_hint" v="Cliquez sur un intitulé pour plus de détails" />
+
+        <e k="bank_detail_col_period" v="N°" />
+        <e k="bank_detail_col_payment" v="Mensualité" />
+        <e k="bank_detail_col_interest" v="Intérêts" />
+        <e k="bank_detail_col_principal" v="Capital" />
+        <e k="bank_detail_col_balance" v="Restant" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="NOUVEL EMPRUNT" />
+        <e k="bank_wizard_step1_title" v="Étape 1 — Configuration du prêt" />
+        <e k="bank_wizard_step2_title" v="Étape 2 — Récapitulatif et validation" />
+        <e k="bank_wizard_card_rates" v="TAUX" />
+        <e k="bank_wizard_card_cost" v="COÛT" />
+        <e k="bank_wizard_label_loanType" v="Type d'emprunt" />
+        <e k="bank_wizard_label_amount" v="Montant" />
+        <e k="bank_wizard_label_duration" v="Durée" />
+        <e k="bank_wizard_limit" v="Plafond disponible (sous réserve d'acceptation) : %s" />
+        <e k="bank_wizard_monthlyPreview" v="Mensualité estimée : %s" />
+        <e k="bank_wizard_recap_baseRate" v="Taux de base" />
+        <e k="bank_wizard_recap_typeSpread" v="Marge produit" />
+        <e k="bank_wizard_recap_surcharge" v="Surcoût risque" />
+        <e k="bank_wizard_recap_monthly" v="Mensualité" />
+        <e k="bank_wizard_recap_totalInterest" v="Intérêts totaux" />
+        <e k="bank_wizard_recap_totalCost" v="Coût total" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (capacité à rembourser)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (montant / actifs)" />
+        <e k="bank_wizard_recap_effectiveRate" v="TEG (taux tout compris)" />
+        <e k="bank_wizard_recap_risk" v="Niveau de risque" />
+        <e k="bank_wizard_recap_risk_section" v="Risque" />
+        <e k="bank_wizard_indicativeRate" v="Taux indicatif : %s (hors risque)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Le montant demandé dépasse votre plafond de crédit disponible." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Le montant demandé dépasse le plafond d'exposition par ferme (25% de la capacité bancaire totale)." />
+        <e k="bank_wizard_warn_refused" v="Emprunt refusé : votre profil financier ne remplit pas les critères minimum." />
+        <e k="bank_wizard_warn_invalidAmount" v="Montant invalide : veuillez sélectionner une valeur positive." />
+        <e k="bank_wizard_warn_critical50" v="Risque élevé : le montant débloqué sera plafonné à 50% de votre demande." />
+        <e k="bank_wizard_hint_refused" v="Cliquez sur DSCR ou Niveau de risque pour comprendre le refus." />
+        <e k="bank_wizard_totalCostPreview" v="Total &#224; rembourser : ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="dont ~%s d'int&#233;r&#234;ts" />
+        <e k="bank_wizard_amountCapped" v="Demand&#233; : %s  &#8594;  Accord&#233; : %s" />
+        <e k="bank_wizard_btn_prev" v="Précédent" />
+        <e k="bank_wizard_btn_next" v="Suivant" />
+        <e k="bank_wizard_btn_confirm" v="Confirmer" />
+        <e k="bank_wizard_confirm_msg" v="Confirmer l'emprunt de %s au taux de %s ?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Décomposition du taux d'intérêt appliqué à votre emprunt.&#10;Le TEG final est la somme du taux de base, de la marge produit et du surcoût lié au risque." />
+        <e k="bank_wizard_info_baseRate" v="Taux directeur fixé par la banque, identique pour tous les emprunteurs.&#10;Il évolue selon les paramètres du serveur." />
+        <e k="bank_wizard_info_typeSpread" v="Supplément de taux lié au type de prêt choisi.&#10;Amortissable = 0% : le capital décroît à chaque mensualité.&#10;In Fine : le capital entier reste exposé jusqu'à l'échéance.&#10;Revolving : capital disponible en permanence sans échéance fixe." />
+        <e k="bank_wizard_info_surcharge" v="Majoration appliquée selon votre niveau de risque.&#10;Plus votre profil est risqué, plus ce surcoût augmente." />
+        <e k="bank_wizard_info_effectiveRate" v="Taux Effectif Global : le vrai coût annuel de votre emprunt.&#10;Il additionne le taux de base, la marge produit et le surcoût risque." />
+        <e k="bank_wizard_info_risk_section" v="Évaluation du risque de votre emprunt par la banque.&#10;Ces indicateurs déterminent si le prêt est accordé et à quelles conditions." />
+        <e k="bank_wizard_info_cost" v="Synthèse du coût total de votre emprunt.&#10;Compare la mensualité, les intérêts cumulés et le montant global à rembourser." />
+        <e k="bank_wizard_info_monthly" v="Montant prélevé chaque mois sur votre trésorerie.&#10;Pour un prêt amortissable, il inclut capital et intérêts.&#10;Pour un prêt In Fine, seuls les intérêts sont prélevés." />
+        <e k="bank_wizard_info_totalInterest" v="Somme de tous les intérêts que vous paierez sur la durée du prêt.&#10;Plus la durée est longue, plus ce montant est élevé." />
+        <e k="bank_wizard_info_totalCost" v="Montant total que vous aurez remboursé à la fin du prêt.&#10;Égal au capital emprunté plus les intérêts totaux." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Banque &amp; Crédit" />
+        <e k="bank_setting_initialCapital" v="Capital initial" />
+        <e k="bank_toolTip_initialCapital" v="Montant de crédit initial mis à disposition de chaque exploitation pour ses opérations bancaires." />
+        <e k="bank_setting_leverageRatio" v="Ratio de levier" />
+        <e k="bank_toolTip_leverageRatio" v="Définit le multiple maximal d'endettement par rapport aux fonds propres. Ex. : 10x → crédit max = 10× l'équité." />
+        <e k="bank_setting_dynamicRate" v="Taux dynamique" />
+        <e k="bank_toolTip_dynamicRate" v="Activé : le taux de base évolue annuellement (±0,25%, bornes 1–12%). Les majorations restent actives." />
+        <e k="bank_setting_baseInterestRate" v="Taux de base" />
+        <e k="bank_toolTip_baseInterestRate" v="Taux d'intérêt annuel de base appliqué sur tous les emprunts, avant majoration de risque." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Pénalité de remboursement anticipé" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Pourcentage du capital restant prélevé comme pénalité en cas de remboursement anticipé." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Année %d — %s" />
+        <e k="bank_report_title_default" v="RAPPORT ANNUEL" />
+        <e k="bank_report_section_costs" v="Flux financiers" />
+        <e k="bank_report_section_activity" v="Activité" />
+        <e k="bank_report_interestPaid" v="· Intérêts versés" />
+        <e k="bank_report_principalPaid" v="· Capital remboursé" />
+        <e k="bank_report_totalPaid" v="Total versé" />
+        <e k="bank_report_avgMonthly" v="· Mensualité moyenne" />
+        <e k="bank_report_loansOpened" v="· Prêts ouverts" />
+        <e k="bank_report_loansClosed" v="· Prêts soldés" />
+        <e k="bank_report_loansActive" v="· Prêts en cours" />
+        <e k="bank_report_outstanding" v="Encours total" />
+        <e k="bank_report_noData" v="Aucune donnée de rapport annuel disponible." />
+        <e k="bank_report_btnNext" v="Année +" />
+        <e k="bank_report_btnPrev" v="Année -" />
+        <e k="bank_btn_report" v="Rapport annuel" />
+    </elements>
+</l10n>

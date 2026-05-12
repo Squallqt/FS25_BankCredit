@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Ngân hàng &amp; Tín dụng" />
+        <e k="bank_label_interest" v="Lãi vay" />
+        <e k="bank_label_principal" v="Gốc vay" />
+        <e k="finance_bankLoanInterest" v="Lãi ngân hàng" />
+        <e k="finance_bankLoanPrincipal" v="Gốc vay" />
+        <e k="bank_vanilla_loan_cleared" v="Phát hiện khoản vay hiện có %s và đã tự động tất toán.&#10;Số tiền đã được trừ khỏi số dư của bạn.&#10;&#10;Sử dụng menu Ngân hàng để đăng ký khoản vay mới." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="NGÂN HÀNG" />
+        <e k="bank_empty_list" v="Không có khoản vay đang hoạt động để hiển thị." />
+        <e k="bank_empty_paid" v="Không có khoản vay đã tất toán để hiển thị." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Khoản vay đang hoạt động" />
+        <e k="bank_tab_paid" v="Khoản vay đã hoàn thành" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Tín dụng khả dụng" />
+        <e k="bank_dash_available_sub" v="(tùy thuộc vào quyết định tín dụng)" />
+        <e k="bank_dash_outstanding" v="Dư nợ hiện tại" />
+        <e k="bank_dash_outstanding_sub" v="%d%% hạn mức vay đã sử dụng" />
+        <e k="bank_dash_monthlyTotal" v="Tổng trả hàng tháng" />
+        <e k="bank_dash_monthlyTotal_sub" v="(tổng khấu trừ hàng tháng)" />
+        <e k="bank_dash_rate" v="Lãi suất hiện tại" />
+        <e k="bank_dash_rate_sub" v="(lãi suất cơ bản, chưa tính phụ phí)" />
+        <e k="bank_dash_equity" v="Vốn chủ sở hữu" />
+        <e k="bank_dash_capacity" v="Tổng hạn mức tín dụng" />
+        <e k="bank_dash_outstanding_label" v="Tổng dư nợ (tất cả trang trại)" />
+        <e k="bank_dash_utilization" v="Tỷ lệ sử dụng" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Chỉ số ngân hàng"/>
+        <e k="bank_btn_indicators" v="Chỉ số ngân hàng"/>
+        <e k="bank_dash_leverage" v="Đòn bẩy tài chính" />
+        <e k="bank_dash_coverage" v="Bảo phủ rủi ro" />
+        <e k="bank_dash_provision" v="Dự trữ rủi ro" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Bảng cân đối" />
+        <e k="bank_health_sectionRisk" v="Danh mục &amp; Rủi ro" />
+        <e k="bank_health_sectionPortfolio" v="Phân bổ danh mục" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Chỉ số nội bộ của ngân hàng. Tổng quan về sự ổn định tài chính của ngân hàng: vốn chủ sở hữu, hạn mức tín dụng, tỷ lệ sử dụng và đòn bẩy." />
+        <e k="bank_info_risk" v="Chỉ số nội bộ của ngân hàng. Đo lường khả năng ngân hàng bù đắp các khoản lỗ tiềm tàng và mức độ tập trung của trang trại bạn trong danh mục." />
+        <e k="bank_info_portfolio" v="Phân bổ các khoản vay đang hoạt động theo mức độ rủi ro. Nhiều khoản vay rủi ro hơn đồng nghĩa với ít tín dụng khả dụng hơn." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Vốn chủ sở hữu của ngân hàng, bao gồm vốn ban đầu và thu nhập lãi tích lũy.&#10;Mỗi khoản lãi bạn trả củng cố ngân hàng và tăng hạn mức tín dụng của ngân hàng." />
+        <e k="bank_info_capacity" v="Số tiền tối đa ngân hàng có thể cho tất cả các trang trại vay cộng lại.&#10;Bằng vốn chủ sở hữu nhân với đòn bẩy tài chính.&#10;Khi cạn kiệt, không thể cấp khoản vay mới." />
+        <e k="bank_info_outstanding" v="Tổng tất cả các khoản gốc còn lại của mọi trang trại trên máy chủ.&#10;Được dùng để tính tỷ lệ sử dụng của ngân hàng.&#10;Số tiền này càng cao, năng lực cho vay khả dụng càng thấp." />
+        <e k="bank_info_utilization" v="Tỷ lệ phần trăm tổng hạn mức đang được cho vay hiện tại.&#10;Dưới 50% = lành mạnh&#10;50–80% = căng thẳng&#10;Trên 80% = tín dụng rất hạn chế" />
+        <e k="bank_info_leverage" v="Hệ số nhân áp dụng cho vốn chủ sở hữu để xác định hạn mức tín dụng.&#10;Ví dụ: 10x = mỗi 1 € vốn chủ sở hữu hỗ trợ 10 € khoản vay.&#10;Do quản trị viên máy chủ thiết lập." />
+        <e k="bank_info_coverage" v="Đo lường xem ngân hàng có đủ dự phòng để bù đắp rủi ro trong danh mục cho vay hay không.&#10;Tính toán: Vốn chủ sở hữu ÷ Dự phòng rủi ro.&#10;Trên 1,5x = lành mạnh&#10;1,0–1,5x = cảnh báo&#10;Dưới 1,0x = nguy hiểm&#10;Tỷ lệ quá thấp có thể chặn phê duyệt các khoản vay mới." />
+        <e k="bank_info_provision" v="Quỹ dự phòng để trang trải các khoản nợ xấu có thể xảy ra.&#10;Khoản vay rủi ro cao đòi hỏi dự phòng lớn hơn, trực tiếp giảm hạn mức tín dụng hiệu quả của ngân hàng.&#10;Đây là quỹ dự phòng nội bộ của ngân hàng, không phải hoàn trả khoản vay của người chơi." />
+
+        <e k="bank_info_hint" v="Nhấp vào tiêu đề hoặc chỉ số để biết thêm chi tiết" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Loại" />
+        <e k="bank_col_amount" v="Số tiền ban đầu" />
+        <e k="bank_col_monthly" v="Trả hàng tháng" />
+        <e k="bank_col_rate" v="Lãi suất" />
+        <e k="bank_col_remaining" v="Thời hạn còn lại" />
+        <e k="bank_col_rest" v="Gốc còn lại" />
+        <e k="bank_col_status" v="Trạng thái" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Đang hoạt động" />
+        <e k="bank_status_paid" v="Đã tất toán" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Vay mới" />
+        <e k="bank_btn_details" v="Chi tiết khoản vay" />
+        <e k="bank_btn_earlyRepay" v="Trả sớm" />
+        <e k="bank_btn_repayLine" v="Trả hạn mức" />
+        <e k="bank_btn_close" v="Đóng hạn mức tín dụng" />
+        <e k="bank_btn_back" v="Đóng" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Niên kim" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Tuần hoàn" />
+        <e k="bank_loanType_annuity_desc" v="Khoản trả hàng tháng cố định, như nhau mỗi tháng, bao gồm cả lãi và gốc.&#10;Số tiền không bao giờ thay đổi trong suốt thời hạn vay." />
+        <e k="bank_loanType_bullet_desc" v="Trả lãi hàng tháng.&#10;Toàn bộ gốc được hoàn trả một lần vào ngày đáo hạn.&#10;Khoản trả hàng tháng thấp nhưng hãy lên kế hoạch dòng tiền cho ngày đáo hạn." />
+        <e k="bank_loanType_revolving_desc" v="Hạn mức tín dụng thường trực đến mức tối đa được phê duyệt.&#10;Rút theo nhu cầu, hoàn trả tự do,&#10;không có khoản trả cố định hay ngày đáo hạn." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Rút vốn" />
+        <e k="bank_revolving_status_open" v="Đang mở" />
+        <e k="bank_revolving_status_available" v="Khả dụng" />
+        <e k="bank_revolving_noDuration" v="Không có kỳ hạn cố định" />
+        <e k="bank_revolving_variablePayment" v="Biến đổi" />
+        <e k="bank_revolving_estimatedInterest" v="Lãi ước tính (1 năm)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / năm tối đa" />
+        <e k="bank_revolving_commitmentFee" v="Phí cam kết" />
+        <e k="bank_confirm_draw" v="Số tiền rút (tối đa %s):" />
+        <e k="bank_confirm_repay_revolving" v="Số tiền hoàn trả (tối đa %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Số tiền hoàn trả (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Đóng hạn mức tín dụng này? Thao tác không thể hoàn tác." />
+        <e k="bank_detail_revolving_limit" v="Hạn mức tín dụng" />
+        <e k="bank_detail_revolving_drawn" v="Số dư đã sử dụng" />
+        <e k="bank_detail_revolving_available" v="Khả dụng" />
+        <e k="bank_detail_rev_utilization" v="Mức sử dụng" />
+        <e k="bank_detail_rev_conditions" v="Điều kiện" />
+        <e k="bank_detail_rev_interest_month" v="Lãi / tháng" />
+        <e k="bank_detail_rev_interest_year" v="Lãi / năm" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Phí hàng năm 1% trên phần hạn mức chưa sử dụng. Thu hàng tháng trên số tiền khả dụng chưa sử dụng. Hiển thị số tiền tối đa (hạn mức chưa sử dụng hoàn toàn)." />
+        <e k="bank_detail_rev_duration" v="Thời hạn" />
+        <e k="bank_detail_rev_payment" v="Thanh toán" />
+        <e k="bank_detail_info_rev_utilization" v="Chi tiết mức sử dụng hạn mức tín dụng tuần hoàn.&#10;Hạn mức là số tiền tối đa được phê duyệt.&#10;Số dư đã sử dụng là số tiền đang vay hiện tại." />
+        <e k="bank_detail_info_rev_limit" v="Số tiền tối đa bạn có thể vay&#10;từ hạn mức tín dụng tuần hoàn này." />
+        <e k="bank_detail_info_rev_drawn" v="Số tiền hiện đang vay và sử dụng&#10;trong hạn mức tín dụng này." />
+        <e k="bank_detail_info_rev_available" v="Số tiền vẫn có thể rút&#10;trong phạm vi hạn mức tín dụng của bạn." />
+        <e k="bank_detail_info_rev_conditions" v="Các điều kiện tài chính áp dụng&#10;cho hạn mức tín dụng tuần hoàn này." />
+        <e k="bank_detail_info_rev_interest_month" v="Lãi hàng tháng ước tính&#10;dựa trên số dư đã sử dụng hiện tại." />
+        <e k="bank_detail_info_rev_interest_year" v="Lãi hàng năm ước tính&#10;dựa trên số dư đã sử dụng hiện tại." />
+        <e k="bank_detail_info_rev_duration" v="Hạn mức tín dụng tuần hoàn không có kỳ hạn cố định.&#10;Chúng vẫn mở cho đến khi được đóng lại." />
+        <e k="bank_detail_info_rev_payment" v="Thanh toán tuần hoàn là biến đổi:&#10;bạn trả lãi hàng tháng trên số dư đã sử dụng.&#10;Gốc được hoàn trả theo nhịp độ của riêng bạn." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Thấp" />
+        <e k="bank_risk_moderate" v="Trung bình" />
+        <e k="bank_risk_high" v="Cao" />
+        <e k="bank_risk_critical" v="Nguy hiểm" />
+        <e k="bank_risk_refused" v="Từ chối" />
+        <e k="bank_portfolio_scale_safe" v="An toàn" />
+        <e k="bank_portfolio_scale_risky" v="Rủi ro" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d năm" />
+        <e k="bank_format_monthsShort" v="%d tháng" />
+        <e k="bank_format_yearsMonths" v="%d n. %d th." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Bạn cần sở hữu một trang trại để đăng ký khoản vay." />
+        <e k="bank_error_insufficientFunds" v="Số dư không đủ để trả nợ trước hạn." />
+        <e k="bank_error_partialRepayMin" v="Số tiền trả một phần tối thiểu: %s (10 %% vốn ban đầu)." />
+        <e k="bank_confirm_earlyRepay" v="Trả %s với khoản phạt %s?&#10;Tổng cộng: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="CHI TIẾT KHOẢN VAY" />
+        <e k="bank_detail_title" v="KHOẢN VAY SỐ %d" />
+        <e k="bank_detail_label_amount" v="Số tiền" />
+        <e k="bank_detail_label_rate" v="Lãi suất" />
+        <e k="bank_detail_label_type" v="Loại" />
+        <e k="bank_detail_label_risk" v="Rủi ro" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Tổng số tiền vay tại thời điểm ký hợp đồng tín dụng. Số tiền này không thay đổi trong suốt thời hạn hợp đồng." />
+        <e k="bank_detail_info_rate" v="Lãi suất hàng năm áp dụng cho khoản vay này. Bao gồm lãi suất cơ bản của ngân hàng và phần bù rủi ro nếu có." />
+        <e k="bank_detail_info_type" v="Phương thức hoàn trả khoản vay&#10;Niên kim: khoản trả hàng tháng cố định, như nhau mỗi tháng&#10;Bullet: chỉ trả lãi hàng tháng, gốc trả cuối&#10;Tuần hoàn: hạn mức tín dụng mở, không có kỳ hạn cố định" />
+        <e k="bank_detail_info_risk" v="Mức độ rủi ro được ngân hàng đánh giá khi phê duyệt. Phụ thuộc vào DSCR, LTV và lịch sử của bạn. Rủi ro cao hơn dẫn đến phần bù lãi suất." />
+        <e k="bank_detail_info_dscr" v="Tỷ số bao phủ dịch vụ nợ&#10;Thu nhập &#247; tổng khoản trả nợ hàng tháng.&#10;Trên 1,5 = thoải mái&#10;1,0&#8211;1,5 = căng&#10;Dưới 1,0 = thu nhập không đủ trả nợ&#10;&#10;Cách cải thiện:&#10;Trả các khoản vay hiện có (giảm khoản trả)&#10;Tăng thu nhập trang trại (bán hàng, cây trồng, chăn nuôi)&#10;Yêu cầu số tiền thấp hơn&#10;Kéo dài thời hạn (giảm khoản trả)" />
+        <e k="bank_detail_info_ltv" v="Tỷ lệ vay trên giá trị&#10;Số tiền vay chia cho giá trị tài sản của bạn.&#10;Thấp hơn là an toàn hơn cho ngân hàng.&#10;Trên 80% = rủi ro cao." />
+
+        <e k="bank_detail_info_hint" v="Nhấp vào một trường để biết thêm chi tiết" />
+
+        <e k="bank_detail_col_period" v="Số" />
+        <e k="bank_detail_col_payment" v="Trả" />
+        <e k="bank_detail_col_interest" v="Lãi" />
+        <e k="bank_detail_col_principal" v="Gốc" />
+        <e k="bank_detail_col_balance" v="Dư nợ" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="KHOẢN VAY MỚI" />
+        <e k="bank_wizard_step1_title" v="Bước 1 — Cấu hình khoản vay" />
+        <e k="bank_wizard_step2_title" v="Bước 2 — Tóm tắt và xác nhận" />
+        <e k="bank_wizard_card_rates" v="LÃI SUẤT" />
+        <e k="bank_wizard_card_cost" v="CHI PHÍ" />
+        <e k="bank_wizard_label_loanType" v="Loại vay" />
+        <e k="bank_wizard_label_amount" v="Số tiền" />
+        <e k="bank_wizard_label_duration" v="Thời hạn" />
+        <e k="bank_wizard_limit" v="Hạn mức khả dụng (tùy quyết định tín dụng): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Khoản trả hàng tháng ước tính: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Lãi suất cơ bản" />
+        <e k="bank_wizard_recap_typeSpread" v="Phần bù sản phẩm" />
+        <e k="bank_wizard_recap_surcharge" v="Phần bù rủi ro" />
+        <e k="bank_wizard_recap_monthly" v="Trả hàng tháng" />
+        <e k="bank_wizard_recap_totalInterest" v="Tổng lãi" />
+        <e k="bank_wizard_recap_totalCost" v="Tổng chi phí" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (khả năng trả nợ)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (vay / tài sản)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (lãi suất thực tế hàng năm)" />
+        <e k="bank_wizard_recap_risk" v="Mức rủi ro" />
+        <e k="bank_wizard_recap_risk_section" v="Rủi ro" />
+        <e k="bank_wizard_indicativeRate" v="Lãi suất tham khảo: %s (không rủi ro)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Số tiền yêu cầu vượt quá hạn mức tín dụng khả dụng của bạn." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Số tiền yêu cầu vượt quá giới hạn phơi lộ trên mỗi trang trại (25% tổng năng lực ngân hàng)." />
+        <e k="bank_wizard_warn_refused" v="Từ chối khoản vay: hồ sơ tài chính của bạn không đáp ứng yêu cầu tối thiểu." />
+        <e k="bank_wizard_warn_invalidAmount" v="Số tiền không hợp lệ: hãy chọn giá trị dương." />
+        <e k="bank_wizard_warn_critical50" v="Rủi ro cao: số tiền giải ngân sẽ bị giới hạn ở 50% yêu cầu của bạn." />
+        <e k="bank_wizard_hint_refused" v="Nhấp vào DSCR hoặc Mức rủi ro để hiểu lý do từ chối." />
+        <e k="bank_wizard_totalCostPreview" v="Tổng phải trả: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="trong đó ~%s tiền lãi" />
+        <e k="bank_wizard_amountCapped" v="Yêu cầu: %s  &#8594;  Chấp thuận: %s" />
+        <e k="bank_wizard_btn_prev" v="Trước" />
+        <e k="bank_wizard_btn_next" v="Tiếp theo" />
+        <e k="bank_wizard_btn_confirm" v="Xác nhận" />
+        <e k="bank_wizard_confirm_msg" v="Xác nhận khoản vay %s với lãi suất %s?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Chi tiết lãi suất áp dụng cho khoản vay của bạn.&#10;EIR cuối cùng là tổng của lãi suất cơ bản, phần bù sản phẩm và phần bù rủi ro." />
+        <e k="bank_wizard_info_baseRate" v="Lãi suất tham chiếu do ngân hàng thiết lập, giống nhau cho tất cả người vay.&#10;Thay đổi theo cài đặt máy chủ." />
+        <e k="bank_wizard_info_typeSpread" v="Spread lãi suất liên kết với loại vay đã chọn.&#10;Niên kim = 0% : vốn giảm theo từng kỳ thanh toán.&#10;Bullet: toàn bộ vốn chịu rủi ro đến khi đáo hạn.&#10;Tuần hoàn: vốn luôn sẵn sàng không có ngày đáo hạn cố định." />
+        <e k="bank_wizard_info_surcharge" v="Phần bù áp dụng dựa trên mức độ rủi ro của bạn.&#10;Hồ sơ càng rủi ro, phần bù này càng cao." />
+        <e k="bank_wizard_info_effectiveRate" v="Lãi suất thực tế hàng năm (APR): chi phí hàng năm thực sự của khoản vay.&#10;Kết hợp lãi suất cơ bản, phần bù sản phẩm và phần bù rủi ro." />
+        <e k="bank_wizard_info_risk_section" v="Đánh giá rủi ro của ngân hàng đối với khoản vay của bạn.&#10;Các chỉ số này xác định liệu khoản vay có được phê duyệt và theo điều kiện nào." />
+        <e k="bank_wizard_info_cost" v="Tóm tắt tổng chi phí khoản vay của bạn.&#10;So sánh khoản trả hàng tháng, lãi tích lũy và tổng số tiền phải hoàn trả." />
+        <e k="bank_wizard_info_monthly" v="Số tiền được khấu trừ từ dòng tiền hàng tháng.&#10;Với khoản vay niên kim bao gồm gốc và lãi.&#10;Với khoản vay bullet chỉ khấu trừ lãi." />
+        <e k="bank_wizard_info_totalInterest" v="Tổng tất cả lãi đã trả trong suốt thời hạn vay.&#10;Thời hạn càng dài, số tiền này càng lớn." />
+        <e k="bank_wizard_info_totalCost" v="Tổng số tiền hoàn trả khi kết thúc khoản vay.&#10;Bằng gốc đã vay cộng với tổng lãi." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Ngân hàng &amp; Tín dụng" />
+        <e k="bank_setting_initialCapital" v="Vốn ban đầu" />
+        <e k="bank_toolTip_initialCapital" v="Số tiền tín dụng ban đầu được cung cấp cho hoạt động ngân hàng trên mỗi trang trại." />
+        <e k="bank_setting_leverageRatio" v="Đòn bẩy tài chính" />
+        <e k="bank_toolTip_leverageRatio" v="Xác định hệ số nợ tối đa so với vốn chủ sở hữu khả dụng. Ví dụ: 10x → tín dụng tối đa = 10× vốn chủ sở hữu." />
+        <e k="bank_setting_dynamicRate" v="Lãi suất động" />
+        <e k="bank_toolTip_dynamicRate" v="Bật: lãi suất cơ bản thay đổi hàng năm (±0,25%, khoảng 1–12%). Phần bù rủi ro luôn được áp dụng." />
+        <e k="bank_setting_baseInterestRate" v="Lãi suất cơ bản" />
+        <e k="bank_toolTip_baseInterestRate" v="Lãi suất cơ bản hàng năm áp dụng cho tất cả các khoản vay trước phần bù rủi ro." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Phạt trả nợ sớm" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Tỷ lệ phần trăm gốc còn lại được tính như khoản phạt khi trả nợ trước hạn." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Năm %d — %s" />
+        <e k="bank_report_title_default" v="BÁO CÁO HÀNG NĂM" />
+        <e k="bank_report_section_costs" v="Dòng tài chính" />
+        <e k="bank_report_section_activity" v="Hoạt động" />
+        <e k="bank_report_interestPaid" v="· Lãi đã trả" />
+        <e k="bank_report_principalPaid" v="· Gốc đã hoàn trả" />
+        <e k="bank_report_totalPaid" v="Tổng đã trả" />
+        <e k="bank_report_avgMonthly" v="· Trả hàng tháng trung bình" />
+        <e k="bank_report_loansOpened" v="· Khoản vay mở" />
+        <e k="bank_report_loansClosed" v="· Khoản vay đóng" />
+        <e k="bank_report_loansActive" v="· Khoản vay đang hoạt động" />
+        <e k="bank_report_outstanding" v="Tổng dư nợ" />
+        <e k="bank_report_noData" v="Không có dữ liệu báo cáo hàng năm." />
+        <e k="bank_report_btnNext" v="Năm +" />
+        <e k="bank_report_btnPrev" v="Năm -" />
+        <e k="bank_btn_report" v="Báo cáo hàng năm" />
+    </elements>
+</l10n>

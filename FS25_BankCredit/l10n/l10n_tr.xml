@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Banka &amp; Kredi" />
+        <e k="bank_label_interest" v="Kredi faizi" />
+        <e k="bank_label_principal" v="Kredi anaparası" />
+        <e k="finance_bankLoanInterest" v="Banka faizi" />
+        <e k="finance_bankLoanPrincipal" v="Kredi anaparası" />
+        <e k="bank_vanilla_loan_cleared" v="%s tutarında mevcut bir kredi tespit edildi ve otomatik olarak kapatıldı.&#10;Tutar bakiyenizden düşüldü.&#10;&#10;Yeni kredi başvurusu için Banka menüsünü kullanın." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANKA" />
+        <e k="bank_empty_list" v="Gösterilecek aktif kredi yok." />
+        <e k="bank_empty_paid" v="Gösterilecek kapatılmış kredi yok." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktif krediler" />
+        <e k="bank_tab_paid" v="Tamamlanan krediler" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Kullanılabilir kredi" />
+        <e k="bank_dash_available_sub" v="(kredi kararına bağlı)" />
+        <e k="bank_dash_outstanding" v="Mevcut borç" />
+        <e k="bank_dash_outstanding_sub" v="kredi tavanının %d%%'si kullanıldı" />
+        <e k="bank_dash_monthlyTotal" v="Toplam aylık taksit" />
+        <e k="bank_dash_monthlyTotal_sub" v="(toplam aylık tahsilat)" />
+        <e k="bank_dash_rate" v="Güncel faiz oranı" />
+        <e k="bank_dash_rate_sub" v="(baz oran, ek ücretler hariç)" />
+        <e k="bank_dash_equity" v="Özkaynak" />
+        <e k="bank_dash_capacity" v="Toplam kredi kapasitesi" />
+        <e k="bank_dash_outstanding_label" v="Toplam borç (tüm çiftlikler)" />
+        <e k="bank_dash_utilization" v="Kullanım oranı" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Banka göstergeleri"/>
+        <e k="bank_btn_indicators" v="Banka göstergeleri"/>
+        <e k="bank_dash_leverage" v="Kaldıraç oranı" />
+        <e k="bank_dash_coverage" v="Risk karşılama" />
+        <e k="bank_dash_provision" v="Risk rezervi" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Bilanço" />
+        <e k="bank_health_sectionRisk" v="Portföy &amp; Risk" />
+        <e k="bank_health_sectionPortfolio" v="Portföy dağılımı" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Bankanın iç göstergeleri. Bankanın finansal sağlamlığına genel bakış: özkaynak, kredi kapasitesi, kullanım ve kaldıraç." />
+        <e k="bank_info_risk" v="Bankanın iç göstergeleri. Bankanın olası kayıpları karşılama yeteneğini ve çiftliğinizin portföydeki yoğunluğunu ölçer." />
+        <e k="bank_info_portfolio" v="Aktif kredilerin risk düzeyine göre dağılımı. Daha fazla riskli kredi, daha az kullanılabilir kredi demektir." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Bankanın başlangıç sermayesi ve birikmiş faiz gelirlerinden oluşan özkaynak.&#10;Ödediğiniz her faiz bankayı güçlendirir ve kredi kapasitesini artırır." />
+        <e k="bank_info_capacity" v="Bankanın tüm çiftliklere toplam olarak ödünç verebileceği maksimum tutar.&#10;Özkaynak ile kaldıraç oranının çarpımına eşittir.&#10;Tükendiğinde yeni kredi verilemez." />
+        <e k="bank_info_outstanding" v="Sunucudaki tüm çiftliklerin kalan anapara borçlarının toplamı.&#10;Bankanın kullanım oranını hesaplamak için kullanılır.&#10;Bu tutar ne kadar yüksekse, kullanılabilir kredi kapasitesi o kadar düşük olur." />
+        <e k="bank_info_utilization" v="Toplam kapasitenin şu anda ödünç verilen yüzdesi.&#10;%50 altı = sağlıklı&#10;%50–80 = gergin&#10;%80 üzeri = kredi çok kısıtlı" />
+        <e k="bank_info_leverage" v="Kredi kapasitesini belirlemek için özkaynaklara uygulanan çarpan.&#10;Örn. 10x = her 1 € özkaynak 10 € krediyi destekler.&#10;Sunucu yöneticisi tarafından ayarlanır." />
+        <e k="bank_info_coverage" v="Bankanın kredi portföyündeki riskleri karşılamak için yeterli rezerve sahip olup olmadığını ölçer.&#10;Hesaplama: Özkaynak ÷ Kredi kayıp karşılığı.&#10;1,5x üzeri = sağlıklı&#10;1,0–1,5x = dikkat&#10;1,0x altı = kritik&#10;Çok düşük bir oran yeni kredilerin onayını engelleyebilir." />
+        <e k="bank_info_provision" v="Olası kredi kayıplarını karşılamak için ayrılan fonlar.&#10;Yüksek riskli krediler daha büyük karşılık gerektirir ve bu durum bankanın etkin kredi kapasitesini doğrudan azaltır.&#10;Bu, bankanın iç rezervidir; oyuncu kredilerinin geri ödenmesi değildir." />
+
+        <e k="bank_info_hint" v="Daha fazla ayrıntı için bir başlık veya göstergeye tıklayın" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Tür" />
+        <e k="bank_col_amount" v="Başlangıç tutarı" />
+        <e k="bank_col_monthly" v="Aylık taksit" />
+        <e k="bank_col_rate" v="Faiz oranı" />
+        <e k="bank_col_remaining" v="Kalan süre" />
+        <e k="bank_col_rest" v="Kalan anapara" />
+        <e k="bank_col_status" v="Durum" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktif" />
+        <e k="bank_status_paid" v="Kapatıldı" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Yeni kredi" />
+        <e k="bank_btn_details" v="Kredi ayrıntıları" />
+        <e k="bank_btn_earlyRepay" v="Erken öde" />
+        <e k="bank_btn_repayLine" v="Limiti geri öde" />
+        <e k="bank_btn_close" v="Kredi limitini kapat" />
+        <e k="bank_btn_back" v="Kapat" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Eşit taksitli" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Rotatif" />
+        <e k="bank_loanType_annuity_desc" v="Her ay aynı olan sabit aylık taksit; faiz ve anaparayı birleştirir.&#10;Kredi süresince tutar hiç değişmez." />
+        <e k="bank_loanType_bullet_desc" v="Yalnızca faiz içeren aylık ödeme.&#10;Tüm anapara vade sonunda tek seferde geri ödenir.&#10;Düşük aylık ödemeler; ancak vade için nakit akışınızı planlayın." />
+        <e k="bank_loanType_revolving_desc" v="Onaylanan maksimuma kadar kalıcı kredi limiti.&#10;İhtiyacınız kadarını çekin, serbestçe geri ödeyin,&#10;sabit taksit veya vade tarihi olmadan." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Çekim" />
+        <e k="bank_revolving_status_open" v="Açık" />
+        <e k="bank_revolving_status_available" v="Kullanılabilir" />
+        <e k="bank_revolving_noDuration" v="Sabit vade yok" />
+        <e k="bank_revolving_variablePayment" v="Değişken" />
+        <e k="bank_revolving_estimatedInterest" v="Tahmini faiz (1 yıl)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / yıl maks." />
+        <e k="bank_revolving_commitmentFee" v="Taahhüt komisyonu" />
+        <e k="bank_confirm_draw" v="Çekilecek tutar (maks. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Ödenecek tutar (maks. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Ödenecek tutar (min %s — maks %s):" />
+        <e k="bank_confirm_closeLine" v="Bu kredi limitini kapatmak istiyor musunuz? Bu işlem geri alınamaz." />
+        <e k="bank_detail_revolving_limit" v="Kredi limiti" />
+        <e k="bank_detail_revolving_drawn" v="Kullanılan bakiye" />
+        <e k="bank_detail_revolving_available" v="Kullanılabilir" />
+        <e k="bank_detail_rev_utilization" v="Kullanım" />
+        <e k="bank_detail_rev_conditions" v="Koşullar" />
+        <e k="bank_detail_rev_interest_month" v="Faiz / ay" />
+        <e k="bank_detail_rev_interest_year" v="Faiz / yıl" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Kredi limitinin kullanılmayan kısmı üzerinden yıllık %1 komisyon. Kullanılmayan mevcut tutar üzerinden aylık tahsil edilir. Maksimum tutarı gösterir (limit tamamen kullanılmamış)." />
+        <e k="bank_detail_rev_duration" v="Vade" />
+        <e k="bank_detail_rev_payment" v="Ödeme" />
+        <e k="bank_detail_info_rev_utilization" v="Rotatif kredi limitinin kullanım ayrıntısı.&#10;Limit, onaylanan maksimum tutardır.&#10;Kullanılan bakiye, şu anda borç alınan tutardır." />
+        <e k="bank_detail_info_rev_limit" v="Bu rotatif kredi limitinden&#10;borç alabileceğiniz maksimum tutar." />
+        <e k="bank_detail_info_rev_drawn" v="Bu kredi limitinden şu anda&#10;borç alınan ve kullanılan tutar." />
+        <e k="bank_detail_info_rev_available" v="Kredi limitiniz dahilinde&#10;hâlâ çekilebilecek tutar." />
+        <e k="bank_detail_info_rev_conditions" v="Bu rotatif kredi limitine&#10;uygulanan finansman koşulları." />
+        <e k="bank_detail_info_rev_interest_month" v="Mevcut kullanılan bakiyeye göre&#10;tahmini aylık faiz." />
+        <e k="bank_detail_info_rev_interest_year" v="Mevcut kullanılan bakiyeye göre&#10;tahmini yıllık faiz." />
+        <e k="bank_detail_info_rev_duration" v="Rotatif kredi limitleri sabit bir vadeye sahip değildir.&#10;Kapatılana kadar açık kalırlar." />
+        <e k="bank_detail_info_rev_payment" v="Rotatif ödemeler değişkendir:&#10;kullanılan bakiye üzerinden aylık faiz ödersiniz.&#10;Anapara kendi hızınızda geri ödenir." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Düşük" />
+        <e k="bank_risk_moderate" v="Orta" />
+        <e k="bank_risk_high" v="Yüksek" />
+        <e k="bank_risk_critical" v="Kritik" />
+        <e k="bank_risk_refused" v="Reddedildi" />
+        <e k="bank_portfolio_scale_safe" v="Sa&#287;l&#305;kl&#305;" />
+        <e k="bank_portfolio_scale_risky" v="Riskli" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d yıl" />
+        <e k="bank_format_monthsShort" v="%d ay" />
+        <e k="bank_format_yearsMonths" v="%d y. %d a." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Kredi başvurusunda bulunmak için bir çiftliğe sahip olmanız gerekir." />
+        <e k="bank_error_insufficientFunds" v="Erken ödeme için yetersiz bakiye." />
+        <e k="bank_error_partialRepayMin" v="Minimum kısmi geri ödeme: %s (başlangıç sermayesinin %% 10u)." />
+        <e k="bank_confirm_earlyRepay" v="%s tutarını %s cezayla ödemek istiyor musunuz?&#10;Toplam: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="KREDİ AYRINTILARI" />
+        <e k="bank_detail_title" v="KREDİ NO. %d" />
+        <e k="bank_detail_label_amount" v="Tutar" />
+        <e k="bank_detail_label_rate" v="Faiz" />
+        <e k="bank_detail_label_type" v="Tür" />
+        <e k="bank_detail_label_risk" v="Risk" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Kredi sözleşmesinin imzalanması sırasında alınan toplam tutar. Bu tutar sözleşme süresince değişmez." />
+        <e k="bank_detail_info_rate" v="Bu krediye uygulanan yıllık faiz oranı. Bankanın baz oranını ve olası bir risk primini içerir." />
+        <e k="bank_detail_info_type" v="Kredinin geri ödeme biçimi&#10;Eşit taksitli: her ay aynı olan sabit aylık taksit&#10;Bullet: yalnızca aylık faiz, anapara sonda&#10;Rotatif: açık kredi limiti, sabit vade yok" />
+        <e k="bank_detail_info_risk" v="Onay sırasında banka tarafından değerlendirilen risk düzeyi. DSCR, LTV ve geçmişinize bağlıdır. Daha yüksek risk, faiz oranına prim eklenmesine yol açar." />
+        <e k="bank_detail_info_dscr" v="Borç servis karşılama oranı&#10;Gelirler &#247; toplam aylık borç ödemeleri.&#10;1,5 üzeri = rahat&#10;1,0&#8211;1,5 = sıkışık&#10;1,0 altı = gelirler borcu karşılamıyor&#10;&#10;Geliştirmek için:&#10;Mevcut kredileri geri ödeyin (taksitleri azaltır)&#10;Çiftlik gelirlerini artırın (satış, ekin, hayvancılık)&#10;Daha düşük bir tutar talep edin&#10;Vadeyi uzatın (taksiti azaltır)" />
+        <e k="bank_detail_info_ltv" v="Kredi/değer oranı&#10;Kredi tutarının varlıklarınızın değerine bölümü.&#10;Düşük olması banka için daha güvenlidir.&#10;%80 üzeri = yüksek risk." />
+
+        <e k="bank_detail_info_hint" v="Daha fazla ayrıntı için bir alana tıklayın" />
+
+        <e k="bank_detail_col_period" v="No." />
+        <e k="bank_detail_col_payment" v="Taksit" />
+        <e k="bank_detail_col_interest" v="Faiz" />
+        <e k="bank_detail_col_principal" v="Anapara" />
+        <e k="bank_detail_col_balance" v="Bakiye" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="YENİ KREDİ" />
+        <e k="bank_wizard_step1_title" v="Adım 1 — Kredi yapılandırma" />
+        <e k="bank_wizard_step2_title" v="Adım 2 — Özet ve onay" />
+        <e k="bank_wizard_card_rates" v="FAİZ ORANLARI" />
+        <e k="bank_wizard_card_cost" v="MALİYET" />
+        <e k="bank_wizard_label_loanType" v="Kredi türü" />
+        <e k="bank_wizard_label_amount" v="Tutar" />
+        <e k="bank_wizard_label_duration" v="Vade" />
+        <e k="bank_wizard_limit" v="Kullanılabilir limit (kredi kararına bağlı): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Tahmini aylık taksit: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Baz oran" />
+        <e k="bank_wizard_recap_typeSpread" v="Ürün primi" />
+        <e k="bank_wizard_recap_surcharge" v="Risk primi" />
+        <e k="bank_wizard_recap_monthly" v="Aylık taksit" />
+        <e k="bank_wizard_recap_totalInterest" v="Toplam faiz" />
+        <e k="bank_wizard_recap_totalCost" v="Toplam maliyet" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (geri ödeme kapasitesi)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (kredi / varlıklar)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (efektif yıllık faiz oranı)" />
+        <e k="bank_wizard_recap_risk" v="Risk düzeyi" />
+        <e k="bank_wizard_recap_risk_section" v="Risk" />
+        <e k="bank_wizard_indicativeRate" v="Gösterge oran: %s (risksiz)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Talep edilen tutar, kullanılabilir kredi limitinizi aşıyor." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Talep edilen tutar, çiftlik başına yoğunlaşma limitini aşıyor (toplam banka kapasitesinin %25'i)." />
+        <e k="bank_wizard_warn_refused" v="Kredi reddedildi: finansal profiliniz asgari gereksinimleri karşılamıyor." />
+        <e k="bank_wizard_warn_invalidAmount" v="Geçersiz tutar: pozitif bir değer seçin." />
+        <e k="bank_wizard_warn_critical50" v="Yüksek risk: kullandırılacak tutar talebinizin %50'si ile sınırlandırılacaktır." />
+        <e k="bank_wizard_hint_refused" v="Ret nedenini anlamak için DSCR'ye veya Risk Düzeyine tıklayın." />
+        <e k="bank_wizard_totalCostPreview" v="Toplam geri ödeme: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="bunun ~%s'ı faiz" />
+        <e k="bank_wizard_amountCapped" v="Talep edilen: %s  &#8594;  Onaylanan: %s" />
+        <e k="bank_wizard_btn_prev" v="Önceki" />
+        <e k="bank_wizard_btn_next" v="Sonraki" />
+        <e k="bank_wizard_btn_confirm" v="Onayla" />
+        <e k="bank_wizard_confirm_msg" v="%s tutarında %s faizle kredi onaylanıyor mu?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Kredinize uygulanan faiz oranının ayrıntısı.&#10;Nihai EIR; baz oran, ürün primi ve risk priminin toplamıdır." />
+        <e k="bank_wizard_info_baseRate" v="Banka tarafından belirlenen referans oran; tüm borçlular için aynıdır.&#10;Sunucu ayarlarına göre değişir." />
+        <e k="bank_wizard_info_typeSpread" v="Seçilen kredi türüne bağlı faiz spreadi.&#10;Eşit taksitli = %0 : her ödemede ana para azalır.&#10;Bullet: tüm ana para vadeye kadar risk altında.&#10;Rotatif: sabit vade tarihi olmaksızın sermaye daima kullanılabilir." />
+        <e k="bank_wizard_info_surcharge" v="Risk düzeyinize göre uygulanan ek ücret.&#10;Profiliniz ne kadar riskli olursa bu ücret o kadar yüksek olur." />
+        <e k="bank_wizard_info_effectiveRate" v="Efektif yıllık faiz oranı (EYFR): kredinizin gerçek yıllık maliyeti.&#10;Baz oranı, ürün primini ve risk primini birleştirir." />
+        <e k="bank_wizard_info_risk_section" v="Bankanın kredinize ilişkin risk değerlendirmesi.&#10;Bu göstergeler, kredinin verilip verilmeyeceğini ve hangi koşullarda verileceğini belirler." />
+        <e k="bank_wizard_info_cost" v="Kredinizin toplam maliyetinin özeti.&#10;Aylık taksit, birikmiş faiz ve geri ödenecek toplam tutarı karşılaştırır." />
+        <e k="bank_wizard_info_monthly" v="Her ay nakit akışınızdan düşülen tutar.&#10;Eşit taksitli kredi için anapara ve faiz içerir.&#10;Bullet kredi için yalnızca faiz düşülür." />
+        <e k="bank_wizard_info_totalInterest" v="Kredi süresi boyunca ödenen tüm faizlerin toplamı.&#10;Vade ne kadar uzun olursa bu tutar o kadar yüksek olur." />
+        <e k="bank_wizard_info_totalCost" v="Kredi sonunda geri ödenen toplam tutar.&#10;Borç alınan anapara ile toplam faizin toplamına eşittir." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Banka &amp; Kredi" />
+        <e k="bank_setting_initialCapital" v="Başlangıç sermayesi" />
+        <e k="bank_toolTip_initialCapital" v="Her çiftlik için bankacılık işlemlerine tahsis edilen başlangıç kredi tutarı." />
+        <e k="bank_setting_leverageRatio" v="Kaldıraç oranı" />
+        <e k="bank_toolTip_leverageRatio" v="Mevcut özkaynaklara göre maksimum borç çarpanını belirler. Örn. 10x → maks. kredi = özkaynak × 10." />
+        <e k="bank_setting_dynamicRate" v="Dinamik faiz oranı" />
+        <e k="bank_toolTip_dynamicRate" v="Etkin: baz oran her yıl değişir (±%0,25, aralık %1–12). Risk primleri her zaman uygulanır." />
+        <e k="bank_setting_baseInterestRate" v="Baz oran" />
+        <e k="bank_toolTip_baseInterestRate" v="Risk priminden önce tüm kredilere uygulanan yıllık baz oran." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Erken ödeme cezası" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Kredinin erken ödenmesi durumunda kalan anaparadan alınan ceza yüzdesi." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Yıl %d — %s" />
+        <e k="bank_report_title_default" v="YILLIK RAPOR" />
+        <e k="bank_report_section_costs" v="Finansal akışlar" />
+        <e k="bank_report_section_activity" v="Aktivite" />
+        <e k="bank_report_interestPaid" v="· Ödenen faiz" />
+        <e k="bank_report_principalPaid" v="· Geri ödenen anapara" />
+        <e k="bank_report_totalPaid" v="Toplam ödenen" />
+        <e k="bank_report_avgMonthly" v="· Ortalama aylık taksit" />
+        <e k="bank_report_loansOpened" v="· Açılan krediler" />
+        <e k="bank_report_loansClosed" v="· Kapatılan krediler" />
+        <e k="bank_report_loansActive" v="· Aktif krediler" />
+        <e k="bank_report_outstanding" v="Toplam borç" />
+        <e k="bank_report_noData" v="Yıllık rapor verisi mevcut değil." />
+        <e k="bank_report_btnNext" v="Yıl +" />
+        <e k="bank_report_btnPrev" v="Yıl -" />
+        <e k="bank_btn_report" v="Yıllık rapor" />
+    </elements>
+</l10n>

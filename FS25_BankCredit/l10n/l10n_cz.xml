@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Banka &amp; Úvěry" />
+        <e k="bank_label_interest" v="Úroky z půjčky" />
+        <e k="bank_label_principal" v="Jistina (půjčka)" />
+        <e k="finance_bankLoanInterest" v="Bankovní úroky" />
+        <e k="finance_bankLoanPrincipal" v="Jistina (půjčka)" />
+        <e k="bank_vanilla_loan_cleared" v="Byl nalezen stávající úvěr ve výši %s a automaticky splacen.&#10;Částka byla odečtena z vašeho zůstatku.&#10;&#10;Použijte nabídku Banka pro sjednání nového úvěru." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANKA" />
+        <e k="bank_empty_list" v="Žádné aktivní půjčky k zobrazení." />
+        <e k="bank_empty_paid" v="Žádné splacené půjčky k zobrazení." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktivní půjčky" />
+        <e k="bank_tab_paid" v="Dokončené půjčky" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Dostupný úvěr" />
+        <e k="bank_dash_available_sub" v="(závisí na schválení)" />
+        <e k="bank_dash_outstanding" v="Aktuální dluh" />
+        <e k="bank_dash_outstanding_sub" v="%d%% úvěrového stropu využito" />
+        <e k="bank_dash_monthlyTotal" v="Celková měsíční splátka" />
+        <e k="bank_dash_monthlyTotal_sub" v="(celková měsíční úhrada)" />
+        <e k="bank_dash_rate" v="Aktuální sazba" />
+        <e k="bank_dash_rate_sub" v="(základní sazba, bez příplatků)" />
+        <e k="bank_dash_equity" v="Vlastní kapitál" />
+        <e k="bank_dash_capacity" v="Celková úvěrová kapacita" />
+        <e k="bank_dash_outstanding_label" v="Celkový dluh (všechny farmy)" />
+        <e k="bank_dash_utilization" v="Míra využití" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Bankovní ukazatele"/>
+        <e k="bank_btn_indicators" v="Bankovní ukazatele"/>
+        <e k="bank_dash_leverage" v="Pákový poměr" />
+        <e k="bank_dash_coverage" v="Krytí rizik" />
+        <e k="bank_dash_provision" v="Riziková rezerva" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Rozvaha" />
+        <e k="bank_health_sectionRisk" v="Portfolio &amp; Riziko" />
+        <e k="bank_health_sectionPortfolio" v="Rozložení portfolia" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Interní ukazatele banky. Přehled finanční stability banky: vlastní kapitál, úvěrová kapacita, využití a pákový poměr." />
+        <e k="bank_info_risk" v="Interní ukazatele banky. Měří schopnost banky krýt potenciální ztráty a koncentraci vaší farmy v portfoliu." />
+        <e k="bank_info_portfolio" v="Rozložení probíhajících půjček podle rizikové úrovně. Více rizikových půjček znamená méně dostupného úvěru." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Vlastní kapitál banky tvořený počátečním kapitálem a naakumulovanými úroky.&#10;Každá vámi zaplacená úroková splátka posiluje banku a zvyšuje její úvěrovou kapacitu." />
+        <e k="bank_info_capacity" v="Maximální částka, kterou může banka půjčit všem farmám dohromady.&#10;Rovná se vlastnímu kapitálu násobenému pákovým poměrem.&#10;Je-li vyčerpána, nové půjčky nelze poskytnout." />
+        <e k="bank_info_outstanding" v="Součet všech zbývajících jistin dlužných na všech farmách serveru.&#10;Používá se pro výpočet míry využití banky.&#10;Čím vyšší je tato částka, tím nižší je dostupná úvěrová kapacita." />
+        <e k="bank_info_utilization" v="Procento celkové kapacity aktuálně zapůjčené.&#10;Pod 50 % = zdravé&#10;50–80 % = napnuté&#10;Nad 80 % = velmi omezený úvěr" />
+        <e k="bank_info_leverage" v="Násobitel aplikovaný na vlastní kapitál pro určení úvěrové kapacity.&#10;Např. 10x = každé 1 € vlastního kapitálu kryje 10 € půjček.&#10;Nastavuje administrátor serveru." />
+        <e k="bank_info_coverage" v="Měří, zda má banka dostatečné rezervy na pokrytí rizik svého úvěrového portfolia.&#10;Výpočet: Vlastní kapitál ÷ Opravné položky.&#10;Nad 1,5x = zdravé&#10;1,0–1,5x = pozornost&#10;Pod 1,0x = kritické&#10;Příliš nízký poměr může zablokovat schválení nových půjček." />
+        <e k="bank_info_provision" v="Rezervy vytvořené k absorpci možných úvěrových ztrát.&#10;Vysoce rizikové půjčky vyžadují vyšší opravné položky, čímž přímo snižují efektivní úvěrovou kapacitu.&#10;Jde o interní rezervu banky, nikoli o vrácení hráčských půjček." />
+
+        <e k="bank_info_hint" v="Klikněte na název nebo ukazatel pro více podrobností" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Typ" />
+        <e k="bank_col_amount" v="Počáteční částka" />
+        <e k="bank_col_monthly" v="Měsíční splátka" />
+        <e k="bank_col_rate" v="Sazba" />
+        <e k="bank_col_remaining" v="Zbývající doba" />
+        <e k="bank_col_rest" v="Zbývající jistina" />
+        <e k="bank_col_status" v="Stav" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktivní" />
+        <e k="bank_status_paid" v="Splaceno" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Nová půjčka" />
+        <e k="bank_btn_details" v="Podrobnosti půjčky" />
+        <e k="bank_btn_earlyRepay" v="Splatit" />
+        <e k="bank_btn_repayLine" v="Splatit linku" />
+        <e k="bank_btn_close" v="Zrušit úvěrovou linku" />
+        <e k="bank_btn_back" v="Zavřít" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Anuitní" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Revolvingový" />
+        <e k="bank_loanType_annuity_desc" v="Fixní měsíční splátka, každý měsíc stejná, kombinující úroky a jistinu.&#10;Výše splátky se po celou dobu trvání smlouvy nemění." />
+        <e k="bank_loanType_bullet_desc" v="Každý měsíc platíte pouze úroky.&#10;Celá jistina je splacena jednorázově na konci splatnosti.&#10;Nízké měsíční splátky, ale plánujte likviditu na konci." />
+        <e k="bank_loanType_revolving_desc" v="Trvalá úvěrová linka do výše schváleného limitu.&#10;Čerpejte, co potřebujete, splácejte volně,&#10;bez fixní splátky ani pevného data ukončení." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Čerpat" />
+        <e k="bank_revolving_status_open" v="Otevřená" />
+        <e k="bank_revolving_status_available" v="Dostupná" />
+        <e k="bank_revolving_noDuration" v="Bez pevné doby" />
+        <e k="bank_revolving_variablePayment" v="Variabilní" />
+        <e k="bank_revolving_estimatedInterest" v="Odh. úroky (1 rok)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / rok max." />
+        <e k="bank_revolving_commitmentFee" v="Poplatek za nevyčerpání" />
+        <e k="bank_confirm_draw" v="Částka k čerpání (max. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Částka ke splacení (max. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Částka ke splacení (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Zrušit tuto úvěrovou linku? Tato akce je nevratná." />
+        <e k="bank_detail_revolving_limit" v="Limit" />
+        <e k="bank_detail_revolving_drawn" v="Vyčerpaný zůstatek" />
+        <e k="bank_detail_revolving_available" v="Dostupné" />
+        <e k="bank_detail_rev_utilization" v="Využití" />
+        <e k="bank_detail_rev_conditions" v="Podmínky" />
+        <e k="bank_detail_rev_interest_month" v="Úroky / měsíc" />
+        <e k="bank_detail_rev_interest_year" v="Úroky / rok" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Roční poplatek 1 % z nevyčerpané části linky. Účtován měsíčně z nevyužité dostupné částky. Zobrazuje maximální částku (linka plně nevyčerpána)." />
+        <e k="bank_detail_rev_duration" v="Doba" />
+        <e k="bank_detail_rev_payment" v="Splátka" />
+        <e k="bank_detail_info_rev_utilization" v="Přehled čerpání vaší revolvingové úvěrové linky.&#10;Limit je maximální povolená částka.&#10;Vyčerpaný zůstatek je aktuálně půjčená částka." />
+        <e k="bank_detail_info_rev_limit" v="Maximální částka, kterou si můžete půjčit&#10;na této revolvingové úvěrové lince." />
+        <e k="bank_detail_info_rev_drawn" v="Aktuálně půjčená a využívaná částka&#10;na této úvěrové lince." />
+        <e k="bank_detail_info_rev_available" v="Stále dostupná částka k čerpání&#10;v rámci vašeho úvěrového limitu." />
+        <e k="bank_detail_info_rev_conditions" v="Finanční podmínky platné&#10;pro tuto revolvingovou úvěrovou linku." />
+        <e k="bank_detail_info_rev_interest_month" v="Odhadované měsíční úroky&#10;na základě aktuálního vyčerpaného zůstatku." />
+        <e k="bank_detail_info_rev_interest_year" v="Odhadované roční úroky&#10;na základě aktuálního vyčerpaného zůstatku." />
+        <e k="bank_detail_info_rev_duration" v="Revolvingové úvěrové linky nemají pevnou dobu trvání.&#10;Zůstávají otevřené, dokud nejsou zrušeny." />
+        <e k="bank_detail_info_rev_payment" v="Splátky revolvingu jsou variabilní:&#10;platíte měsíční úroky z vyčerpaného zůstatku.&#10;Jistinu splácíte vlastním tempem." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Nízké" />
+        <e k="bank_risk_moderate" v="Střední" />
+        <e k="bank_risk_high" v="Vysoké" />
+        <e k="bank_risk_critical" v="Kritické" />
+        <e k="bank_risk_refused" v="Zamítnuto" />
+        <e k="bank_portfolio_scale_safe" v="Zdravé" />
+        <e k="bank_portfolio_scale_risky" v="Rizikové" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d let" />
+        <e k="bank_format_monthsShort" v="%d měs." />
+        <e k="bank_format_yearsMonths" v="%d r. %d m." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Pro žádost o půjčku musíte vlastnit farmu." />
+        <e k="bank_error_insufficientFunds" v="Nedostatek prostředků pro předčasné splacení." />
+        <e k="bank_error_partialRepayMin" v="Minimální částečné splacení: %s (10 %% původního kapitálu)." />
+        <e k="bank_confirm_earlyRepay" v="Splatit %s s poplatkem %s?&#10;Celkem: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="DETAIL PŮJČKY" />
+        <e k="bank_detail_title" v="PŮJČKA č. %d" />
+        <e k="bank_detail_label_amount" v="Částka" />
+        <e k="bank_detail_label_rate" v="Sazba" />
+        <e k="bank_detail_label_type" v="Typ" />
+        <e k="bank_detail_label_risk" v="Riziko" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Celková půjčená částka v okamžiku podpisu smlouvy. Tato částka se po dobu trvání smlouvy nemění." />
+        <e k="bank_detail_info_rate" v="Roční úroková sazba uplatněná na tuto půjčku. Zahrnuje základní sazbu banky plus případný příplatek za riziko." />
+        <e k="bank_detail_info_type" v="Způsob splácení půjčky&#10;Anuitní: fixní měsíční splátka, každý měsíc stejná&#10;Bullet: měsíčně jen úroky, jistina splacena na konci&#10;Revolvingový: otevřená úvěrová linka, bez pevné doby" />
+        <e k="bank_detail_info_risk" v="Riziková úroveň hodnocená bankou při schválení. Závisí na DSCR, LTV a vaší historii. Vyšší riziko znamená příplatek k sazbě." />
+        <e k="bank_detail_info_dscr" v="Ukazatel krytí dluhové služby&#10;Příjmy &#247; celkové měsíční splátky dluhů.&#10;Nad 1,5 = komfortní&#10;1,0&#8211;1,5 = napjaté&#10;Pod 1,0 = příjmy nekryjí dluhy&#10;&#10;Pro zlepšení:&#10;Splatit stávající půjčky (snižuje splátky)&#10;Zvýšit příjmy farmy (prodeje, plodiny, chov)&#10;Požádat o nižší částku&#10;Prodloužit dobu (snižuje splátku)" />
+        <e k="bank_detail_info_ltv" v="Poměr půjčky k hodnotě&#10;Výše půjčky dělená hodnotou vašich aktiv.&#10;Nižší hodnota je pro banku bezpečnější.&#10;Nad 80 % = vysoké riziko." />
+
+        <e k="bank_detail_info_hint" v="Klikněte na název pro více podrobností" />
+
+        <e k="bank_detail_col_period" v="Č." />
+        <e k="bank_detail_col_payment" v="Splátka" />
+        <e k="bank_detail_col_interest" v="Úroky" />
+        <e k="bank_detail_col_principal" v="Jistina" />
+        <e k="bank_detail_col_balance" v="Zbytek" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="NOVÁ PŮJČKA" />
+        <e k="bank_wizard_step1_title" v="Krok 1 — Konfigurace půjčky" />
+        <e k="bank_wizard_step2_title" v="Krok 2 — Souhrn a potvrzení" />
+        <e k="bank_wizard_card_rates" v="SAZBY" />
+        <e k="bank_wizard_card_cost" v="NÁKLADY" />
+        <e k="bank_wizard_label_loanType" v="Typ půjčky" />
+        <e k="bank_wizard_label_amount" v="Částka" />
+        <e k="bank_wizard_label_duration" v="Délka" />
+        <e k="bank_wizard_limit" v="Dostupný limit (závisí na schválení): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Odhadovaná splátka: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Základní sazba" />
+        <e k="bank_wizard_recap_typeSpread" v="Produktová marže" />
+        <e k="bank_wizard_recap_surcharge" v="Rizikový příplatek" />
+        <e k="bank_wizard_recap_monthly" v="Měsíční splátka" />
+        <e k="bank_wizard_recap_totalInterest" v="Celkové úroky" />
+        <e k="bank_wizard_recap_totalCost" v="Celkové náklady" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (schopnost splácet)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (půjčka / aktiva)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (efektivní sazba)" />
+        <e k="bank_wizard_recap_risk" v="Riziková úroveň" />
+        <e k="bank_wizard_recap_risk_section" v="Riziko" />
+        <e k="bank_wizard_indicativeRate" v="Indikativní sazba: %s (bez rizika)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Požadovaná částka překračuje váš dostupný úvěrový limit." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Požadovaná částka překračuje limit koncentrace na farmu (25 % celkové kapacity banky)." />
+        <e k="bank_wizard_warn_refused" v="Půjčka zamítnuta: váš finanční profil nesplňuje minimální požadavky." />
+        <e k="bank_wizard_warn_invalidAmount" v="Neplatná částka: vyberte kladnou hodnotu." />
+        <e k="bank_wizard_warn_critical50" v="Vysoké riziko: vyplacená částka bude omezena na 50 % vaší žádosti." />
+        <e k="bank_wizard_hint_refused" v="Klikněte na DSCR nebo Úroveň rizika, abyste pochopili důvod zamítnutí." />
+        <e k="bank_wizard_totalCostPreview" v="Celkem ke splacení: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="z toho ~%s úroků" />
+        <e k="bank_wizard_amountCapped" v="Požadováno: %s  &#8594;  Schváleno: %s" />
+        <e k="bank_wizard_btn_prev" v="Zpět" />
+        <e k="bank_wizard_btn_next" v="Další" />
+        <e k="bank_wizard_btn_confirm" v="Potvrdit" />
+        <e k="bank_wizard_confirm_msg" v="Potvrdit půjčku %s při sazbě %s?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Rozklad úrokové sazby uplatněné na vaši půjčku.&#10;Výsledný EIR je součtem základní sazby, produktové marže a rizikového příplatku." />
+        <e k="bank_wizard_info_baseRate" v="Referenční sazba stanovená bankou, stejná pro všechny dlužníky.&#10;Mění se podle nastavení serveru." />
+        <e k="bank_wizard_info_typeSpread" v="Přirážka k sazbě podle zvoleného typu půjčky.&#10;Anuitní = 0 % : kapitál klesá s každou splátkou.&#10;Bullet: celý kapitál exponován až do splatnosti.&#10;Revolvingový: kapitál trvale dostupný bez pevného data splatnosti." />
+        <e k="bank_wizard_info_surcharge" v="Přirážka aplikovaná podle vaší rizikové úrovně.&#10;Čím rizikovější váš profil, tím vyšší tento příplatek." />
+        <e k="bank_wizard_info_effectiveRate" v="Efektivní úroková sazba: skutečné roční náklady vaší půjčky.&#10;Kombinuje základní sazbu, produktovou marži a rizikový příplatek." />
+        <e k="bank_wizard_info_risk_section" v="Hodnocení rizika vaší půjčky bankou.&#10;Tyto ukazatele určují, zda je půjčka poskytnuta a za jakých podmínek." />
+        <e k="bank_wizard_info_cost" v="Souhrn celkových nákladů vaší půjčky.&#10;Porovnává měsíční splátku, kumulativní úroky a celkovou splatnou částku." />
+        <e k="bank_wizard_info_monthly" v="Částka odečtená z vaší hotovosti každý měsíc.&#10;U anuitní půjčky zahrnuje jistinu i úroky.&#10;U bullet půjčky jsou odečteny pouze úroky." />
+        <e k="bank_wizard_info_totalInterest" v="Součet všech úroků, které zaplatíte po dobu trvání půjčky.&#10;Čím delší doba, tím vyšší tato částka." />
+        <e k="bank_wizard_info_totalCost" v="Celková částka, kterou splatíte do konce půjčky.&#10;Rovná se půjčené jistině plus celkovým úrokům." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Banka &amp; Úvěry" />
+        <e k="bank_setting_initialCapital" v="Počáteční kapitál" />
+        <e k="bank_toolTip_initialCapital" v="Počáteční výše úvěru přidělená každé farmě pro její bankovní operace." />
+        <e k="bank_setting_leverageRatio" v="Pákový poměr" />
+        <e k="bank_toolTip_leverageRatio" v="Definuje maximální násobek zadlužení vůči vlastnímu kapitálu. Např. 10x → max. úvěr = 10× vlastní kapitál." />
+        <e k="bank_setting_dynamicRate" v="Dynamická sazba" />
+        <e k="bank_toolTip_dynamicRate" v="Zapnuto: základní sazba se každoročně mění (±0,25 %, rozsah 1–12 %). Rizikové příplatky zůstávají aktivní." />
+        <e k="bank_setting_baseInterestRate" v="Základní úroková sazba" />
+        <e k="bank_toolTip_baseInterestRate" v="Roční základní úroková sazba uplatněná na všechny půjčky před rizikovým příplatkem." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Poplatek za předčasné splacení" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Procento zbývající jistiny účtované jako pokuta v případě předčasného splacení." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Rok %d — %s" />
+        <e k="bank_report_title_default" v="VÝROČNÍ ZPRÁVA" />
+        <e k="bank_report_section_costs" v="Finanční toky" />
+        <e k="bank_report_section_activity" v="Aktivita" />
+        <e k="bank_report_interestPaid" v="· Zaplacené úroky" />
+        <e k="bank_report_principalPaid" v="· Splacená jistina" />
+        <e k="bank_report_totalPaid" v="Celkem zaplaceno" />
+        <e k="bank_report_avgMonthly" v="· Průměrná měsíční splátka" />
+        <e k="bank_report_loansOpened" v="· Nové půjčky" />
+        <e k="bank_report_loansClosed" v="· Splacené půjčky" />
+        <e k="bank_report_loansActive" v="· Probíhající půjčky" />
+        <e k="bank_report_outstanding" v="Celkový dluh" />
+        <e k="bank_report_noData" v="Nejsou k dispozici žádná data výroční zprávy." />
+        <e k="bank_report_btnNext" v="Rok +" />
+        <e k="bank_report_btnPrev" v="Rok -" />
+        <e k="bank_btn_report" v="Výroční zpráva" />
+    </elements>
+</l10n>

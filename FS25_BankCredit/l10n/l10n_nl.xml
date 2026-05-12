@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bank &amp; Krediet" />
+        <e k="bank_label_interest" v="Leningrente" />
+        <e k="bank_label_principal" v="Leningkapitaal" />
+        <e k="finance_bankLoanInterest" v="Bankrente" />
+        <e k="finance_bankLoanPrincipal" v="Leningkapitaal" />
+        <e k="bank_vanilla_loan_cleared" v="Een bestaande lening van %s is gedetecteerd en automatisch terugbetaald.&#10;Het bedrag is van uw saldo afgetrokken.&#10;&#10;Gebruik het Bankmenu om een nieuwe lening aan te vragen." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANK" />
+        <e k="bank_empty_list" v="Geen actieve leningen om weer te geven." />
+        <e k="bank_empty_paid" v="Geen afgeloste leningen om weer te geven." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Actieve leningen" />
+        <e k="bank_tab_paid" v="Beëindigde leningen" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Beschikbaar krediet" />
+        <e k="bank_dash_available_sub" v="(afhankelijk van goedkeuring)" />
+        <e k="bank_dash_outstanding" v="Huidige schuld" />
+        <e k="bank_dash_outstanding_sub" v="%d%% van de kredietlimiet gebruikt" />
+        <e k="bank_dash_monthlyTotal" v="Totale maandelijkse aflossing" />
+        <e k="bank_dash_monthlyTotal_sub" v="(totale maandelijkse afschrijving)" />
+        <e k="bank_dash_rate" v="Huidige rente" />
+        <e k="bank_dash_rate_sub" v="(basisrente, zonder toeslagen)" />
+        <e k="bank_dash_equity" v="Eigen vermogen" />
+        <e k="bank_dash_capacity" v="Totale kredietcapaciteit" />
+        <e k="bank_dash_outstanding_label" v="Totale schuld (alle boerderijen)" />
+        <e k="bank_dash_utilization" v="Benuttigingsgraad" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Bankindicatoren"/>
+        <e k="bank_btn_indicators" v="Bankindicatoren"/>
+        <e k="bank_dash_leverage" v="Hefboomwerking" />
+        <e k="bank_dash_coverage" v="Risicodekking" />
+        <e k="bank_dash_provision" v="Risicoreserve" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Balans" />
+        <e k="bank_health_sectionRisk" v="Portefeuille &amp; Risico" />
+        <e k="bank_health_sectionPortfolio" v="Portefeuilleverdeling" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Interne bankmetingen. Overzicht van de financiële basis van de bank: eigen vermogen, kredietcapaciteit, benutting en hefboomwerking." />
+        <e k="bank_info_risk" v="Interne bankmetingen. Meet het vermogen van de bank om potentiële verliezen te dekken en de concentratie van uw boerderij in de portefeuille." />
+        <e k="bank_info_portfolio" v="Verdeling van lopende leningen per risiconiveau. Meer risicovolle leningen betekent minder beschikbaar krediet." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Het eigen vermogen van de bank, samengesteld uit het beginkapitaal en de geaccumuleerde renteopbrengsten.&#10;Elke betaalde rente versterkt de bank en vergroot haar kredietcapaciteit." />
+        <e k="bank_info_capacity" v="Het maximale bedrag dat de bank in totaal aan alle boerderijen kan uitlenen.&#10;Gelijk aan eigen vermogen maal de hefboomwerking.&#10;Wanneer uitgeput, kunnen geen nieuwe leningen worden verstrekt." />
+        <e k="bank_info_outstanding" v="Som van alle uitstaande hoofdsommen over alle boerderijen op de server.&#10;Gebruikt om de benuttigingsgraad van de bank te berekenen.&#10;Hoe hoger dit bedrag, hoe lager de beschikbare kredietcapaciteit." />
+        <e k="bank_info_utilization" v="Percentage van de totale capaciteit dat momenteel is uitgeleend.&#10;Onder 50% = gezond&#10;50-80% = krap&#10;Boven 80% = krediet zeer beperkt" />
+        <e k="bank_info_leverage" v="De vermenigvuldiger op eigen vermogen om de kredietcapaciteit te bepalen.&#10;Bijv. 10x = elke 1 € eigen vermogen ondersteunt 10 € leningen.&#10;Ingesteld door de serverbeheerder." />
+        <e k="bank_info_coverage" v="Meet of de bank voldoende reserves heeft om de risico's van haar leningenportefeuille te dekken.&#10;Berekening: Eigen vermogen ÷ Kredietverliesvoorzieningen.&#10;Boven 1,5x = gezond&#10;1,0–1,5x = let op&#10;Onder 1,0x = kritiek&#10;Een te lage ratio kan de goedkeuring van nieuwe leningen blokkeren." />
+        <e k="bank_info_provision" v="Gereserveerde fondsen voor mogelijke leningverliezen.&#10;Hoog-risicoleningen vereisen grotere voorzieningen, wat de effectieve kredietcapaciteit van de bank direct vermindert.&#10;Dit is een interne bankreserve, geen terugbetaling van spelersleningen." />
+
+        <e k="bank_info_hint" v="Klik op een titel of indicator voor meer details" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Type" />
+        <e k="bank_col_amount" v="Oorspronkelijk bedrag" />
+        <e k="bank_col_monthly" v="Maandelijkse aflossing" />
+        <e k="bank_col_rate" v="Rente" />
+        <e k="bank_col_remaining" v="Resterende looptijd" />
+        <e k="bank_col_rest" v="Resterend kapitaal" />
+        <e k="bank_col_status" v="Status" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Actief" />
+        <e k="bank_status_paid" v="Afgelost" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Nieuwe lening" />
+        <e k="bank_btn_details" v="Leningdetails" />
+        <e k="bank_btn_earlyRepay" v="Aflossen" />
+        <e k="bank_btn_repayLine" v="Lijn aflossen" />
+        <e k="bank_btn_close" v="Kredietlijn sluiten" />
+        <e k="bank_btn_back" v="Sluiten" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Annuïteit" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Revolverend" />
+        <e k="bank_loanType_annuity_desc" v="Vaste maandelijkse aflossing, elke maand hetzelfde, rente en kapitaal gecombineerd.&#10;Het bedrag verandert nooit gedurende de hele looptijd." />
+        <e k="bank_loanType_bullet_desc" v="Maandelijks alleen rente betalen.&#10;Het volledige kapitaal wordt in één keer terugbetaald op de vervaldatum.&#10;Lage maandelijkse aflossingen, maar plan uw kasstroom op de vervaldatum." />
+        <e k="bank_loanType_revolving_desc" v="Permanente kredietlijn tot het goedgekeurde maximum.&#10;Trek op wat u nodig heeft, betaal vrij terug,&#10;geen vaste aflossing of vervaldatum." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Opnemen" />
+        <e k="bank_revolving_status_open" v="Open" />
+        <e k="bank_revolving_status_available" v="Beschikbaar" />
+        <e k="bank_revolving_noDuration" v="Geen vaste looptijd" />
+        <e k="bank_revolving_variablePayment" v="Variabel" />
+        <e k="bank_revolving_estimatedInterest" v="Gesch. rente (1 jaar)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / jr max" />
+        <e k="bank_revolving_commitmentFee" v="Provisie" />
+        <e k="bank_confirm_draw" v="Op te nemen bedrag (max. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Terug te betalen bedrag (max. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Terug te betalen bedrag (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Deze kredietlijn sluiten? Deze actie kan niet ongedaan worden gemaakt." />
+        <e k="bank_detail_revolving_limit" v="Kredietlimiet" />
+        <e k="bank_detail_revolving_drawn" v="Opgenomen saldo" />
+        <e k="bank_detail_revolving_available" v="Beschikbaar" />
+        <e k="bank_detail_rev_utilization" v="Benutting" />
+        <e k="bank_detail_rev_conditions" v="Voorwaarden" />
+        <e k="bank_detail_rev_interest_month" v="Rente / maand" />
+        <e k="bank_detail_rev_interest_year" v="Rente / jaar" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Jaarlijkse vergoeding van 1% op het niet-opgenomen deel van de kredietlijn. Maandelijks in rekening gebracht op het ongebruikte beschikbare bedrag. Toont het maximumbedrag (lijn volledig niet opgenomen)." />
+        <e k="bank_detail_rev_duration" v="Looptijd" />
+        <e k="bank_detail_rev_payment" v="Betaling" />
+        <e k="bank_detail_info_rev_utilization" v="Detail van het gebruik van de revolverende kredietlijn.&#10;De limiet is het goedgekeurde maximum.&#10;Het opgenomen saldo is het momenteel geleende bedrag." />
+        <e k="bank_detail_info_rev_limit" v="Het maximale bedrag dat u kunt lenen&#10;van deze revolverende kredietlijn." />
+        <e k="bank_detail_info_rev_drawn" v="Het momenteel geleende en in gebruik zijnde bedrag&#10;op deze kredietlijn." />
+        <e k="bank_detail_info_rev_available" v="Het bedrag dat nog kan worden opgenomen&#10;binnen uw kredietlimiet." />
+        <e k="bank_detail_info_rev_conditions" v="De financieringsvoorwaarden die van toepassing zijn&#10;op deze revolverende kredietlijn." />
+        <e k="bank_detail_info_rev_interest_month" v="Geschatte maandelijkse rente&#10;op basis van het huidige opgenomen saldo." />
+        <e k="bank_detail_info_rev_interest_year" v="Geschatte jaarlijkse rente&#10;op basis van het huidige opgenomen saldo." />
+        <e k="bank_detail_info_rev_duration" v="Revolverende kredietlijnen hebben geen vaste looptijd.&#10;Ze blijven open totdat ze worden gesloten." />
+        <e k="bank_detail_info_rev_payment" v="Revolverende betalingen zijn variabel:&#10;u betaalt maandelijkse rente over het opgenomen saldo.&#10;Kapitaal wordt terugbetaald in uw eigen tempo." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Laag" />
+        <e k="bank_risk_moderate" v="Matig" />
+        <e k="bank_risk_high" v="Hoog" />
+        <e k="bank_risk_critical" v="Kritiek" />
+        <e k="bank_risk_refused" v="Geweigerd" />
+        <e k="bank_portfolio_scale_safe" v="Gezond" />
+        <e k="bank_portfolio_scale_risky" v="Riskant" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d jaar" />
+        <e k="bank_format_monthsShort" v="%d mnd" />
+        <e k="bank_format_yearsMonths" v="%d j. %d m." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="U moet een boerderij bezitten om een lening aan te vragen." />
+        <e k="bank_error_insufficientFunds" v="Onvoldoende middelen voor vervroegde aflossing." />
+        <e k="bank_error_partialRepayMin" v="Minimale gedeeltelijke terugbetaling: %s (10 %% van het oorspronkelijke kapitaal)." />
+        <e k="bank_confirm_earlyRepay" v="%s terugbetalen met een boete van %s?&#10;Totaal: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="LENINGDETAILS" />
+        <e k="bank_detail_title" v="LENING NR. %d" />
+        <e k="bank_detail_label_amount" v="Bedrag" />
+        <e k="bank_detail_label_rate" v="Rente" />
+        <e k="bank_detail_label_type" v="Type" />
+        <e k="bank_detail_label_risk" v="Risico" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Het totale geleende bedrag bij ondertekening van de leningovereenkomst. Dit bedrag wijzigt niet gedurende de looptijd." />
+        <e k="bank_detail_info_rate" v="De op deze lening toegepaste jaarrente. Bevat de basisrente van de bank en een eventuele risicopremie." />
+        <e k="bank_detail_info_type" v="De terugbetalingswijze van de lening&#10;Annuïteit: vaste maandelijkse aflossing, elke maand hetzelfde&#10;Bullet: maandelijks alleen rente, kapitaal aan het einde&#10;Revolverend: open kredietlijn, geen vaste looptijd" />
+        <e k="bank_detail_info_risk" v="Het risiconiveau dat de bank beoordeelde bij goedkeuring. Afhankelijk van DSCR, LTV en uw historiek. Hoger risico leidt tot een renteopslag." />
+        <e k="bank_detail_info_dscr" v="Schulddekkingsratio&#10;Inkomsten &#247; totale maandelijkse schuldaflossingen.&#10;Boven 1,5 = comfortabel&#10;1,0&#8211;1,5 = krap&#10;Onder 1,0 = inkomsten dekken de schulden niet&#10;&#10;Om te verbeteren:&#10;Bestaande leningen aflossen (verlaagt maandlasten)&#10;Boerderij-inkomsten verhogen (verkopen, gewassen, veeteelt)&#10;Een lager bedrag aanvragen&#10;Looptijd verlengen (verlaagt maandlast)" />
+        <e k="bank_detail_info_ltv" v="Loan-to-value ratio&#10;Leningbedrag gedeeld door de waarde van uw activa.&#10;Lager is veiliger voor de bank.&#10;Boven 80% = hoog risico." />
+
+        <e k="bank_detail_info_hint" v="Klik op een veld voor meer details" />
+
+        <e k="bank_detail_col_period" v="Nr." />
+        <e k="bank_detail_col_payment" v="Aflossing" />
+        <e k="bank_detail_col_interest" v="Rente" />
+        <e k="bank_detail_col_principal" v="Kapitaal" />
+        <e k="bank_detail_col_balance" v="Saldo" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="NIEUWE LENING" />
+        <e k="bank_wizard_step1_title" v="Stap 1 — Lening configureren" />
+        <e k="bank_wizard_step2_title" v="Stap 2 — Samenvatting en bevestiging" />
+        <e k="bank_wizard_card_rates" v="RENTE" />
+        <e k="bank_wizard_card_cost" v="KOSTEN" />
+        <e k="bank_wizard_label_loanType" v="Leningtype" />
+        <e k="bank_wizard_label_amount" v="Bedrag" />
+        <e k="bank_wizard_label_duration" v="Looptijd" />
+        <e k="bank_wizard_limit" v="Beschikbare limiet (afhankelijk van goedkeuring): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Geschatte maandelijkse aflossing: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Basisrente" />
+        <e k="bank_wizard_recap_typeSpread" v="Productpremie" />
+        <e k="bank_wizard_recap_surcharge" v="Risicopremie" />
+        <e k="bank_wizard_recap_monthly" v="Maandelijkse aflossing" />
+        <e k="bank_wizard_recap_totalInterest" v="Totale rente" />
+        <e k="bank_wizard_recap_totalCost" v="Totale kosten" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (terugbetalingscapaciteit)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (lening / activa)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (effectief jaarrendement)" />
+        <e k="bank_wizard_recap_risk" v="Risiconiveau" />
+        <e k="bank_wizard_recap_risk_section" v="Risico" />
+        <e k="bank_wizard_indicativeRate" v="Indicatieve rente: %s (zonder risico)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Het gevraagde bedrag overschrijdt uw beschikbare kredietlimiet." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Het gevraagde bedrag overschrijdt de concentratiegrens per boerderij (25% van de totale bankcapaciteit)." />
+        <e k="bank_wizard_warn_refused" v="Lening geweigerd: uw financieel profiel voldoet niet aan de minimumvereisten." />
+        <e k="bank_wizard_warn_invalidAmount" v="Ongeldig bedrag: selecteer een positieve waarde." />
+        <e k="bank_wizard_warn_critical50" v="Hoog risico: het uitbetaalde bedrag wordt beperkt tot 50% van uw aanvraag." />
+        <e k="bank_wizard_hint_refused" v="Klik op DSCR of Risiconiveau om de reden van afwijzing te begrijpen." />
+        <e k="bank_wizard_totalCostPreview" v="Totaal terug te betalen: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="waarvan ~%s rente" />
+        <e k="bank_wizard_amountCapped" v="Aangevraagd: %s  &#8594;  Goedgekeurd: %s" />
+        <e k="bank_wizard_btn_prev" v="Vorige" />
+        <e k="bank_wizard_btn_next" v="Volgende" />
+        <e k="bank_wizard_btn_confirm" v="Bevestigen" />
+        <e k="bank_wizard_confirm_msg" v="Lening van %s bevestigen tegen %s rente?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Detail van de op uw lening toegepaste rente.&#10;De uiteindelijke EIR is de som van de basisrente, productpremie en risicopremie." />
+        <e k="bank_wizard_info_baseRate" v="De referentierente bepaald door de bank, gelijk voor alle kredietnemers.&#10;Varieert op basis van serverinstellingen." />
+        <e k="bank_wizard_info_typeSpread" v="De rentespread verbonden aan het gekozen leningtype.&#10;Annuiteit = 0% : het kapitaal daalt bij elke betaling.&#10;Bullet: volledig kapitaal blootgesteld tot de einddatum.&#10;Revolverend: kapitaal permanent beschikbaar zonder vaste einddatum." />
+        <e k="bank_wizard_info_surcharge" v="De toeslag op basis van uw risiconiveau.&#10;Hoe risicovoller uw profiel, hoe hoger deze toeslag." />
+        <e k="bank_wizard_info_effectiveRate" v="Effectief jaarrendement (EIR): de werkelijke jaarlijkse kosten van uw lening.&#10;Combineert de basisrente, productpremie en risicopremie." />
+        <e k="bank_wizard_info_risk_section" v="De risicobeoordeling van de bank voor uw lening.&#10;Deze indicatoren bepalen of de lening wordt verstrekt en onder welke voorwaarden." />
+        <e k="bank_wizard_info_cost" v="Samenvatting van de totale kosten van uw lening.&#10;Vergelijkt de maandelijkse aflossing, opgebouwde rente en het totaal terug te betalen bedrag." />
+        <e k="bank_wizard_info_monthly" v="Het bedrag dat maandelijks van uw kasstroom wordt afgetrokken.&#10;Voor een annuïteitslening omvat dit kapitaal en rente.&#10;Voor een bulletlening wordt alleen rente afgetrokken." />
+        <e k="bank_wizard_info_totalInterest" v="De som van alle rente die gedurende de looptijd wordt betaald.&#10;Hoe langer de looptijd, hoe hoger dit bedrag." />
+        <e k="bank_wizard_info_totalCost" v="Het totale bedrag dat aan het einde van de lening is terugbetaald.&#10;Gelijk aan het geleende kapitaal plus de totale rente." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bank &amp; Krediet" />
+        <e k="bank_setting_initialCapital" v="Beginkapitaal" />
+        <e k="bank_toolTip_initialCapital" v="Het initiële kredietbedrag ter beschikking gesteld voor bankactiviteiten per boerderij." />
+        <e k="bank_setting_leverageRatio" v="Hefboomverhouding" />
+        <e k="bank_toolTip_leverageRatio" v="Bepaalt de maximale schuldvermenigvuldiger ten opzichte van het beschikbare eigen vermogen. Bijv. 10x → max. krediet = 10× eigen vermogen." />
+        <e k="bank_setting_dynamicRate" v="Dynamische rente" />
+        <e k="bank_toolTip_dynamicRate" v="Ingeschakeld: de basisrente wijzigt jaarlijks (±0,25%, bereik 1–12%). Risicopremies gelden altijd." />
+        <e k="bank_setting_baseInterestRate" v="Basisrente" />
+        <e k="bank_toolTip_baseInterestRate" v="De jaarlijkse basisrente toegepast op alle leningen vóór de risicopremie." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Boete vervroegde aflossing" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Het percentage van het resterend kapitaal dat als boete wordt aangerekend bij vervroegde aflossing van de lening." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Jaar %d — %s" />
+        <e k="bank_report_title_default" v="JAARVERSLAG" />
+        <e k="bank_report_section_costs" v="Financiële stromen" />
+        <e k="bank_report_section_activity" v="Activiteit" />
+        <e k="bank_report_interestPaid" v="· Betaalde rente" />
+        <e k="bank_report_principalPaid" v="· Afgelost kapitaal" />
+        <e k="bank_report_totalPaid" v="Totaal betaald" />
+        <e k="bank_report_avgMonthly" v="· Gemiddelde maandelijkse aflossing" />
+        <e k="bank_report_loansOpened" v="· Geopende leningen" />
+        <e k="bank_report_loansClosed" v="· Gesloten leningen" />
+        <e k="bank_report_loansActive" v="· Actieve leningen" />
+        <e k="bank_report_outstanding" v="Totale schuld" />
+        <e k="bank_report_noData" v="Geen jaarverslaggegevens beschikbaar." />
+        <e k="bank_report_btnNext" v="Jaar +" />
+        <e k="bank_report_btnPrev" v="Jaar -" />
+        <e k="bank_btn_report" v="Jaarverslag" />
+    </elements>
+</l10n>

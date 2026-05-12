@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bank &amp; Kredit" />
+        <e k="bank_label_interest" v="Bunga pinjaman" />
+        <e k="bank_label_principal" v="Pokok pinjaman" />
+        <e k="finance_bankLoanInterest" v="Bunga bank" />
+        <e k="finance_bankLoanPrincipal" v="Pokok pinjaman" />
+        <e k="bank_vanilla_loan_cleared" v="Pinjaman yang ada sebesar %s terdeteksi dan dilunasi secara otomatis.&#10;Jumlahnya telah dikurangkan dari saldo Anda.&#10;&#10;Gunakan menu Bank untuk mengajukan pinjaman baru." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANK" />
+        <e k="bank_empty_list" v="Tidak ada pinjaman aktif untuk ditampilkan." />
+        <e k="bank_empty_paid" v="Tidak ada pinjaman yang telah dilunasi untuk ditampilkan." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Pinjaman aktif" />
+        <e k="bank_tab_paid" v="Pinjaman selesai" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Kredit tersedia" />
+        <e k="bank_dash_available_sub" v="(berdasarkan persetujuan)" />
+        <e k="bank_dash_outstanding" v="Utang saat ini" />
+        <e k="bank_dash_outstanding_sub" v="%d%% batas pinjaman terpakai" />
+        <e k="bank_dash_monthlyTotal" v="Total cicilan bulanan" />
+        <e k="bank_dash_monthlyTotal_sub" v="(total pemotongan bulanan)" />
+        <e k="bank_dash_rate" v="Suku bunga saat ini" />
+        <e k="bank_dash_rate_sub" v="(suku bunga dasar, tanpa biaya tambahan)" />
+        <e k="bank_dash_equity" v="Ekuitas" />
+        <e k="bank_dash_capacity" v="Total kapasitas kredit" />
+        <e k="bank_dash_outstanding_label" v="Total utang (semua pertanian)" />
+        <e k="bank_dash_utilization" v="Tingkat utilisasi" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Indikator bank"/>
+        <e k="bank_btn_indicators" v="Indikator bank"/>
+        <e k="bank_dash_leverage" v="Rasio leverage" />
+        <e k="bank_dash_coverage" v="Cakupan risiko" />
+        <e k="bank_dash_provision" v="Cadangan risiko" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Neraca" />
+        <e k="bank_health_sectionRisk" v="Portofolio &amp; Risiko" />
+        <e k="bank_health_sectionPortfolio" v="Distribusi portofolio" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Metrik internal bank. Gambaran umum kesehatan keuangan bank: ekuitas, kapasitas kredit, utilisasi, dan leverage." />
+        <e k="bank_info_risk" v="Metrik internal bank. Mengukur kemampuan bank untuk menutup potensi kerugian dan konsentrasi pertanian Anda dalam portofolio." />
+        <e k="bank_info_portfolio" v="Distribusi pinjaman yang sedang berjalan berdasarkan tingkat risiko. Semakin banyak pinjaman berisiko, semakin sedikit kredit yang tersedia." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Ekuitas bank, terdiri dari modal awal dan akumulasi pendapatan bunga.&#10;Setiap bunga yang Anda bayar memperkuat bank dan meningkatkan kapasitas kreditnya." />
+        <e k="bank_info_capacity" v="Jumlah maksimum yang dapat dipinjamkan bank ke semua pertanian secara keseluruhan.&#10;Sama dengan ekuitas dikalikan leverage.&#10;Saat habis, tidak ada pinjaman baru yang dapat diberikan." />
+        <e k="bank_info_outstanding" v="Jumlah semua pokok yang masih terutang di seluruh pertanian di server.&#10;Digunakan untuk menghitung tingkat utilisasi bank.&#10;Semakin tinggi jumlah ini, semakin rendah kapasitas kredit yang tersedia." />
+        <e k="bank_info_utilization" v="Persentase total kapasitas yang saat ini dipinjamkan.&#10;Di bawah 50% = sehat&#10;50-80% = ketat&#10;Di atas 80% = kredit sangat terbatas" />
+        <e k="bank_info_leverage" v="Pengganda yang diterapkan pada ekuitas untuk menentukan kapasitas kredit.&#10;Contoh 10x = setiap 1 € ekuitas mendukung 10 € pinjaman.&#10;Ditetapkan oleh administrator server." />
+        <e k="bank_info_coverage" v="Mengukur apakah bank memiliki cadangan yang cukup untuk menutupi risiko portofolio pinjamannya.&#10;Perhitungan: Ekuitas ÷ Provisi kerugian kredit.&#10;Di atas 1,5x = sehat&#10;1,0–1,5x = perhatian&#10;Di bawah 1,0x = kritis&#10;Rasio yang terlalu rendah dapat menghalangi persetujuan pinjaman baru." />
+        <e k="bank_info_provision" v="Dana yang dicadangkan untuk menanggung kemungkinan gagal bayar pinjaman.&#10;Pinjaman berisiko tinggi membutuhkan provisi lebih besar, yang secara langsung mengurangi kapasitas kredit efektif bank.&#10;Ini adalah cadangan internal bank, bukan penggantian pinjaman pemain." />
+
+        <e k="bank_info_hint" v="Klik judul atau indikator untuk detail lebih lanjut" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Jenis" />
+        <e k="bank_col_amount" v="Jumlah awal" />
+        <e k="bank_col_monthly" v="Cicilan bulanan" />
+        <e k="bank_col_rate" v="Suku bunga" />
+        <e k="bank_col_remaining" v="Sisa jangka waktu" />
+        <e k="bank_col_rest" v="Sisa pokok" />
+        <e k="bank_col_status" v="Status" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktif" />
+        <e k="bank_status_paid" v="Lunas" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Pinjaman baru" />
+        <e k="bank_btn_details" v="Detail pinjaman" />
+        <e k="bank_btn_earlyRepay" v="Lunasi" />
+        <e k="bank_btn_repayLine" v="Lunasi jalur" />
+        <e k="bank_btn_close" v="Tutup jalur kredit" />
+        <e k="bank_btn_back" v="Tutup" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Anuitas" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Revolving" />
+        <e k="bank_loanType_annuity_desc" v="Cicilan bulanan tetap, sama setiap bulan, menggabungkan bunga dan pokok.&#10;Jumlahnya tidak pernah berubah sepanjang masa pinjaman." />
+        <e k="bank_loanType_bullet_desc" v="Hanya membayar bunga setiap bulan.&#10;Seluruh pokok dilunasi sekaligus pada tanggal jatuh tempo.&#10;Cicilan bulanan kecil, tetapi rencanakan arus kas saat jatuh tempo." />
+        <e k="bank_loanType_revolving_desc" v="Batas kredit permanen hingga jumlah yang disetujui.&#10;Tarik yang Anda butuhkan, bayar kembali dengan bebas,&#10;tanpa cicilan tetap atau tanggal jatuh tempo." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Tarik" />
+        <e k="bank_revolving_status_open" v="Terbuka" />
+        <e k="bank_revolving_status_available" v="Tersedia" />
+        <e k="bank_revolving_noDuration" v="Tidak ada jangka waktu tetap" />
+        <e k="bank_revolving_variablePayment" v="Variabel" />
+        <e k="bank_revolving_estimatedInterest" v="Est. bunga (1 th.)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / thn maks." />
+        <e k="bank_revolving_commitmentFee" v="Biaya komitmen" />
+        <e k="bank_confirm_draw" v="Jumlah penarikan (maks. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Jumlah pembayaran (maks. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Jumlah pembayaran (min %s — maks %s):" />
+        <e k="bank_confirm_closeLine" v="Tutup jalur kredit ini? Tindakan ini tidak dapat dibatalkan." />
+        <e k="bank_detail_revolving_limit" v="Batas kredit" />
+        <e k="bank_detail_revolving_drawn" v="Saldo tertarik" />
+        <e k="bank_detail_revolving_available" v="Tersedia" />
+        <e k="bank_detail_rev_utilization" v="Utilisasi" />
+        <e k="bank_detail_rev_conditions" v="Kondisi" />
+        <e k="bank_detail_rev_interest_month" v="Bunga / bln" />
+        <e k="bank_detail_rev_interest_year" v="Bunga / th." />
+        <e k="bank_detail_info_rev_commitment_fee" v="Biaya tahunan 1% atas bagian yang belum ditarik dari jalur kredit. Dibebankan bulanan atas jumlah tersedia yang tidak terpakai. Menampilkan jumlah maksimum (jalur sama sekali belum ditarik)." />
+        <e k="bank_detail_rev_duration" v="Jangka waktu" />
+        <e k="bank_detail_rev_payment" v="Pembayaran" />
+        <e k="bank_detail_info_rev_utilization" v="Rincian penggunaan jalur kredit revolving.&#10;Batas adalah jumlah maksimum yang disetujui.&#10;Saldo tertarik adalah jumlah yang saat ini dipinjam." />
+        <e k="bank_detail_info_rev_limit" v="Jumlah maksimum yang dapat Anda pinjam&#10;dari jalur kredit revolving ini." />
+        <e k="bank_detail_info_rev_drawn" v="Jumlah yang saat ini dipinjam dan digunakan&#10;pada jalur kredit ini." />
+        <e k="bank_detail_info_rev_available" v="Jumlah yang masih bisa ditarik&#10;dalam batas kredit Anda." />
+        <e k="bank_detail_info_rev_conditions" v="Kondisi keuangan yang berlaku&#10;untuk jalur kredit revolving ini." />
+        <e k="bank_detail_info_rev_interest_month" v="Perkiraan bunga bulanan&#10;berdasarkan saldo tertarik saat ini." />
+        <e k="bank_detail_info_rev_interest_year" v="Perkiraan bunga tahunan&#10;berdasarkan saldo tertarik saat ini." />
+        <e k="bank_detail_info_rev_duration" v="Jalur kredit revolving tidak memiliki jangka waktu tetap.&#10;Tetap terbuka sampai ditutup." />
+        <e k="bank_detail_info_rev_payment" v="Pembayaran revolving bersifat variabel:&#10;Anda membayar bunga bulanan atas saldo tertarik.&#10;Pokok dilunasi sesuai kecepatan Anda sendiri." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Rendah" />
+        <e k="bank_risk_moderate" v="Sedang" />
+        <e k="bank_risk_high" v="Tinggi" />
+        <e k="bank_risk_critical" v="Kritis" />
+        <e k="bank_risk_refused" v="Ditolak" />
+        <e k="bank_portfolio_scale_safe" v="Aman" />
+        <e k="bank_portfolio_scale_risky" v="Berisiko" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d th." />
+        <e k="bank_format_monthsShort" v="%d bln" />
+        <e k="bank_format_yearsMonths" v="%d th. %d bln" />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Anda harus memiliki pertanian untuk mengajukan pinjaman." />
+        <e k="bank_error_insufficientFunds" v="Dana tidak mencukupi untuk pelunasan awal." />
+        <e k="bank_error_partialRepayMin" v="Pelunasan sebagian minimum: %s (10 %% dari modal awal)." />
+        <e k="bank_confirm_earlyRepay" v="Lunasi %s dengan denda %s?&#10;Total: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="DETAIL PINJAMAN" />
+        <e k="bank_detail_title" v="PINJAMAN NR. %d" />
+        <e k="bank_detail_label_amount" v="Jumlah" />
+        <e k="bank_detail_label_rate" v="Suku bunga" />
+        <e k="bank_detail_label_type" v="Jenis" />
+        <e k="bank_detail_label_risk" v="Risiko" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Jumlah total yang dipinjam saat penandatanganan perjanjian pinjaman. Jumlah ini tidak berubah selama masa perjanjian." />
+        <e k="bank_detail_info_rate" v="Suku bunga tahunan yang diterapkan pada pinjaman ini. Mencakup suku bunga dasar bank dan potensi premi terkait tingkat risiko." />
+        <e k="bank_detail_info_type" v="Cara pelunasan pinjaman&#10;Anuitas: cicilan bulanan tetap, sama setiap bulan&#10;Bullet: hanya bunga bulanan, pokok di akhir&#10;Revolving: jalur kredit terbuka, tanpa jangka waktu tetap" />
+        <e k="bank_detail_info_risk" v="Tingkat risiko yang dinilai oleh bank pada saat persetujuan. Tergantung pada DSCR, LTV, dan riwayat Anda. Risiko lebih tinggi mengakibatkan premi suku bunga." />
+        <e k="bank_detail_info_dscr" v="Rasio cakupan layanan utang&#10;Pendapatan &#247; total cicilan utang bulanan.&#10;Di atas 1,5 = nyaman&#10;1,0&#8211;1,5 = ketat&#10;Di bawah 1,0 = pendapatan tidak menutupi utang&#10;&#10;Cara meningkatkan:&#10;Lunasi pinjaman yang ada (mengurangi cicilan)&#10;Tingkatkan pendapatan pertanian (penjualan, tanaman, ternak)&#10;Ajukan jumlah yang lebih rendah&#10;Perpanjang jangka waktu (mengurangi cicilan)" />
+        <e k="bank_detail_info_ltv" v="Rasio pinjaman terhadap nilai&#10;Jumlah pinjaman dibagi nilai aset Anda.&#10;Lebih rendah lebih aman bagi bank.&#10;Di atas 80% = risiko tinggi." />
+
+        <e k="bank_detail_info_hint" v="Klik kolom untuk detail lebih lanjut" />
+
+        <e k="bank_detail_col_period" v="No." />
+        <e k="bank_detail_col_payment" v="Cicilan" />
+        <e k="bank_detail_col_interest" v="Bunga" />
+        <e k="bank_detail_col_principal" v="Pokok" />
+        <e k="bank_detail_col_balance" v="Sisa" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="PINJAMAN BARU" />
+        <e k="bank_wizard_step1_title" v="Langkah 1 — Konfigurasi pinjaman" />
+        <e k="bank_wizard_step2_title" v="Langkah 2 — Ringkasan dan konfirmasi" />
+        <e k="bank_wizard_card_rates" v="SUKU BUNGA" />
+        <e k="bank_wizard_card_cost" v="BIAYA" />
+        <e k="bank_wizard_label_loanType" v="Jenis pinjaman" />
+        <e k="bank_wizard_label_amount" v="Jumlah" />
+        <e k="bank_wizard_label_duration" v="Jangka waktu" />
+        <e k="bank_wizard_limit" v="Batas tersedia (berdasarkan persetujuan): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Estimasi cicilan bulanan: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Suku bunga dasar" />
+        <e k="bank_wizard_recap_typeSpread" v="Premi produk" />
+        <e k="bank_wizard_recap_surcharge" v="Premi risiko" />
+        <e k="bank_wizard_recap_monthly" v="Cicilan bulanan" />
+        <e k="bank_wizard_recap_totalInterest" v="Total bunga" />
+        <e k="bank_wizard_recap_totalCost" v="Total biaya" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (kemampuan bayar)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (pinjaman / aset)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (suku bunga efektif tahunan)" />
+        <e k="bank_wizard_recap_risk" v="Tingkat risiko" />
+        <e k="bank_wizard_recap_risk_section" v="Risiko" />
+        <e k="bank_wizard_indicativeRate" v="Suku bunga indikatif: %s (tanpa risiko)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Jumlah yang diminta melebihi batas kredit Anda yang tersedia." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Jumlah yang diminta melebihi batas eksposur per pertanian (25% dari total kapasitas bank)." />
+        <e k="bank_wizard_warn_refused" v="Pinjaman ditolak: profil keuangan Anda tidak memenuhi persyaratan minimum." />
+        <e k="bank_wizard_warn_invalidAmount" v="Jumlah tidak valid: pilih nilai positif." />
+        <e k="bank_wizard_warn_critical50" v="Risiko tinggi: jumlah yang dicairkan akan dibatasi 50% dari permintaan Anda." />
+        <e k="bank_wizard_hint_refused" v="Klik DSCR atau Tingkat Risiko untuk memahami alasan penolakan." />
+        <e k="bank_wizard_totalCostPreview" v="Total yang harus dibayar: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="di mana ~%s bunga" />
+        <e k="bank_wizard_amountCapped" v="Diminta: %s  &#8594;  Disetujui: %s" />
+        <e k="bank_wizard_btn_prev" v="Sebelumnya" />
+        <e k="bank_wizard_btn_next" v="Berikutnya" />
+        <e k="bank_wizard_btn_confirm" v="Konfirmasi" />
+        <e k="bank_wizard_confirm_msg" v="Konfirmasi pinjaman %s dengan suku bunga %s?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Rincian suku bunga yang diterapkan pada pinjaman Anda.&#10;EIR akhir adalah jumlah dari suku bunga dasar, premi produk, dan premi risiko." />
+        <e k="bank_wizard_info_baseRate" v="Suku bunga referensi yang ditetapkan oleh bank, sama untuk semua peminjam.&#10;Berubah berdasarkan pengaturan server." />
+        <e k="bank_wizard_info_typeSpread" v="Spread suku bunga yang terkait dengan jenis pinjaman yang dipilih.&#10;Anuitas = 0% : pokok berkurang dengan setiap cicilan.&#10;Bullet: seluruh pokok terekspos hingga jatuh tempo.&#10;Revolving: modal tersedia secara permanen tanpa tanggal jatuh tempo tetap." />
+        <e k="bank_wizard_info_surcharge" v="Biaya tambahan yang diterapkan berdasarkan tingkat risiko Anda.&#10;Semakin berisiko profil Anda, semakin tinggi biaya tambahan ini." />
+        <e k="bank_wizard_info_effectiveRate" v="Suku bunga efektif tahunan: biaya tahunan sebenarnya dari pinjaman Anda.&#10;Menggabungkan suku bunga dasar, premi produk, dan premi risiko." />
+        <e k="bank_wizard_info_risk_section" v="Penilaian risiko bank atas pinjaman Anda.&#10;Indikator-indikator ini menentukan apakah pinjaman diberikan dan dengan kondisi apa." />
+        <e k="bank_wizard_info_cost" v="Ringkasan total biaya pinjaman Anda.&#10;Membandingkan cicilan bulanan, bunga akumulasi, dan total yang harus dibayar kembali." />
+        <e k="bank_wizard_info_monthly" v="Jumlah yang dikurangkan dari arus kas Anda setiap bulan.&#10;Untuk pinjaman anuitas, mencakup pokok dan bunga.&#10;Untuk pinjaman bullet, hanya bunga yang dikurangkan." />
+        <e k="bank_wizard_info_totalInterest" v="Jumlah semua bunga yang dibayarkan sepanjang masa pinjaman.&#10;Semakin panjang jangka waktunya, semakin tinggi jumlah ini." />
+        <e k="bank_wizard_info_totalCost" v="Jumlah total yang Anda kembalikan pada akhir pinjaman.&#10;Sama dengan pokok yang dipinjam ditambah total bunga." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bank &amp; Kredit" />
+        <e k="bank_setting_initialCapital" v="Modal awal" />
+        <e k="bank_toolTip_initialCapital" v="Jumlah kredit awal yang disediakan untuk operasi perbankan per pertanian." />
+        <e k="bank_setting_leverageRatio" v="Rasio leverage" />
+        <e k="bank_toolTip_leverageRatio" v="Menentukan pengganda utang maksimum relatif terhadap ekuitas yang tersedia. Contoh 10x → max. kredit = 10× ekuitas." />
+        <e k="bank_setting_dynamicRate" v="Suku bunga dinamis" />
+        <e k="bank_toolTip_dynamicRate" v="Aktif: suku bunga dasar berubah setiap tahun (±0,25%, rentang 1–12%). Premi risiko selalu berlaku." />
+        <e k="bank_setting_baseInterestRate" v="Suku bunga dasar" />
+        <e k="bank_toolTip_baseInterestRate" v="Suku bunga tahunan dasar yang diterapkan pada semua pinjaman sebelum premi risiko." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Penalti pelunasan awal" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Persentase sisa pokok yang dibebankan sebagai penalti atas pelunasan pinjaman lebih awal." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Tahun %d — %s" />
+        <e k="bank_report_title_default" v="LAPORAN TAHUNAN" />
+        <e k="bank_report_section_costs" v="Arus keuangan" />
+        <e k="bank_report_section_activity" v="Aktivitas" />
+        <e k="bank_report_interestPaid" v="· Bunga yang dibayarkan" />
+        <e k="bank_report_principalPaid" v="· Pokok yang dilunasi" />
+        <e k="bank_report_totalPaid" v="Total yang dibayarkan" />
+        <e k="bank_report_avgMonthly" v="· Rata-rata cicilan bulanan" />
+        <e k="bank_report_loansOpened" v="· Pinjaman yang dibuka" />
+        <e k="bank_report_loansClosed" v="· Pinjaman yang ditutup" />
+        <e k="bank_report_loansActive" v="· Pinjaman aktif" />
+        <e k="bank_report_outstanding" v="Total utang" />
+        <e k="bank_report_noData" v="Tidak ada data laporan tahunan yang tersedia." />
+        <e k="bank_report_btnNext" v="Tahun +" />
+        <e k="bank_report_btnPrev" v="Tahun -" />
+        <e k="bank_btn_report" v="Laporan tahunan" />
+    </elements>
+</l10n>

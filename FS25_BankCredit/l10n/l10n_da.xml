@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bank &amp; Kredit" />
+        <e k="bank_label_interest" v="Lånerenter" />
+        <e k="bank_label_principal" v="Lånkapital" />
+        <e k="finance_bankLoanInterest" v="Bankrenter" />
+        <e k="finance_bankLoanPrincipal" v="Lånkapital" />
+        <e k="bank_vanilla_loan_cleared" v="Et eksisterende lån på %s blev registreret og automatisk tilbagebetalt.&#10;Beløbet er trukket fra din saldo.&#10;&#10;Brug Bank-menuen til at optage et nyt lån." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANK" />
+        <e k="bank_empty_list" v="Ingen aktive lån at vise." />
+        <e k="bank_empty_paid" v="Ingen afsluttede lån at vise." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktive lån" />
+        <e k="bank_tab_paid" v="Afsluttede lån" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Tilgængelig kredit" />
+        <e k="bank_dash_available_sub" v="(med forbehold for godkendelse)" />
+        <e k="bank_dash_outstanding" v="Aktuel gæld" />
+        <e k="bank_dash_outstanding_sub" v="%d%% af lånegrænsen brugt" />
+        <e k="bank_dash_monthlyTotal" v="Samlet månedlig ydelse" />
+        <e k="bank_dash_monthlyTotal_sub" v="(samlet månedligt træk)" />
+        <e k="bank_dash_rate" v="Aktuel rente" />
+        <e k="bank_dash_rate_sub" v="(grundrente, ekskl. tillæg)" />
+        <e k="bank_dash_equity" v="Egenkapital" />
+        <e k="bank_dash_capacity" v="Samlet lånekapacitet" />
+        <e k="bank_dash_outstanding_label" v="Samlet gæld (alle farme)" />
+        <e k="bank_dash_utilization" v="Udnyttelsesgrad" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Bankindikatorer"/>
+        <e k="bank_btn_indicators" v="Bankindikatorer"/>
+        <e k="bank_dash_leverage" v="Gearingsgrad" />
+        <e k="bank_dash_coverage" v="Risicodækning" />
+        <e k="bank_dash_provision" v="Risikoreserve" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Balance" />
+        <e k="bank_health_sectionRisk" v="Portefølje &amp; Risiko" />
+        <e k="bank_health_sectionPortfolio" v="Porteføljefordeling" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Interne bankmålinger. Oversigt over bankens finansielle grundlag: egenkapital, lånekapacitet, udnyttelse og gearing." />
+        <e k="bank_info_risk" v="Interne bankmålinger. Måler bankens evne til at dække potentielle tab og din farms koncentration i porteføljen." />
+        <e k="bank_info_portfolio" v="Fordeling af løbende lån efter risikoniveau. Flere risikable lån betyder mindre tilgængelig kredit." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Bankens egen kapital, opbygget af startkapital og akkumulerede renter.&#10;Hver rentebetaling du foretager styrker banken og øger dens lånekapacitet." />
+        <e k="bank_info_capacity" v="Maksimalt beløb banken kan udlåne til alle farme samlet.&#10;Lig med egenkapitalen ganget med gearingsgraden.&#10;Når den er opbrugt, kan der ikke udstedes nye lån." />
+        <e k="bank_info_outstanding" v="Sum af al resterende hovedstol skyldig på tværs af alle farme på serveren.&#10;Bruges til at beregne bankens udnyttelsesgrad.&#10;Jo højere dette beløb er, jo lavere er den tilgængelige lånekapacitet." />
+        <e k="bank_info_utilization" v="Procentdel af den samlede kapacitet der aktuelt er udlånt.&#10;Under 50 % = sundt&#10;50-80 % = stramt&#10;Over 80 % = meget begrænset kredit" />
+        <e k="bank_info_leverage" v="Multiplikator på egenkapitalen til bestemmelse af lånekapacitet.&#10;F.eks. 10x = hvert 1 € egenkapital understøtter 10 € i lån.&#10;Fastsættes af serveradministratoren." />
+        <e k="bank_info_coverage" v="Måler, om banken har tilstrækkelige reserver til at dække risiciene i sin låneportefølje.&#10;Beregning: Egenkapital ÷ Tabshensættelser.&#10;Over 1,5x = sundt&#10;1,0–1,5x = opmærksomhed&#10;Under 1,0x = kritisk&#10;Et for lavt forhold kan blokere godkendelsen af nye lån." />
+        <e k="bank_info_provision" v="Midler reserveret til at absorbere eventuelle misligholdelser.&#10;Højrisikante lån kræver større hensættelser, hvilket direkte reducerer den effektive lånekapacitet.&#10;Dette er en intern bankreserve, ikke en tilbagebetaling af spillerens lån." />
+
+        <e k="bank_info_hint" v="Klik på en titel eller indikator for flere detaljer" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Type" />
+        <e k="bank_col_amount" v="Oprindeligt beløb" />
+        <e k="bank_col_monthly" v="Månedlig ydelse" />
+        <e k="bank_col_rate" v="Rente" />
+        <e k="bank_col_remaining" v="Resterende løbetid" />
+        <e k="bank_col_rest" v="Resterende kapital" />
+        <e k="bank_col_status" v="Status" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktiv" />
+        <e k="bank_status_paid" v="Afsluttet" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Nyt lån" />
+        <e k="bank_btn_details" v="Lånedetaljer" />
+        <e k="bank_btn_earlyRepay" v="Indfri" />
+        <e k="bank_btn_repayLine" v="Indfri linjen" />
+        <e k="bank_btn_close" v="Luk kreditlinjen" />
+        <e k="bank_btn_back" v="Luk" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Annuitetslån" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="Revolverende" />
+        <e k="bank_loanType_annuity_desc" v="Fast månedlig ydelse, identisk hver måned, der kombinerer renter og afdrag.&#10;Beløbet varierer aldrig i hele lånets løbetid." />
+        <e k="bank_loanType_bullet_desc" v="Kun renter betales månedligt.&#10;Hele kapitalen tilbagebetales i ét samlet beløb ved udløb.&#10;Lave månedlige ydelser, men planlæg likviditeten ved udløb." />
+        <e k="bank_loanType_revolving_desc" v="Permanent kreditlinje op til det godkendte loft.&#10;Træk det du har brug for, betal frit tilbage,&#10;ingen fast ydelse eller slutdato." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Træk" />
+        <e k="bank_revolving_status_open" v="Åben" />
+        <e k="bank_revolving_status_available" v="Tilgængelig" />
+        <e k="bank_revolving_noDuration" v="Ingen fast løbetid" />
+        <e k="bank_revolving_variablePayment" v="Variabel" />
+        <e k="bank_revolving_estimatedInterest" v="Ansl. renter (1 år)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / år maks." />
+        <e k="bank_revolving_commitmentFee" v="Provisiongebyr" />
+        <e k="bank_confirm_draw" v="Træksbeløb (maks. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Tilbagebetalingsbeløb (maks. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Tilbagebetalingsbeløb (min %s — maks %s):" />
+        <e k="bank_confirm_closeLine" v="Luk denne kreditlinje? Denne handling kan ikke fortrydes." />
+        <e k="bank_detail_revolving_limit" v="Kreditloft" />
+        <e k="bank_detail_revolving_drawn" v="Trukket saldo" />
+        <e k="bank_detail_revolving_available" v="Tilgængelig" />
+        <e k="bank_detail_rev_utilization" v="Udnyttelse" />
+        <e k="bank_detail_rev_conditions" v="Betingelser" />
+        <e k="bank_detail_rev_interest_month" v="Renter / måned" />
+        <e k="bank_detail_rev_interest_year" v="Renter / år" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Årligt gebyr på 1 % af den utrukne del af kreditlinjen. Opkræves månedligt af det ubrugte tilgængelige beløb. Viser det maksimale beløb (linje fuldt utrukket)." />
+        <e k="bank_detail_rev_duration" v="Løbetid" />
+        <e k="bank_detail_rev_payment" v="Betaling" />
+        <e k="bank_detail_info_rev_utilization" v="Anvendelsesfordeling af din revolverende kreditlinje.&#10;Loftet er det maksimalt godkendte beløb.&#10;Den trukne saldo er det aktuelt lånte beløb." />
+        <e k="bank_detail_info_rev_limit" v="Maksimalt beløb du kan låne&#10;på denne revolverende kreditlinje." />
+        <e k="bank_detail_info_rev_drawn" v="Aktuelt lånt og benyttet beløb&#10;på denne kreditlinje." />
+        <e k="bank_detail_info_rev_available" v="Beløb der stadig er tilgængeligt at trække&#10;inden for dit kreditloft." />
+        <e k="bank_detail_info_rev_conditions" v="Finansielle betingelser gældende&#10;for denne revolverende kreditlinje." />
+        <e k="bank_detail_info_rev_interest_month" v="Anslåede månedlige renter baseret&#10;på den aktuelle trukne saldo." />
+        <e k="bank_detail_info_rev_interest_year" v="Anslåede årlige renter baseret&#10;på den aktuelle trukne saldo." />
+        <e k="bank_detail_info_rev_duration" v="Revolverende kreditlinjer har ingen fast løbetid.&#10;De forbliver åbne, indtil de lukkes." />
+        <e k="bank_detail_info_rev_payment" v="Betalinger på en revolverende linje er variable:&#10;du betaler månedlige renter af den trukne saldo.&#10;Kapitalen tilbagebetales i dit eget tempo." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Lav" />
+        <e k="bank_risk_moderate" v="Moderat" />
+        <e k="bank_risk_high" v="Høj" />
+        <e k="bank_risk_critical" v="Kritisk" />
+        <e k="bank_risk_refused" v="Afvist" />
+        <e k="bank_portfolio_scale_safe" v="Sund" />
+        <e k="bank_portfolio_scale_risky" v="Risikabel" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d år" />
+        <e k="bank_format_monthsShort" v="%d mdr." />
+        <e k="bank_format_yearsMonths" v="%d å. %d m." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Du skal eje en farm for at ansøge om et lån." />
+        <e k="bank_error_insufficientFunds" v="Utilstrækkelige midler til førtidig indfrielse." />
+        <e k="bank_error_partialRepayMin" v="Minimum delvis tilbagebetaling: %s (10 %% af den oprindelige kapital)." />
+        <e k="bank_confirm_earlyRepay" v="Indfri %s med et gebyr på %s?&#10;I alt: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="LÅNEDETALJER" />
+        <e k="bank_detail_title" v="LÅN NR. %d" />
+        <e k="bank_detail_label_amount" v="Beløb" />
+        <e k="bank_detail_label_rate" v="Rente" />
+        <e k="bank_detail_label_type" v="Type" />
+        <e k="bank_detail_label_risk" v="Risiko" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Samlet lånt beløb ved kontraktunderskrivelsen. Dette beløb ændres ikke i kontraktens løbetid." />
+        <e k="bank_detail_info_rate" v="Årlig rentesats for dette lån. Inkluderer bankens grundrente plus eventuel risikotillæg." />
+        <e k="bank_detail_info_type" v="Tilbagebetalingsmetode for lånet&#10;Annuitet: fast månedlig ydelse, identisk hver måned&#10;Bullet: kun renter månedligt, kapital tilbagebetales ved udløb&#10;Revolverende: åben kreditlinje, ingen fast løbetid" />
+        <e k="bank_detail_info_risk" v="Risikoniveau vurderet af banken ved godkendelse. Afhænger af DSCR, LTV og din historik. Højere risiko medfører rentetillæg." />
+        <e k="bank_detail_info_dscr" v="Gældsserviceringsforhold&#10;Indtægter &#247; samlede månedlige gældsbetalinger.&#10;Over 1,5 = komfortabel&#10;1,0&#8211;1,5 = stram&#10;Under 1,0 = indtægter dækker ikke gælden&#10;&#10;For at forbedre:&#10;Indfri eksisterende lån (reducerer ydelser)&#10;Øg farmens indtægter (salg, afgrøder, husdyr)&#10;Ansøg om et lavere beløb&#10;Forlæng løbetiden (reducerer ydelsen)" />
+        <e k="bank_detail_info_ltv" v="Loan To Value&#10;Lånebeløb divideret med værdien af dine aktiver.&#10;Lavere er sikrere for banken.&#10;Over 80 % = høj risiko." />
+
+        <e k="bank_detail_info_hint" v="Klik på en etiket for flere detaljer" />
+
+        <e k="bank_detail_col_period" v="Nr." />
+        <e k="bank_detail_col_payment" v="Ydelse" />
+        <e k="bank_detail_col_interest" v="Renter" />
+        <e k="bank_detail_col_principal" v="Afdrag" />
+        <e k="bank_detail_col_balance" v="Restgæld" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="NYT LÅN" />
+        <e k="bank_wizard_step1_title" v="Trin 1 — Lånekonfiguration" />
+        <e k="bank_wizard_step2_title" v="Trin 2 — Oversigt og bekræftelse" />
+        <e k="bank_wizard_card_rates" v="RENTER" />
+        <e k="bank_wizard_card_cost" v="OMKOSTNING" />
+        <e k="bank_wizard_label_loanType" v="Lånetype" />
+        <e k="bank_wizard_label_amount" v="Beløb" />
+        <e k="bank_wizard_label_duration" v="Løbetid" />
+        <e k="bank_wizard_limit" v="Tilgængeligt loft (med forbehold for godkendelse): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Anslået månedlig ydelse: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Grundrente" />
+        <e k="bank_wizard_recap_typeSpread" v="Produktspænd" />
+        <e k="bank_wizard_recap_surcharge" v="Risikotillæg" />
+        <e k="bank_wizard_recap_monthly" v="Månedlig ydelse" />
+        <e k="bank_wizard_recap_totalInterest" v="Samlede renter" />
+        <e k="bank_wizard_recap_totalCost" v="Samlet omkostning" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (tilbagebetalingsevne)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (lån / aktiver)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (samlet rente)" />
+        <e k="bank_wizard_recap_risk" v="Risikoniveau" />
+        <e k="bank_wizard_recap_risk_section" v="Risiko" />
+        <e k="bank_wizard_indicativeRate" v="Vejledende rente: %s (ekskl. risiko)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Det ønskede beløb overstiger dit tilgængelige kreditloft." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Det ønskede beløb overstiger koncentrationsgrænsen pr. farm (25 % af den samlede bankkapacitet)." />
+        <e k="bank_wizard_warn_refused" v="Lån afvist: din finansielle profil opfylder ikke minimumskravene." />
+        <e k="bank_wizard_warn_invalidAmount" v="Ugyldigt beløb: vælg venligst en positiv værdi." />
+        <e k="bank_wizard_warn_critical50" v="Høj risiko: det udbetalte beløb vil blive begrænset til 50 % af din ansøgning." />
+        <e k="bank_wizard_hint_refused" v="Klik på DSCR eller Risikoniveau for at forstå årsagen til afvisningen." />
+        <e k="bank_wizard_totalCostPreview" v="Samlet tilbagebetaling: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="heraf ~%s i renter" />
+        <e k="bank_wizard_amountCapped" v="Ansøgt: %s  &#8594;  Godkendt: %s" />
+        <e k="bank_wizard_btn_prev" v="Forrige" />
+        <e k="bank_wizard_btn_next" v="Næste" />
+        <e k="bank_wizard_btn_confirm" v="Bekræft" />
+        <e k="bank_wizard_confirm_msg" v="Bekræft et lån på %s til %s rente?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Opdeling af renten på dit lån.&#10;Den endelige EIR er summen af grundrenten, produktspændet og risikotillægget." />
+        <e k="bank_wizard_info_baseRate" v="Referencerente fastsat af banken, ens for alle låntagere.&#10;Ændres baseret på serverindstillinger." />
+        <e k="bank_wizard_info_typeSpread" v="Rentetillæg knyttet til den valgte lånetype.&#10;Annuitet = 0 % : kapitalen falder med hver ydelse.&#10;Bullet: hele kapitalen eksponeret frem til udløb.&#10;Revolverende: kapital permanent tilgængelig uden fast slutdato." />
+        <e k="bank_wizard_info_surcharge" v="Tillæg baseret på dit risikoniveau.&#10;Jo mere risikabel din profil, jo højere dette tillæg." />
+        <e k="bank_wizard_info_effectiveRate" v="Effektiv rente: de sande årlige omkostninger ved dit lån.&#10;Kombinerer grundrente, produktspænd og risikotillæg." />
+        <e k="bank_wizard_info_risk_section" v="Bankens risikovurdering af dit lån.&#10;Disse indikatorer afgør om lånet bevilges og på hvilke vilkår." />
+        <e k="bank_wizard_info_cost" v="Oversigt over de samlede omkostninger ved dit lån.&#10;Sammenligner månedlig ydelse, kumulative renter og samlet tilbagebetalingsbeløb." />
+        <e k="bank_wizard_info_monthly" v="Beløb fratrukket din likviditet hver måned.&#10;For et annuitetslån inkluderer det kapital og renter.&#10;For et bullet-lån trækkes kun renter." />
+        <e k="bank_wizard_info_totalInterest" v="Sum af alle renter du betaler over lånets løbetid.&#10;Jo længere løbetid, jo højere dette beløb." />
+        <e k="bank_wizard_info_totalCost" v="Samlet beløb du har tilbagebetalt ved lånets udløb.&#10;Lig med lånt kapital plus samlede renter." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bank &amp; Kredit" />
+        <e k="bank_setting_initialCapital" v="Startkapital" />
+        <e k="bank_toolTip_initialCapital" v="Indledende kreditbeløb stillet til rådighed for hver farm til bankoperationer." />
+        <e k="bank_setting_leverageRatio" v="Gearingsgrad" />
+        <e k="bank_toolTip_leverageRatio" v="Definerer den maksimale gældsgrad i forhold til egenkapitalen. F.eks. 10x → maks. kredit = 10× egenkapitalen." />
+        <e k="bank_setting_dynamicRate" v="Dynamisk rente" />
+        <e k="bank_toolTip_dynamicRate" v="Aktiveret: grundrenten ændres hvert år (±0,25 %, interval 1–12 %). Risikotillæg er altid aktive." />
+        <e k="bank_setting_baseInterestRate" v="Grundrentesats" />
+        <e k="bank_toolTip_baseInterestRate" v="Årlig grundrentesats gældende for alle lån, før risikotillæg." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Gebyr for førtidig indfrielse" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Procentdel af resterende kapital opkrævet som gebyr ved førtidig indfrielse." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="År %d — %s" />
+        <e k="bank_report_title_default" v="ÅRSRAPPORT" />
+        <e k="bank_report_section_costs" v="Finansielle strømme" />
+        <e k="bank_report_section_activity" v="Aktivitet" />
+        <e k="bank_report_interestPaid" v="· Betalte renter" />
+        <e k="bank_report_principalPaid" v="· Tilbagebetalt kapital" />
+        <e k="bank_report_totalPaid" v="Samlet betalt" />
+        <e k="bank_report_avgMonthly" v="· Gennemsnitlig månedlig ydelse" />
+        <e k="bank_report_loansOpened" v="· Oprettede lån" />
+        <e k="bank_report_loansClosed" v="· Afsluttede lån" />
+        <e k="bank_report_loansActive" v="· Aktive lån" />
+        <e k="bank_report_outstanding" v="Samlet gæld" />
+        <e k="bank_report_noData" v="Ingen årsrapportdata tilgængelig." />
+        <e k="bank_report_btnNext" v="År +" />
+        <e k="bank_report_btnPrev" v="År -" />
+        <e k="bank_btn_report" v="Årsrapport" />
+    </elements>
+</l10n>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="Bank &amp; Kredit" />
+        <e k="bank_label_interest" v="Kreditzinsen" />
+        <e k="bank_label_principal" v="Darlehenskapital" />
+        <e k="finance_bankLoanInterest" v="Bankzinsen" />
+        <e k="finance_bankLoanPrincipal" v="Darlehenskapital" />
+        <e k="bank_vanilla_loan_cleared" v="Ein bestehendes Darlehen über %s wurde erkannt und automatisch zurückgezahlt.&#10;Der Betrag wurde von Ihrem Guthaben abgezogen.&#10;&#10;Verwenden Sie das Bankmenü, um ein neues Darlehen aufzunehmen." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="BANK" />
+        <e k="bank_empty_list" v="Keine aktiven Darlehen vorhanden." />
+        <e k="bank_empty_paid" v="Keine abgeschlossenen Darlehen vorhanden." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="Aktive Darlehen" />
+        <e k="bank_tab_paid" v="Abgeschlossene Darlehen" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="Verfügbarer Kredit" />
+        <e k="bank_dash_available_sub" v="(vorbehaltlich Genehmigung)" />
+        <e k="bank_dash_outstanding" v="Aktueller Schuldenstand" />
+        <e k="bank_dash_outstanding_sub" v="%d%% der Kreditobergrenze ausgeschöpft" />
+        <e k="bank_dash_monthlyTotal" v="Gesamte Monatsrate" />
+        <e k="bank_dash_monthlyTotal_sub" v="(gesamter monatlicher Abzug)" />
+        <e k="bank_dash_rate" v="Aktueller Zinssatz" />
+        <e k="bank_dash_rate_sub" v="(Basiszinssatz, ohne Aufschläge)" />
+        <e k="bank_dash_equity" v="Eigenkapital" />
+        <e k="bank_dash_capacity" v="Gesamte Kreditkapazität" />
+        <e k="bank_dash_outstanding_label" v="Gesamtschuldenstand (alle Betriebe)" />
+        <e k="bank_dash_utilization" v="Auslastungsgrad" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="Bankkennzahlen"/>
+        <e k="bank_btn_indicators" v="Bankkennzahlen"/>
+        <e k="bank_dash_leverage" v="Verschuldungsgrad" />
+        <e k="bank_dash_coverage" v="Risikodeckung" />
+        <e k="bank_dash_provision" v="Risikorücklage" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="Bilanz" />
+        <e k="bank_health_sectionRisk" v="Portfolio &amp; Risiko" />
+        <e k="bank_health_sectionPortfolio" v="Portfolioverteilung" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="Bankinterne Kennzahlen. &#220;berblick &#252;ber die finanzielle Solidit&#228;t der Bank: Eigenkapital, Kreditkapazit&#228;t, Auslastung und Verschuldungsgrad." />
+        <e k="bank_info_risk" v="Bankinterne Kennzahlen. Misst die F&#228;higkeit der Bank, potenzielle Verluste zu decken, und die Konzentration Ihres Betriebs im Portfolio." />
+        <e k="bank_info_portfolio" v="Verteilung der ausstehenden Darlehen nach Risikoniveau. Mehr risikoreiche Darlehen bedeuten weniger verfügbaren Kredit." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="Eigenkapital der Bank, aufgebaut aus dem Anfangskapital und den aufgelaufenen Zinserträgen.&#10;Jede Zinszahlung stärkt die Bank und erhöht ihre Kreditkapazität." />
+        <e k="bank_info_capacity" v="Maximalbetrag, den die Bank an alle Betriebe verleihen kann.&#10;Entspricht dem Eigenkapital multipliziert mit dem Verschuldungsgrad.&#10;Wenn erschöpft, können keine neuen Darlehen vergeben werden." />
+        <e k="bank_info_outstanding" v="Summe aller ausstehenden Kapitalbeträge aller Betriebe auf dem Server.&#10;Wird zur Berechnung der Auslastung der Bank verwendet.&#10;Je höher dieser Betrag, desto geringer die verfügbare Kreditkapazität." />
+        <e k="bank_info_utilization" v="Prozentualer Anteil der derzeit vergebenen Gesamtkapazität.&#10;Unter 50 % = gesund&#10;50-80 % = angespannt&#10;Über 80 % = sehr begrenztes Kreditangebot" />
+        <e k="bank_info_leverage" v="Multiplikator auf das Eigenkapital zur Bestimmung der Kreditkapazität.&#10;z.B. 10x = jeder 1 € Eigenkapital unterstützt 10 € Darlehen.&#10;Wird vom Serveradministrator festgelegt." />
+        <e k="bank_info_coverage" v="Misst, ob die Bank ausreichend Reserven hat, um die Risiken ihres Kreditportfolios abzudecken.&#10;Berechnung: Eigenkapital ÷ Risikovorsorge.&#10;Über 1,5x = gesund&#10;1,0–1,5x = Vorsicht&#10;Unter 1,0x = kritisch&#10;Ein zu niedriges Verhältnis kann die Vergabe neuer Kredite blockieren." />
+        <e k="bank_info_provision" v="Rückstellungen zur Deckung möglicher Kreditausfälle.&#10;Hochrisikodarlehen erfordern höhere Rückstellungen, was die effektive Kreditkapazität direkt reduziert.&#10;Dies ist eine interne Bankenreserve und keine Rückerstattung von Spielerkrediten." />
+
+        <e k="bank_info_hint" v="Klicken Sie auf einen Titel oder Indikator für Details" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="Typ" />
+        <e k="bank_col_amount" v="Anfangsbetrag" />
+        <e k="bank_col_monthly" v="Monatsrate" />
+        <e k="bank_col_rate" v="Zinssatz" />
+        <e k="bank_col_remaining" v="Restlaufzeit" />
+        <e k="bank_col_rest" v="Restkapital" />
+        <e k="bank_col_status" v="Status" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="Aktiv" />
+        <e k="bank_status_paid" v="Abgeschlossen" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="Neues Darlehen" />
+        <e k="bank_btn_details" v="Darlehensdetails" />
+        <e k="bank_btn_earlyRepay" v="Tilgen" />
+        <e k="bank_btn_repayLine" v="Linie zurückzahlen" />
+        <e k="bank_btn_close" v="Kreditlinie schließen" />
+        <e k="bank_btn_back" v="Schließen" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="Annuität" />
+        <e k="bank_loanType_bullet" v="Endfälligkeit" />
+        <e k="bank_loanType_revolving" v="Revolving" />
+        <e k="bank_loanType_annuity_desc" v="Feste Monatsrate, monatlich gleich, bestehend aus Zinsen und Tilgung.&#10;Der Betrag ändert sich nie während der gesamten Laufzeit." />
+        <e k="bank_loanType_bullet_desc" v="Monatlich nur Zinsen.&#10;Das Kapital wird am Ende in einer einzigen Zahlung zurückgezahlt.&#10;Niedrige Monatsraten, aber planen Sie die Liquidität am Laufzeitende." />
+        <e k="bank_loanType_revolving_desc" v="Dauerhafter Kreditrahmen bis zur bewilligten Höchstgrenze.&#10;Nehmen Sie, was Sie brauchen, zahlen Sie frei zurück,&#10;ohne feste Rate oder Enddatum." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="Abrufen" />
+        <e k="bank_revolving_status_open" v="Offen" />
+        <e k="bank_revolving_status_available" v="Verfügbar" />
+        <e k="bank_revolving_noDuration" v="Keine feste Laufzeit" />
+        <e k="bank_revolving_variablePayment" v="Variabel" />
+        <e k="bank_revolving_estimatedInterest" v="Gesch. Zinsen (1 Jahr)" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / J. max" />
+        <e k="bank_revolving_commitmentFee" v="Bereitstellungsprovision" />
+        <e k="bank_confirm_draw" v="Abrufbetrag (max. %s):" />
+        <e k="bank_confirm_repay_revolving" v="Rückzahlungsbetrag (max. %s):" />
+        <e k="bank_confirm_partialRepay_amount" v="Rückzahlungsbetrag (min %s — max %s):" />
+        <e k="bank_confirm_closeLine" v="Diese Kreditlinie schließen? Diese Aktion ist unwiderruflich." />
+        <e k="bank_detail_revolving_limit" v="Kreditrahmen" />
+        <e k="bank_detail_revolving_drawn" v="Abgerufener Saldo" />
+        <e k="bank_detail_revolving_available" v="Verfügbar" />
+        <e k="bank_detail_rev_utilization" v="Auslastung" />
+        <e k="bank_detail_rev_conditions" v="Konditionen" />
+        <e k="bank_detail_rev_interest_month" v="Zinsen / Monat" />
+        <e k="bank_detail_rev_interest_year" v="Zinsen / Jahr" />
+        <e k="bank_detail_info_rev_commitment_fee" v="Jährliche Bereitstellungsprovision von 1 % auf den nicht abgerufenen Teil der Kreditlinie. Monatlich auf den ungenutzten verfügbaren Betrag berechnet. Zeigt den Höchstbetrag (Linie vollständig nicht abgerufen)." />
+        <e k="bank_detail_rev_duration" v="Laufzeit" />
+        <e k="bank_detail_rev_payment" v="Zahlung" />
+        <e k="bank_detail_info_rev_utilization" v="Nutzungsaufschlüsselung Ihrer Revolving-Kreditlinie.&#10;Das Limit ist der maximal genehmigte Betrag.&#10;Der abgerufene Saldo ist der aktuell geliehene Betrag." />
+        <e k="bank_detail_info_rev_limit" v="Höchstbetrag, den Sie&#10;auf dieser Revolving-Kreditlinie leihen können." />
+        <e k="bank_detail_info_rev_drawn" v="Aktuell geliehener und genutzter Betrag&#10;auf dieser Kreditlinie." />
+        <e k="bank_detail_info_rev_available" v="Noch verfügbarer Abrufbetrag&#10;innerhalb Ihres Kreditrahmens." />
+        <e k="bank_detail_info_rev_conditions" v="Finanzielle Konditionen, die für&#10;diese Revolving-Kreditlinie gelten." />
+        <e k="bank_detail_info_rev_interest_month" v="Geschätzte monatliche Zinsen basierend&#10;auf dem aktuellen abgerufenen Saldo." />
+        <e k="bank_detail_info_rev_interest_year" v="Geschätzte jährliche Zinsen basierend&#10;auf dem aktuellen abgerufenen Saldo." />
+        <e k="bank_detail_info_rev_duration" v="Revolving-Kreditlinien haben keine feste Laufzeit.&#10;Sie bleiben offen, bis sie geschlossen werden." />
+        <e k="bank_detail_info_rev_payment" v="Revolving-Zahlungen sind variabel:&#10;Sie zahlen monatliche Zinsen auf den abgerufenen Saldo.&#10;Das Kapital wird nach eigenem Ermessen zurückgezahlt." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="Niedrig" />
+        <e k="bank_risk_moderate" v="Moderat" />
+        <e k="bank_risk_high" v="Hoch" />
+        <e k="bank_risk_critical" v="Kritisch" />
+        <e k="bank_risk_refused" v="Abgelehnt" />
+        <e k="bank_portfolio_scale_safe" v="Sicher" />
+        <e k="bank_portfolio_scale_risky" v="Riskant" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d Jahre" />
+        <e k="bank_format_monthsShort" v="%d Mo." />
+        <e k="bank_format_yearsMonths" v="%d J. %d Mo." />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="Sie müssen einen Betrieb besitzen, um ein Darlehen zu beantragen." />
+        <e k="bank_error_insufficientFunds" v="Unzureichende Mittel für eine vorzeitige Rückzahlung." />
+        <e k="bank_error_partialRepayMin" v="Mindestteilrückzahlung: %s (10 %% des ursprünglichen Kapitals)." />
+        <e k="bank_confirm_earlyRepay" v="%s mit einer Vorfälligkeitsentschädigung von %s zurückzahlen?&#10;Gesamt: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="DARLEHENSDETAILS" />
+        <e k="bank_detail_title" v="DARLEHEN NR. %d" />
+        <e k="bank_detail_label_amount" v="Betrag" />
+        <e k="bank_detail_label_rate" v="Zinssatz" />
+        <e k="bank_detail_label_type" v="Typ" />
+        <e k="bank_detail_label_risk" v="Risiko" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="Gesamtbetrag, der bei der Unterzeichnung des Darlehens geliehen wurde. Dieser Betrag ändert sich während der Vertragslaufzeit nicht." />
+        <e k="bank_detail_info_rate" v="Auf dieses Darlehen angewendeter Jahreszinssatz. Er enthält den Basiszinssatz der Bank zuzüglich eines eventuellen Risikoaufschlags." />
+        <e k="bank_detail_info_type" v="Rückzahlungsweise des Darlehens&#10;Annuität: feste Monatsrate, monatlich gleich&#10;Endfälligkeit: monatlich nur Zinsen, Kapital am Ende&#10;Revolving: offene Kreditlinie, keine feste Laufzeit" />
+        <e k="bank_detail_info_risk" v="Von der Bank bei der Genehmigung bewertetes Risikoniveau. Abhängig von DSCR, LTV und Ihrer Vorgeschichte. Höheres Risiko bedeutet einen Zinsaufschlag." />
+        <e k="bank_detail_info_dscr" v="Schuldendienstdeckungsgrad&#10;Einnahmen &#247; gesamte monatliche Schuldzahlungen.&#10;&#220;ber 1,5 = komfortabel&#10;1,0&#8211;1,5 = angespannt&#10;Unter 1,0 = Einnahmen decken die Schulden nicht&#10;&#10;So verbessern Sie ihn:&#10;Bestehende Darlehen zur&#252;ckzahlen (reduziert Monatsraten)&#10;Betriebseinnahmen steigern (Verk&#228;ufe, Anbau, Tierhaltung)&#10;Niedrigeren Betrag beantragen&#10;Laufzeit verl&#228;ngern (reduziert Monatsrate)" />
+        <e k="bank_detail_info_ltv" v="Loan To Value&#10;Darlehensbetrag dividiert durch den Wert Ihrer Vermögenswerte.&#10;Niedriger ist sicherer für die Bank.&#10;Über 80 % = hohes Risiko." />
+
+        <e k="bank_detail_info_hint" v="Klicken Sie auf einen Titel für weitere Details" />
+
+        <e k="bank_detail_col_period" v="Nr." />
+        <e k="bank_detail_col_payment" v="Rate" />
+        <e k="bank_detail_col_interest" v="Zinsen" />
+        <e k="bank_detail_col_principal" v="Tilgung" />
+        <e k="bank_detail_col_balance" v="Restbetrag" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="NEUES DARLEHEN" />
+        <e k="bank_wizard_step1_title" v="Schritt 1 — Darlehensinformationen" />
+        <e k="bank_wizard_step2_title" v="Schritt 2 — Zusammenfassung &amp; Bestätigung" />
+        <e k="bank_wizard_card_rates" v="ZINSEN" />
+        <e k="bank_wizard_card_cost" v="KOSTEN" />
+        <e k="bank_wizard_label_loanType" v="Darlehensart" />
+        <e k="bank_wizard_label_amount" v="Betrag" />
+        <e k="bank_wizard_label_duration" v="Laufzeit" />
+        <e k="bank_wizard_limit" v="Verfügbares Limit (vorbehaltlich Genehmigung): %s" />
+        <e k="bank_wizard_monthlyPreview" v="Geschätzte Monatsrate: %s" />
+        <e k="bank_wizard_recap_baseRate" v="Basiszinssatz" />
+        <e k="bank_wizard_recap_typeSpread" v="Produktaufschlag" />
+        <e k="bank_wizard_recap_surcharge" v="Risikoaufschlag" />
+        <e k="bank_wizard_recap_monthly" v="Monatsrate" />
+        <e k="bank_wizard_recap_totalInterest" v="Gesamtzinsen" />
+        <e k="bank_wizard_recap_totalCost" v="Gesamtkosten" />
+        <e k="bank_wizard_recap_dscr" v="DSCR (Rückzahlungsfähigkeit)" />
+        <e k="bank_wizard_recap_ltv" v="LTV (Darlehen / Vermögen)" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR (Effektivzinssatz)" />
+        <e k="bank_wizard_recap_risk" v="Risikoniveau" />
+        <e k="bank_wizard_recap_risk_section" v="Risiko" />
+        <e k="bank_wizard_indicativeRate" v="Indikativzinssatz: %s (ohne Risiko)" />
+        <e k="bank_wizard_warn_limitExceeded" v="Der beantragte Betrag überschreitet Ihr verfügbares Kreditlimit." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="Der beantragte Betrag überschreitet die Konzentrationsgrenze pro Betrieb (25 % der Gesamtkapazität)." />
+        <e k="bank_wizard_warn_refused" v="Darlehen abgelehnt: Ihr Finanzprofil erfüllt nicht die Mindestanforderungen." />
+        <e k="bank_wizard_warn_invalidAmount" v="Ungültiger Betrag: Bitte wählen Sie einen positiven Wert." />
+        <e k="bank_wizard_warn_critical50" v="Hohes Risiko: Der ausgezahlte Betrag wird auf 50 % Ihrer Anfrage begrenzt." />
+        <e k="bank_wizard_hint_refused" v="Klicken Sie auf DSCR oder Risikoniveau, um den Ablehnungsgrund zu verstehen." />
+        <e k="bank_wizard_totalCostPreview" v="Gesamtr&#252;ckzahlung: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="davon ~%s Zinsen" />
+        <e k="bank_wizard_amountCapped" v="Beantragt: %s  &#8594;  Genehmigt: %s" />
+        <e k="bank_wizard_btn_prev" v="Zurück" />
+        <e k="bank_wizard_btn_next" v="Weiter" />
+        <e k="bank_wizard_btn_confirm" v="Bestätigen" />
+        <e k="bank_wizard_confirm_msg" v="Darlehen über %s zu %s Zinssatz bestätigen?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="Aufschlüsselung des auf Ihr Darlehen angewendeten Zinssatzes.&#10;Der endgültige EIR ist die Summe aus Basiszinssatz, Produktaufschlag und Risikoaufschlag." />
+        <e k="bank_wizard_info_baseRate" v="Von der Bank festgelegter Referenzzinssatz, gleich für alle Kreditnehmer.&#10;Ändert sich entsprechend den Servereinstellungen." />
+        <e k="bank_wizard_info_typeSpread" v="Zinsaufschlag bezogen auf den gewählten Darlehenstyp.&#10;Annuität = 0% : Kapital sinkt mit jeder Rate.&#10;Endfälligkeit: gesamtes Kapital bis Laufzeitende exponiert.&#10;Revolving: Kapital dauerhaft verfügbar ohne feste Laufzeit." />
+        <e k="bank_wizard_info_surcharge" v="Aufschlag basierend auf Ihrem Risikoniveau.&#10;Je risikoreicher Ihr Profil, desto höher dieser Aufschlag." />
+        <e k="bank_wizard_info_effectiveRate" v="Effektivzinssatz: die wahren jährlichen Kosten Ihres Darlehens.&#10;Kombiniert Basiszinssatz, Produktaufschlag und Risikoaufschlag." />
+        <e k="bank_wizard_info_risk_section" v="Risikobewertung Ihres Darlehens durch die Bank.&#10;Diese Indikatoren bestimmen, ob das Darlehen gewährt wird und zu welchen Konditionen." />
+        <e k="bank_wizard_info_cost" v="Zusammenfassung der Gesamtkosten Ihres Darlehens.&#10;Vergleicht Monatsrate, kumulierte Zinsen und Gesamtrückzahlungsbetrag." />
+        <e k="bank_wizard_info_monthly" v="Monatlich von Ihrer Liquidität abgezogener Betrag.&#10;Bei einem Annuitätendarlehen umfasst er Tilgung und Zinsen.&#10;Bei einem endfälligen Darlehen werden nur Zinsen abgezogen." />
+        <e k="bank_wizard_info_totalInterest" v="Summe aller Zinsen, die Sie über die Darlehenslaufzeit zahlen werden.&#10;Je länger die Laufzeit, desto höher dieser Betrag." />
+        <e k="bank_wizard_info_totalCost" v="Gesamtbetrag, den Sie bis zum Ende des Darlehens zurückgezahlt haben werden.&#10;Entspricht dem geliehenen Kapital plus Gesamtzinsen." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="Bank &amp; Kredit" />
+        <e k="bank_setting_initialCapital" v="Anfangskapital" />
+        <e k="bank_toolTip_initialCapital" v="Anfangskreditbetrag, der jedem Betrieb für seine Bankgeschäfte zur Verfügung gestellt wird." />
+        <e k="bank_setting_leverageRatio" v="Verschuldungsgrad" />
+        <e k="bank_toolTip_leverageRatio" v="Legt das maximale Verschuldungsvielfache des verfügbaren Eigenkapitals fest. z.B. 10x → Maximalkredit = 10× das Eigenkapital." />
+        <e k="bank_setting_dynamicRate" v="Dynamischer Zinssatz" />
+        <e k="bank_toolTip_dynamicRate" v="Aktiviert: Der Basiszinssatz ändert sich jedes Jahr (±0,25 %, Bereich 1–12 %). Risikoaufschläge gelten immer." />
+        <e k="bank_setting_baseInterestRate" v="Basiszinssatz" />
+        <e k="bank_toolTip_baseInterestRate" v="Jährlicher Basiszinssatz, der auf alle Darlehen angewendet wird, vor Risikoaufschlag." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="Vorfälligkeitsentschädigung" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="Prozentsatz des ausstehenden Kapitals, der als Strafe bei vorzeitiger Darlehensrückzahlung berechnet wird." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="Jahr %d — %s" />
+        <e k="bank_report_title_default" v="JAHRESBERICHT" />
+        <e k="bank_report_section_costs" v="Finanzströme" />
+        <e k="bank_report_section_activity" v="Aktivität" />
+        <e k="bank_report_interestPaid" v="· Gezahlte Zinsen" />
+        <e k="bank_report_principalPaid" v="· Getilgtes Kapital" />
+        <e k="bank_report_totalPaid" v="Gesamt bezahlt" />
+        <e k="bank_report_avgMonthly" v="· Durchschnittliche Monatsrate" />
+        <e k="bank_report_loansOpened" v="· Eröffnete Darlehen" />
+        <e k="bank_report_loansClosed" v="· Abgeschlossene Darlehen" />
+        <e k="bank_report_loansActive" v="· Laufende Darlehen" />
+        <e k="bank_report_outstanding" v="Gesamtverschuldung" />
+        <e k="bank_report_noData" v="Keine Jahresberichtsdaten verfügbar." />
+        <e k="bank_report_btnNext" v="Jahr +" />
+        <e k="bank_report_btnPrev" v="Jahr -" />
+        <e k="bank_btn_report" v="Jahresbericht" />
+    </elements>
+</l10n>

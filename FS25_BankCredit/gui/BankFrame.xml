@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI name="BankFrame">
+    <GuiElement profile="fs25_menuContainer">
+
+        <!-- Header -->
+        <GuiElement profile="fs25_menuHeaderPanel" position="-62px 92px">
+            <Bitmap profile="fs25_menuHeaderIconBg">
+                <Bitmap profile="bankHeaderIcon"/>
+            </Bitmap>
+            <Text profile="fs25_menuHeaderTitle" id="categoryHeaderText" text="$l10n_bank_menu_title"/>
+            <RoundCorner profile="fs25_shopMoneyBoxBg" id="shopMoneyBoxBg"/>
+            <BoxLayout profile="fs25_shopMoneyBox" id="shopMoneyBox">
+                <Text profile="fs25_shopBalance" text="$l10n_ui_balance:"/>
+                <Text profile="fs25_shopMoney" id="currentBalanceText"/>
+            </BoxLayout>
+        </GuiElement>
+
+        <!-- Sub-category tabs -->
+        <BoxLayout profile="fs25_subCategorySelectorTabbedBox" id="subCategoryBox">
+            <Button profile="fs25_subCategorySelectorTabbedTab" id="subCategoryTabs[1]" text="$l10n_bank_tab_active" onClick="onClickTabActive">
+                <ThreePartBitmap profile="fs25_subCategorySelectorTabbedTabBg" name="background"/>
+            </Button>
+            <Button profile="fs25_subCategorySelectorTabbedTab" id="subCategoryTabs[2]" text="$l10n_bank_tab_paid" onClick="onClickTabPaid">
+                <ThreePartBitmap profile="fs25_subCategorySelectorTabbedTabBg" name="background"/>
+            </Button>
+        </BoxLayout>
+
+        <!-- Separator -->
+        <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" position="-63px -57px" size="100% 2dp"/>
+        <MultiTextOption profile="fs25_subCategorySelectorTabbed" id="subCategoryPaging" position="0px -10px" onClick="updateSubCategoryPages"/>
+
+        <!-- Dashboard: 4 metric cards -->
+        <GuiElement profile="bankDashboardStrip" position="-63px -67px" id="dashboardStrip">
+
+            <!-- Card 1: Available credit -->
+            <GuiElement profile="bankDashCard" position="5px -10px">
+                <RoundCorner profile="bankDashCardBg"/>
+                <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" position="0px -99px" size="365px 2dp"/>
+                <Text profile="bankDashCardLabel" position="0px -20px" size="370px 20px" text="$l10n_bank_dash_available"/>
+                <Text profile="bankDashCardSub" position="0px -43px" size="370px 4px" text="$l10n_bank_dash_available_sub"/>
+                <Text profile="bankDashCardValue" position="0px -45px" size="370px 34px" id="dashAvailableValue"/>
+            </GuiElement>
+
+            <!-- Card 2: Active loans -->
+            <GuiElement profile="bankDashCard" position="395px -10px">
+                <RoundCorner profile="bankDashCardBg"/>
+                <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" position="0px -99px" size="365px 2dp"/>
+                <Text profile="bankDashCardLabel" position="0px -20px" size="370px 20px" text="$l10n_bank_dash_outstanding"/>
+                <Text profile="bankDashCardSub" position="0px -43px" size="370px 4px" id="dashOutstandingSubValue"/>
+                <Text profile="bankDashCardValue" position="0px -45px" size="370px 34px" id="dashOutstandingValue"/>
+            </GuiElement>
+
+            <!-- Card 3: Total monthly payments -->
+            <GuiElement profile="bankDashCard" position="785px -10px">
+                <RoundCorner profile="bankDashCardBg"/>
+                <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" position="0px -99px" size="365px 2dp"/>
+                <Text profile="bankDashCardLabel" position="0px -20px" size="370px 20px" text="$l10n_bank_dash_monthlyTotal"/>
+                <Text profile="bankDashCardSub" position="0px -43px" size="370px 4px" text="$l10n_bank_dash_monthlyTotal_sub"/>
+                <Text profile="bankDashCardValue" position="0px -45px" size="370px 34px" id="dashMonthlyTotalValue"/>
+            </GuiElement>
+
+            <!-- Card 4: Current rate -->
+            <GuiElement profile="bankDashCard" position="1175px -10px">
+                <RoundCorner profile="bankDashCardBg"/>
+                <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" position="0px -99px" size="365px 2dp"/>
+                <Text profile="bankDashCardLabel" position="0px -20px" size="370px 20px" text="$l10n_bank_dash_rate"/>
+                <Text profile="bankDashCardSub" position="0px -43px" size="370px 4px" text="$l10n_bank_dash_rate_sub"/>
+                <Text profile="bankDashCardValueHL" position="0px -45px" size="370px 34px" id="dashRateValue"/>
+            </GuiElement>
+
+            <!-- Grey gradient spacer below cards -->
+            <ThreePartBitmap profile="bankDashSpacer" position="0px -128px"/>
+
+        </GuiElement>
+
+        <!-- Tab 1: Active loans -->
+        <GuiElement profile="fs25_subCategorySelectorTabbedContainer" id="subCategoryPages[1]">
+
+            <GuiElement id="loansListContainer" profile="bankListContentArea">
+
+                <!-- Column headers -->
+                <GuiElement profile="fs25_statisticsHeaderBox" position="-60px -120px">
+                    <Text profile="bankColumnHeader" position="20px -10px"   size="190px 32px" text="$l10n_bank_col_type"/>
+                    <Text profile="bankColumnHeader" position="220px -10px"  size="210px 32px" text="$l10n_bank_col_amount"/>
+                    <Text profile="bankColumnHeader" position="440px -10px"  size="210px 32px" text="$l10n_bank_col_monthly"/>
+                    <Text profile="bankColumnHeader" position="660px -10px"  size="150px 32px" text="$l10n_bank_col_rate"/>
+                    <Text profile="bankColumnHeader" position="820px -10px"  size="210px 32px" text="$l10n_bank_col_remaining"/>
+                    <Text profile="bankColumnHeader" position="1040px -10px" size="250px 32px" text="$l10n_bank_col_rest"/>
+                    <Text profile="bankColumnHeader" position="1300px -10px" size="220px 32px" text="$l10n_bank_col_status"/>
+                </GuiElement>
+
+                <!-- Loans list -->
+                <SmoothList id="listLoans" profile="bankLoansList" position="-60px -160px" listItemSpacing="-1px">
+                    <ListItem profile="bankLoansListItem">
+                        <ThreePartBitmap profile="bankListItemGradient" name="alternating"/>
+                        <Text profile="bankRowCellLeft"   position="20px 0px"   size="190px 40px" name="cellType"/>
+                        <Text profile="bankRowCellRight"  position="220px 0px"  size="210px 40px" name="cellAmount"/>
+                        <Text profile="bankRowCellRight"  position="440px 0px"  size="210px 40px" name="cellMonthly"/>
+                        <Text profile="bankRowCellCenter" position="660px 0px"  size="150px 40px" name="cellRate"/>
+                        <Text profile="bankRowCellCenter" position="820px 0px"  size="210px 40px" name="cellDuration"/>
+                        <Text profile="bankRowCellRight"  position="1040px 0px" size="250px 40px" name="cellRest"/>
+                        <Text profile="bankRowCellCenter" position="1300px 0px" size="220px 40px" name="cellStatus"/>
+                    </ListItem>
+                </SmoothList>
+
+                <!-- Slider -->
+                <ThreePartBitmap profile="bankSliderBox" position="-60px -160px" id="loansSliderBox">
+                    <Slider profile="fs25_listSlider" dataElementId="listLoans"/>
+                </ThreePartBitmap>
+
+            </GuiElement>
+
+            <!-- Empty state -->
+            <GuiElement id="emptyListContainer" profile="bankListContentArea">
+                <Text profile="bankEmptyStateText" position="540px -376px" text="$l10n_bank_empty_list"/>
+            </GuiElement>
+
+        </GuiElement>
+
+        <!-- Tab 2: Paid loans -->
+        <GuiElement profile="fs25_subCategorySelectorTabbedContainer" id="subCategoryPages[2]">
+
+            <GuiElement id="paidLoansListContainer" profile="bankListContentArea">
+
+                <!-- Column headers -->
+                <GuiElement profile="fs25_statisticsHeaderBox" position="-60px -120px">
+                    <Text profile="bankColumnHeader" position="20px -10px"   size="190px 32px" text="$l10n_bank_col_type"/>
+                    <Text profile="bankColumnHeader" position="220px -10px"  size="210px 32px" text="$l10n_bank_col_amount"/>
+                    <Text profile="bankColumnHeader" position="440px -10px"  size="210px 32px" text="$l10n_bank_col_monthly"/>
+                    <Text profile="bankColumnHeader" position="660px -10px"  size="150px 32px" text="$l10n_bank_col_rate"/>
+                    <Text profile="bankColumnHeader" position="820px -10px"  size="210px 32px" text="$l10n_bank_col_remaining"/>
+                    <Text profile="bankColumnHeader" position="1040px -10px" size="250px 32px" text="$l10n_bank_col_rest"/>
+                    <Text profile="bankColumnHeader" position="1300px -10px" size="220px 32px" text="$l10n_bank_col_status"/>
+                </GuiElement>
+
+                <!-- Paid loans list -->
+                <SmoothList id="listPaidLoans" profile="bankLoansList" position="-60px -160px" listItemSpacing="-1px">
+                    <ListItem profile="bankLoansListItem">
+                        <ThreePartBitmap profile="bankListItemGradient" name="alternating"/>
+                        <Text profile="bankRowCellLeft"   position="20px 0px"   size="190px 40px" name="cellType"/>
+                        <Text profile="bankRowCellRight"  position="220px 0px"  size="210px 40px" name="cellAmount"/>
+                        <Text profile="bankRowCellRight"  position="440px 0px"  size="210px 40px" name="cellMonthly"/>
+                        <Text profile="bankRowCellCenter" position="660px 0px"  size="150px 40px" name="cellRate"/>
+                        <Text profile="bankRowCellCenter" position="820px 0px"  size="210px 40px" name="cellDuration"/>
+                        <Text profile="bankRowCellRight"  position="1040px 0px" size="250px 40px" name="cellRest"/>
+                        <Text profile="bankRowCellCenter" position="1300px 0px" size="220px 40px" name="cellStatus"/>
+                    </ListItem>
+                </SmoothList>
+
+                <!-- Slider -->
+                <ThreePartBitmap profile="bankSliderBox" position="-60px -160px" id="paidSliderBox">
+                    <Slider profile="fs25_listSlider" dataElementId="listPaidLoans"/>
+                </ThreePartBitmap>
+
+            </GuiElement>
+
+            <!-- Empty state -->
+            <GuiElement id="emptyPaidListContainer" profile="bankListContentArea">
+                <Text profile="bankEmptyStateText" position="540px -376px" text="$l10n_bank_empty_paid"/>
+            </GuiElement>
+
+        </GuiElement>
+
+    </GuiElement>
+</GUI>

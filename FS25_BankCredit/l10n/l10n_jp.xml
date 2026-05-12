@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="銀行&amp;ローン" />
+        <e k="bank_label_interest" v="ローン利息" />
+        <e k="bank_label_principal" v="ローン元本" />
+        <e k="finance_bankLoanInterest" v="銀行利息" />
+        <e k="finance_bankLoanPrincipal" v="ローン元本" />
+        <e k="bank_vanilla_loan_cleared" v="%sの既存ローンが検出され、自動的に返済されました。&#10;金額はあなたの残高から差し引かれました。&#10;&#10;新しいローンを申請するには銀行メニューを使用してください。" />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="銀行" />
+        <e k="bank_empty_list" v="表示するアクティブなローンはありません。" />
+        <e k="bank_empty_paid" v="表示する返済済みローンはありません。" />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="アクティブなローン" />
+        <e k="bank_tab_paid" v="終了したローン" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="利用可能な与信枠" />
+        <e k="bank_dash_available_sub" v="（審査結果に基づく）" />
+        <e k="bank_dash_outstanding" v="現在の残債" />
+        <e k="bank_dash_outstanding_sub" v="借入限度額の %d%% を使用" />
+        <e k="bank_dash_monthlyTotal" v="月次返済合計" />
+        <e k="bank_dash_monthlyTotal_sub" v="（月次総引落額）" />
+        <e k="bank_dash_rate" v="現在の金利" />
+        <e k="bank_dash_rate_sub" v="（基本金利、追加料金を除く）" />
+        <e k="bank_dash_equity" v="自己資本" />
+        <e k="bank_dash_capacity" v="総与信能力" />
+        <e k="bank_dash_outstanding_label" v="総残債（すべての農場）" />
+        <e k="bank_dash_utilization" v="利用率" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="銀行指標"/>
+        <e k="bank_btn_indicators" v="銀行指標"/>
+        <e k="bank_dash_leverage" v="レバレッジ比率" />
+        <e k="bank_dash_coverage" v="リスクカバレッジ" />
+        <e k="bank_dash_provision" v="リスク準備金" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="バランスシート" />
+        <e k="bank_health_sectionRisk" v="ポートフォリオ&amp;リスク" />
+        <e k="bank_health_sectionPortfolio" v="ポートフォリオ分布" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="銀行内部指標。銀行の財務的健全性の概要：自己資本、与信能力、利用率、レバレッジ。" />
+        <e k="bank_info_risk" v="銀行内部指標。銀行が潜在的な損失をカバーする能力とポートフォリオ内でのあなたの農場の集中度を測定します。" />
+        <e k="bank_info_portfolio" v="リスクレベル別の進行中ローンの分布。リスクの高いローンが多いほど、利用可能な与信枠が少なくなります。" />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="銀行の自己資本。初期資本と累積利息収入で構成されます。&#10;あなたが支払う利息ごとに銀行が強化され、与信能力が増加します。" />
+        <e k="bank_info_capacity" v="銀行がすべての農場に融資できる最大総額です。&#10;自己資本×レバレッジ比率に等しい。&#10;使い果たした場合、新しいローンは提供できません。" />
+        <e k="bank_info_outstanding" v="サーバー上のすべての農場の残存元本の合計。&#10;銀行の利用率の計算に使用されます。&#10;この金額が高いほど、利用可能な与信能力は低くなります。" />
+        <e k="bank_info_utilization" v="現在融資されている総能力の割合。&#10;50%未満＝健全&#10;50〜80%＝逼迫&#10;80%超＝与信が非常に限定的" />
+        <e k="bank_info_leverage" v="与信能力を決定するために自己資本に適用される乗数。&#10;例：10倍＝自己資本1€ごとに10€のローンをサポート。&#10;サーバー管理者が設定します。" />
+        <e k="bank_info_coverage" v="銀行が融資ポートフォリオのリスクをカバーするのに十分な引当金を保有しているかを測定します。&#10;計算：自己資本 ÷ 貸倒引当金。&#10;1.5倍超 = 健全&#10;1.0〜1.5倍 = 注意&#10;1.0倍未満 = 深刻&#10;比率が低すぎると新規ローンの承認が阻止される場合があります。" />
+        <e k="bank_info_provision" v="ローンの不払いに備えて確保された資金。&#10;高リスクローンはより大きな引当金が必要で、これにより銀行の実効的な与信能力が直接減少します。&#10;これは銀行の内部準備であり、プレイヤーのローン返済ではありません。" />
+
+        <e k="bank_info_hint" v="詳細は見出しまたは指標をクリックしてください" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="種類" />
+        <e k="bank_col_amount" v="当初金額" />
+        <e k="bank_col_monthly" v="月次返済額" />
+        <e k="bank_col_rate" v="金利" />
+        <e k="bank_col_remaining" v="残存期間" />
+        <e k="bank_col_rest" v="残存元本" />
+        <e k="bank_col_status" v="状況" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="アクティブ" />
+        <e k="bank_status_paid" v="返済済み" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="新規ローン" />
+        <e k="bank_btn_details" v="ローン詳細" />
+        <e k="bank_btn_earlyRepay" v="繰上返済" />
+        <e k="bank_btn_repayLine" v="与信枠を返済" />
+        <e k="bank_btn_close" v="与信枠を閉じる" />
+        <e k="bank_btn_back" v="閉じる" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="元利均等" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="リボルビング" />
+        <e k="bank_loanType_annuity_desc" v="毎月固定の返済額。利息と元本を合わせた金額が毎月同じです。&#10;ローン期間中、金額は変わりません。" />
+        <e k="bank_loanType_bullet_desc" v="毎月は利息のみ支払い。&#10;満期日に元本全額を一括返済します。&#10;月々の負担は少ないですが、満期時のキャッシュフローを計画してください。" />
+        <e k="bank_loanType_revolving_desc" v="承認された上限額までの常設与信枠。&#10;必要な分だけ引き出し、自由に返済できます。&#10;固定返済額も満期日もありません。" />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="引き出し" />
+        <e k="bank_revolving_status_open" v="オープン" />
+        <e k="bank_revolving_status_available" v="利用可能" />
+        <e k="bank_revolving_noDuration" v="固定期間なし" />
+        <e k="bank_revolving_variablePayment" v="変動" />
+        <e k="bank_revolving_estimatedInterest" v="推定利息（1年）" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / 年 最大" />
+        <e k="bank_revolving_commitmentFee" v="コミットメントフィー" />
+        <e k="bank_confirm_draw" v="引出額（上限%s）：" />
+        <e k="bank_confirm_repay_revolving" v="返済額（上限%s）：" />
+        <e k="bank_confirm_partialRepay_amount" v="返済額（最低 %s — 上限 %s）：" />
+        <e k="bank_confirm_closeLine" v="この与信枠を閉じますか？この操作は元に戻せません。" />
+        <e k="bank_detail_revolving_limit" v="与信限度額" />
+        <e k="bank_detail_revolving_drawn" v="引出残高" />
+        <e k="bank_detail_revolving_available" v="利用可能額" />
+        <e k="bank_detail_rev_utilization" v="利用率" />
+        <e k="bank_detail_rev_conditions" v="条件" />
+        <e k="bank_detail_rev_interest_month" v="利息／月" />
+        <e k="bank_detail_rev_interest_year" v="利息／年" />
+        <e k="bank_detail_info_rev_commitment_fee" v="与信枠の未引出部分に対する年1%の手数料。未使用の利用可能額に対して毎月課金されます。最大額（枠が全く引き出されていない場合）を表示します。" />
+        <e k="bank_detail_rev_duration" v="期間" />
+        <e k="bank_detail_rev_payment" v="返済額" />
+        <e k="bank_detail_info_rev_utilization" v="リボルビング与信枠の利用状況の詳細。&#10;限度額は承認された最大額です。&#10;引出残高は現在借入中の金額です。" />
+        <e k="bank_detail_info_rev_limit" v="このリボルビング与信枠から&#10;借入できる最大金額。" />
+        <e k="bank_detail_info_rev_drawn" v="この与信枠で現在&#10;借入・使用中の金額。" />
+        <e k="bank_detail_info_rev_available" v="与信限度額の範囲内で&#10;まだ引き出せる金額。" />
+        <e k="bank_detail_info_rev_conditions" v="このリボルビング与信枠に&#10;適用される資金調達条件。" />
+        <e k="bank_detail_info_rev_interest_month" v="現在の引出残高に基づく&#10;推定月次利息。" />
+        <e k="bank_detail_info_rev_interest_year" v="現在の引出残高に基づく&#10;推定年次利息。" />
+        <e k="bank_detail_info_rev_duration" v="リボルビング与信枠には固定期間がありません。&#10;閉じるまでオープン状態が続きます。" />
+        <e k="bank_detail_info_rev_payment" v="リボルビング返済は変動制です：&#10;引出残高に対して月次利息を支払います。&#10;元本は自分のペースで返済します。" />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="低" />
+        <e k="bank_risk_moderate" v="中程度" />
+        <e k="bank_risk_high" v="高" />
+        <e k="bank_risk_critical" v="深刻" />
+        <e k="bank_risk_refused" v="拒否" />
+        <e k="bank_portfolio_scale_safe" v="健全" />
+        <e k="bank_portfolio_scale_risky" v="リスクあり" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d年" />
+        <e k="bank_format_monthsShort" v="%dヶ月" />
+        <e k="bank_format_yearsMonths" v="%d年%dヶ月" />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="ローンを申請するには農場を所有する必要があります。" />
+        <e k="bank_error_insufficientFunds" v="繰上返済に必要な資金が不足しています。" />
+        <e k="bank_error_partialRepayMin" v="一部返済の最低金額：%s（当初元本の10%%）。" />
+        <e k="bank_confirm_earlyRepay" v="%sを%sの違約金で返済しますか？&#10;合計：%s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="ローン詳細" />
+        <e k="bank_detail_title" v="ローン番号%d" />
+        <e k="bank_detail_label_amount" v="金額" />
+        <e k="bank_detail_label_rate" v="金利" />
+        <e k="bank_detail_label_type" v="種類" />
+        <e k="bank_detail_label_risk" v="リスク" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="ローン契約書署名時に借入した総額。この金額は契約期間中変わりません。" />
+        <e k="bank_detail_info_rate" v="このローンに適用される年利。銀行の基本金利とリスクレベルに応じたプレミアムが含まれます。" />
+        <e k="bank_detail_info_type" v="ローンの返済方法&#10;元利均等：毎月固定の返済額&#10;Bullet：毎月利息のみ、元本は最後に一括&#10;リボルビング：オープン与信枠、固定期間なし" />
+        <e k="bank_detail_info_risk" v="審査時に銀行が評価したリスクレベル。DSCR、LTV、あなたの履歴に依存します。リスクが高いほど金利プレミアムが付加されます。" />
+        <e k="bank_detail_info_dscr" v="債務返済カバー率&#10;収入 &#247; 月次債務返済総額。&#10;1.5超 = 余裕あり&#10;1.0&#8211;1.5 = 逼迫&#10;1.0未満 = 収入が債務をカバーできない&#10;&#10;改善方法：&#10;既存ローンを返済する（月次返済額を削減）&#10;農場の収入を増やす（販売、作物、畜産）&#10;より少ない金額を申請する&#10;期間を延長する（月次返済額を削減）" />
+        <e k="bank_detail_info_ltv" v="ローン・トゥ・バリュー比率&#10;ローン残高÷資産価値。&#10;低いほど銀行にとって安全。&#10;80%超＝高リスク。" />
+
+        <e k="bank_detail_info_hint" v="詳細はフィールドをクリックしてください" />
+
+        <e k="bank_detail_col_period" v="番号" />
+        <e k="bank_detail_col_payment" v="返済額" />
+        <e k="bank_detail_col_interest" v="利息" />
+        <e k="bank_detail_col_principal" v="元本" />
+        <e k="bank_detail_col_balance" v="残高" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="新規ローン" />
+        <e k="bank_wizard_step1_title" v="ステップ1 — ローンの設定" />
+        <e k="bank_wizard_step2_title" v="ステップ2 — 概要と確認" />
+        <e k="bank_wizard_card_rates" v="金利" />
+        <e k="bank_wizard_card_cost" v="費用" />
+        <e k="bank_wizard_label_loanType" v="ローンの種類" />
+        <e k="bank_wizard_label_amount" v="金額" />
+        <e k="bank_wizard_label_duration" v="期間" />
+        <e k="bank_wizard_limit" v="利用可能限度額（審査結果に基づく）：%s" />
+        <e k="bank_wizard_monthlyPreview" v="推定月次返済額：%s" />
+        <e k="bank_wizard_recap_baseRate" v="基本金利" />
+        <e k="bank_wizard_recap_typeSpread" v="商品プレミアム" />
+        <e k="bank_wizard_recap_surcharge" v="リスクプレミアム" />
+        <e k="bank_wizard_recap_monthly" v="月次返済額" />
+        <e k="bank_wizard_recap_totalInterest" v="総利息" />
+        <e k="bank_wizard_recap_totalCost" v="総費用" />
+        <e k="bank_wizard_recap_dscr" v="DSCR（返済能力）" />
+        <e k="bank_wizard_recap_ltv" v="LTV（ローン／資産）" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR（実質年利）" />
+        <e k="bank_wizard_recap_risk" v="リスクレベル" />
+        <e k="bank_wizard_recap_risk_section" v="リスク" />
+        <e k="bank_wizard_indicativeRate" v="参考金利：%s（リスクなし）" />
+        <e k="bank_wizard_warn_limitExceeded" v="申請額が利用可能な与信限度額を超えています。" />
+        <e k="bank_wizard_warn_concentrationExceeded" v="申請額が農場ごとのエクスポージャー限度（総銀行能力の25%）を超えています。" />
+        <e k="bank_wizard_warn_refused" v="ローン拒否：財務プロファイルが最低要件を満たしていません。" />
+        <e k="bank_wizard_warn_invalidAmount" v="無効な金額：正の値を選択してください。" />
+        <e k="bank_wizard_warn_critical50" v="高リスク：融資額は申請額の50%に制限されます。" />
+        <e k="bank_wizard_hint_refused" v="拒否理由を理解するには DSCR またはリスクレベルをクリックしてください。" />
+        <e k="bank_wizard_totalCostPreview" v="総返済額：~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="うち利息 ~%s" />
+        <e k="bank_wizard_amountCapped" v="申請：%s  &#8594;  承認：%s" />
+        <e k="bank_wizard_btn_prev" v="前へ" />
+        <e k="bank_wizard_btn_next" v="次へ" />
+        <e k="bank_wizard_btn_confirm" v="確認" />
+        <e k="bank_wizard_confirm_msg" v="%sのローンを金利%sで確認しますか？" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="ローンに適用される金利の詳細。&#10;最終EIRは基本金利＋商品プレミアム＋リスクプレミアムの合計です。" />
+        <e k="bank_wizard_info_baseRate" v="銀行が設定した基準金利。すべての借入人に同一。&#10;サーバー設定に基づいて変動します。" />
+        <e k="bank_wizard_info_typeSpread" v="選択したローンの種類に関連する金利スプレッド。&#10;元利均等 = 0%：毎回の返済で元本が減少します。&#10;Bullet：満期まで全元本がリスクにさらされます。&#10;リボルビング：固定期日なしで資金が常に利用可能です。" />
+        <e k="bank_wizard_info_surcharge" v="リスクレベルに基づいて適用される追加費用。&#10;プロファイルのリスクが高いほど、この追加費用が高くなります。" />
+        <e k="bank_wizard_info_effectiveRate" v="実質年利（EIR）：ローンの実際の年間費用。&#10;基本金利、商品プレミアム、リスクプレミアムを合算したものです。" />
+        <e k="bank_wizard_info_risk_section" v="ローンに対する銀行のリスク評価。&#10;これらの指標が融資の可否と条件を決定します。" />
+        <e k="bank_wizard_info_cost" v="ローンの総費用のサマリー。&#10;月次返済額、累積利息、総返済額を比較します。" />
+        <e k="bank_wizard_info_monthly" v="毎月キャッシュフローから差し引かれる金額。&#10;元利均等ローンは元本と利息を含みます。&#10;Bulletローンは利息のみが差し引かれます。" />
+        <e k="bank_wizard_info_totalInterest" v="ローン期間中に支払うすべての利息の合計。&#10;期間が長いほど、この金額が高くなります。" />
+        <e k="bank_wizard_info_totalCost" v="ローン終了時に返済した総額。&#10;借入元本＋総利息に等しい。" />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="銀行&amp;ローン" />
+        <e k="bank_setting_initialCapital" v="初期資本" />
+        <e k="bank_toolTip_initialCapital" v="農場ごとの銀行業務用に提供される初期与信枠。" />
+        <e k="bank_setting_leverageRatio" v="レバレッジ比率" />
+        <e k="bank_toolTip_leverageRatio" v="利用可能な自己資本に対する最大負債乗数を定義します。例：10倍→最大与信＝自己資本の10倍。" />
+        <e k="bank_setting_dynamicRate" v="動的金利" />
+        <e k="bank_toolTip_dynamicRate" v="有効：基本金利が毎年変動します（±0.25%、範囲1〜12%）。リスクプレミアムは常に適用されます。" />
+        <e k="bank_setting_baseInterestRate" v="基本金利" />
+        <e k="bank_toolTip_baseInterestRate" v="リスクプレミアム前に全ローンに適用される年間基本金利。" />
+        <e k="bank_setting_earlyRepaymentPenalty" v="繰上返済違約金" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="ローンの早期返済に対する違約金として請求される残存元本の割合。" />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="%d年度 — %s" />
+        <e k="bank_report_title_default" v="年次報告書" />
+        <e k="bank_report_section_costs" v="資金フロー" />
+        <e k="bank_report_section_activity" v="活動状況" />
+        <e k="bank_report_interestPaid" v="・支払利息" />
+        <e k="bank_report_principalPaid" v="・返済元本" />
+        <e k="bank_report_totalPaid" v="総支払額" />
+        <e k="bank_report_avgMonthly" v="・平均月次返済額" />
+        <e k="bank_report_loansOpened" v="・開始したローン" />
+        <e k="bank_report_loansClosed" v="・完済したローン" />
+        <e k="bank_report_loansActive" v="・アクティブなローン" />
+        <e k="bank_report_outstanding" v="総負債" />
+        <e k="bank_report_noData" v="年次報告書データはありません。" />
+        <e k="bank_report_btnNext" v="翌年" />
+        <e k="bank_report_btnPrev" v="前年" />
+        <e k="bank_btn_report" v="年次報告書" />
+    </elements>
+</l10n>

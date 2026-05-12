@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUIProfiles>
+
+    <!-- Header icon -->
+    <Profile name="bankHeaderIcon" extends="fs25_menuHeaderIcon">
+        <imageSliceId value="bankCredit.menuIcon"/>
+    </Profile>
+
+    <!-- Content area -->
+    <Profile name="bankListContentArea" extends="emptyPanel" with="anchorTopStretchingX pivotTopLeft"/>
+
+    <!-- Dashboard strip -->
+    <Profile name="bankDashboardStrip" extends="emptyPanel" with="anchorTopLeft">
+        <size value="1550px 130px"/>
+        <position value="0px 0px"/>
+    </Profile>
+
+    <!-- Dashboard cards -->
+    <Profile name="bankDashCard" extends="emptyPanel" with="anchorTopLeft">
+        <size value="370px 100px"/>
+    </Profile>
+
+    <Profile name="bankDashCardBg" extends="baseReference" with="anchorTopLeft">
+        <size value="370px 100px"/>
+        <color value="0 0 0 0.70"/>
+        <cornerSize value="0.35"/>
+    </Profile>
+
+    <Profile name="bankDashCardLabel" extends="baseReference" with="anchorTopLeft">
+        <size value="370px 20px"/>
+        <textSize value="18px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_colorWhite_50"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="bankDashCardValue" extends="baseReference" with="anchorTopLeft">
+        <size value="370px 34px"/>
+        <textSize value="24px"/>
+        <textBold value="true"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="bankDashCardValueHL" extends="bankDashCardValue">
+        <textColor value="$preset_fs25_colorMainHighlight"/>
+    </Profile>
+
+    <Profile name="bankDashCardSub" extends="baseReference" with="anchorTopLeft">
+        <size value="370px 14px"/>
+        <textSize value="11px"/>
+        <textBold value="false"/>
+        <textColor value="$preset_colorWhite_50"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+
+
+    <Profile name="bankDashSpacer" extends="fs25_lineSeparatorTopHighlighted" with="anchorTopLeft">
+        <size value="1555px 2dp"/>
+        <imageColor value="$preset_fs25_colorGreyLight_50"/>
+    </Profile>
+
+    <!-- Toggle button strip -->
+    <Profile name="bankToggleStrip" extends="emptyPanel" with="anchorTopLeft">
+        <position value="0px -256px"/>
+        <size value="1560px 36px"/>
+    </Profile>
+
+    <Profile name="bankToggleBtn" extends="fs25_subCategorySelectorTabbedTab">
+        <size value="220px 36px"/>
+    </Profile>
+
+    <!-- Loans list -->
+    <Profile name="bankLoansList" extends="emptyPanel" with="pivotTopLeft">
+        <position value="0px -190px"/>
+        <size value="1540px 600px"/>
+    </Profile>
+
+    <Profile name="bankLoansListItem" extends="fs25_calendarListItem">
+        <height value="40px"/>
+        <imageColor value="$preset_fs25_colorGrey"/>
+        <imageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+        <alternateBackgroundColor value="$preset_fs25_colorGreyDark_50"/>
+    </Profile>
+
+    <Profile name="bankListItemGradient" extends="fs25_calendarListItemBg">
+        <imageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+        <startImageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+        <endImageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+    </Profile>
+
+    <!-- Column headers -->
+    <Profile name="bankColumnHeader" extends="baseReference" with="anchorTopLeft">
+        <imageColor value="0 0 0 0"/>
+        <textSize value="15px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_colorWhite_50"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <!-- Row cells -->
+    <Profile name="bankRowCellLeft" extends="baseReference" with="anchorStretchingYLeft">
+        <textBold value="false"/>
+        <textSize value="16px"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textSelectedColor value="$preset_fs25_colorMainDark"/>
+        <textDisabledColor value="$preset_colorDisabled"/>
+    </Profile>
+
+    <Profile name="bankRowCellCenter" extends="bankRowCellLeft">
+        <textAlignment value="center"/>
+        <textBold value="true"/>
+    </Profile>
+
+    <Profile name="bankRowCellRight" extends="baseReference" with="anchorStretchingYLeft">
+        <textBold value="true"/>
+        <textSize value="16px"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textSelectedColor value="$preset_fs25_colorMainDark"/>
+        <textDisabledColor value="$preset_colorDisabled"/>
+    </Profile>
+
+    <!-- List slider -->
+    <Profile name="bankSliderBox" extends="fs25_listSliderBox" with="anchorTopRight">
+        <width value="6px"/>
+        <height value="600px"/>
+    </Profile>
+
+    <!-- Empty state -->
+    <Profile name="bankEmptyStateText" extends="baseReference" with="anchorTopLeft">
+        <size value="400px 40px"/>
+        <textSize value="18px"/>
+        <textBold value="false"/>
+        <textColor value="0.45 0.45 0.45 1"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  AnnualReportDialog layout                                    -->
+    <!--  Dialog: 640×480  (uses fs25_dialogContentContainer)          -->
+    <!--  MainBox: 560px wide, anchorTopCenter → auto-equal L/R margin -->
+    <!--  Reuses bhd_sectionAccent, bhd_separator from BankHealthDialog-->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <Profile name="ard_dialogBg" extends="fs25_dialogBg">
+        <size value="640px 480px"/>
+    </Profile>
+
+    <Profile name="ard_mainBox" extends="emptyPanel" with="anchorTopCenter">
+        <size value="560px 400px"/>
+        <flowDirection value="vertical"/>
+        <alignmentX value="left"/>
+        <alignmentY value="top"/>
+        <elementSpacing value="0px"/>
+    </Profile>
+
+    <Profile name="ard_title" extends="baseReference">
+        <size value="560px 40px"/>
+        <margin value="0px 4px 0px 0px"/>
+        <textSize value="18px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="ard_titleSepWrapper" extends="emptyPanel">
+        <size value="560px 2dp"/>
+    </Profile>
+
+    <Profile name="ard_titleSep" extends="fs25_lineSeparatorTopHighlighted" with="anchorTopCenter">
+        <size value="180px 2dp"/>
+    </Profile>
+
+    <Profile name="ard_titleSpacer" extends="emptyPanel">
+        <size value="560px 20px"/>
+    </Profile>
+
+    <Profile name="ard_contentArea" extends="emptyPanel">
+        <size value="560px 340px"/>
+    </Profile>
+
+    <Profile name="ard_sectionTitle" extends="baseReference" with="anchorTopLeft">
+        <size value="540px 26px"/>
+        <textSize value="16px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="0.60 0.60 0.60 1"/>
+        <textAlignment value="left"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="ard_dataLabel" extends="baseReference" with="anchorTopLeft">
+        <size value="280px 24px"/>
+        <textSize value="14px"/>
+        <textBold value="false"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_colorWhite_50"/>
+        <textAlignment value="left"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="ard_dataLabelBold" extends="ard_dataLabel">
+        <textBold value="true"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+    </Profile>
+
+    <Profile name="ard_dataValue" extends="baseReference" with="anchorTopLeft">
+        <size value="260px 24px"/>
+        <textSize value="14px"/>
+        <textBold value="true"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textAlignment value="right"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="ard_dataValueHL" extends="ard_dataValue">
+        <textColor value="$preset_fs25_colorMainHighlight"/>
+    </Profile>
+
+    <!-- ═════════════════════════════════════════════════════ -->
+    <!-- Bank Health Dialog                                    -->
+    <!--                                                       -->
+    <!-- Layout: -->
+    <!--   Dialog:        640 × 500                            -->
+    <!--   ContentContainer padding: ~20px (native, all sides) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  BankHealthDialog layout                                      -->
+    <!--  Dialog: 640×540  (uses fs25_dialogContentContainer)          -->
+    <!--  MainBox: 560px wide, anchorTopCenter → auto-equal L/R margin -->
+    <!--    Title:       560 × 40                                      -->
+    <!--    SepWrapper:  560 × 2dp                                     -->
+    <!--    Spacer:      560 × 25  (breathing below main title)        -->
+    <!--    ContentArea: 560 × 385                                     -->
+    <!--  Hierarchy: section 16px > data 14px > portfolio 12px         -->
+    <!--  ButtonBox: standard fs25_dialogButtonBox                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <Profile name="bankHealthDialogBg" extends="fs25_dialogBg">
+        <size value="640px 560px"/>
+    </Profile>
+
+    <Profile name="bhd_mainBox" extends="emptyPanel" with="anchorTopCenter">
+        <size value="560px 472px"/>
+        <flowDirection value="vertical"/>
+        <alignmentX value="left"/>
+        <alignmentY value="top"/>
+        <elementSpacing value="0px"/>
+    </Profile>
+
+    <Profile name="bhd_title" extends="baseReference">
+        <size value="560px 40px"/>
+        <margin value="0px 4px 0px 0px"/>
+        <textSize value="18px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="bhd_titleSepWrapper" extends="emptyPanel">
+        <size value="560px 2dp"/>
+    </Profile>
+
+    <Profile name="bhd_titleSep" extends="fs25_lineSeparatorTopHighlighted" with="anchorTopCenter">
+        <size value="180px 2dp"/>
+    </Profile>
+
+    <Profile name="bhd_titleSpacer" extends="emptyPanel">
+        <size value="560px 25px"/>
+    </Profile>
+
+    <Profile name="bhd_contentArea" extends="emptyPanel">
+        <size value="560px 405px"/>
+    </Profile>
+
+    <!-- Section accent bar (golden, left of section title) -->
+    <Profile name="bhd_sectionAccent" extends="baseReference" with="anchorTopLeft">
+        <size value="3px 26px"/>
+        <color value="$preset_fs25_colorMainHighlight"/>
+        <cornerSize value="0"/>
+    </Profile>
+
+    <!-- Section title button: clickable, highlights on focus/hover -->
+    <Profile name="bhd_sectionButton" extends="baseReference" with="anchorTopLeft">
+        <size value="540px 26px"/>
+        <textSize value="16px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="0.60 0.60 0.60 1"/>
+        <textFocusedColor value="$preset_fs25_colorMainHighlight"/>
+        <textHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+        <textAlignment value="left"/>
+        <textVerticalAlignment value="middle"/>
+        <imageColor value="0 0 0 0"/>
+        <imageFocusedColor value="0 0 0 0"/>
+        <imagePressedColor value="0 0 0 0"/>
+    </Profile>
+
+    <!-- Data label button: clickable, highlights on focus/hover -->
+    <Profile name="bhd_dataButton" extends="baseReference" with="anchorTopLeft">
+        <size value="280px 24px"/>
+        <textSize value="14px"/>
+        <textBold value="false"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_colorWhite_50"/>
+        <textFocusedColor value="$preset_fs25_colorMainLight"/>
+        <textHighlightedColor value="$preset_fs25_colorMainLight"/>
+        <textAlignment value="left"/>
+        <textVerticalAlignment value="middle"/>
+        <imageColor value="0 0 0 0"/>
+        <imageFocusedColor value="0 0 0 0"/>
+        <imagePressedColor value="0 0 0 0"/>
+    </Profile>
+
+    <!-- Data value (right-aligned, same size as label) -->
+    <Profile name="bhd_dataValue" extends="baseReference" with="anchorTopLeft">
+        <size value="260px 24px"/>
+        <textSize value="14px"/>
+        <textBold value="true"/>
+        <textColor value="$preset_fs25_colorMainLight"/>
+        <textAlignment value="right"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="bhd_separator" extends="baseReference" with="anchorTopLeft">
+        <size value="560px 1px"/>
+        <color value="0.25 0.25 0.25 1"/>
+        <cornerSize value="0"/>
+    </Profile>
+
+    <!-- ===== PORTFOLIO DISTRIBUTION BAR ===== -->
+    <!-- Layout: [SAIN 50px][8px][BAR 444px][8px][RISQUÉ 50px] = 560px -->
+
+    <Profile name="bhd_portfolioBarBg" extends="baseReference" with="anchorTopLeft">
+        <size value="444px 16px"/>
+        <color value="$preset_fs25_colorGreyDark"/>
+        <cornerSize value="0.5"/>
+    </Profile>
+
+    <Profile name="bhd_portfolioBarFill" extends="baseReference" with="anchorTopLeft">
+        <size value="444px 16px"/>
+        <color value="$preset_fs25_colorGreen"/>
+        <cornerSize value="0.5"/>
+    </Profile>
+
+    <!-- Scale endpoints: SAIN right-aligned (hugs bar left) / RISQUÉ left-aligned (hugs bar right) -->
+    <Profile name="bhd_portfolioScaleSafe" extends="baseReference" with="anchorTopLeft">
+        <size value="50px 16px"/>
+        <textSize value="13px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="0.45 0.45 0.45 1"/>
+        <textAlignment value="right"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="bhd_portfolioScaleRisky" extends="bhd_portfolioScaleSafe">
+        <textAlignment value="left"/>
+    </Profile>
+
+    <!-- Dynamic status label: dominant tier name uppercase centered, color set in Lua -->
+    <Profile name="bhd_portfolioStatus" extends="baseReference" with="anchorTopLeft">
+        <size value="560px 18px"/>
+        <textSize value="16px"/>
+        <textBold value="true"/>
+        <textUpperCase value="true"/>
+        <textColor value="$preset_fs25_colorGreen"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+    <Profile name="bhd_hintText" extends="baseReference" with="anchorTopLeft">
+        <size value="560px 18px"/>
+        <textSize value="11px"/>
+        <textBold value="false"/>
+        <textColor value="0.40 0.40 0.40 1"/>
+        <textAlignment value="center"/>
+        <textVerticalAlignment value="middle"/>
+    </Profile>
+
+</GUIProfiles>

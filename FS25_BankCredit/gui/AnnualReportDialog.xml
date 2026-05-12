@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+
+    <GuiElement profile="ard_dialogBg" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+            <BoxLayout profile="ard_mainBox">
+
+                <!-- Title -->
+                <Text profile="ard_title" id="mainTitleText" text="$l10n_bank_report_title_default"/>
+
+                <!-- Title separator -->
+                <GuiElement profile="ard_titleSepWrapper">
+                    <ThreePartBitmap profile="ard_titleSep" id="titleSep"/>
+                </GuiElement>
+
+                <!-- Spacer -->
+                <GuiElement profile="ard_titleSpacer"/>
+
+                <!-- Content area -->
+                <GuiElement profile="ard_contentArea">
+
+                    <!-- ===== PAYMENTS ===== -->
+                    <RoundCorner profile="bhd_sectionAccent" position="0px 0px"/>
+                    <Text profile="ard_sectionTitle" position="12px 0px" text="$l10n_bank_report_section_costs"/>
+
+                    <Text profile="ard_dataLabel" position="12px -34px"  text="$l10n_bank_report_interestPaid"/>
+                    <Text profile="ard_dataValue" position="300px -34px" id="reportInterestValue"/>
+
+                    <Text profile="ard_dataLabel" position="12px -58px"  text="$l10n_bank_report_principalPaid"/>
+                    <Text profile="ard_dataValue" position="300px -58px" id="reportPrincipalValue"/>
+
+                    <Text profile="ard_dataLabel" position="12px -82px"  text="$l10n_bank_report_avgMonthly"/>
+                    <Text profile="ard_dataValue" position="300px -82px" id="reportAvgMonthlyValue"/>
+
+                    <RoundCorner profile="bhd_separator" position="0px -114px"/>
+
+                    <Text profile="ard_dataLabelBold" position="12px -126px" text="$l10n_bank_report_totalPaid"/>
+                    <Text profile="ard_dataValueHL"   position="300px -126px" id="reportTotalValue"/>
+
+                    <RoundCorner profile="bhd_separator" position="0px -158px"/>
+
+                    <!-- ===== ACTIVITY ===== -->
+                    <RoundCorner profile="bhd_sectionAccent" position="0px -171px"/>
+                    <Text profile="ard_sectionTitle" position="12px -171px" text="$l10n_bank_report_section_activity"/>
+
+                    <Text profile="ard_dataLabel" position="12px -205px" text="$l10n_bank_report_loansOpened"/>
+                    <Text profile="ard_dataValue" position="300px -205px" id="reportLoansOpenedValue"/>
+
+                    <Text profile="ard_dataLabel" position="12px -229px" text="$l10n_bank_report_loansClosed"/>
+                    <Text profile="ard_dataValue" position="300px -229px" id="reportLoansClosedValue"/>
+
+                    <Text profile="ard_dataLabel" position="12px -253px" text="$l10n_bank_report_loansActive"/>
+                    <Text profile="ard_dataValue" position="300px -253px" id="reportLoansActiveValue"/>
+
+                    <RoundCorner profile="bhd_separator" position="0px -285px"/>
+
+                    <Text profile="ard_dataLabelBold" position="12px -297px" text="$l10n_bank_report_outstanding"/>
+                    <Text profile="ard_dataValueHL"   position="300px -297px" id="reportOutstandingValue"/>
+
+                </GuiElement>
+
+            </BoxLayout>
+        </GuiElement>
+
+        <BoxLayout profile="fs25_dialogButtonBox">
+            <Button profile="buttonMenuPrev" id="btnPrevYear" text="$l10n_bank_report_btnPrev" onClick="onClickPrevYear"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonMenuNext" id="btnNextYear" text="$l10n_bank_report_btnNext" onClick="onClickNextYear"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonBack" id="btnClose" text="$l10n_button_close" onClick="onClickBack"/>
+        </BoxLayout>
+    </GuiElement>
+</GUI>

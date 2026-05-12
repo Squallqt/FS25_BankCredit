@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="은행&amp;대출" />
+        <e k="bank_label_interest" v="대출 이자" />
+        <e k="bank_label_principal" v="대출 원금" />
+        <e k="finance_bankLoanInterest" v="은행 이자" />
+        <e k="finance_bankLoanPrincipal" v="대출 원금" />
+        <e k="bank_vanilla_loan_cleared" v="%s의 기존 대출이 감지되어 자동으로 상환되었습니다.&#10;금액이 잔액에서 차감되었습니다.&#10;&#10;새 대출을 신청하려면 은행 메뉴를 사용하세요." />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="은행" />
+        <e k="bank_empty_list" v="표시할 활성 대출이 없습니다." />
+        <e k="bank_empty_paid" v="표시할 상환 완료 대출이 없습니다." />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="활성 대출" />
+        <e k="bank_tab_paid" v="종료된 대출" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="이용 가능한 여신 한도" />
+        <e k="bank_dash_available_sub" v="（심사 결과에 따라）" />
+        <e k="bank_dash_outstanding" v="현재 잔여 채무" />
+        <e k="bank_dash_outstanding_sub" v="대출 한도의 %d%% 사용" />
+        <e k="bank_dash_monthlyTotal" v="월 상환금 합계" />
+        <e k="bank_dash_monthlyTotal_sub" v="（월간 총 인출 금액）" />
+        <e k="bank_dash_rate" v="현재 금리" />
+        <e k="bank_dash_rate_sub" v="（기본 금리, 가산 금리 제외）" />
+        <e k="bank_dash_equity" v="자기자본" />
+        <e k="bank_dash_capacity" v="총 여신 한도" />
+        <e k="bank_dash_outstanding_label" v="총 잔여 채무（모든 농장）" />
+        <e k="bank_dash_utilization" v="한도 이용률" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="은행 지표"/>
+        <e k="bank_btn_indicators" v="은행 지표"/>
+        <e k="bank_dash_leverage" v="레버리지 비율" />
+        <e k="bank_dash_coverage" v="리스크 커버리지" />
+        <e k="bank_dash_provision" v="위험 준비금" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="대차대조표" />
+        <e k="bank_health_sectionRisk" v="포트폴리오&amp;리스크" />
+        <e k="bank_health_sectionPortfolio" v="포트폴리오 분포" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="은행 내부 지표. 은행의 재무 건전성 개요: 자기자본, 여신 한도, 이용률 및 레버리지." />
+        <e k="bank_info_risk" v="은행 내부 지표. 은행이 잠재적 손실을 감당할 수 있는 능력과 포트폴리오 내 농장의 집중도를 측정합니다." />
+        <e k="bank_info_portfolio" v="리스크 수준별 진행 중 대출 분포. 고위험 대출이 많을수록 이용 가능한 여신이 줄어듭니다." />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="은행의 자기자본으로, 초기 자본과 누적 이자 수익으로 구성됩니다.&#10;납부하는 이자마다 은행이 강화되어 여신 한도가 증가합니다." />
+        <e k="bank_info_capacity" v="은행이 모든 농장에 대출할 수 있는 최대 총액입니다.&#10;자기자본×레버리지 비율과 같습니다.&#10;소진되면 신규 대출을 제공할 수 없습니다." />
+        <e k="bank_info_outstanding" v="서버의 모든 농장에서 남아 있는 원금의 합계입니다.&#10;은행의 이용률을 계산하는 데 사용됩니다.&#10;이 금액이 클수록 이용 가능한 여신 한도는 낮아집니다." />
+        <e k="bank_info_utilization" v="현재 대출된 총 한도의 비율.&#10;50% 미만＝건전&#10;50~80%＝빡빡함&#10;80% 초과＝여신이 매우 제한적" />
+        <e k="bank_info_leverage" v="여신 한도를 결정하기 위해 자기자본에 적용되는 배수.&#10;예: 10배＝자기자본 1€마다 10€의 대출 지원.&#10;서버 관리자가 설정합니다." />
+        <e k="bank_info_coverage" v="은행이 대출 포트폴리오의 위험을 감당하기에 충분한 준비금을 보유하고 있는지 측정합니다.&#10;계산: 자기자본 ÷ 대손충당금.&#10;1.5배 초과 = 건전&#10;1.0~1.5배 = 주의&#10;1.0배 미만 = 심각&#10;비율이 너무 낮으면 신규 대출 승인이 차단될 수 있습니다." />
+        <e k="bank_info_provision" v="대출 불이행 가능성을 대비해 적립된 자금.&#10;고위험 대출은 더 많은 충당금이 필요하며, 이는 은행의 실효적 여신 한도를 직접 감소시킵니다.&#10;이는 은행 내부의 위험 준비금이며, 플레이어 대출 상환이 아닙니다." />
+
+        <e k="bank_info_hint" v="자세한 내용은 제목 또는 지표를 클릭하세요" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="유형" />
+        <e k="bank_col_amount" v="최초 금액" />
+        <e k="bank_col_monthly" v="월 상환금" />
+        <e k="bank_col_rate" v="금리" />
+        <e k="bank_col_remaining" v="잔여 기간" />
+        <e k="bank_col_rest" v="잔여 원금" />
+        <e k="bank_col_status" v="상태" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="활성" />
+        <e k="bank_status_paid" v="상환 완료" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="신규 대출" />
+        <e k="bank_btn_details" v="대출 상세" />
+        <e k="bank_btn_earlyRepay" v="조기상환" />
+        <e k="bank_btn_repayLine" v="한도 상환" />
+        <e k="bank_btn_close" v="여신 한도 닫기" />
+        <e k="bank_btn_back" v="닫기" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="원리금 균등" />
+        <e k="bank_loanType_bullet" v="Bullet" />
+        <e k="bank_loanType_revolving" v="리볼빙" />
+        <e k="bank_loanType_annuity_desc" v="매월 고정 상환금으로 이자와 원금이 포함됩니다.&#10;대출 기간 동안 금액이 변하지 않습니다." />
+        <e k="bank_loanType_bullet_desc" v="매월 이자만 납부합니다.&#10;만기일에 원금 전액을 일시 상환합니다.&#10;월 부담이 낮지만 만기 시 현금흐름을 계획하세요." />
+        <e k="bank_loanType_revolving_desc" v="승인된 한도까지의 상시 여신 한도.&#10;필요한 만큼 인출하고 자유롭게 상환할 수 있습니다.&#10;고정 상환금이나 만기일이 없습니다." />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="인출" />
+        <e k="bank_revolving_status_open" v="개설" />
+        <e k="bank_revolving_status_available" v="이용 가능" />
+        <e k="bank_revolving_noDuration" v="고정 기간 없음" />
+        <e k="bank_revolving_variablePayment" v="변동" />
+        <e k="bank_revolving_estimatedInterest" v="추정 이자（1년）" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / 년 최대" />
+        <e k="bank_revolving_commitmentFee" v="약정 수수료" />
+        <e k="bank_confirm_draw" v="인출 금액（최대 %s）：" />
+        <e k="bank_confirm_repay_revolving" v="상환 금액（최대 %s）：" />
+        <e k="bank_confirm_partialRepay_amount" v="상환 금액（최소 %s — 최대 %s）：" />
+        <e k="bank_confirm_closeLine" v="이 여신 한도를 닫으시겠습니까? 이 작업은 되돌릴 수 없습니다." />
+        <e k="bank_detail_revolving_limit" v="여신 한도" />
+        <e k="bank_detail_revolving_drawn" v="인출 잔액" />
+        <e k="bank_detail_revolving_available" v="이용 가능액" />
+        <e k="bank_detail_rev_utilization" v="이용률" />
+        <e k="bank_detail_rev_conditions" v="조건" />
+        <e k="bank_detail_rev_interest_month" v="이자／월" />
+        <e k="bank_detail_rev_interest_year" v="이자／년" />
+        <e k="bank_detail_info_rev_commitment_fee" v="여신 한도의 미인출 부분에 대한 연 1% 수수료. 사용하지 않은 이용 가능액에 대해 매월 청구됩니다. 최대 금액（한도가 전혀 인출되지 않은 경우）을 표시합니다." />
+        <e k="bank_detail_rev_duration" v="기간" />
+        <e k="bank_detail_rev_payment" v="상환금" />
+        <e k="bank_detail_info_rev_utilization" v="리볼빙 여신 한도 이용 현황 상세.&#10;한도는 승인된 최대 금액입니다.&#10;인출 잔액은 현재 차입 중인 금액입니다." />
+        <e k="bank_detail_info_rev_limit" v="이 리볼빙 여신 한도에서&#10;차입할 수 있는 최대 금액." />
+        <e k="bank_detail_info_rev_drawn" v="이 여신 한도에서&#10;현재 차입·사용 중인 금액." />
+        <e k="bank_detail_info_rev_available" v="여신 한도 내에서&#10;아직 인출 가능한 금액." />
+        <e k="bank_detail_info_rev_conditions" v="이 리볼빙 여신 한도에&#10;적용되는 자금 조달 조건." />
+        <e k="bank_detail_info_rev_interest_month" v="현재 인출 잔액 기준&#10;추정 월 이자." />
+        <e k="bank_detail_info_rev_interest_year" v="현재 인출 잔액 기준&#10;추정 연 이자." />
+        <e k="bank_detail_info_rev_duration" v="리볼빙 여신 한도에는 고정 기간이 없습니다.&#10;닫을 때까지 개설된 상태를 유지합니다." />
+        <e k="bank_detail_info_rev_payment" v="리볼빙 상환금은 변동제입니다：&#10;인출 잔액에 대해 월 이자를 납부합니다.&#10;원금은 자신의 속도로 상환합니다." />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="낮음" />
+        <e k="bank_risk_moderate" v="보통" />
+        <e k="bank_risk_high" v="높음" />
+        <e k="bank_risk_critical" v="심각" />
+        <e k="bank_risk_refused" v="거부" />
+        <e k="bank_portfolio_scale_safe" v="건전" />
+        <e k="bank_portfolio_scale_risky" v="위험" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d년" />
+        <e k="bank_format_monthsShort" v="%d개월" />
+        <e k="bank_format_yearsMonths" v="%d년 %d개월" />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="대출을 신청하려면 농장을 소유해야 합니다." />
+        <e k="bank_error_insufficientFunds" v="조기 상환을 위한 자금이 부족합니다." />
+        <e k="bank_error_partialRepayMin" v="최소 부분 상환액: %s (초기 자본의 10%%)." />
+        <e k="bank_confirm_earlyRepay" v="%s를 %s의 위약금으로 상환하시겠습니까?&#10;합계: %s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="대출 세부사항" />
+        <e k="bank_detail_title" v="대출 번호 %d" />
+        <e k="bank_detail_label_amount" v="금액" />
+        <e k="bank_detail_label_rate" v="금리" />
+        <e k="bank_detail_label_type" v="유형" />
+        <e k="bank_detail_label_risk" v="리스크" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="대출 계약 체결 시 차입한 총 금액. 계약 기간 동안 이 금액은 변경되지 않습니다." />
+        <e k="bank_detail_info_rate" v="이 대출에 적용되는 연이율. 은행 기본 금리와 리스크 수준에 따른 가산 금리가 포함됩니다." />
+        <e k="bank_detail_info_type" v="대출 상환 방식&#10;원리금 균등: 매월 동일한 고정 상환금&#10;Bullet: 매월 이자만, 원금은 만기 일시 상환&#10;리볼빙: 오픈 여신 한도, 고정 기간 없음" />
+        <e k="bank_detail_info_risk" v="심사 시 은행이 평가한 리스크 수준. DSCR, LTV 및 귀하의 이력에 따라 달라집니다. 리스크가 높을수록 금리 가산이 더 커집니다." />
+        <e k="bank_detail_info_dscr" v="부채상환비율&#10;수입 &#247; 월간 부채 상환 합계.&#10;1.5 초과 = 여유&#10;1.0&#8211;1.5 = 빡빡함&#10;1.0 미만 = 수입이 부채를 감당하지 못함&#10;&#10;개선 방법：&#10;기존 대출 상환（월 상환금 감소）&#10;농장 수입 증대（판매, 작물, 축산）&#10;더 적은 금액 신청&#10;기간 연장（월 상환금 감소）" />
+        <e k="bank_detail_info_ltv" v="담보 인정 비율&#10;대출 금액÷자산 가치.&#10;낮을수록 은행에 더 안전.&#10;80% 초과＝고위험." />
+
+        <e k="bank_detail_info_hint" v="자세한 내용은 필드를 클릭하세요" />
+
+        <e k="bank_detail_col_period" v="번호" />
+        <e k="bank_detail_col_payment" v="상환금" />
+        <e k="bank_detail_col_interest" v="이자" />
+        <e k="bank_detail_col_principal" v="원금" />
+        <e k="bank_detail_col_balance" v="잔액" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="신규 대출" />
+        <e k="bank_wizard_step1_title" v="1단계 — 대출 설정" />
+        <e k="bank_wizard_step2_title" v="2단계 — 요약 및 확인" />
+        <e k="bank_wizard_card_rates" v="금리" />
+        <e k="bank_wizard_card_cost" v="비용" />
+        <e k="bank_wizard_label_loanType" v="대출 유형" />
+        <e k="bank_wizard_label_amount" v="금액" />
+        <e k="bank_wizard_label_duration" v="기간" />
+        <e k="bank_wizard_limit" v="이용 가능 한도（심사 결과에 따라）: %s" />
+        <e k="bank_wizard_monthlyPreview" v="추정 월 상환금: %s" />
+        <e k="bank_wizard_recap_baseRate" v="기본 금리" />
+        <e k="bank_wizard_recap_typeSpread" v="상품 가산 금리" />
+        <e k="bank_wizard_recap_surcharge" v="리스크 가산 금리" />
+        <e k="bank_wizard_recap_monthly" v="월 상환금" />
+        <e k="bank_wizard_recap_totalInterest" v="총 이자" />
+        <e k="bank_wizard_recap_totalCost" v="총 비용" />
+        <e k="bank_wizard_recap_dscr" v="DSCR（상환 능력）" />
+        <e k="bank_wizard_recap_ltv" v="LTV（대출／자산）" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR（실질 연이율）" />
+        <e k="bank_wizard_recap_risk" v="리스크 수준" />
+        <e k="bank_wizard_recap_risk_section" v="리스크" />
+        <e k="bank_wizard_indicativeRate" v="참고 금리: %s（리스크 없음）" />
+        <e k="bank_wizard_warn_limitExceeded" v="신청 금액이 이용 가능한 여신 한도를 초과합니다." />
+        <e k="bank_wizard_warn_concentrationExceeded" v="신청 금액이 농장별 익스포저 한도（총 은행 한도의 25%）를 초과합니다." />
+        <e k="bank_wizard_warn_refused" v="대출 거부: 재무 프로필이 최소 요건을 충족하지 않습니다." />
+        <e k="bank_wizard_warn_invalidAmount" v="유효하지 않은 금액: 양수 값을 선택하세요." />
+        <e k="bank_wizard_warn_critical50" v="고위험: 실행 금액이 신청 금액의 50%로 제한됩니다." />
+        <e k="bank_wizard_hint_refused" v="거부 사유를 이해하려면 DSCR 또는 리스크 수준을 클릭하세요." />
+        <e k="bank_wizard_totalCostPreview" v="총 상환 금액: ~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="그 중 이자 ~%s" />
+        <e k="bank_wizard_amountCapped" v="신청: %s  &#8594;  승인: %s" />
+        <e k="bank_wizard_btn_prev" v="이전" />
+        <e k="bank_wizard_btn_next" v="다음" />
+        <e k="bank_wizard_btn_confirm" v="확인" />
+        <e k="bank_wizard_confirm_msg" v="%s 대출을 금리 %s로 확인하시겠습니까?" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="대출에 적용되는 금리 상세.&#10;최종 EIR은 기본 금리＋상품 가산 금리＋리스크 가산 금리의 합입니다." />
+        <e k="bank_wizard_info_baseRate" v="은행이 설정한 기준 금리로 모든 차주에게 동일합니다.&#10;서버 설정에 따라 변동합니다." />
+        <e k="bank_wizard_info_typeSpread" v="선택한 대움 유형과 관련된 금리 스프레드.&#10;원리금 균등 = 0% : 매 납부마다 원금이 감소합니다.&#10;Bullet: 만기까지 전체 원금이 노출됩니다.&#10;리볼빙: 만기 없이 자금이 상시 이용 가능합니다." />
+        <e k="bank_wizard_info_surcharge" v="리스크 수준에 따라 적용되는 추가 비용.&#10;프로필의 리스크가 높을수록 이 추가 비용이 커집니다." />
+        <e k="bank_wizard_info_effectiveRate" v="실질 연이율（EIR）: 대출의 실제 연간 비용.&#10;기본 금리, 상품 가산 금리, 리스크 가산 금리를 합산한 값입니다." />
+        <e k="bank_wizard_info_risk_section" v="대출에 대한 은행의 리스크 평가.&#10;이 지표들이 대출 여부와 조건을 결정합니다." />
+        <e k="bank_wizard_info_cost" v="대출 총 비용 요약.&#10;월 상환금, 누적 이자, 총 상환 금액을 비교합니다." />
+        <e k="bank_wizard_info_monthly" v="매월 현금흐름에서 차감되는 금액.&#10;원리금 균등 대출은 원금과 이자가 포함됩니다.&#10;Bullet 대출은 이자만 차감됩니다." />
+        <e k="bank_wizard_info_totalInterest" v="대출 기간 동안 납부하는 모든 이자의 합계.&#10;기간이 길수록 이 금액이 커집니다." />
+        <e k="bank_wizard_info_totalCost" v="대출 종료 시 상환한 총 금액.&#10;차입 원금＋총 이자와 같습니다." />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="은행&amp;대출" />
+        <e k="bank_setting_initialCapital" v="초기 자본" />
+        <e k="bank_toolTip_initialCapital" v="농장별 은행 업무를 위해 제공되는 초기 여신 금액." />
+        <e k="bank_setting_leverageRatio" v="레버리지 비율" />
+        <e k="bank_toolTip_leverageRatio" v="이용 가능한 자기자본 대비 최대 부채 배수를 정의합니다. 예: 10배→최대 여신＝자기자본의 10배." />
+        <e k="bank_setting_dynamicRate" v="동적 금리" />
+        <e k="bank_toolTip_dynamicRate" v="활성화: 기본 금리가 매년 변동합니다（±0.25%, 범위 1~12%）. 리스크 가산 금리는 항상 적용됩니다." />
+        <e k="bank_setting_baseInterestRate" v="기본 금리" />
+        <e k="bank_toolTip_baseInterestRate" v="리스크 가산 금리 전 모든 대출에 적용되는 연간 기본 금리." />
+        <e k="bank_setting_earlyRepaymentPenalty" v="조기 상환 위약금" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="대출 조기 상환 위약금으로 부과되는 잔여 원금의 비율." />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="%d년도 — %s" />
+        <e k="bank_report_title_default" v="연간 보고서" />
+        <e k="bank_report_section_costs" v="자금 흐름" />
+        <e k="bank_report_section_activity" v="활동 현황" />
+        <e k="bank_report_interestPaid" v="· 납부 이자" />
+        <e k="bank_report_principalPaid" v="· 상환 원금" />
+        <e k="bank_report_totalPaid" v="총 납부액" />
+        <e k="bank_report_avgMonthly" v="· 평균 월 상환금" />
+        <e k="bank_report_loansOpened" v="· 개설 대출" />
+        <e k="bank_report_loansClosed" v="· 완료 대출" />
+        <e k="bank_report_loansActive" v="· 활성 대출" />
+        <e k="bank_report_outstanding" v="총 채무" />
+        <e k="bank_report_noData" v="연간 보고서 데이터가 없습니다." />
+        <e k="bank_report_btnNext" v="다음 연도" />
+        <e k="bank_report_btnPrev" v="이전 연도" />
+        <e k="bank_btn_report" v="연간 보고서" />
+    </elements>
+</l10n>

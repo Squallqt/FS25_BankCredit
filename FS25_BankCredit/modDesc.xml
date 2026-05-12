@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="108">
+    <author>Squallqt</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Bank And Credit</en>
+        <de>Bank Und Kredit</de>
+        <fr>Banque Et Crédit</fr>
+    </title>
+    <description>
+        <en><![CDATA[Bank & Credit adds a fractional-reserve bank to Farming Simulator 25. Borrow money, manage your debt and grow your credit capacity by farming.
+
+The bank is a standalone virtual entity with its own equity, funded by the interest it collects. Credit is not granted automatically: it is evaluated based on your income and assets.
+
+Features:
+- Three loan types: Annuity (fixed monthly payment), Bullet (interest-only, full principal at maturity), Revolving (draw and repay freely, no fixed term)
+- Revolving: 1%/year commitment fee on the undrawn portion; voluntary closure when balance is zero
+- Credit scoring via DSCR (12-month decay-weighted income history) and LTV (asset liquidation value with per-category haircuts)
+- Five risk levels: LOW / MODERATE / HIGH / CRITICAL / REFUSED - transparent rate breakdown and explicit refusal reasons
+- Risk surcharges on top of base rate: LOW +0%, MODERATE +0.75%, HIGH +2%, CRITICAL +5%
+- CRITICAL applications are auto-capped at 50% of the requested amount (the bank still lends, but at a reduced size)
+- Asset haircuts by category: farmland 70%, livestock 60%, buildings 55%, inventory 50%, tools 50%, tractors 40%, cash 30%
+- Borrower limit: liquidated asset value plus 24-month income projection, minus existing outstanding debt
+- Concentration cap: a single farm cannot exceed 25% of the bank's total lending capacity
+- Loan detail view: full amortisation schedule (Annuity, Bullet) or draw and repayment panel (Revolving)
+- Bank health dashboard: equity, leverage ratio, outstanding portfolio, internal loss reserve (not player-loan reimbursement), coverage ratio
+- Annual financial report per farm
+- Base rate with mean-reversion, updated quarterly (1% - 12%, configurable anchor)
+- Type spreads: Annuity +0%, Bullet +0.75%, Revolving +5%
+- Early repayment on Annuity and Bullet loans: full or partial by number of months (configurable penalty 0% - 5%)
+- Settings (in Game Settings): starting capital (100 k€ - 5 M€), leverage ratio (5x - 20x), base rate, dynamic rate, early repayment penalty
+- Separate Interest and Principal entries in the Finance tab
+- Solo and multiplayer: in multiplayer, bank equity and portfolio are shared server-side across all farms
+- Compatible with FS25_Invoices: invoice income counts in DSCR history
+- Compatible with FS25_RedTape: subsidy and grant income counts in DSCR history
+
+Important: this mod replaces the vanilla loan system. Any vanilla loan balance is automatically cleared at game start.
+
+Issues & suggestions: https://github.com/Squallqt/FS25_BankCredit
+
+Access via the dedicated tab in the InGame Menu (ESC).]]></en>
+        <de><![CDATA[Bank & Kredit fügt Farming Simulator 25 eine Mindestreservebank hinzu. Nehmen Sie Kredite auf, verwalten Sie Ihre Schulden und steigern Sie Ihre Kreditkapazität durch die Bewirtschaftung Ihres Hofes.
+
+Die Bank ist eine eigenständige virtuelle Einheit mit eigenem Eigenkapital, das durch die erhaltenen Zinsen wächst. Kredit wird nicht automatisch gewährt: Er wird anhand Ihrer Einnahmen und Ihres Vermögens bewertet.
+
+Funktionen:
+- Drei Kreditarten: Annuität (gleichbleibende Monatsrate), Endfällig (nur Zinsen, Tilgung am Laufzeitende), Revolving (frei ziehen und zurückzahlen, keine feste Laufzeit)
+- Revolving: Bereitstellungsprovision von 1 %/Jahr auf den nicht abgerufenen Betrag; freiwillige Kündigung bei Saldo null
+- Kreditwürdigkeitsprüfung via DSCR (12-monatige abnehmend gewichtete Einnahmenhistorie) und LTV (liquidierter Vermögenswert mit kategoriespezifischen Abschlägen)
+- Fünf Risikoklassen: NIEDRIG / MODERAT / HOCH / KRITISCH / ABGELEHNT - transparente Zinsaufschlüsselung und explizite Ablehnungsgründe
+- Risikoaufschläge auf den Basiszins: NIEDRIG +0 %, MODERAT +0,75 %, HOCH +2 %, KRITISCH +5 %
+- KRITISCH-Anträge werden automatisch auf 50 % des beantragten Betrags begrenzt (die Bank vergibt den Kredit weiterhin, jedoch in reduzierter Höhe)
+- Bewertungsabschläge nach Vermögenskategorie: Ackerland 70 %, Vieh 60 %, Gebäude 55 %, Vorräte 50 %, Geräte 50 %, Traktoren 40 %, Bargeld 30 %
+- Kreditnehmergrenze: Liquidationswert der Aktiva plus 24-Monats-Einkommensprojektion, abzüglich bestehender Schulden
+- Konzentrationsgrenze: ein einzelner Betrieb darf 25 % der Gesamtkapazität der Bank nicht überschreiten
+- Kreditdetailansicht: vollständiger Tilgungsplan (Annuität, Endfällig) oder Zierungs- und Rückzahlungsbereich (Revolving)
+- Bank-Dashboard: Eigenkapital, Hebelverhältnis, ausstehende Kredite, interne Risikorückstellung (keine Rückzahlung von Spielerkrediten), Deckungsgrad
+- Jährlicher Finanzbericht je Betrieb
+- Basiszins mit Mean-Reversion, vierteljährlich aktualisiert (1 % - 12 %, konfigurierbarer Anker)
+- Spreads nach Kreditart: Annuität +0 %, Endfällig +0,75 %, Revolving +5 %
+- Vorzeitige Rückzahlung bei Annuität und Endfällig: vollständig oder teilweise nach Monaten (konfigurierbares Vorfälligkeitsentgelt 0 % - 5 %)
+- Einstellungen (in den Spieleinstellungen): Startkapital (100 k€ - 5 M€), Hebelverhältnis (5x - 20x), Basiszins, dynamischer Zins, Vorfälligkeitsentgelt
+- Getrennte Einträge für Zinsen und Tilgung im Finanz-Tab
+- Einzel- und Mehrspielermodus: Im Mehrspielermodus werden Eigenkapital und Portfolio der Bank serverseitig für alle Betriebe geteilt
+- Kompatibel mit FS25_Invoices: Rechnungseinnahmen zählen zur DSCR-Historie
+- Kompatibel mit FS25_RedTape: Subventionen und Fördermittel zählen zur DSCR-Historie
+
+Wichtig: Dieser Mod ersetzt das Vanilla-Kreditsystem. Bestehende Vanilla-Kreditsalden werden beim Spielstart automatisch getilgt.
+
+Issues & Vorschläge: https://github.com/Squallqt/FS25_BankCredit
+
+Zugriff über den eigenen Tab im InGame-Menü (ESC).]]></de>
+        <fr><![CDATA[Banque & Crédit ajoute une banque à réserves fractionnaires à Farming Simulator 25. Empruntez, gérez votre dette et développez votre capacité de crédit en cultivant.
+
+La banque est une entité virtuelle indépendante avec ses propres fonds propres, alimentés par les intérêts perçus. Le crédit n'est pas accordé automatiquement : il est évalué selon vos revenus et votre patrimoine.
+
+Fonctionnalités :
+- Trois types de prêts : Amortissable (mensualité fixe), In Fine (intérêts seulement, capital en une fois à l'échéance), Revolving (tirez et remboursez librement, sans durée fixe)
+- Revolving : commission de non-utilisation de 1 %/an sur la portion non tirée ; clôture volontaire lorsque le solde est nul
+- Scoring de crédit via DSCR (historique de revenus à pondération décroissante sur 12 mois) et LTV (valeur liquidative des actifs avec décote par catégorie)
+- Cinq niveaux de risque : FAIBLE / MODÉRÉ / ÉLEVÉ / CRITIQUE / REFUSÉ - décomposition transparente du taux et motifs de refus explicites
+- Surcharges de risque ajoutées au taux de base : FAIBLE +0 %, MODÉRÉ +0,75 %, ÉLEVÉ +2 %, CRITIQUE +5 %
+- Les demandes CRITIQUE sont automatiquement plafonnées à 50 % du montant demandé (la banque accorde le prêt, mais à un montant réduit)
+- Décotes par catégorie d'actif : terrain agricole 70 %, bétail 60 %, bâtiments 55 %, inventaire 50 %, outils 50 %, tracteurs 40 %, cash 30 %
+- Plafond emprunteur : valeur liquidative des actifs et projection de revenus sur 24 mois, déduction faite de l'encours existant
+- Plafond de concentration : une ferme ne peut pas représenter plus de 25 % de la capacité totale de la banque
+- Vue détaillée des prêts : tableau d'amortissement complet (Amortissable, In Fine) ou panneau de tirage et remboursement (Revolving)
+- Tableau de bord bancaire : fonds propres, ratio de levier, encours du portefeuille, réserve interne pour pertes (pas un remboursement de prêt joueur), ratio de couverture
+- Rapport financier annuel par ferme
+- Taux de base à réversion vers la moyenne, évoluant trimestriellement (1 % - 12 %, ancrage configurable)
+- Spreads par type de prêt : Amortissable +0 %, In Fine +0,75 %, Revolving +5 %
+- Remboursement anticipé sur les prêts Amortissable et In Fine : intégral ou partiel par nombre de mois (pénalité configurable 0 % - 5 %)
+- Paramètres (dans les Paramètres du jeu) : capital initial (100 k€ - 5 M€), ratio de levier (5x - 20x), taux de base, taux dynamique, pénalité de remboursement anticipé
+- Lignes Intérêts et Capital séparées dans l'onglet Finance
+- Solo et multijoueur : en multijoueur, fonds propres et portefeuille sont partagés côté serveur entre toutes les fermes
+- Compatible avec FS25_Invoices : les revenus de facturation comptent dans l'historique DSCR
+- Compatible avec FS25_RedTape : les subventions et aides comptent dans l'historique DSCR
+
+Important : ce mod remplace le système de prêt vanilla. Les prêts vanilla en cours sont automatiquement remboursés au démarrage de la partie.
+
+Issues & suggestions : https://github.com/Squallqt/FS25_BankCredit
+
+Accès via l'onglet dédié dans le menu en jeu (ECHAP).]]></fr>
+
+    </description>
+    <iconFilename>icon_BankCredit.dds</iconFilename>
+    <multiplayer supported="true" />
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/Main.lua" />
+    </extraSourceFiles>
+    <l10n filenamePrefix="l10n/l10n" />
+</modDesc>

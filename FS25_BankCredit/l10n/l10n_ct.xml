@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <elements>
+        <!-- Finance tab -->
+        <e k="bank_modTitle" v="銀行 &amp; 貸款" />
+        <e k="bank_label_interest" v="貸款利息" />
+        <e k="bank_label_principal" v="貸款本金" />
+        <e k="finance_bankLoanInterest" v="銀行利息" />
+        <e k="finance_bankLoanPrincipal" v="貸款本金" />
+        <e k="bank_vanilla_loan_cleared" v="偵測到一筆 %s 的現有貸款，已自動還清。&#10;該金額已從您的餘額中扣除。&#10;&#10;請使用銀行選單申請新貸款。" />
+
+        <!-- Menu -->
+        <e k="bank_menu_title" v="銀行" />
+        <e k="bank_empty_list" v="目前無活躍貸款。" />
+        <e k="bank_empty_paid" v="目前無已結清貸款。" />
+
+        <!-- Tabs -->
+        <e k="bank_tab_active" v="活躍貸款" />
+        <e k="bank_tab_paid" v="已結清貸款" />
+
+        <!-- Dashboard — Player overview -->
+        <e k="bank_dash_available" v="可用額度" />
+        <e k="bank_dash_available_sub" v="（需經審核）" />
+        <e k="bank_dash_outstanding" v="目前未還餘額" />
+        <e k="bank_dash_outstanding_sub" v="已使用借款上限的 %d%%" />
+        <e k="bank_dash_monthlyTotal" v="每月還款總額" />
+        <e k="bank_dash_monthlyTotal_sub" v="（每月總扣款）" />
+        <e k="bank_dash_rate" v="目前利率" />
+        <e k="bank_dash_rate_sub" v="（基準利率，不含附加費）" />
+        <e k="bank_dash_equity" v="銀行淨資產" />
+        <e k="bank_dash_capacity" v="總放貸能力" />
+        <e k="bank_dash_outstanding_label" v="總未還餘額（所有農場）" />
+        <e k="bank_dash_utilization" v="使用率" />
+        <!-- Dashboard — Bank health -->
+        <e k="bank_dash_bankTitle" v="銀行指標"/>
+        <e k="bank_btn_indicators" v="銀行指標"/>
+        <e k="bank_dash_leverage" v="槓桿比率" />
+        <e k="bank_dash_coverage" v="風險覆蓋率" />
+        <e k="bank_dash_provision" v="風险準備" />
+
+        <!-- Bank health dialog sections -->
+        <e k="bank_health_sectionBalance" v="資產負債表" />
+        <e k="bank_health_sectionRisk" v="投資組合 &amp; 風險" />
+        <e k="bank_health_sectionPortfolio" v="投資組合分佈" />
+
+        <!-- Section summaries (InfoDialog — click on section title) -->
+        <e k="bank_info_balance" v="銀行內部指標。銀行財務穩健性概覽：淨資產、放貸能力、使用率和槓桿。" />
+        <e k="bank_info_risk" v="銀行內部指標。衡量銀行覆蓋潛在損失的能力以及您的農場在投資組合中的集中度。" />
+        <e k="bank_info_portfolio" v="依風險等級劃分的在貸款分佈。高風險貸款越多，可用額度越少。" />
+
+        <!-- Individual indicator explanations (InfoDialog — click on data line) -->
+        <e k="bank_info_equity" v="銀行自有資本，由初始資本和累積利息收入構成。&#10;您每次支付利息都會增強銀行實力並提高其放貸能力。" />
+        <e k="bank_info_capacity" v="銀行可向所有農場提供的最大貸款總額。&#10;等於淨資產乘以槓桿比率。&#10;額度耗盡後，無法發放新貸款。" />
+        <e k="bank_info_outstanding" v="伺服器上所有農場所欠本金餘額的總和。&#10;用於計算銀行的使用率。&#10;此金額越高，可用放貸能力越低。" />
+        <e k="bank_info_utilization" v="目前已貸出的總容量百分比。&#10;低於50% = 健康&#10;50-80% = 緊張&#10;高於80% = 可用信貸極為有限" />
+        <e k="bank_info_leverage" v="應用於淨資產以確定放貸能力的倍數。&#10;例如10倍 = 每1€淨資產支持10€貸款。&#10;由伺服器管理員設定。" />
+        <e k="bank_info_coverage" v="衡量銀行是否擁有足夠的準備金來覆蓋其貸款組合的風險。&#10;計算：淨資產 ÷ 損失準備金。&#10;高於1.5倍 = 健康&#10;1.0-1.5倍 = 注意&#10;低於1.0倍 = 危急&#10;比率過低可能導致新貸款申請無法獲批。" />
+        <e k="bank_info_provision" v="為吸收潛在違約損失而預留的資金。&#10;高風險貸款需要更多準備金，這直接降低了銀行的有效放貸能力。&#10;這是銀行內部風險準備，不是對玩家貸款的償還。" />
+
+        <e k="bank_info_hint" v="點擊標題或指標查看詳情" />
+
+        <!-- Loan list -->
+        <e k="bank_col_type" v="類型" />
+        <e k="bank_col_amount" v="初始金額" />
+        <e k="bank_col_monthly" v="月還款額" />
+        <e k="bank_col_rate" v="利率" />
+        <e k="bank_col_remaining" v="剩餘期限" />
+        <e k="bank_col_rest" v="剩餘本金" />
+        <e k="bank_col_status" v="狀態" />
+
+        <!-- Statuses -->
+        <e k="bank_status_active" v="活躍" />
+        <e k="bank_status_paid" v="已結清" />
+
+        <!-- Buttons -->
+        <e k="bank_btn_newLoan" v="新貸款" />
+        <e k="bank_btn_details" v="貸款詳情" />
+        <e k="bank_btn_earlyRepay" v="提前還款" />
+        <e k="bank_btn_repayLine" v="償還額度" />
+        <e k="bank_btn_close" v="關閉信貸額度" />
+        <e k="bank_btn_back" v="關閉" />
+
+        <!-- Loan types -->
+        <e k="bank_loanType_annuity" v="等額還款" />
+        <e k="bank_loanType_bullet" v="到期還本" />
+        <e k="bank_loanType_revolving" v="循環貸款" />
+        <e k="bank_loanType_annuity_desc" v="每月固定還款額，本息合併，始終相同。&#10;在整個貸款期限內金額從不變化。" />
+        <e k="bank_loanType_bullet_desc" v="每月僅支付利息。&#10;到期時一次性償還全部本金。&#10;月供較低，但需在到期時備足資金。" />
+        <e k="bank_loanType_revolving_desc" v="在批准額度內的永久信貸額度。&#10;按需支取，自由還款，&#10;無固定月供，無固定到期日。" />
+
+        <!-- Revolving-specific -->
+        <e k="bank_revolving_draw" v="提款" />
+        <e k="bank_revolving_status_open" v="開放" />
+        <e k="bank_revolving_status_available" v="可用" />
+        <e k="bank_revolving_noDuration" v="無固定期限" />
+        <e k="bank_revolving_variablePayment" v="浮動" />
+        <e k="bank_revolving_estimatedInterest" v="預計利息（1年）" />
+        <e k="bank_revolving_commitmentFeeSuffix" v=" / 年 最多" />
+        <e k="bank_revolving_commitmentFee" v="承諾費" />
+        <e k="bank_confirm_draw" v="提款金額（最多 %s）：" />
+        <e k="bank_confirm_repay_revolving" v="還款金額（最多 %s）：" />
+        <e k="bank_confirm_partialRepay_amount" v="還款金額（最低 %s — 最多 %s）：" />
+        <e k="bank_confirm_closeLine" v="關閉此信貸額度？此操作不可撤銷。" />
+        <e k="bank_detail_revolving_limit" v="額度上限" />
+        <e k="bank_detail_revolving_drawn" v="已支取餘額" />
+        <e k="bank_detail_revolving_available" v="可用額度" />
+        <e k="bank_detail_rev_utilization" v="使用率" />
+        <e k="bank_detail_rev_conditions" v="條款" />
+        <e k="bank_detail_rev_interest_month" v="利息/月" />
+        <e k="bank_detail_rev_interest_year" v="利息/年" />
+        <e k="bank_detail_info_rev_commitment_fee" v="對信貸額度未支取部分按年收取1%的承諾費。按月就未使用可用金額計收。顯示最高金額（額度完全未支取時）。" />
+        <e k="bank_detail_rev_duration" v="期限" />
+        <e k="bank_detail_rev_payment" v="還款" />
+        <e k="bank_detail_info_rev_utilization" v="您循環信貸額度的使用明細。&#10;上限是最高授權金額。&#10;已支取餘額是目前借用金額。" />
+        <e k="bank_detail_info_rev_limit" v="您在此循環信貸額度上&#10;可借用的最高金額。" />
+        <e k="bank_detail_info_rev_drawn" v="目前在此信貸額度上&#10;已借用和使用中的金額。" />
+        <e k="bank_detail_info_rev_available" v="在您的信貸上限內&#10;仍可支取的金額。" />
+        <e k="bank_detail_info_rev_conditions" v="適用於此循環&#10;信貸額度的財務條款。" />
+        <e k="bank_detail_info_rev_interest_month" v="基於目前已支取餘額&#10;估算的月利息。" />
+        <e k="bank_detail_info_rev_interest_year" v="基於目前已支取餘額&#10;估算的年利息。" />
+        <e k="bank_detail_info_rev_duration" v="循環信貸額度沒有固定期限。&#10;在關閉之前保持開放狀態。" />
+        <e k="bank_detail_info_rev_payment" v="循環貸款還款額浮動：&#10;您按已支取餘額支付月利息。&#10;本金按您自己的節奏償還。" />
+
+        <!-- Risk tiers -->
+        <e k="bank_risk_low" v="低" />
+        <e k="bank_risk_moderate" v="中" />
+        <e k="bank_risk_high" v="高" />
+        <e k="bank_risk_critical" v="危急" />
+        <e k="bank_risk_refused" v="拒絕" />
+        <e k="bank_portfolio_scale_safe" v="健康" />
+        <e k="bank_portfolio_scale_risky" v="高風險" />
+
+        <!-- Formats -->
+        <e k="bank_format_years" v="%d年" />
+        <e k="bank_format_monthsShort" v="%d月" />
+        <e k="bank_format_yearsMonths" v="%d年%d月" />
+
+        <!-- Errors -->
+        <e k="bank_error_noFarm" v="您必須擁有一個農場才能申請貸款。" />
+        <e k="bank_error_insufficientFunds" v="資金不足，無法提前還款。" />
+        <e k="bank_error_partialRepayMin" v="最低部分還款金額：%s（初始本金的10%%）。" />
+        <e k="bank_confirm_earlyRepay" v="提前償還 %s，違約金 %s？&#10;合計：%s" />
+
+        <!-- Loan detail -->
+        <e k="bank_detail_dialog_title" v="貸款詳情" />
+        <e k="bank_detail_title" v="貸款 #%d" />
+        <e k="bank_detail_label_amount" v="金額" />
+        <e k="bank_detail_label_rate" v="利率" />
+        <e k="bank_detail_label_type" v="類型" />
+        <e k="bank_detail_label_risk" v="風險" />
+        <e k="bank_detail_label_dscr" v="DSCR" />
+        <e k="bank_detail_label_ltv" v="LTV" />
+
+        <!-- Loan detail info explanations (InfoDialog — click on header label) -->
+        <e k="bank_detail_info_amount" v="簽署貸款合約時借入的總金額。該金額在合約期內不會改變。" />
+        <e k="bank_detail_info_rate" v="適用於此貸款的年利率。包含銀行基準利率以及與風險等級相關的任何附加費率。" />
+        <e k="bank_detail_info_type" v="貸款還款方式&#10;等額還款：每月固定還款，金額相同&#10;到期還本：每月付息，到期一次還本&#10;循環貸款：開放額度，無固定期限" />
+        <e k="bank_detail_info_risk" v="銀行在審核時評估的風險等級。取決於DSCR、LTV及您的歷史記錄。風險越高，附加利率越高。" />
+        <e k="bank_detail_info_dscr" v="債務償付覆蓋率&#10;收入 &#247; 每月債務總還款額。&#10;高於 1.5 = 寬裕&#10;1.0&#8211;1.5 = 緊張&#10;低於 1.0 = 收入無法覆蓋債務&#10;&#10;改善方法：&#10;償還現有貸款（減少每月還款）&#10;增加農場收入（銷售、作物、畜牧）&#10;申請較低金額&#10;延長貸款期限（減少每月還款）" />
+        <e k="bank_detail_info_ltv" v="貸款價值比&#10;貸款金額除以您的資產價值。&#10;比率越低，銀行風險越小。&#10;高於80% = 高風險。" />
+
+        <e k="bank_detail_info_hint" v="點擊標籤查看更多詳情" />
+
+        <e k="bank_detail_col_period" v="期" />
+        <e k="bank_detail_col_payment" v="還款額" />
+        <e k="bank_detail_col_interest" v="利息" />
+        <e k="bank_detail_col_principal" v="本金" />
+        <e k="bank_detail_col_balance" v="餘額" />
+
+        <!-- Wizard -->
+        <e k="bank_wizard_title" v="新建貸款" />
+        <e k="bank_wizard_step1_title" v="第1步 — 貸款配置" />
+        <e k="bank_wizard_step2_title" v="第2步 — 摘要與確認" />
+        <e k="bank_wizard_card_rates" v="利率" />
+        <e k="bank_wizard_card_cost" v="成本" />
+        <e k="bank_wizard_label_loanType" v="貸款類型" />
+        <e k="bank_wizard_label_amount" v="金額" />
+        <e k="bank_wizard_label_duration" v="期限" />
+        <e k="bank_wizard_limit" v="可用額度（需經審核）：%s" />
+        <e k="bank_wizard_monthlyPreview" v="預計月還款：%s" />
+        <e k="bank_wizard_recap_baseRate" v="基準利率" />
+        <e k="bank_wizard_recap_typeSpread" v="產品利差" />
+        <e k="bank_wizard_recap_surcharge" v="風險附加費" />
+        <e k="bank_wizard_recap_monthly" v="月還款額" />
+        <e k="bank_wizard_recap_totalInterest" v="總利息" />
+        <e k="bank_wizard_recap_totalCost" v="總費用" />
+        <e k="bank_wizard_recap_dscr" v="DSCR（還款能力）" />
+        <e k="bank_wizard_recap_ltv" v="LTV（貸款/資產）" />
+        <e k="bank_wizard_recap_effectiveRate" v="EIR（綜合利率）" />
+        <e k="bank_wizard_recap_risk" v="風險等級" />
+        <e k="bank_wizard_recap_risk_section" v="風險" />
+        <e k="bank_wizard_indicativeRate" v="參考利率：%s（不含風險）" />
+        <e k="bank_wizard_warn_limitExceeded" v="申請金額超出您的可用信貸額度。" />
+        <e k="bank_wizard_warn_concentrationExceeded" v="申請金額超出單一農場曝險上限（總銀行容量的25%）。" />
+        <e k="bank_wizard_warn_refused" v="貸款被拒：您的財務狀況不符合最低標準。" />
+        <e k="bank_wizard_warn_invalidAmount" v="金額無效：請選擇正值。" />
+        <e k="bank_wizard_warn_critical50" v="高風險：實際放款金額將限制在您申請金額的50%。" />
+        <e k="bank_wizard_hint_refused" v="點擊 DSCR 或風險等級以了解被拒原因。" />
+        <e k="bank_wizard_totalCostPreview" v="應還總額：~%s" />
+        <e k="bank_wizard_totalInterestPreview" v="其中利息 ~%s" />
+        <e k="bank_wizard_amountCapped" v="申請：%s  &#8594;  批准：%s" />
+        <e k="bank_wizard_btn_prev" v="上一步" />
+        <e k="bank_wizard_btn_next" v="下一步" />
+        <e k="bank_wizard_btn_confirm" v="確認" />
+        <e k="bank_wizard_confirm_msg" v="確認以 %s 利率借款 %s？" />
+
+        <!-- Wizard — Recap info tooltips (InfoDialog — click on title/indicator) -->
+        <e k="bank_wizard_info_rates" v="您貸款適用利率的明細。&#10;最終EIR是基準利率、產品利差和風險附加費之和。" />
+        <e k="bank_wizard_info_baseRate" v="銀行設定的參考利率，對所有借款人相同。&#10;根據伺服器參數變化。" />
+        <e k="bank_wizard_info_typeSpread" v="與所選貸款類型相關的利率溢價。&#10;等額還款 = 0%：每期償還部分本金。&#10;到期還本：全部本金在到期日才還清。&#10;循環貸款：資金隨時可用，無固定還款期。" />
+        <e k="bank_wizard_info_surcharge" v="根據您的風險等級收取的溢價。&#10;您的風險越高，此附加費越高。" />
+        <e k="bank_wizard_info_effectiveRate" v="實際年利率：您貸款的真實年度成本。&#10;等於基準利率、產品利差和風險附加費之和。" />
+        <e k="bank_wizard_info_risk_section" v="銀行對您貸款的風險評估。&#10;這些指標決定貸款是否獲批及條款如何。" />
+        <e k="bank_wizard_info_cost" v="您貸款總成本摘要。&#10;比較月還款額、累計利息和應還總額。" />
+        <e k="bank_wizard_info_monthly" v="每月從您帳戶扣除的金額。&#10;等額還款貸款包含本金和利息。&#10;到期還本貸款僅扣除利息。" />
+        <e k="bank_wizard_info_totalInterest" v="貸款期限內您將支付的所有利息之和。&#10;期限越長，金額越高。" />
+        <e k="bank_wizard_info_totalCost" v="貸款結束時您將償還的總金額。&#10;等於借入本金加上總利息。" />
+
+        <!-- Settings -->
+        <e k="bank_settings_section_title" v="銀行 &amp; 貸款" />
+        <e k="bank_setting_initialCapital" v="初始資本" />
+        <e k="bank_toolTip_initialCapital" v="為每個農場銀行業務提供的初始信貸金額。" />
+        <e k="bank_setting_leverageRatio" v="槓桿比率" />
+        <e k="bank_toolTip_leverageRatio" v="定義相對於淨資產的最大借貸倍數。例：10倍 → 最大信貸 = 淨資產的10倍。" />
+        <e k="bank_setting_dynamicRate" v="動態利率" />
+        <e k="bank_toolTip_dynamicRate" v="啟用後：基準利率每年變動（±0.25%，範圍1–12%）。風險附加費始終適用。" />
+        <e k="bank_setting_baseInterestRate" v="基準利率" />
+        <e k="bank_toolTip_baseInterestRate" v="適用於所有貸款的年基準利率，不含風險附加費。" />
+        <e k="bank_setting_earlyRepaymentPenalty" v="提前還款罰金" />
+        <e k="bank_toolTip_earlyRepaymentPenalty" v="提前還款時按未償本金收取的罰金百分比。" />
+
+        <!-- Annual Report -->
+        <e k="bank_report_title" v="第%d年 — %s" />
+        <e k="bank_report_title_default" v="年度報告" />
+        <e k="bank_report_section_costs" v="資金流動" />
+        <e k="bank_report_section_activity" v="活動" />
+        <e k="bank_report_interestPaid" v="· 已付利息" />
+        <e k="bank_report_principalPaid" v="· 已還本金" />
+        <e k="bank_report_totalPaid" v="合計付款" />
+        <e k="bank_report_avgMonthly" v="· 平均月供" />
+        <e k="bank_report_loansOpened" v="· 新增貸款" />
+        <e k="bank_report_loansClosed" v="· 已結清貸款" />
+        <e k="bank_report_loansActive" v="· 在貸筆數" />
+        <e k="bank_report_outstanding" v="未還總額" />
+        <e k="bank_report_noData" v="暫無年度報告資料。" />
+        <e k="bank_report_btnNext" v="下一年" />
+        <e k="bank_report_btnPrev" v="上一年" />
+        <e k="bank_btn_report" v="年度報告" />
+    </elements>
+</l10n>
