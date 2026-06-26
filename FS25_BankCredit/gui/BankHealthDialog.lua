@@ -6,8 +6,6 @@ local BankHealthDialog_mt = Class(BankHealthDialog, MessageDialog)
 BankHealthDialog.COLOR_GOOD       = {0.40, 0.85, 0.40, 1}
 BankHealthDialog.COLOR_WARN       = {1.00, 0.66, 0.00, 1}
 BankHealthDialog.COLOR_DANGER     = {1.00, 0.30, 0.30, 1}
-BankHealthDialog.COLOR_NEUTRAL    = {0.60, 0.60, 0.60, 1}
-
 BankHealthDialog.PORTFOLIO_COLOR  = {
     low      = {0.40, 0.85, 0.40, 1},
     moderate = {1.00, 0.82, 0.00, 1},
@@ -247,7 +245,7 @@ function BankHealthDialog:refresh()
     -- 100 = fully healthy portfolio  |  0 = fully critical portfolio
     local score = math.floor((lowVal * 100 + modVal * 60 + highVal * 20) / 100 + 0.5)
 
-    -- Bar fill = score% of 444px (full = safe, empty = critical)
+    -- Bar fill uses (100 - score)% of the bar width: full = critical, empty = safe
     local bg = self.healthPortfolioBarBg
     if bg ~= nil then
         local fill = self.healthPortfolioBarFill

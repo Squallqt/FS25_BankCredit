@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+
+    <GuiElement profile="nid_dialogBg" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+            <BoxLayout profile="nid_mainBox">
+
+                <!-- Prompt text -->
+                <Text profile="nid_promptText" id="promptText"/>
+
+                <!-- Spacer -->
+                <GuiElement profile="nid_spacer"/>
+
+                <!-- Numeric text input -->
+                <TextInput profile="nid_inputField" id="inputField"
+                           onTextChanged="onInputTextChanged"
+                           onEnterPressed="onClickOk"
+                           enterWhenClickOutside="false"
+                           applyProfanityFilter="false">
+                    <ThreePartBitmap profile="nid_inputOutline" absoluteSizeOffset="0px 0px"/>
+                    <ThreePartBitmap profile="nid_inputIconBox">
+                        <Bitmap profile="nid_inputIcon"/>
+                    </ThreePartBitmap>
+                </TextInput>
+
+            </BoxLayout>
+        </GuiElement>
+
+        <!-- Button bar -->
+        <BoxLayout profile="fs25_dialogButtonBox">
+            <Button profile="buttonOK" id="btnOk" text="$l10n_button_ok" onClick="onClickOk"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonBack" text="$l10n_bank_btn_back" onClick="onClickBack"/>
+        </BoxLayout>
+    </GuiElement>
+
+    <GUIProfiles>
+
+        <Profile name="nid_dialogBg" extends="fs25_dialogBg">
+            <size value="560px 210px"/>
+        </Profile>
+
+        <Profile name="nid_mainBox" extends="emptyPanel" with="anchorTopCenter">
+            <size value="480px 108px"/>
+            <flowDirection value="vertical"/>
+            <alignmentX value="left"/>
+            <alignmentY value="top"/>
+            <elementSpacing value="0px"/>
+        </Profile>
+
+        <!-- Prompt label (centered, 2-line safe) -->
+        <Profile name="nid_promptText" extends="baseReference">
+            <size value="480px 64px"/>
+            <textSize value="16px"/>
+            <textBold value="false"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+            <textWrapWidth value="480"/>
+        </Profile>
+
+        <Profile name="nid_spacer" extends="emptyPanel">
+            <size value="480px 8px"/>
+        </Profile>
+
+        <!-- Input field: no visible background, border via nid_inputOutline child -->
+        <Profile name="nid_inputField" extends="fs25_textInput" with="anchorTopCenter">
+            <size value="480px 36px"/>
+            <applyProfanityFilter value="false"/>
+            <handleFocus value="true"/>
+            <textAlignment value="center"/>
+            <textVerticalAlignment value="middle"/>
+            <textOffset value="0px 2px"/>
+            <imageSliceId value="noSlice"/>
+            <imageColor value="0 0 0 0"/>
+            <imageFocusedColor value="0 0 0 0"/>
+            <imageHighlightedColor value="0 0 0 0"/>
+            <imageDisabledColor value="0 0 0 0"/>
+        </Profile>
+
+        <!-- Three-part border around the input (same texture as TakeLoanWizard) -->
+        <Profile name="nid_inputOutline" extends="baseReference">
+            <imageSliceId value="gui.3dShop_button_outline_middle"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <startImageSize value="6px 0"/>
+            <startImageSliceId value="gui.3dShop_button_outline_left"/>
+            <startImageColor value="$preset_fs25_colorGrey"/>
+            <startImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <endImageSize value="6px 0"/>
+            <endImageSliceId value="gui.3dShop_button_outline_right"/>
+            <endImageColor value="$preset_fs25_colorGrey"/>
+            <endImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+        </Profile>
+
+        <Profile name="nid_inputIconBox" extends="baseReference" with="anchorMiddleCenter">
+            <size value="100% 99%"/>
+            <imageSliceId value="gui.empty"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <startImageSize value="18px 0"/>
+            <startImageSliceId value="gui.empty"/>
+            <startImageColor value="$preset_fs25_colorGrey"/>
+            <startImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+            <endImageSize value="18px 0"/>
+            <endImageSliceId value="gui.empty"/>
+            <endImageColor value="$preset_fs25_colorGrey"/>
+            <endImageFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageDisabledColor value="$preset_fs25_colorGreyDark"/>
+        </Profile>
+
+        <Profile name="nid_inputIcon" extends="baseReference" with="anchorMiddleRight">
+            <position value="-10px 0px"/>
+            <size value="10px 10px"/>
+            <imageSliceId value="gui.icon_pen"/>
+            <imageColor value="$preset_fs25_colorGreyLight"/>
+            <imageHighlightedColor value="$preset_fs25_colorMainLight"/>
+            <imageFocusedColor value="$preset_fs25_colorMainLight"/>
+            <imageDisabledColor value="$preset_fs25_colorGreyDark"/>
+        </Profile>
+
+    </GUIProfiles>
+</GUI>

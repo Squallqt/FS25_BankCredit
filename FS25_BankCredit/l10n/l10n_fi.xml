@@ -131,7 +131,6 @@
         <e k="bank_portfolio_scale_risky" v="Riskialtis" />
 
         <!-- Formats -->
-        <e k="bank_format_years" v="%d v." />
         <e k="bank_format_monthsShort" v="%d kk" />
         <e k="bank_format_yearsMonths" v="%d v. %d kk" />
 

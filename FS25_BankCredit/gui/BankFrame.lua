@@ -8,6 +8,9 @@ BankFrame.TAB = {
     PAID   = 2,
 }
 
+BankFrame.SCREEN_EDGE_SLIDER_MARGIN_X = 0
+BankFrame.NATIVE_DOCKED_SLIDER_OFFSET_Y = 10
+
 BankFrame.COLOR_ACTIVE = {1.00, 0.82, 0.00, 1}
 BankFrame.COLOR_PAID   = {0.40, 0.85, 0.40, 1}
 
@@ -175,6 +178,7 @@ function BankFrame:onFrameOpen()
     end
 
     self:refreshList()
+    self:updateScreenEdgeSliders()
 
     g_messageCenter:subscribe(MessageType.MONEY_CHANGED, self.onMoneyChanged, self)
     g_messageCenter:subscribe(MessageType.PERIOD_CHANGED, self.onPeriodChanged, self)
@@ -188,6 +192,11 @@ function BankFrame:onFrameClose()
     BankFrame:superClass().onFrameClose(self)
     g_messageCenter:unsubscribeAll(self)
     g_currentMission.bankFrame = nil
+end
+
+function BankFrame:update(dt)
+    BankFrame:superClass().update(self, dt)
+    self:updateScreenEdgeSliders()
 end
 
 ---Called when player money changes
@@ -341,8 +350,10 @@ function BankFrame:refreshList()
         self.loansList = {}
         if self.listLoans then self.listLoans:reloadData() end
         if self.listPaidLoans then self.listPaidLoans:reloadData() end
+        self:refreshLoanSliders()
         self:updateEmptyState()
         self:updateButtonStates()
+        self:updateSliderVisibility()
         return
     end
 
@@ -372,22 +383,52 @@ function BankFrame:refreshList()
         if self.listPaidLoans then self.listPaidLoans:reloadData() end
     end
 
+    self:refreshLoanSliders()
     self:updateEmptyState()
     self:updateButtonStates()
     self:updateSliderVisibility()
 end
 
----Shows or hides scroll slider based on item count
-function BankFrame:updateSliderVisibility()
-    local maxVisibleItems = math.floor(600 / 40)
+function BankFrame:refreshLoanSliders()
+    if self.loansSlider ~= nil and self.listLoans ~= nil then
+        self.loansSlider:onBindUpdate(self.listLoans)
+    end
+    if self.paidSlider ~= nil and self.listPaidLoans ~= nil then
+        self.paidSlider:onBindUpdate(self.listPaidLoans)
+    end
+end
 
-    if self.currentTab == BankFrame.TAB.ACTIVE then
-        if self.loansSliderBox then
-            self.loansSliderBox:setVisible(#self.loansList > maxVisibleItems)
-        end
-    elseif self.currentTab == BankFrame.TAB.PAID then
-        if self.paidSliderBox then
-            self.paidSliderBox:setVisible(#self.loansList > maxVisibleItems)
+---Shows the docked slider for the current tab
+function BankFrame:updateSliderVisibility()
+    if self.loansSliderBox then
+        self.loansSliderBox:setVisible(self.currentTab == BankFrame.TAB.ACTIVE)
+    end
+    if self.paidSliderBox then
+        self.paidSliderBox:setVisible(self.currentTab == BankFrame.TAB.PAID)
+    end
+end
+
+function BankFrame:updateScreenEdgeSliders()
+    local sliderBoxes = {
+        self.loansSliderBox,
+        self.paidSliderBox
+    }
+
+    for _, sliderBox in ipairs(sliderBoxes) do
+        if sliderBox ~= nil
+            and sliderBox.absPosition ~= nil
+            and sliderBox.absSize ~= nil
+            and sliderBox.absSize[1] ~= nil then
+            sliderBox:updateAbsolutePosition()
+
+            local x = 1 - sliderBox.absSize[1] - BankFrame.SCREEN_EDGE_SLIDER_MARGIN_X
+            local y = sliderBox.absPosition[2] + BankFrame.NATIVE_DOCKED_SLIDER_OFFSET_Y * (g_pixelSizeScaledY or 0)
+
+            sliderBox:setAbsolutePosition(x, y)
+
+            for _, child in ipairs(sliderBox.elements) do
+                child:updateAbsolutePosition()
+            end
         end
     end
 end
@@ -615,23 +656,29 @@ function BankFrame:onClickEarlyRepay()
 
     local loan = self.selectedLoan
 
-    -- Revolving: partial repay via TextInputDialog
+    -- Revolving: partial repay via NumericInputDialog
     if loan.type == Loan.TYPE.REVOLVING then
         if loan.restAmount <= 0 then return end
+        local maxRepay = math.floor(loan.restAmount)
         local title = string.format(g_i18n:getText("bank_confirm_repay_revolving"),
-            g_i18n:formatMoney(loan.restAmount, 0, true, false))
-        TextInputDialog.show(self.onRevolvingRepayAmountEntered, self,
-            tostring(math.floor(loan.restAmount)), title, nil, 10, g_i18n:getText("button_ok"))
+            g_i18n:formatMoney(maxRepay, 0, true, false))
+        NumericInputDialog.show(self.onRevolvingRepayAmountEntered, self,
+            tostring(maxRepay), title, nil, 10, g_i18n:getText("button_ok"),
+            nil, maxRepay)
         return
     end
 
     -- Non-revolving: ask how much principal to repay early, then confirm
     local minRepay = math.floor(loan.amount * 0.10)
+    local maxRepay = math.floor(loan.restAmount)
+    local minValue = loan.restAmount > minRepay and minRepay or nil
+    local minPromptRepay = minValue or maxRepay
     local prompt = string.format(g_i18n:getText("bank_confirm_partialRepay_amount"),
-        g_i18n:formatMoney(minRepay, 0, true, false),
-        g_i18n:formatMoney(loan.restAmount, 0, true, false))
-    TextInputDialog.show(self.onPartialAmountEntered, self,
-        tostring(math.floor(loan.restAmount)), prompt, nil, 12, g_i18n:getText("button_ok"))
+        g_i18n:formatMoney(minPromptRepay, 0, true, false),
+        g_i18n:formatMoney(maxRepay, 0, true, false))
+    NumericInputDialog.show(self.onPartialAmountEntered, self,
+        tostring(maxRepay), prompt, nil, 12, g_i18n:getText("button_ok"),
+        minValue, maxRepay)
 end
 
 ---Handles amount input for partial early repayment (non-revolving only)
@@ -646,8 +693,8 @@ function BankFrame:onPartialAmountEntered(text, confirmed)
 
     local repayAmount = math.floor(tonumber(text) or 0)
     if repayAmount <= 0 then return end
-    if repayAmount >= loan.restAmount then
-        repayAmount = math.floor(loan.restAmount)
+    if Loan.isPayoffAmount(loan.restAmount, repayAmount) then
+        repayAmount = loan.restAmount
     else
         local minRepay = math.floor(loan.amount * 0.10)
         if repayAmount < minRepay then
@@ -717,7 +764,11 @@ function BankFrame:onRevolvingRepayAmountEntered(text, confirmed)
     if amount > loan.restAmount then
         amount = loan.restAmount
     end
-    amount = math.floor(amount)
+    if Loan.isPayoffAmount(loan.restAmount, amount) then
+        amount = loan.restAmount
+    else
+        amount = math.floor(amount)
+    end
 
     local farmId = self:getCurrentFarmId()
     local farm   = g_farmManager:getFarmById(farmId)
@@ -752,7 +803,8 @@ function BankFrame:onClickDraw()
     local title = string.format(g_i18n:getText("bank_confirm_draw"),
         g_i18n:formatMoney(maxDraw, 0, true, false))
 
-    TextInputDialog.show(self.onDrawAmountEntered, self, tostring(math.floor(maxDraw)), title, nil, 10, g_i18n:getText("button_ok"))
+    NumericInputDialog.show(self.onDrawAmountEntered, self, tostring(math.floor(maxDraw)), title, nil, 10, g_i18n:getText("button_ok"),
+        nil, math.floor(maxDraw))
 end
 
 ---Handles draw amount input result

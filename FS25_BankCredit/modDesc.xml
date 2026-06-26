@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="108">
+<modDesc descVersion="110">
     <author>Squallqt</author>
-    <version>1.0.0.0</version>
+    <version>1.0.1.0</version>
     <title>
         <en>Bank And Credit</en>
         <de>Bank Und Kredit</de>
@@ -38,7 +38,17 @@ Important: this mod replaces the vanilla loan system. Any vanilla loan balance i
 
 Issues & suggestions: https://github.com/Squallqt/FS25_BankCredit
 
-Access via the dedicated tab in the InGame Menu (ESC).]]></en>
+Access via the dedicated tab in the InGame Menu (ESC).
+
+Changelog:
+
+1.0.1.0:
+- Fixed multiplayer synchronization of paid loans and annual reports
+- Fixed Bank tab display in the menu
+- Fixed repayment and draw amount fields accepting letters
+- Added full translation coverage for all 27 supported languages
+1.0.0.0:
+- Initial release]]></en>
         <de><![CDATA[Bank & Kredit fügt Farming Simulator 25 eine Mindestreservebank hinzu. Nehmen Sie Kredite auf, verwalten Sie Ihre Schulden und steigern Sie Ihre Kreditkapazität durch die Bewirtschaftung Ihres Hofes.
 
 Die Bank ist eine eigenständige virtuelle Einheit mit eigenem Eigenkapital, das durch die erhaltenen Zinsen wächst. Kredit wird nicht automatisch gewährt: Er wird anhand Ihrer Einnahmen und Ihres Vermögens bewertet.
@@ -69,7 +79,17 @@ Wichtig: Dieser Mod ersetzt das Vanilla-Kreditsystem. Bestehende Vanilla-Kredits
 
 Issues & Vorschläge: https://github.com/Squallqt/FS25_BankCredit
 
-Zugriff über den eigenen Tab im InGame-Menü (ESC).]]></de>
+Zugriff über den eigenen Tab im InGame-Menü (ESC).
+
+Changelog:
+
+1.0.1.0:
+- Multiplayer-Synchronisierung von getilgten Krediten und Jahresberichten korrigiert
+- Anzeige des Bank-Tabs im Menü korrigiert
+- Betragseingabefelder akzeptierten Buchstaben – korrigiert (Rückzahlung, Abruf)
+- Vollständige Übersetzung für alle 27 unterstützten Sprachen hinzugefügt
+1.0.0.0:
+- Erstveröffentlichung]]></de>
         <fr><![CDATA[Banque & Crédit ajoute une banque à réserves fractionnaires à Farming Simulator 25. Empruntez, gérez votre dette et développez votre capacité de crédit en cultivant.
 
 La banque est une entité virtuelle indépendante avec ses propres fonds propres, alimentés par les intérêts perçus. Le crédit n'est pas accordé automatiquement : il est évalué selon vos revenus et votre patrimoine.
@@ -100,7 +120,17 @@ Important : ce mod remplace le système de prêt vanilla. Les prêts vanilla en 
 
 Issues & suggestions : https://github.com/Squallqt/FS25_BankCredit
 
-Accès via l'onglet dédié dans le menu en jeu (ECHAP).]]></fr>
+Accès via l'onglet dédié dans le menu en jeu (ECHAP).
+
+Changelog :
+
+1.0.1.0 :
+- Correction de la synchronisation multijoueur des prêts soldés et des rapports annuels
+- Correction de l'affichage de l'onglet Banque dans le menu
+- Correction des champs de saisie de montant acceptant des lettres (remboursement, tirage)
+- Ajout de la traduction complète pour les 27 langues prises en charge
+1.0.0.0 :
+- Version initiale]]></fr>
 
     </description>
     <iconFilename>icon_BankCredit.dds</iconFilename>

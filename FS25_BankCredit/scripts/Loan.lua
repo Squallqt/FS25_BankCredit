@@ -5,6 +5,11 @@ local Loan_mt = Class(Loan)
 
 Loan.TYPE = { ANNUITY = 1, BULLET = 2, REVOLVING = 3 }
 Loan.RISK = { LOW = 1, MODERATE = 2, HIGH = 3, CRITICAL = 4, REFUSED = 5 }
+Loan.PAYOFF_EPSILON = 1
+
+function Loan.isPayoffAmount(restAmount, amount)
+    return restAmount ~= nil and amount ~= nil and (amount >= restAmount or restAmount - amount < Loan.PAYOFF_EPSILON)
+end
 
 ---Create a new Loan instance
 -- @param table? customMt Optional custom metatable
@@ -28,6 +33,20 @@ function Loan.new(customMt)
     self.monthlyPayment = 0
 
     return self
+end
+
+function Loan:normalizeResidualBalance()
+    if self.restAmount > 0 and self.restAmount < Loan.PAYOFF_EPSILON then
+        local clearedAmount = self.restAmount
+        self.restAmount = 0
+        if self.type ~= Loan.TYPE.REVOLVING then
+            self.paidOff = true
+            self.restDuration = 0
+        end
+        return clearedAmount
+    end
+
+    return 0
 end
 
 ---Serialize loan data to XML file

@@ -423,7 +423,7 @@ function LoanDetailDialog:updateRevolvingPanel(loan)
     if self.textRevInterestMonth then self.textRevInterestMonth:setText(g_i18n:formatMoney(interestMonth, 0, true, false)) end
     if self.textRevInterestYear  then self.textRevInterestYear:setText(g_i18n:formatMoney(interestYear, 0, true, false)) end
     local commitmentFeeYear = loan.amount * LoanService.COMMITMENT_FEE_RATE
-    if self.textRevCommitmentFee then self.textRevCommitmentFee:setText(g_i18n:formatMoney(commitmentFeeYear, 0, true, false) .. "/an max") end
+    if self.textRevCommitmentFee then self.textRevCommitmentFee:setText(g_i18n:formatMoney(commitmentFeeYear, 0, true, false) .. g_i18n:getText("bank_revolving_commitmentFeeSuffix")) end
     if self.textRevDuration      then self.textRevDuration:setText(g_i18n:getText("bank_revolving_noDuration")) end
     if self.textRevPayment      then self.textRevPayment:setText(g_i18n:getText("bank_revolving_variablePayment")) end
 

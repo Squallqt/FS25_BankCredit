@@ -131,7 +131,6 @@
         <e k="bank_portfolio_scale_risky" v="Ризиковий" />
 
         <!-- Formats -->
-        <e k="bank_format_years" v="%d р." />
         <e k="bank_format_monthsShort" v="%d м." />
         <e k="bank_format_yearsMonths" v="%d р. %d м." />
 

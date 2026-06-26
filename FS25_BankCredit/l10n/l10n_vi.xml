@@ -131,7 +131,6 @@
         <e k="bank_portfolio_scale_risky" v="Rủi ro" />
 
         <!-- Formats -->
-        <e k="bank_format_years" v="%d năm" />
         <e k="bank_format_monthsShort" v="%d tháng" />
         <e k="bank_format_yearsMonths" v="%d n. %d th." />
 

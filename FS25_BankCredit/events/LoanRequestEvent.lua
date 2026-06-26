@@ -60,7 +60,6 @@ function LoanRequestEvent:run(connection)
     end
 
     if not g_currentMission:getHasPlayerPermission("farmManager", connection) then
-        Logging.warning("[BankCredit] LoanRequestEvent: player lacks farmManager permission")
         return
     end
 
@@ -69,8 +68,6 @@ function LoanRequestEvent:run(connection)
     if player == nil then return end
     local farmId = player.farmId
     if not LoanService.isValidFarmId(farmId) then
-        Logging.warning("[BankCredit] LoanRequestEvent: rejected — player has no valid farm (farmId=%s)",
-            tostring(farmId))
         return
     end
 

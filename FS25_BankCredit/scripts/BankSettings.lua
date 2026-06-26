@@ -345,7 +345,7 @@ function BankSettings:injectMenu()
     settingsPage:updateGeneralSettings(settingsPage.gameSettingsLayout)
 end
 
----Returns a flat table of default values; used by Phase 7 bootstrap until XML load is wired
+---Returns a flat table of default setting values
 -- @return table settings
 function BankSettings.load()
     local result = {}

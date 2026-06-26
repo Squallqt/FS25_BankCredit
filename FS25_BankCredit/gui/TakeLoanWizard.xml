@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+<GUI onOpen="onOpen" onClose="onClose">
     <GuiElement profile="newLayer"/>
     <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
 
@@ -206,10 +206,10 @@
         <!--    TitleSep:    200 × 2dp centered                            -->
         <!--    Spacer:      560 × 25                                      -->
         <!--    ContentArea: 560 × 540                                     -->
-        <!--  Step headers use profiles: bhd_sectionAccent, bhd_sectionButton -->
-        <!--  Data labels use profile:   bhd_dataButton (golden accent bar)  -->
-        <!--  Card bg uses profile:      loanDetHeaderBg (RoundCorner 0 0 0 0.55) -->
-        <!--  Recap values use profile:  bhd_dataValue at x=300, right-aligned  -->
+        <!--  Step headers use profiles: wizSectionAccent, wizSectionTitle -->
+        <!--  Data labels use profile:   bhd_dataButton (golden accent bar) -->
+        <!--  Card bg uses profile:      wizCardBg (RoundCorner 0 0 0 0.55) -->
+        <!--  Recap values use profile:  wizRecapValue at x=300, right-aligned -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
 
         <!-- Dialog background -->
@@ -305,17 +305,6 @@
             <imagePressedColor value="0 0 0 0"/>
             <textFocusedColor value="$preset_fs25_colorMainHighlight"/>
             <textHighlightedColor value="$preset_fs25_colorMainHighlight"/>
-        </Profile>
-
-        <!-- Data label (14px white_50, identical to bhd_dataButton) -->
-        <Profile name="wizDataLabel" extends="baseReference" with="anchorTopLeft">
-            <size value="280px 24px"/>
-            <textSize value="14px"/>
-            <textBold value="false"/>
-            <textUpperCase value="true"/>
-            <textColor value="$preset_colorWhite_50"/>
-            <textAlignment value="left"/>
-            <textVerticalAlignment value="middle"/>
         </Profile>
 
         <!-- MultiTextOption (centered in parent via anchorTopCenter) -->
@@ -439,13 +428,6 @@
         <Profile name="wizRecapRisk" extends="wizRecapValue">
             <textSize value="16px"/>
             <textUpperCase value="true"/>
-        </Profile>
-
-        <!-- TEG separator (thin line within rates section) -->
-        <Profile name="wizRecapSep" extends="baseReference" with="anchorTopLeft">
-            <size value="240px 1px"/>
-            <color value="0.25 0.25 0.25 1"/>
-            <cornerSize value="0"/>
         </Profile>
 
         <!-- Warning text -->

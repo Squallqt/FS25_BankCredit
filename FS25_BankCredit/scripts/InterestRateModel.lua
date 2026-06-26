@@ -36,11 +36,9 @@ function InterestRateModel:update(currentYear, baseRate)
     local deviation = self.currentRate - anchor
     local r = math.random(1, 20)
     local move
-    local zone
 
     if deviation >= InterestRateModel.GRAVITY_BAND * 1.5 then
         -- Extreme high (dev >= +1.5%): 10% up | 20% stable | 70% down
-        zone = "EXTREME_HAUT"
         if r <= 2 then
             move = 1
         elseif r <= 6 then
@@ -50,7 +48,6 @@ function InterestRateModel:update(currentYear, baseRate)
         end
     elseif deviation >= InterestRateModel.GRAVITY_BAND then
         -- Too high (+1% <= dev < +1.5%): 20% up | 15% stable | 65% down
-        zone = "TROP_HAUT"
         if r <= 4 then
             move = 1
         elseif r <= 7 then
@@ -60,7 +57,6 @@ function InterestRateModel:update(currentYear, baseRate)
         end
     elseif deviation >= InterestRateModel.GRAVITY_BAND * 0.5 then
         -- Slightly high (+0.5% <= dev < +1%): 25% up | 30% stable | 45% down
-        zone = "LEGEREMENT_HAUT"
         if r <= 5 then
             move = 1
         elseif r <= 11 then
@@ -70,7 +66,6 @@ function InterestRateModel:update(currentYear, baseRate)
         end
     elseif deviation <= -InterestRateModel.GRAVITY_BAND * 1.5 then
         -- Extreme low (dev <= -1.5%): 70% up | 20% stable | 10% down
-        zone = "EXTREME_BAS"
         if r <= 14 then
             move = 1
         elseif r <= 18 then
@@ -80,7 +75,6 @@ function InterestRateModel:update(currentYear, baseRate)
         end
     elseif deviation <= -InterestRateModel.GRAVITY_BAND then
         -- Too low (-1.5% < dev <= -1%): 65% up | 15% stable | 20% down
-        zone = "TROP_BAS"
         if r <= 13 then
             move = 1
         elseif r <= 16 then
@@ -90,7 +84,6 @@ function InterestRateModel:update(currentYear, baseRate)
         end
     elseif deviation <= -InterestRateModel.GRAVITY_BAND * 0.5 then
         -- Slightly low (-1% < dev <= -0.5%): 45% up | 30% stable | 25% down
-        zone = "LEGEREMENT_BAS"
         if r <= 9 then
             move = 1
         elseif r <= 15 then
@@ -100,7 +93,6 @@ function InterestRateModel:update(currentYear, baseRate)
         end
     else
         -- Near anchor (|dev| < 0.5%): 30% up | 40% stable | 30% down
-        zone = "NEUTRE"
         if r <= 6 then
             move = 1
         elseif r <= 14 then
@@ -174,7 +166,6 @@ end
 -- @param string key XML key path
 function InterestRateModel:readFromXML(xmlFile, key)
     self.currentRate = getXMLFloat(xmlFile, key .. "#currentRate") or InterestRateModel.DEFAULT_RATE
-    -- lastDirection legacy field ignored (mean-reversion model has no direction state)
 
     self.rateHistory = {}
     local i = 0

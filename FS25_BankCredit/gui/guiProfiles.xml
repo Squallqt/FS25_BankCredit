@@ -65,16 +65,6 @@
         <imageColor value="$preset_fs25_colorGreyLight_50"/>
     </Profile>
 
-    <!-- Toggle button strip -->
-    <Profile name="bankToggleStrip" extends="emptyPanel" with="anchorTopLeft">
-        <position value="0px -256px"/>
-        <size value="1560px 36px"/>
-    </Profile>
-
-    <Profile name="bankToggleBtn" extends="fs25_subCategorySelectorTabbedTab">
-        <size value="220px 36px"/>
-    </Profile>
-
     <!-- Loans list -->
     <Profile name="bankLoansList" extends="emptyPanel" with="pivotTopLeft">
         <position value="0px -190px"/>
@@ -132,9 +122,12 @@
     </Profile>
 
     <!-- List slider -->
-    <Profile name="bankSliderBox" extends="fs25_listSliderBox" with="anchorTopRight">
-        <width value="6px"/>
-        <height value="600px"/>
+    <Profile name="bankSliderDockedBg" extends="fs25_sliderDockedBg" with="anchorTopRight"/>
+    <Profile name="bankSliderDockedBox" extends="fs25_sliderDockedBox"/>
+    <Profile name="bankSliderDocked" extends="fs25_helpLineSlider">
+        <startImageColor value="$preset_fs25_colorMainHighlight"/>
+        <sliderImageColor value="$preset_fs25_colorMainHighlight"/>
+        <endImageColor value="$preset_fs25_colorMainHighlight"/>
     </Profile>
 
     <!-- Empty state -->
@@ -231,20 +224,14 @@
         <textColor value="$preset_fs25_colorMainHighlight"/>
     </Profile>
 
-    <!-- ═════════════════════════════════════════════════════ -->
-    <!-- Bank Health Dialog                                    -->
-    <!--                                                       -->
-    <!-- Layout: -->
-    <!--   Dialog:        640 × 500                            -->
-    <!--   ContentContainer padding: ~20px (native, all sides) -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!--  BankHealthDialog layout                                      -->
-    <!--  Dialog: 640×540  (uses fs25_dialogContentContainer)          -->
+    <!--  Dialog: 640×560  (uses fs25_dialogContentContainer)          -->
     <!--  MainBox: 560px wide, anchorTopCenter → auto-equal L/R margin -->
     <!--    Title:       560 × 40                                      -->
     <!--    SepWrapper:  560 × 2dp                                     -->
     <!--    Spacer:      560 × 25  (breathing below main title)        -->
-    <!--    ContentArea: 560 × 385                                     -->
+    <!--    ContentArea: 560 × 405                                     -->
     <!--  Hierarchy: section 16px > data 14px > portfolio 12px         -->
     <!--  ButtonBox: standard fs25_dialogButtonBox                     -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -344,7 +331,7 @@
     </Profile>
 
     <!-- ===== PORTFOLIO DISTRIBUTION BAR ===== -->
-    <!-- Layout: [SAIN 50px][8px][BAR 444px][8px][RISQUÉ 50px] = 560px -->
+    <!-- Layout: [SAFE 50px][8px][BAR 444px][8px][RISKY 50px] = 560px -->
 
     <Profile name="bhd_portfolioBarBg" extends="baseReference" with="anchorTopLeft">
         <size value="444px 16px"/>
@@ -358,7 +345,7 @@
         <cornerSize value="0.5"/>
     </Profile>
 
-    <!-- Scale endpoints: SAIN right-aligned (hugs bar left) / RISQUÉ left-aligned (hugs bar right) -->
+    <!-- Scale endpoints: SAFE right-aligned (hugs bar left) / RISKY left-aligned (hugs bar right) -->
     <Profile name="bhd_portfolioScaleSafe" extends="baseReference" with="anchorTopLeft">
         <size value="50px 16px"/>
         <textSize value="13px"/>

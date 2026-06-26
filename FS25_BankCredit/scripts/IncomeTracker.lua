@@ -78,7 +78,7 @@ function IncomeTracker:onMoneyChange(amount, farmId, moneyType)
 end
 
 ---Records an income amount for the current period.
--- On server, marks the farm as dirty for debounced sync to connected clients.
+-- On server, schedules debounced sync to connected clients.
 -- @param float  amount  Income amount (positive)
 -- @param integer farmId  Farm identifier
 function IncomeTracker:recordIncome(amount, farmId)
@@ -87,8 +87,6 @@ function IncomeTracker:recordIncome(amount, farmId)
     self.history[farmId][periodIndex] = (self.history[farmId][periodIndex] or 0) + amount
 
     if g_currentMission:getIsServer() then
-        self._dirtyFarms = self._dirtyFarms or {}
-        self._dirtyFarms[farmId] = true
         self:scheduleDebouncedSync()
     end
 end
@@ -107,7 +105,6 @@ function IncomeTracker:scheduleDebouncedSync()
             if selfL._elapsed >= 500 then
                 removeModEventListener(selfL)
                 selfL._tracker._syncTimerActive = false
-                selfL._tracker._dirtyFarms = nil
                 if g_server ~= nil then
                     g_server:broadcastEvent(BankPeriodSyncEvent.new())
                 end
@@ -292,5 +289,4 @@ function IncomeTracker:cleanup()
     g_messageCenter:unsubscribeAll(self)
     self.history = {}
     self._syncTimerActive = false
-    self._dirtyFarms = nil
 end

@@ -52,13 +52,11 @@ function LoanRepayEvent:run(connection)
     end
 
     if not g_currentMission:getHasPlayerPermission("farmManager", connection) then
-        Logging.warning("[BankCredit] LoanRepayEvent: player lacks farmManager permission")
         return
     end
 
     local loan = manager.repository:getById(self.loanId)
     if loan == nil then
-        Logging.warning("[BankCredit] LoanRepayEvent: loan #%d not found", self.loanId)
         return
     end
 
@@ -68,25 +66,15 @@ function LoanRepayEvent:run(connection)
     local farmId = player.farmId
     if not LoanService.isValidFarmId(farmId) then return end
     if loan.farmId ~= farmId then
-        Logging.warning("[BankCredit] LoanRepayEvent: farm mismatch — loan #%d belongs to farm %d, player is farm %d", self.loanId, loan.farmId, farmId)
         return
     end
 
     if self.amount == nil or self.amount <= 0 then return end
 
-    local riskLevel        = loan.riskLevel
-    local restBefore       = loan.restAmount
-    local principalPortion = math.min(self.amount, restBefore)
-
     if loan.type == Loan.TYPE.REVOLVING then
         manager.loanService:repayRevolving(loan, self.amount)
     else
-        local penalty = manager.loanService:earlyRepayment(loan, self.amount)
-
-        g_server:broadcastEvent(
-            LoanPaymentEvent.new(loan.id, loan.restAmount, loan.restDuration, loan.paidOff, penalty, principalPortion, riskLevel),
-            false
-        )
+        manager.loanService:earlyRepayment(loan, self.amount)
     end
 
     -- broadcastEvent(false) does not loop back to the server player; refresh the host GUI explicitly

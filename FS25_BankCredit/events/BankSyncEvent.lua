@@ -38,6 +38,12 @@ function BankSyncEvent:readStream(streamId, connection)
         table.insert(loans, loan)
     end
 
+    local incomeTracker = IncomeTracker.new()
+    incomeTracker:readStream(streamId)
+
+    local annualReport = AnnualReport.new()
+    annualReport:readStream(streamId)
+
     local manager = BankCredit.manager
     if manager == nil then
         Logging.warning("[BankCredit] BankSyncEvent: manager not available, %d loans discarded", count)
@@ -53,18 +59,16 @@ function BankSyncEvent:readStream(streamId, connection)
 
     -- Apply rateModel in-place
     manager.rateModel.currentRate   = rateModel.currentRate
-    manager.rateModel.lastDirection = rateModel.lastDirection
     manager.rateModel.rateHistory   = rateModel.rateHistory
 
-    -- Rebuild repository with active loans from server
+    -- Rebuild repository with all loans from server
     manager.repository:clear()
     for _, loan in ipairs(loans) do
         manager.repository:add(loan)
     end
 
-    local incomeTracker = IncomeTracker.new()
-    incomeTracker:readStream(streamId)
     manager.incomeTracker.history = incomeTracker.history
+    manager.annualReport.data = annualReport.data
 end
 
 ---Writes full bank state to network stream
@@ -78,17 +82,23 @@ function BankSyncEvent:writeStream(streamId, connection)
         InterestRateModel.new():writeStream(streamId)
         streamWriteInt16(streamId, 0)
         IncomeTracker.new():writeStream(streamId)
+        AnnualReport.new():writeStream(streamId)
         return
     end
 
     manager.ledger:writeStream(streamId)
     manager.rateModel:writeStream(streamId)
 
-    local activeLoans = manager.repository:getActive()
-    streamWriteInt16(streamId, #activeLoans)
-    for _, loan in ipairs(activeLoans) do
+    local loans = {}
+    for _, loan in pairs(manager.repository.loans) do
+        table.insert(loans, loan)
+    end
+
+    streamWriteInt16(streamId, #loans)
+    for _, loan in ipairs(loans) do
         loan:writeStream(streamId)
     end
 
     manager.incomeTracker:writeStream(streamId)
+    manager.annualReport:writeStream(streamId)
 end

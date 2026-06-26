@@ -56,13 +56,11 @@ function RevolvingDrawEvent:run(connection)
     end
 
     if not g_currentMission:getHasPlayerPermission("farmManager", connection) then
-        Logging.warning("[BankCredit] RevolvingDrawEvent: player lacks farmManager permission")
         return
     end
 
     local loan = manager.repository:getById(self.loanId)
     if loan == nil then
-        Logging.warning("[BankCredit] RevolvingDrawEvent: loan #%d not found", self.loanId)
         return
     end
 
@@ -72,8 +70,6 @@ function RevolvingDrawEvent:run(connection)
     local farmId = player.farmId
     if not LoanService.isValidFarmId(farmId) then return end
     if loan.farmId ~= farmId then
-        Logging.warning("[BankCredit] RevolvingDrawEvent: farm mismatch — loan #%d belongs to farm %d, player is farm %d",
-            self.loanId, loan.farmId, farmId)
         return
     end
 

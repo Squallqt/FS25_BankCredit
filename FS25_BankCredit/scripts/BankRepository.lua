@@ -140,7 +140,6 @@ function BankRepository:loadFromXML(savegamePath, ledger, settings, incomeTracke
     local filePath = savegamePath .. BankRepository.FILENAME
 
     if not fileExists(filePath) then
-        Logging.info("[BankCredit] No save file found, starting fresh")
         return
     end
 
@@ -183,6 +182,11 @@ function BankRepository:loadFromXML(savegamePath, ledger, settings, incomeTracke
 
         local loan = Loan.new()
         loan:readFromXML(xmlFile, key)
+        local clearedAmount = loan:normalizeResidualBalance()
+        if clearedAmount > 0 then
+            ledger.totalOutstanding = math.max(0, ledger.totalOutstanding - clearedAmount)
+            ledger.portfolioByRisk[loan.riskLevel] = math.max(0, (ledger.portfolioByRisk[loan.riskLevel] or 0) - clearedAmount)
+        end
         self.loans[loan.id] = loan
         if loan.id >= self.nextId then
             self.nextId = loan.id + 1
@@ -191,7 +195,6 @@ function BankRepository:loadFromXML(savegamePath, ledger, settings, incomeTracke
         i = i + 1
     end
 
-    Logging.info("[BankCredit] Loaded %d loans from %s (format v%d)", i, filePath, version)
     delete(xmlFile)
 end
 
@@ -232,41 +235,3 @@ function BankRepository:saveSettingsToXML(savegamePath, settings)
     return true
 end
 
----Load settings from bankcredit XML file
--- @param string savegamePath Path to savegame directory
--- @return table|nil settings Loaded settings or nil if not found
-function BankRepository:loadSettingsFromXML(savegamePath)
-    local filePath = savegamePath .. BankRepository.FILENAME
-
-    if not fileExists(filePath) then
-        return nil
-    end
-
-    local xmlFile = loadXMLFile("bankcredit", filePath)
-    if xmlFile == nil then
-        Logging.warning("[BankCredit] Failed to load settings from %s", filePath)
-        return nil
-    end
-
-    local hasAny = hasXMLProperty(xmlFile, "bankcredit.settings#initialCapital")
-        or hasXMLProperty(xmlFile, "bankcredit.settings#baseInterestRate")
-        or hasXMLProperty(xmlFile, "bankcredit.settings#leverageRatio")
-        or hasXMLProperty(xmlFile, "bankcredit.settings#earlyRepaymentPenalty")
-
-    if not hasAny then
-        delete(xmlFile)
-        return nil
-    end
-
-    local dynRaw = getXMLInt(xmlFile, "bankcredit.settings#dynamicRate")
-    local settings = {
-        initialCapital        = getXMLFloat(xmlFile, "bankcredit.settings#initialCapital")        or BankSettings.DEFAULTS.initialCapital,
-        baseInterestRate      = getXMLFloat(xmlFile, "bankcredit.settings#baseInterestRate")      or BankSettings.DEFAULTS.baseInterestRate,
-        leverageRatio         = getXMLFloat(xmlFile, "bankcredit.settings#leverageRatio")         or BankSettings.DEFAULTS.leverageRatio,
-        earlyRepaymentPenalty = getXMLFloat(xmlFile, "bankcredit.settings#earlyRepaymentPenalty") or BankSettings.DEFAULTS.earlyRepaymentPenalty,
-        dynamicRate           = dynRaw == nil and BankSettings.DEFAULTS.dynamicRate or (dynRaw == 1),
-    }
-
-    delete(xmlFile)
-    return settings
-end

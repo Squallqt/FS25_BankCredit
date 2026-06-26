@@ -74,14 +74,12 @@ function BankSettingsEvent:run(connection)
             and g_currentMission.userManager:getUserByConnection(connection)
             or nil
         if user == nil or not user:getIsMasterUser() then
-            Logging.warning("[BankSettingsEvent] Server rejected: player is not master user")
             return
         end
 
         -- Validate every field against the whitelist before trusting and rebroadcasting
         for _, id in ipairs(BankSettings.menuItems) do
             if not isValidSettingValue(id, src[id]) then
-                Logging.warning("[BankSettingsEvent] Server rejected: invalid value for '%s'", id)
                 return
             end
         end

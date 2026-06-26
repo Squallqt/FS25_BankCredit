@@ -3,12 +3,6 @@
 LoanService = {}
 local LoanService_mt = Class(LoanService)
 
-LoanService.TYPE_NAMES = {
-    [Loan.TYPE.ANNUITY]   = "ANNUITY",
-    [Loan.TYPE.BULLET]    = "BULLET",
-    [Loan.TYPE.REVOLVING] = "REVOLVING",
-}
-
 -- Annual commitment fee rate on the undrawn portion of a revolving credit line (1%/year)
 LoanService.COMMITMENT_FEE_RATE = 0.01
 
@@ -146,13 +140,11 @@ end
 -- @return Loan|nil Disbursed loan or nil if refused
 function LoanService:disburse(farmId, requestedAmount, loanType, durationMonths)
     if not LoanService.isValidFarmId(farmId) then
-        Logging.warning("[BankCredit] Loan disbursement rejected: invalid farmId=%s", tostring(farmId))
         return nil
     end
 
     local check = self:canDisburse(farmId, requestedAmount, loanType, durationMonths)
     if not check.ok then
-        Logging.warning("[BankCredit] Loan disbursement refused for farm %d: %s", farmId, tostring(check.reason))
         return nil
     end
 
@@ -193,10 +185,10 @@ function LoanService:disburse(farmId, requestedAmount, loanType, durationMonths)
 
     if g_server ~= nil then
         g_server:broadcastEvent(LoanCreateEvent.new(loan), false)
+        if self.annualReport ~= nil then
+            g_server:broadcastEvent(AnnualReportSyncEvent.new(self.annualReport), false)
+        end
     end
-
-    Logging.info("[BankCredit] Loan #%d disbursed to farm %d: €%.2f at %.2f%% (%s)",
-        loan.id, farmId, loan.amount, loan.interestRate, LoanService.TYPE_NAMES[loanType] or tostring(loanType))
 
     return loan
 end
@@ -246,6 +238,9 @@ function LoanService:collectMonthlyPayment(loan)
         if self.annualReport ~= nil then
             local currentYear = g_currentMission.environment.currentYear
             self.annualReport:recordInterest(loan.farmId, currentYear, totalCharge)
+            if g_server ~= nil then
+                g_server:broadcastEvent(AnnualReportSyncEvent.new(self.annualReport), false)
+            end
         end
 
         return
@@ -262,7 +257,7 @@ function LoanService:collectMonthlyPayment(loan)
     end
 
     -- Final payment: clamp principal to remaining balance to avoid overshoot
-    if principalPortion >= loan.restAmount then
+    if Loan.isPayoffAmount(loan.restAmount, principalPortion) then
         principalPortion  = loan.restAmount
         totalPayment      = principalPortion + interestPortion
         loan.paidOff      = true
@@ -296,6 +291,9 @@ function LoanService:collectMonthlyPayment(loan)
         if loan.paidOff then
             self.annualReport:recordLoanClosed(loan.farmId, currentYear)
         end
+        if g_server ~= nil then
+            g_server:broadcastEvent(AnnualReportSyncEvent.new(self.annualReport), false)
+        end
     end
 end
 
@@ -316,6 +314,10 @@ function LoanService:earlyRepayment(loan, amount)
     if not g_currentMission:getIsServer() then return 0 end
     if loan.paidOff then return 0 end
     if amount == nil or amount <= 0 then return 0 end
+    amount = math.min(amount, loan.restAmount)
+    if Loan.isPayoffAmount(loan.restAmount, amount) then
+        amount = loan.restAmount
+    end
     if not LoanService.isValidFarmId(loan.farmId) then
         Logging.warning("[BankCredit] earlyRepayment: rejected on loan #%d with invalid farmId=%s",
             loan.id or -1, tostring(loan.farmId))
@@ -325,6 +327,8 @@ function LoanService:earlyRepayment(loan, amount)
     local bankSettings = g_currentMission ~= nil and g_currentMission.bankSettings or nil
     local penaltyPct = (bankSettings and bankSettings.earlyRepaymentPenalty) or 0
     local penalty    = amount * (penaltyPct / 100)
+    local riskLevel  = loan.riskLevel
+    local principalPortion = amount
 
     g_currentMission:addMoney(-amount,   loan.farmId, MoneyType.LOAN_PRINCIPAL, true, true)
     if penalty > 0 then
@@ -370,6 +374,16 @@ function LoanService:earlyRepayment(loan, amount)
         end
     end
 
+    if g_server ~= nil then
+        g_server:broadcastEvent(
+            LoanPaymentEvent.new(loan.id, loan.restAmount, loan.restDuration, loan.paidOff, penalty, principalPortion, riskLevel),
+            false
+        )
+        if self.annualReport ~= nil then
+            g_server:broadcastEvent(AnnualReportSyncEvent.new(self.annualReport), false)
+        end
+    end
+
     return penalty
 end
 
@@ -404,9 +418,6 @@ function LoanService:drawRevolving(loan, amount)
             false
         )
     end
-
-    Logging.info("[BankCredit] Revolving draw on loan #%d: +€%.2f (balance now €%.2f / limit €%.2f)",
-        loan.id, amount, loan.restAmount, loan.amount)
 end
 
 ---Repays an amount on a revolving credit line. Server-authoritative.
@@ -418,6 +429,9 @@ function LoanService:repayRevolving(loan, amount)
     if loan.type ~= Loan.TYPE.REVOLVING then return end
     if amount == nil or amount <= 0 then return end
     if amount > loan.restAmount then amount = loan.restAmount end
+    if Loan.isPayoffAmount(loan.restAmount, amount) then
+        amount = loan.restAmount
+    end
     if not LoanService.isValidFarmId(loan.farmId) then
         Logging.warning("[BankCredit] repayRevolving: rejected on loan #%d with invalid farmId=%s",
             loan.id or -1, tostring(loan.farmId))
@@ -441,10 +455,10 @@ function LoanService:repayRevolving(loan, amount)
             LoanPaymentEvent.new(loan.id, loan.restAmount, 0, false, 0, amount, loan.riskLevel),
             false
         )
+        if self.annualReport ~= nil then
+            g_server:broadcastEvent(AnnualReportSyncEvent.new(self.annualReport), false)
+        end
     end
-
-    Logging.info("[BankCredit] Revolving repay on loan #%d: -€%.2f (balance now €%.2f / limit €%.2f)",
-        loan.id, amount, loan.restAmount, loan.amount)
 end
 
 ---Closes a revolving credit line. Server-authoritative.
@@ -468,7 +482,8 @@ function LoanService:closeRevolving(loan)
             LoanPaymentEvent.new(loan.id, 0, 0, true, 0, 0, loan.riskLevel),
             false
         )
+        if self.annualReport ~= nil then
+            g_server:broadcastEvent(AnnualReportSyncEvent.new(self.annualReport), false)
+        end
     end
-
-    Logging.info("[BankCredit] Revolving line #%d closed", loan.id)
 end

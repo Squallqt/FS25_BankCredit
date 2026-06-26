@@ -140,3 +140,54 @@ function AnnualReport:readFromXML(xmlFile, key)
         i = i + 1
     end
 end
+
+---Serialize annual report data to network stream
+-- @param integer streamId Network stream identifier
+function AnnualReport:writeStream(streamId)
+    local count = 0
+    for _, yearMap in pairs(self.data) do
+        for _ in pairs(yearMap) do
+            count = count + 1
+        end
+    end
+
+    streamWriteInt16(streamId, count)
+    for farmId, yearMap in pairs(self.data) do
+        for year, stats in pairs(yearMap) do
+            streamWriteInt16(streamId,   farmId)
+            streamWriteInt16(streamId,   year)
+            streamWriteFloat32(streamId, stats.interestPaid)
+            streamWriteFloat32(streamId, stats.principalPaid)
+            streamWriteInt16(streamId,   stats.loansOpened)
+            streamWriteInt16(streamId,   stats.loansClosed)
+        end
+    end
+end
+
+---Deserialize annual report data from network stream
+-- @param integer streamId Network stream identifier
+function AnnualReport:readStream(streamId)
+    self.data = {}
+
+    local count = streamReadInt16(streamId)
+    for _ = 1, count do
+        local farmId        = streamReadInt16(streamId)
+        local year          = streamReadInt16(streamId)
+        local interestPaid  = streamReadFloat32(streamId)
+        local principalPaid = streamReadFloat32(streamId)
+        local loansOpened   = streamReadInt16(streamId)
+        local loansClosed   = streamReadInt16(streamId)
+
+        if farmId > 0 and year > 0 then
+            if self.data[farmId] == nil then
+                self.data[farmId] = {}
+            end
+            self.data[farmId][year] = {
+                interestPaid  = interestPaid,
+                principalPaid = principalPaid,
+                loansOpened   = loansOpened,
+                loansClosed   = loansClosed,
+            }
+        end
+    end
+end

@@ -131,7 +131,6 @@
         <e k="bank_portfolio_scale_risky" v="Kock&#225;zatos" />
 
         <!-- Formats -->
-        <e k="bank_format_years" v="%d év" />
         <e k="bank_format_monthsShort" v="%d hó" />
         <e k="bank_format_yearsMonths" v="%d é. %d h." />
 

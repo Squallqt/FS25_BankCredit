@@ -16,6 +16,7 @@ source(modDirectory .. "scripts/BankSettings.lua")
 source(modDirectory .. "events/LoanCreateEvent.lua")
 source(modDirectory .. "events/LoanPaymentEvent.lua")
 source(modDirectory .. "events/BankSyncEvent.lua")
+source(modDirectory .. "events/AnnualReportSyncEvent.lua")
 source(modDirectory .. "events/BankSettingsEvent.lua")
 source(modDirectory .. "events/LoanRequestEvent.lua")
 source(modDirectory .. "events/LoanRepayEvent.lua")
@@ -28,11 +29,16 @@ source(modDirectory .. "gui/AnnualReportDialog.lua")
 source(modDirectory .. "gui/BankHealthDialog.lua")
 source(modDirectory .. "gui/LoanDetailDialog.lua")
 source(modDirectory .. "gui/TakeLoanWizard.lua")
+source(modDirectory .. "gui/NumericInputDialog.lua")
 
 BankCredit = {}
 BankCredit.modDirectory = modDirectory
 BankCredit.modName = modName
 BankCredit.manager = nil
+
+local IN_GAME_MENU_PAGE_FIELD = "pageBankCredit"
+local IN_GAME_MENU_FRAME_NAME = "BankFrame"
+local IN_GAME_MENU_ICON_SLICE_ID = "bankCredit.menuIcon"
 
 ---Register finance stat entry
 -- @param string statName Name of stat to register
@@ -45,6 +51,19 @@ end
 
 registerFinanceStat("bankLoanInterest")
 registerFinanceStat("bankLoanPrincipal")
+
+---Load shared GUI assets once before creating bank screens
+local function loadGuiAssets()
+    if not BankCredit._guiProfilesLoaded then
+        g_gui:loadProfiles(BankCredit.modDirectory .. "gui/guiProfiles.xml")
+        BankCredit._guiProfilesLoaded = true
+    end
+
+    if g_overlayManager ~= nil
+        and (g_overlayManager.textureConfigs == nil or g_overlayManager.textureConfigs.bankCredit == nil) then
+        g_overlayManager:addTextureConfigFile(BankCredit.modDirectory .. "images/menuIcon.xml", "bankCredit")
+    end
+end
 
 ---Load mission lifecycle initiation
 local function loadedMission()
@@ -114,33 +133,7 @@ local function loadedMission()
     end, BankCredit)
 
     -- GUI registration
-    g_gui:loadProfiles(BankCredit.modDirectory .. "gui/guiProfiles.xml")
-
-    if g_overlayManager ~= nil
-        and (g_overlayManager.textureConfigs == nil or g_overlayManager.textureConfigs.bankCredit == nil) then
-        g_overlayManager:addTextureConfigFile(BankCredit.modDirectory .. "images/menuIcon.xml", "bankCredit")
-    end
-
-    local frame = BankFrame.new(g_i18n, g_messageCenter)
-    g_gui:loadGui(BankCredit.modDirectory .. "gui/BankFrame.xml", "BankFrame", frame, true)
-
-    local detailDialog = LoanDetailDialog.new(frame)
-    g_gui:loadGui(BankCredit.modDirectory .. "gui/LoanDetailDialog.xml", "LoanDetailDialog", detailDialog)
-
-    local healthDialog = BankHealthDialog.new(frame)
-    g_gui:loadGui(BankCredit.modDirectory .. "gui/BankHealthDialog.xml", "BankHealthDialog", healthDialog)
-
-    local reportDialog = AnnualReportDialog.new(frame)
-    g_gui:loadGui(BankCredit.modDirectory .. "gui/AnnualReportDialog.xml", "AnnualReportDialog", reportDialog)
-
-    local wizardDialog = TakeLoanWizard.new(frame)
-    g_gui:loadGui(BankCredit.modDirectory .. "gui/TakeLoanWizard.xml", "TakeLoanWizard", wizardDialog)
-
-    BankCredit.addInGameMenuPage(frame, "BankFrame", function() return true end, "pageStatistics")
-    frame:initialize()
-
-    BankCredit.frame = frame
-
+    loadGuiAssets()
     BankSettings:injectMenu()
 
     -- Vanilla loan clearing: idempotent per-farm clear triggered by the
@@ -174,6 +167,25 @@ local function loadedMission()
         }
         addModEventListener(BankCredit.hostVanillaLoanCheck)
     end
+end
+
+---Apply a one-time tab list alignment reset before native tab rebuilds
+local function applyTabListAlignmentFix()
+    if BankCredit._tabListFixApplied then
+        return
+    end
+
+    if InGameMenu == nil or InGameMenu.rebuildTabList == nil then
+        return
+    end
+
+    InGameMenu.rebuildTabList = Utils.prependedFunction(InGameMenu.rebuildTabList, function(self)
+        if self.pagingTabList ~= nil then
+            self.pagingTabList.listItemAlignmentOffset = 0
+        end
+    end)
+
+    BankCredit._tabListFixApplied = true
 end
 
 ---Clears a lingering vanilla loan on the farm and notifies the owner.
@@ -243,71 +255,162 @@ function BankCredit.showVanillaLoanPopup(amount)
     addModEventListener(popup)
 end
 
----Add bank frame to InGameMenu at specified position
--- @param table frame Frame element to add
--- @param string pageName Name of the page
--- @param table uvs UV coordinates
--- @param function predicateFunc Visibility predicate
--- @param integer|string insertPosition Insert position (number or page name)
-function BankCredit.addInGameMenuPage(frame, pageName, predicateFunc, insertPosition)
-    local targetPosition = 1
+---Check whether the bank InGameMenu page should be enabled
+-- @return boolean isEnabled True when the page is safe to show
+local function getIsBankPageEnabled()
+    return true
+end
 
-    for k, v in pairs({pageName}) do
-        g_inGameMenu.controlIDs[v] = nil
-    end
+---Find the desired InGameMenu position before Statistics
+-- @param table inGameMenu InGameMenu instance
+-- @return integer position Target page position
+local function getBankPagePosition(inGameMenu)
+    local position = 1
 
-    if type(insertPosition) == "number" then
-        targetPosition = insertPosition
-    elseif type(insertPosition) == "string" then
-        for i = 1, #g_inGameMenu.pagingElement.elements do
-            local child = g_inGameMenu.pagingElement.elements[i]
-            if child == g_inGameMenu[insertPosition] then
-                targetPosition = i
-                break
+    if inGameMenu.pageFrames ~= nil then
+        position = #inGameMenu.pageFrames + 1
+
+        for i, page in ipairs(inGameMenu.pageFrames) do
+            if page == inGameMenu.pageStatistics then
+                return i
             end
         end
     end
 
-    g_inGameMenu[pageName] = frame
-    g_inGameMenu.pagingElement:addElement(g_inGameMenu[pageName])
+    return position
+end
 
-    g_inGameMenu:exposeControlsAsFields(pageName)
+---Add bank frame to InGameMenu using the same controller for pageFrames and PagingElement
+-- @param table inGameMenu InGameMenu instance
+-- @return table|nil frame Registered frame, or nil on failure
+function BankCredit.addInGameMenuPage(inGameMenu)
+    inGameMenu = inGameMenu or g_inGameMenu or g_gui.screenControllers[InGameMenu]
 
-    for i = 1, #g_inGameMenu.pagingElement.elements do
-        local child = g_inGameMenu.pagingElement.elements[i]
-        if child == g_inGameMenu[pageName] then
-            table.remove(g_inGameMenu.pagingElement.elements, i)
-            table.insert(g_inGameMenu.pagingElement.elements, targetPosition, child)
-            break
-        end
+    if inGameMenu == nil then
+        Logging.warning("[BankCredit] Cannot add InGameMenu page: g_inGameMenu is nil")
+        return nil
     end
 
-    for i = 1, #g_inGameMenu.pagingElement.pages do
-        local child = g_inGameMenu.pagingElement.pages[i]
-        if child.element == g_inGameMenu[pageName] then
-            table.remove(g_inGameMenu.pagingElement.pages, i)
-            table.insert(g_inGameMenu.pagingElement.pages, targetPosition, child)
-            break
-        end
+    if inGameMenu.pageBankCredit ~= nil then
+        BankCredit.frame = inGameMenu.pageBankCredit
+        return inGameMenu.pageBankCredit
     end
 
-    g_inGameMenu.pagingElement:updateAbsolutePosition()
-    g_inGameMenu.pagingElement:updatePageMapping()
-
-    g_inGameMenu:registerPage(g_inGameMenu[pageName], targetPosition, predicateFunc)
-
-    g_inGameMenu:addPageTab(g_inGameMenu[pageName], nil, nil, "bankCredit.menuIcon")
-
-    for i = 1, #g_inGameMenu.pageFrames do
-        local child = g_inGameMenu.pageFrames[i]
-        if child == g_inGameMenu[pageName] then
-            table.remove(g_inGameMenu.pageFrames, i)
-            table.insert(g_inGameMenu.pageFrames, targetPosition, child)
-            break
-        end
+    if inGameMenu.registerPage == nil or inGameMenu.addPageTab == nil then
+        Logging.warning("[BankCredit] Cannot add InGameMenu page: TabbedMenu registration API is unavailable")
+        return nil
     end
 
-    g_inGameMenu:rebuildTabList()
+    if inGameMenu.pagingElement == nil then
+        Logging.warning("[BankCredit] Cannot add InGameMenu page: pagingElement is nil")
+        return nil
+    end
+
+    if inGameMenu.pagingElement.addPage == nil or inGameMenu.pagingElement.removePageByElement == nil then
+        Logging.warning("[BankCredit] Cannot add InGameMenu page: PagingElement page API is unavailable")
+        return nil
+    end
+
+    local frameRefPath = BankCredit.modDirectory .. "gui/BankFrameRef.xml"
+    local xmlFile = loadXMLFile("BankFrameRefXML", frameRefPath)
+    if xmlFile == nil or xmlFile == 0 then
+        Logging.error("[BankCredit] Failed to load FrameReference XML: %s", tostring(frameRefPath))
+        return nil
+    end
+
+    applyTabListAlignmentFix()
+
+    inGameMenu.controlIDs[IN_GAME_MENU_PAGE_FIELD] = nil
+    g_gui:loadGuiRec(xmlFile, "FrameReferences", inGameMenu.pagingElement, inGameMenu)
+    inGameMenu:exposeControlsAsFields(IN_GAME_MENU_PAGE_FIELD)
+    inGameMenu.pagingElement:updatePageMapping()
+    delete(xmlFile)
+
+    local frame = g_gui:resolveFrameReference(inGameMenu[IN_GAME_MENU_PAGE_FIELD])
+    if frame == nil or frame.initialize == nil then
+        Logging.error("[BankCredit] Failed to resolve InGameMenu frame reference '%s'", IN_GAME_MENU_PAGE_FIELD)
+        return nil
+    end
+
+    if frame.elements == nil or frame.elements[1] == nil then
+        Logging.warning("[BankCredit] Cannot add InGameMenu page: frame root element is missing")
+        return nil
+    end
+
+    frame.elements[1].title = g_i18n:getText("bank_menu_title")
+    inGameMenu[IN_GAME_MENU_PAGE_FIELD] = frame
+
+    inGameMenu.pagingElement:removePageByElement(frame)
+
+    local _, actualPosition = inGameMenu:registerPage(
+        frame,
+        getBankPagePosition(inGameMenu),
+        getIsBankPageEnabled
+    )
+
+    inGameMenu:addPageTab(frame, nil, nil, IN_GAME_MENU_ICON_SLICE_ID)
+    inGameMenu.pagingElement:addPage(
+        string.upper(IN_GAME_MENU_PAGE_FIELD),
+        frame,
+        g_i18n:getText("bank_menu_title"),
+        actualPosition
+    )
+
+    frame:onGuiSetupFinished()
+    frame:initialize()
+    inGameMenu.pagingElement:updateAbsolutePosition()
+    inGameMenu.pagingElement:updatePageMapping()
+
+    if inGameMenu.rebuildTabList ~= nil then
+        inGameMenu:rebuildTabList()
+    else
+        Logging.warning("[BankCredit] InGameMenu page added, but rebuildTabList is unavailable")
+    end
+
+    BankCredit.frame = frame
+    return frame
+end
+
+---Load and register bank GUI when InGameMenu has finished map setup
+-- @param table inGameMenu InGameMenu instance
+-- @return table|nil frame Registered frame, or nil
+function BankCredit.loadInGameMenuGui(inGameMenu)
+    if inGameMenu == nil then
+        Logging.warning("[BankCredit] Cannot load InGameMenu GUI: inGameMenu is nil")
+        return nil
+    end
+
+    if inGameMenu.pageBankCredit ~= nil then
+        BankCredit.frame = inGameMenu.pageBankCredit
+        return inGameMenu.pageBankCredit
+    end
+
+    loadGuiAssets()
+
+    local frameTemplate = BankFrame.new(g_i18n, g_messageCenter)
+    g_gui:loadGui(BankCredit.modDirectory .. "gui/BankFrame.xml", IN_GAME_MENU_FRAME_NAME, frameTemplate, true)
+
+    local frame = BankCredit.addInGameMenuPage(inGameMenu)
+    if frame == nil then
+        return nil
+    end
+
+    local detailDialog = LoanDetailDialog.new(frame)
+    g_gui:loadGui(BankCredit.modDirectory .. "gui/LoanDetailDialog.xml", "LoanDetailDialog", detailDialog)
+
+    local healthDialog = BankHealthDialog.new(frame)
+    g_gui:loadGui(BankCredit.modDirectory .. "gui/BankHealthDialog.xml", "BankHealthDialog", healthDialog)
+
+    local reportDialog = AnnualReportDialog.new(frame)
+    g_gui:loadGui(BankCredit.modDirectory .. "gui/AnnualReportDialog.xml", "AnnualReportDialog", reportDialog)
+
+    local wizardDialog = TakeLoanWizard.new(frame)
+    g_gui:loadGui(BankCredit.modDirectory .. "gui/TakeLoanWizard.xml", "TakeLoanWizard", wizardDialog)
+
+    local numericDialog = NumericInputDialog.new(frame)
+    g_gui:loadGui(BankCredit.modDirectory .. "gui/NumericInputDialog.xml", "NumericInputDialog", numericDialog)
+
+    return frame
 end
 
 ---Save bank state to XML on savegame write
@@ -333,11 +436,9 @@ end
 local function sendInitialClientState(self, connection, user, farm)
     if g_server == nil then return end
     if connection == nil then
-        Logging.warning("[BankCredit] sendInitialClientState: connection is nil, skipping")
         return
     end
     if BankCredit.manager == nil then
-        Logging.warning("[BankCredit] sendInitialClientState: manager not initialized, skipping")
         return
     end
     connection:sendEvent(BankSyncEvent.new())
@@ -365,6 +466,7 @@ local function onMissionDelete()
         end
         BankCredit.manager = nil
     end
+    BankCredit.frame = nil
     if g_messageCenter ~= nil then
         g_messageCenter:unsubscribeAll(BankCredit)
     end
@@ -376,6 +478,9 @@ end
 ---Initialize BankCredit mod: register lifecycle hooks
 local function initBankCredit()
     Mission00.loadMission00Finished = Utils.appendedFunction(Mission00.loadMission00Finished, loadedMission)
+    InGameMenu.onLoadMapFinished = Utils.appendedFunction(InGameMenu.onLoadMapFinished, function(inGameMenu)
+        BankCredit.loadInGameMenuGui(inGameMenu)
+    end)
     FSBaseMission.saveSavegame      = Utils.appendedFunction(FSBaseMission.saveSavegame, onSaveToXMLFile)
     FSBaseMission.sendInitialClientState = Utils.appendedFunction(FSBaseMission.sendInitialClientState, sendInitialClientState)
     BaseMission.delete              = Utils.appendedFunction(BaseMission.delete, onMissionDelete)
@@ -424,7 +529,6 @@ local BankCreditI18NTexts = {
     ["bank_detail_revolving_available"] = true,
     ["bank_tab_active"]                 = true,
     ["bank_tab_paid"]                   = true,
-    ["bank_tab_report"]                 = true,
     ["bank_empty_paid"]                 = true,
     ["bank_report_title"]               = true,
     ["bank_report_interestPaid"]        = true,
@@ -432,7 +536,6 @@ local BankCreditI18NTexts = {
     ["bank_report_loansOpened"]         = true,
     ["bank_report_loansClosed"]         = true,
     ["bank_report_noData"]              = true,
-    ["bank_report_yearLabel"]           = true,
     ["bank_vanilla_loan_cleared"]       = true,
 }
 

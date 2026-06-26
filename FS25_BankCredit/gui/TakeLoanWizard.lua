@@ -354,11 +354,15 @@ function TakeLoanWizard:onAmountEnterPressed(element)
     self:updateStep1()
 end
 
----TextInput live filter: strip non-numeric characters from duration field
+---TextInput live filter: strip non-numeric characters and clamp to max years
 -- @param table element TextInput element
 -- @param string text Current text content
 function TakeLoanWizard:onDurationTextChanged(element, text)
     local filtered = string.gsub(text or "", "[^0-9]", "")
+    local value = tonumber(filtered)
+    if value ~= nil and value > TakeLoanWizard.DURATION_MAX_YEARS then
+        filtered = tostring(TakeLoanWizard.DURATION_MAX_YEARS)
+    end
     if filtered ~= text then element:setText(filtered) end
 end
 

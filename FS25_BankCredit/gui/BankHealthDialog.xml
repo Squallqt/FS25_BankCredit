@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+<GUI onOpen="onOpen" onClose="onClose">
     <GuiElement profile="newLayer"/>
     <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
 
@@ -62,7 +62,7 @@
                     <RoundCorner profile="bhd_sectionAccent" position="0px -282px"/>
                     <Button profile="bhd_sectionButton" position="12px -282px" id="btnPortfolio" text="$l10n_bank_health_sectionPortfolio" onClick="onClickInfoPortfolio"/>
 
-                    <!-- [SAIN 50px][8px][BAR 444px][8px][RISQUÉ 50px] = 560px -->
+                    <!-- [SAFE 50px][8px][BAR 444px][8px][RISKY 50px] = 560px -->
                     <Text profile="bhd_portfolioScaleSafe"  position="0px -323px" text="$l10n_bank_portfolio_scale_safe"/>
                     <RoundCorner profile="bhd_portfolioBarBg"   position="58px -325px" id="healthPortfolioBarBg"/>
                     <RoundCorner profile="bhd_portfolioBarFill" position="58px -325px" id="healthPortfolioBarFill"/>

@@ -131,7 +131,6 @@
         <e k="bank_portfolio_scale_risky" v="Arriscado" />
 
         <!-- Formats -->
-        <e k="bank_format_years" v="%d anos" />
         <e k="bank_format_monthsShort" v="%d mes" />
         <e k="bank_format_yearsMonths" v="%d a. %d m." />
 

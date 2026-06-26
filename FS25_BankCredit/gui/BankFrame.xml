@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <GUI name="BankFrame">
-    <GuiElement profile="fs25_menuContainer">
+    <GuiElement profile="baseReference">
+        <GuiElement profile="fs25_menuContainer">
 
         <!-- Header -->
         <GuiElement profile="fs25_menuHeaderPanel" position="-62px 92px">
             <Bitmap profile="fs25_menuHeaderIconBg">
                 <Bitmap profile="bankHeaderIcon"/>
             </Bitmap>
-            <Text profile="fs25_menuHeaderTitle" id="categoryHeaderText" text="$l10n_bank_menu_title"/>
+            <Text profile="fs25_menuHeaderTitle" text="$l10n_bank_menu_title"/>
             <RoundCorner profile="fs25_shopMoneyBoxBg" id="shopMoneyBoxBg"/>
             <BoxLayout profile="fs25_shopMoneyBox" id="shopMoneyBox">
                 <Text profile="fs25_shopBalance" text="$l10n_ui_balance:"/>
@@ -30,7 +31,7 @@
         <MultiTextOption profile="fs25_subCategorySelectorTabbed" id="subCategoryPaging" position="0px -10px" onClick="updateSubCategoryPages"/>
 
         <!-- Dashboard: 4 metric cards -->
-        <GuiElement profile="bankDashboardStrip" position="-63px -67px" id="dashboardStrip">
+        <GuiElement profile="bankDashboardStrip" position="-63px -67px">
 
             <!-- Card 1: Available credit -->
             <GuiElement profile="bankDashCard" position="5px -10px">
@@ -103,11 +104,6 @@
                     </ListItem>
                 </SmoothList>
 
-                <!-- Slider -->
-                <ThreePartBitmap profile="bankSliderBox" position="-60px -160px" id="loansSliderBox">
-                    <Slider profile="fs25_listSlider" dataElementId="listLoans"/>
-                </ThreePartBitmap>
-
             </GuiElement>
 
             <!-- Empty state -->
@@ -147,11 +143,6 @@
                     </ListItem>
                 </SmoothList>
 
-                <!-- Slider -->
-                <ThreePartBitmap profile="bankSliderBox" position="-60px -160px" id="paidSliderBox">
-                    <Slider profile="fs25_listSlider" dataElementId="listPaidLoans"/>
-                </ThreePartBitmap>
-
             </GuiElement>
 
             <!-- Empty state -->
@@ -161,5 +152,19 @@
 
         </GuiElement>
 
+        <!-- Docked sliders are menu-level controls, not part of the table layout. -->
+        <ThreePartBitmap profile="bankSliderDockedBg" id="loansSliderBox" visible="false">
+            <ThreePartBitmap profile="bankSliderDockedBox">
+                <Slider profile="bankSliderDocked" id="loansSlider" dataElementId="listLoans"/>
+            </ThreePartBitmap>
+        </ThreePartBitmap>
+
+        <ThreePartBitmap profile="bankSliderDockedBg" id="paidSliderBox" visible="false">
+            <ThreePartBitmap profile="bankSliderDockedBox">
+                <Slider profile="bankSliderDocked" id="paidSlider" dataElementId="listPaidLoans"/>
+            </ThreePartBitmap>
+        </ThreePartBitmap>
+
+        </GuiElement>
     </GuiElement>
 </GUI>
