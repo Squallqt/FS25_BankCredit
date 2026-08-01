@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event for full bank state synchronization on client late-join.
+---Network event for full bank state synchronization on client late-join.
 BankSyncEvent = {}
 local BankSyncEvent_mt = Class(BankSyncEvent, Event)
 
@@ -24,6 +24,8 @@ end
 -- @param integer streamId Network stream identifier
 -- @param Connection connection Network connection
 function BankSyncEvent:readStream(streamId, connection)
+    if not connection:getIsServer() then return end
+
     local ledger = BankLedger.new()
     ledger:readStream(streamId)
 
@@ -50,18 +52,15 @@ function BankSyncEvent:readStream(streamId, connection)
         return
     end
 
-    -- Apply ledger in-place (preserve existing reference used by other components)
+    -- Preserve the synchronized model instances referenced by dependent services.
     manager.ledger.equity              = ledger.equity
     manager.ledger.initialCapital      = ledger.initialCapital
     manager.ledger.totalInterestEarned = ledger.totalInterestEarned
     manager.ledger.totalOutstanding    = ledger.totalOutstanding
     manager.ledger.portfolioByRisk     = ledger.portfolioByRisk
 
-    -- Apply rateModel in-place
-    manager.rateModel.currentRate   = rateModel.currentRate
-    manager.rateModel.rateHistory   = rateModel.rateHistory
+    manager.rateModel:copyFrom(rateModel)
 
-    -- Rebuild repository with all loans from server
     manager.repository:clear()
     for _, loan in ipairs(loans) do
         manager.repository:add(loan)

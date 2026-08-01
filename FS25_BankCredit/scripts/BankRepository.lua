@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- CRUD + XML persistence for loans, ledger, settings, incomeTracker, and rateModel.
+---Provides loan storage and XML persistence for bank state.
 BankRepository = {}
 local BankRepository_mt = Class(BankRepository)
 
@@ -101,7 +101,6 @@ function BankRepository:saveToXML(savegamePath, ledger, settings, incomeTracker,
 
     setXMLInt(xmlFile, "bankcredit#version", BankRepository.SAVE_VERSION)
     setXMLInt(xmlFile, "bankcredit#nextId",  self.nextId)
-    setXMLInt(xmlFile, "bankcredit#periodCounter", self.periodCounter or 0)
 
     ledger:writeToXML(xmlFile, "bankcredit.ledger")
 
@@ -156,12 +155,12 @@ function BankRepository:loadFromXML(savegamePath, ledger, settings, incomeTracke
     end
 
     self.nextId        = getXMLInt(xmlFile, "bankcredit#nextId")        or 1
-    self.periodCounter = getXMLInt(xmlFile, "bankcredit#periodCounter") or 0
-
     ledger:readFromXML(xmlFile, "bankcredit.ledger")
 
     settings.initialCapital        = getXMLFloat(xmlFile, "bankcredit.settings#initialCapital")        or BankSettings.DEFAULTS.initialCapital
-    settings.baseInterestRate      = getXMLFloat(xmlFile, "bankcredit.settings#baseInterestRate")      or BankSettings.DEFAULTS.baseInterestRate
+    local savedBaseRate = getXMLFloat(xmlFile, "bankcredit.settings#baseInterestRate")
+        or BankSettings.DEFAULTS.baseInterestRate
+    settings.baseInterestRate = InterestRateModel.clampRate(savedBaseRate)
     settings.leverageRatio         = getXMLFloat(xmlFile, "bankcredit.settings#leverageRatio")         or BankSettings.DEFAULTS.leverageRatio
     settings.earlyRepaymentPenalty = getXMLFloat(xmlFile, "bankcredit.settings#earlyRepaymentPenalty") or BankSettings.DEFAULTS.earlyRepaymentPenalty
     local dynRaw = getXMLInt(xmlFile, "bankcredit.settings#dynamicRate")

@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Rapporto di leva" />
         <e k="bank_toolTip_leverageRatio" v="Definisce il moltiplicatore massimo del debito rispetto al patrimonio disponibile. Es. 10x → credito massimo = 10× patrimonio." />
         <e k="bank_setting_dynamicRate" v="Tasso dinamico" />
-        <e k="bank_toolTip_dynamicRate" v="Attivo: il tasso base cambia ogni anno (±0,25%, intervallo 1–12%). I premi di rischio sono sempre applicati." />
+        <e k="bank_toolTip_dynamicRate" v="Attivo: il tasso base segue tendenze mensili. Può restare stabile o variare dello 0,25%, 0,50% e, eccezionalmente, 0,75%. I premi di rischio sono sempre applicati." />
         <e k="bank_setting_baseInterestRate" v="Tasso base" />
         <e k="bank_toolTip_baseInterestRate" v="Il tasso annuo base applicato a tutti i prestiti prima del premio di rischio." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Penale rimborso anticipato" />

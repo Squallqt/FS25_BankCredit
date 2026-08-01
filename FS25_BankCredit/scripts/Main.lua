@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Mod bootstrap: source loading, mission lifecycle hooks, and FinanceStats registration.
+---Bootstraps source loading, mission lifecycle hooks, and finance statistics.
 local modDirectory = g_currentModDirectory
 local modName = g_currentModName
 
@@ -36,6 +36,54 @@ BankCredit.modDirectory = modDirectory
 BankCredit.modName = modName
 BankCredit.manager = nil
 
+local MONEY_DISPLAY_FACTOR_PROBE = 1000000
+
+---Returns the active display-currency factor applied by g_i18n:formatMoney
+-- @return number factor Display amount divided by internal amount
+function BankCredit.getMoneyDisplayFactor()
+    if g_i18n == nil or type(g_i18n.formatMoney) ~= "function" then
+        return 1
+    end
+
+    local formatted = g_i18n:formatMoney(MONEY_DISPLAY_FACTOR_PROBE, 0, false, false)
+    if type(formatted) ~= "string" then
+        return 1
+    end
+
+    local digits = string.gsub(formatted, "[^0-9]", "")
+    local displayed = tonumber(digits)
+    if displayed == nil or displayed <= 0 then
+        return 1
+    end
+
+    local factor = displayed / MONEY_DISPLAY_FACTOR_PROBE
+    if factor <= 0 or factor ~= factor or factor == math.huge then
+        return 1
+    end
+
+    return factor
+end
+
+---Converts an internal money amount to an integer display-currency amount
+-- @param number amount Internal money amount
+-- @return integer amount Display-currency amount
+function BankCredit.toDisplayMoney(amount)
+    local value = tonumber(amount) or 0
+    local factor = BankCredit.getMoneyDisplayFactor()
+    if factor == 1 then
+        return math.floor(value)
+    end
+    return math.floor(value * factor + 0.5)
+end
+
+---Converts an integer display-currency amount to internal money units
+-- @param number amount Display-currency amount
+-- @return number amount Internal money amount rounded to cents
+function BankCredit.fromDisplayMoney(amount)
+    local factor = BankCredit.getMoneyDisplayFactor()
+    return math.floor(((tonumber(amount) or 0) / factor) * 100 + 0.5) / 100
+end
+
 local IN_GAME_MENU_PAGE_FIELD = "pageBankCredit"
 local IN_GAME_MENU_FRAME_NAME = "BankFrame"
 local IN_GAME_MENU_ICON_SLICE_ID = "bankCredit.menuIcon"
@@ -70,7 +118,6 @@ local function loadedMission()
     MoneyType.LOAN_INTEREST  = MoneyType.register("bankLoanInterest",  "bank_label_interest")
     MoneyType.LOAN_PRINCIPAL = MoneyType.register("bankLoanPrincipal", "bank_label_principal")
 
-    -- Instantiation in dependency order
     local ledger        = BankLedger.new()
     g_currentMission.bankSettings = BankSettings.load()
     local rateModel     = InterestRateModel.new(g_currentMission.bankSettings.baseInterestRate)
@@ -104,54 +151,39 @@ local function loadedMission()
     incomeTracker:initialize()
     bankService:initializeLedger(g_currentMission.bankSettings.initialCapital)
 
-    -- Validate and push settings to UI controls; also triggers applyInitialCapitalDelta on XML load
     BankSettings:applySettings(g_currentMission.bankSettings, false)
 
-    -- Seed RNG once so the rate model is not deterministic across sessions
-    math.randomseed(g_time)
-
-    -- Periodic hooks: server-authoritative
-    -- Rate update every 3 periods (quarterly) when dynamicRate is enabled.
-    -- Counter is stored on the repository so it persists across save/load (see BankRepository XML).
-    repository.periodCounter = repository.periodCounter or 0
+    ---Processes monthly loan collection and market rate changes
     g_messageCenter:subscribe(MessageType.PERIOD_CHANGED, function()
         if g_currentMission:getIsServer() then
             loanService:collectAll()
 
-            repository.periodCounter = (repository.periodCounter or 0) + 1
-            if repository.periodCounter >= 3 then
-                repository.periodCounter = 0
-                local s = g_currentMission.bankSettings
-                if s ~= nil and s.dynamicRate then
-                    local currentYear = g_currentMission.environment.currentYear
-                    rateModel:update(currentYear, s.baseInterestRate)
-                end
+            local settings = g_currentMission.bankSettings
+            if settings.dynamicRate then
+                rateModel:update(g_currentMission.environment.currentYear)
             end
 
             g_server:broadcastEvent(BankPeriodSyncEvent.new())
         end
     end, BankCredit)
 
-    -- GUI registration
     loadGuiAssets()
     BankSettings:injectMenu()
 
-    -- Vanilla loan clearing: idempotent per-farm clear triggered by the
-    -- player's farm selection or by the initial client-state handshake for
-    -- auto-assigned reconnects (which do not publish PLAYER_FARM_CHANGED).
     if g_currentMission:getIsServer() then
+        ---Clears a player's vanilla loan after a farm change
+        -- @param table player Player instance
         g_messageCenter:subscribe(MessageType.PLAYER_FARM_CHANGED, function(player)
             if player == nil or not LoanService.isValidFarmId(player.farmId) then return end
             BankCredit.clearVanillaLoan(g_farmManager:getFarmById(player.farmId))
         end, BankCredit)
 
-        -- Listen-server host only: sendInitialClientState never fires for the
-        -- local loopback, and PLAYER_FARM_CHANGED does not fire when the host
-        -- is auto-assigned its farm from the savegame (no selection screen).
-        -- One-shot deferred check: waits until getFarmId() returns a valid id
-        -- (farm object is created after loadMission00Finished), then clears.
+        -- Defer the local-host clear until its farm is available.
         BankCredit.hostVanillaLoanCheck = {
             elapsed = 0,
+            ---Checks whether the local host has joined a valid farm
+            -- @param table self Mod event listener
+            -- @param float dt Elapsed time in milliseconds
             update = function(self, dt)
                 self.elapsed = self.elapsed + dt
                 local hostFarmId = g_currentMission:getFarmId()
@@ -179,6 +211,8 @@ local function applyTabListAlignmentFix()
         return
     end
 
+    ---Resets the native tab alignment before rebuilding the tab list
+    -- @param table self InGameMenu instance
     InGameMenu.rebuildTabList = Utils.prependedFunction(InGameMenu.rebuildTabList, function(self)
         if self.pagingTabList ~= nil then
             self.pagingTabList.listItemAlignmentOffset = 0
@@ -193,10 +227,7 @@ end
 -- Uses MoneyType.LOAN_PRINCIPAL so the deduction appears as a readable line
 -- in the Finance tab (registered at mission load).
 -- @param table farm Farm instance
--- @param table? targetConnection Optional connection to route the popup to
---        directly. Used from sendInitialClientState where the mapping
---        connection -> player is already known (covers dedicated-server
---        joins before connectionsToPlayer is queryable for the new player).
+-- @param table? targetConnection Optional direct popup connection
 function BankCredit.clearVanillaLoan(farm, targetConnection)
     if farm == nil then return end
     if not LoanService.isValidFarmId(farm.farmId) then return end
@@ -207,9 +238,7 @@ function BankCredit.clearVanillaLoan(farm, targetConnection)
     farm.loan = 0
     g_currentMission:addMoney(-amount, farmId, MoneyType.LOAN_PRINCIPAL, true, true)
 
-    -- Mirror farm.loan = 0 on every client. The engine does not sync direct
-    -- mutations of farm.loan, so without this broadcast a dedicated-server
-    -- client keeps displaying the pre-clear value in the Finance tab.
+    -- Keep every client's Finance tab aligned with the server-side clear.
     if g_server ~= nil then
         g_server:broadcastEvent(VanillaLoanSyncEvent.new(farmId), false)
     end
@@ -219,9 +248,7 @@ function BankCredit.clearVanillaLoan(farm, targetConnection)
         return
     end
 
-    -- Listen-server host: the local host has no entry in connectionsToPlayer,
-    -- so show the popup directly. On a dedicated server getFarmId() returns
-    -- an invalid id and this branch is skipped.
+    -- Notify the listen-server host locally; remote players are mapped below.
     local hostFarmId = g_currentMission:getFarmId()
     if LoanService.isValidFarmId(hostFarmId) and farmId == hostFarmId then
         BankCredit.showVanillaLoanPopup(amount)
@@ -236,10 +263,15 @@ function BankCredit.clearVanillaLoan(farm, targetConnection)
     end
 end
 
+---Shows the vanilla-loan clearing popup
+-- @param number amount Cleared loan amount
 function BankCredit.showVanillaLoanPopup(amount)
     local popup = {
         delay = 2000,
         amount = amount,
+        ---Displays the popup when the HUD is available
+        -- @param table self Mod event listener
+        -- @param float dt Elapsed time in milliseconds
         update = function(self, dt)
             if g_gui:getIsGuiVisible() or g_currentMission.hud == nil then
                 self.delay = 500
@@ -442,12 +474,9 @@ local function sendInitialClientState(self, connection, user, farm)
         return
     end
     connection:sendEvent(BankSyncEvent.new())
-    connection:sendEvent(BankSettingsEvent.new(g_currentMission.bankSettings))
+    connection:sendEvent(BankSettingsEvent.new(g_currentMission.bankSettings, false))
 
-    -- Auto-assigned reconnects bypass PlayerSetFarmEvent and therefore do
-    -- not publish PLAYER_FARM_CHANGED on the server; handle their vanilla
-    -- loan here. The connection -> player mapping is already available,
-    -- so route the popup directly through this connection.
+    -- Handle the joining player's vanilla loan while its connection is available.
     local player = g_currentMission.connectionsToPlayer[connection]
     if player ~= nil and LoanService.isValidFarmId(player.farmId) then
         BankCredit.clearVanillaLoan(g_farmManager:getFarmById(player.farmId), connection)
@@ -478,6 +507,8 @@ end
 ---Initialize BankCredit mod: register lifecycle hooks
 local function initBankCredit()
     Mission00.loadMission00Finished = Utils.appendedFunction(Mission00.loadMission00Finished, loadedMission)
+    ---Loads the bank GUI after the in-game menu map setup
+    -- @param table inGameMenu InGameMenu instance
     InGameMenu.onLoadMapFinished = Utils.appendedFunction(InGameMenu.onLoadMapFinished, function(inGameMenu)
         BankCredit.loadInGameMenuGui(inGameMenu)
     end)
@@ -486,6 +517,8 @@ local function initBankCredit()
     BaseMission.delete              = Utils.appendedFunction(BaseMission.delete, onMissionDelete)
 
     -- Disable vanilla loan UI: BankCredit replaces the native loan system entirely
+    ---Disables the native loan controls
+    -- @return boolean hasPermission Always false
     InGameMenuStatisticsFrame.hasPlayerLoanPermission = Utils.overwrittenFunction(
         InGameMenuStatisticsFrame.hasPlayerLoanPermission,
         function() return false end
@@ -504,12 +537,7 @@ end
 
 initBankCredit()
 
----Resolve mod translation keys without modEnv for Finance tab
--- @param table self I18N instance
--- @param function superFunc Original getText function
--- @param string text Translation key
--- @param string modEnv Optional mod environment name
--- @return string text Localized text
+-- I18N extension: resolve selected mod keys without modEnv across the Finance tab and bank UI.
 local BankCreditI18NTexts = {
     ["finance_bankLoanInterest"]  = true,
     ["finance_bankLoanPrincipal"] = true,
@@ -539,6 +567,12 @@ local BankCreditI18NTexts = {
     ["bank_vanilla_loan_cleared"]       = true,
 }
 
+---Resolve selected mod translation keys without modEnv
+-- @param table self I18N instance
+-- @param function superFunc Original getText function
+-- @param string text Translation key
+-- @param string? modEnv Mod environment name; nil uses BankCredit for selected keys
+-- @return string text Localized text
 local function bankCreditGetText(self, superFunc, text, modEnv)
     if modEnv == nil and BankCreditI18NTexts[text] then
         return superFunc(self, text, modName)

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="110">
+<modDesc descVersion="111">
     <author>Squallqt</author>
-    <version>1.0.1.0</version>
+    <version>1.1.0.0</version>
     <title>
         <en>Bank And Credit</en>
         <de>Bank Und Kredit</de>
@@ -25,7 +25,7 @@ Features:
 - Loan detail view: full amortisation schedule (Annuity, Bullet) or draw and repayment panel (Revolving)
 - Bank health dashboard: equity, leverage ratio, outstanding portfolio, internal loss reserve (not player-loan reimbursement), coverage ratio
 - Annual financial report per farm
-- Base rate with mean-reversion, updated quarterly (1% - 12%, configurable anchor)
+- Configurable base rate (1.25–5.75%) with persistent monthly market trends
 - Type spreads: Annuity +0%, Bullet +0.75%, Revolving +5%
 - Early repayment on Annuity and Bullet loans: full or partial by number of months (configurable penalty 0% - 5%)
 - Settings (in Game Settings): starting capital (100 k€ - 5 M€), leverage ratio (5x - 20x), base rate, dynamic rate, early repayment penalty
@@ -42,13 +42,23 @@ Access via the dedicated tab in the InGame Menu (ESC).
 
 Changelog:
 
+1.1.0.0:
+- Revolving credit limits now follow leverage-ratio changes
+- Reworked dynamic interest rates into persistent monthly market trends with stable, normal, strong, and exceptional movements
+- Adjusted the configurable base-rate range to 1.25–5.75%
+- Improved multiplayer safety: bank and loan state is now only synced from the host, preventing corrupted or tampered data on clients. Thanks to KeilerHirsch: https://github.com/KeilerHirsch
+- Existing saved base rates above 5.75% are automatically capped at 5.75%
+- Added compatibility with FS25_additionalCurrencies: amount fields for loans, repayments, and revolving draws now accept values in the active converted currency
 1.0.1.0:
 - Fixed multiplayer synchronization of paid loans and annual reports
 - Fixed Bank tab display in the menu
 - Fixed repayment and draw amount fields accepting letters
 - Added full translation coverage for all 27 supported languages
 1.0.0.0:
-- Initial release]]></en>
+- Initial release
+
+© 2026 Squallqt. All rights reserved.
+Please download this mod only from the official Farming Simulator ModHub and keep the original link. Reuploading, redistribution, modification or copying of this mod or any of its files, in whole or in part, is not permitted without the author's written consent.]]></en>
         <de><![CDATA[Bank & Kredit fügt Farming Simulator 25 eine Mindestreservebank hinzu. Nehmen Sie Kredite auf, verwalten Sie Ihre Schulden und steigern Sie Ihre Kreditkapazität durch die Bewirtschaftung Ihres Hofes.
 
 Die Bank ist eine eigenständige virtuelle Einheit mit eigenem Eigenkapital, das durch die erhaltenen Zinsen wächst. Kredit wird nicht automatisch gewährt: Er wird anhand Ihrer Einnahmen und Ihres Vermögens bewertet.
@@ -66,7 +76,7 @@ Funktionen:
 - Kreditdetailansicht: vollständiger Tilgungsplan (Annuität, Endfällig) oder Zierungs- und Rückzahlungsbereich (Revolving)
 - Bank-Dashboard: Eigenkapital, Hebelverhältnis, ausstehende Kredite, interne Risikorückstellung (keine Rückzahlung von Spielerkrediten), Deckungsgrad
 - Jährlicher Finanzbericht je Betrieb
-- Basiszins mit Mean-Reversion, vierteljährlich aktualisiert (1 % - 12 %, konfigurierbarer Anker)
+- Konfigurierbarer Basiszins (1,25 % - 5,75 %) mit anhaltenden monatlichen Markttrends
 - Spreads nach Kreditart: Annuität +0 %, Endfällig +0,75 %, Revolving +5 %
 - Vorzeitige Rückzahlung bei Annuität und Endfällig: vollständig oder teilweise nach Monaten (konfigurierbares Vorfälligkeitsentgelt 0 % - 5 %)
 - Einstellungen (in den Spieleinstellungen): Startkapital (100 k€ - 5 M€), Hebelverhältnis (5x - 20x), Basiszins, dynamischer Zins, Vorfälligkeitsentgelt
@@ -83,13 +93,23 @@ Zugriff über den eigenen Tab im InGame-Menü (ESC).
 
 Changelog:
 
+1.1.0.0:
+- Revolving-Kreditlimits werden jetzt an Änderungen des Hebelverhältnisses angepasst
+- Dynamische Zinssätze zu anhaltenden monatlichen Markttrends mit stabilen Phasen sowie normalen, starken und außergewöhnlichen Bewegungen überarbeitet
+- Konfigurierbaren Basiszinssatz auf 1,25 % - 5,75 % angepasst
+- Mehrspieler-Sicherheit verbessert: Bank- und Kreditdaten werden jetzt nur noch vom Host synchronisiert, was beschädigte oder manipulierte Daten auf Clients verhindert. Vielen Dank an KeilerHirsch: https://github.com/KeilerHirsch
+- Bestehende gespeicherte Basiszinssätze über 5,75 % werden automatisch auf 5,75 % begrenzt
+- Kompatibilität mit FS25_additionalCurrencies hinzugefügt: Betragsfelder für Kredite, Rückzahlungen und Revolving-Abrufe akzeptieren jetzt Werte in der aktiven umgerechneten Währung
 1.0.1.0:
 - Multiplayer-Synchronisierung von getilgten Krediten und Jahresberichten korrigiert
 - Anzeige des Bank-Tabs im Menü korrigiert
 - Betragseingabefelder akzeptierten Buchstaben – korrigiert (Rückzahlung, Abruf)
 - Vollständige Übersetzung für alle 27 unterstützten Sprachen hinzugefügt
 1.0.0.0:
-- Erstveröffentlichung]]></de>
+- Erstveröffentlichung
+
+© 2026 Squallqt. Alle Rechte vorbehalten.
+Bitte lade diesen Mod ausschließlich aus dem offiziellen Farming Simulator ModHub herunter und behalte den originalen Link bei. Das erneute Hochladen, die Weitergabe, Veränderung oder das Kopieren dieses Mods oder seiner Dateien, ganz oder teilweise, ist ohne die schriftliche Zustimmung des Autors nicht gestattet.]]></de>
         <fr><![CDATA[Banque & Crédit ajoute une banque à réserves fractionnaires à Farming Simulator 25. Empruntez, gérez votre dette et développez votre capacité de crédit en cultivant.
 
 La banque est une entité virtuelle indépendante avec ses propres fonds propres, alimentés par les intérêts perçus. Le crédit n'est pas accordé automatiquement : il est évalué selon vos revenus et votre patrimoine.
@@ -107,7 +127,7 @@ Fonctionnalités :
 - Vue détaillée des prêts : tableau d'amortissement complet (Amortissable, In Fine) ou panneau de tirage et remboursement (Revolving)
 - Tableau de bord bancaire : fonds propres, ratio de levier, encours du portefeuille, réserve interne pour pertes (pas un remboursement de prêt joueur), ratio de couverture
 - Rapport financier annuel par ferme
-- Taux de base à réversion vers la moyenne, évoluant trimestriellement (1 % - 12 %, ancrage configurable)
+- Taux de base configurable (1,25 % - 5,75 %) avec tendances de marché mensuelles persistantes
 - Spreads par type de prêt : Amortissable +0 %, In Fine +0,75 %, Revolving +5 %
 - Remboursement anticipé sur les prêts Amortissable et In Fine : intégral ou partiel par nombre de mois (pénalité configurable 0 % - 5 %)
 - Paramètres (dans les Paramètres du jeu) : capital initial (100 k€ - 5 M€), ratio de levier (5x - 20x), taux de base, taux dynamique, pénalité de remboursement anticipé
@@ -124,13 +144,23 @@ Accès via l'onglet dédié dans le menu en jeu (ECHAP).
 
 Changelog :
 
+1.1.0.0 :
+- Les plafonds revolving suivent désormais les modifications du ratio de levier
+- Refonte du taux dynamique en tendances mensuelles persistantes, avec stabilité ou variations normales, fortes et exceptionnelles
+- Ajustement de la plage configurable du taux de base à 1,25 % - 5,75 %
+- Sécurité multijoueur améliorée : les données bancaires et de prêt ne sont désormais synchronisées que depuis l'hôte, ce qui empêche des données corrompues ou falsifiées sur les clients. Merci à KeilerHirsch : https://github.com/KeilerHirsch
+- Les taux de base enregistrés supérieurs à 5,75 % sont automatiquement plafonnés à 5,75 %
+- Ajout de la compatibilité avec FS25_additionalCurrencies : les champs de montant des prêts, remboursements et tirages revolving acceptent désormais les valeurs dans la devise convertie active
 1.0.1.0 :
 - Correction de la synchronisation multijoueur des prêts soldés et des rapports annuels
 - Correction de l'affichage de l'onglet Banque dans le menu
 - Correction des champs de saisie de montant acceptant des lettres (remboursement, tirage)
 - Ajout de la traduction complète pour les 27 langues prises en charge
 1.0.0.0 :
-- Version initiale]]></fr>
+- Version initiale
+
+© 2026 Squallqt. Tous droits réservés.
+Merci de télécharger ce mod uniquement depuis le ModHub officiel de Farming Simulator et de conserver le lien original. La remise en ligne, la redistribution, la modification ou la copie de ce mod ou de l'un de ses fichiers, en tout ou partie, ne sont pas autorisées sans l'accord écrit de l'auteur.]]></fr>
 
     </description>
     <iconFilename>icon_BankCredit.dds</iconFilename>

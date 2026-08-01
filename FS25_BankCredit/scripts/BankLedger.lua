@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Tracks the bank's internal balance sheet: reserves, equity, and outstanding credit.
+---Tracks the bank's internal equity and outstanding credit.
 BankLedger = {}
 local BankLedger_mt = Class(BankLedger)
 
@@ -33,7 +33,7 @@ function BankLedger:writeToXML(xmlFile, key)
 end
 
 ---Deserialize ledger from XML file
--- @param XMLFile xmlFile XML file handle
+-- @param integer xmlFile XML file handle
 -- @param string key XML key path
 function BankLedger:readFromXML(xmlFile, key)
     self.equity              = getXMLFloat(xmlFile, key .. "#equity")              or 0

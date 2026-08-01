@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Gjeldsgrad" />
         <e k="bank_toolTip_leverageRatio" v="Definerer den maksimale gjeldsmultiplikatoren i forhold til tilgjengelig egenkapital. F.eks. 10x → maks. kreditt = 10× egenkapital." />
         <e k="bank_setting_dynamicRate" v="Dynamisk rente" />
-        <e k="bank_toolTip_dynamicRate" v="Aktivert: basisrenten endres hvert år (±0,25 %, område 1–12 %). Risikopremier gjelder alltid." />
+        <e k="bank_toolTip_dynamicRate" v="Aktivert: basisrenten følger månedlige trender. Den kan være stabil eller endres med 0,25 %, 0,50 % og unntaksvis 0,75 %. Risikopremier gjelder alltid." />
         <e k="bank_setting_baseInterestRate" v="Basisrente" />
         <e k="bank_toolTip_baseInterestRate" v="Den årlige basisrenten brukt på alle lån før risikopremien." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Bot for førtidig tilbakebetaling" />

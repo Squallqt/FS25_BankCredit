@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Rácio de alavancagem" />
         <e k="bank_toolTip_leverageRatio" v="Define o multiplicador de dívida máximo em relação ao capital próprio disponível. Ex. 10x → crédito máx. = 10× capital próprio." />
         <e k="bank_setting_dynamicRate" v="Taxa dinâmica" />
-        <e k="bank_toolTip_dynamicRate" v="Activada: a taxa base muda anualmente (±0,25%, intervalo 1–12%). Os prémios de risco aplicam-se sempre." />
+        <e k="bank_toolTip_dynamicRate" v="Ativada: a taxa base segue tendências mensais. Pode manter-se estável ou variar 0,25%, 0,50% e, excecionalmente, 0,75%. Os prémios de risco aplicam-se sempre." />
         <e k="bank_setting_baseInterestRate" v="Taxa base" />
         <e k="bank_toolTip_baseInterestRate" v="A taxa anual base aplicada a todos os empréstimos antes do prémio de risco." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Penalização por reembolso antecipado" />

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Tracks farm income over a 12-period rolling window. Feeds DSCR in CreditService.
+---Tracks farm income over a 12-period rolling window for DSCR calculations.
 IncomeTracker = {}
 local IncomeTracker_mt = Class(IncomeTracker)
 
@@ -21,7 +21,6 @@ end
 function IncomeTracker:initialize()
     self.currentPeriodIndex = self:getCurrentPeriodIndex()
 
-    -- Build whitelist of recurring operating-income statistic names.
     -- Uses moneyType.statistic (string) for lookup — table identity is unreliable
     -- because the C++ engine may pass different table instances than MoneyType constants.
     -- Asset sales (vehicles, buildings, land) are excluded to avoid inflating DSCR.
@@ -47,8 +46,8 @@ function IncomeTracker:initialize()
     if not IncomeTracker._moneyPatched then
         IncomeTracker._moneyPatched = true
 
-        -- Farm.changeBalance is the single Lua entry point for ALL money changes,
-        -- including C++ pathways (SellingStation, AnimalClusterSystem, BGA).
+        -- Farm.changeBalance also receives C++ pathways such as selling stations,
+        -- animal systems and the BGA.
         -- Signature: Farm:changeBalance(amount, moneyType)
         Farm.changeBalance = Utils.appendedFunction(
             Farm.changeBalance,
@@ -67,7 +66,7 @@ end
 -- asset sales, loan flows, and other non-recurring items to avoid inflating DSCR.
 -- @param float  amount    Money delta (positive = income)
 -- @param integer farmId   Farm that received the money
--- @param integer moneyType MoneyType constant
+-- @param table moneyType MoneyType instance
 function IncomeTracker:onMoneyChange(amount, farmId, moneyType)
     if amount <= 0 then return end
     if farmId == nil or farmId <= 0 then return end
@@ -126,7 +125,7 @@ end
 -- This ensures the average naturally decays when the farm stops earning.
 -- @param integer farmId      Farm identifier
 -- @param integer periodCount Number of periods to look back
--- @param float   decay       Weight multiplier per older period (default 0.8)
+-- @param float?  decay       Weight multiplier per older period; nil uses 0.8
 -- @return float weightedAvg
 function IncomeTracker:getWeightedAvg(farmId, periodCount, decay)
     decay = decay or 0.8

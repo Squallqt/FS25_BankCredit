@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event for broadcasting a new loan creation to all clients.
+---Network event for broadcasting a new loan creation to all clients.
 LoanCreateEvent = {}
 local LoanCreateEvent_mt = Class(LoanCreateEvent, Event)
 
@@ -25,6 +25,8 @@ end
 -- @param integer streamId Network stream identifier
 -- @param Connection connection Network connection
 function LoanCreateEvent:readStream(streamId, connection)
+    if not connection:getIsServer() then return end
+
     self.loan = Loan.new()
     self.loan:readStream(streamId)
 

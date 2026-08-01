@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Evaluates loan eligibility via DSCR and LTV risk metrics before credit approval.
+---Evaluates loan eligibility with DSCR and LTV risk metrics.
 CreditService = {}
 local CreditService_mt = Class(CreditService)
 
@@ -279,7 +279,7 @@ end
 -- @param number farmId Farm identifier
 -- @param number bankAvailableCapacity Bank's current available lending capacity
 -- @param table repository BankRepository instance
--- @param table bankService BankService instance (optional, enables concentration cap)
+-- @param table? bankService BankService instance; nil disables the concentration cap
 -- @return number Effective limit
 function CreditService:getEffectiveLimit(farmId, bankAvailableCapacity, repository, bankService)
     local borrowerLimit = self:getBorrowerLimit(farmId, repository)

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Orchestrates loan creation, repayment processing, and default handling.
+---Handles loan creation, repayment, and revolving credit operations.
 LoanService = {}
 local LoanService_mt = Class(LoanService)
 
@@ -10,7 +10,7 @@ LoanService.COMMITMENT_FEE_RATE = 0.01
 -- Rejects nil, non-positive, and spectator farms so no loan is ever disbursed,
 -- collected, or mutated against a farm that does not exist. Prevents orphan
 -- loans at new-game startup when the player has not yet been assigned a farm.
--- @param integer|nil farmId Farm identifier to validate
+-- @param integer? farmId Farm identifier to validate; nil is invalid
 -- @return boolean valid True if farmId is a real farm
 function LoanService.isValidFarmId(farmId)
     if farmId == nil then return false end
@@ -177,7 +177,6 @@ function LoanService:disburse(farmId, requestedAmount, loanType, durationMonths)
 
     self.repository:add(loan)
 
-    -- Annual report: record loan opened
     if self.annualReport ~= nil then
         local currentYear = g_currentMission.environment.currentYear
         self.annualReport:recordLoanOpened(farmId, currentYear)
@@ -234,7 +233,6 @@ function LoanService:collectMonthlyPayment(loan)
             self.bankService:onInterestReceived(commitmentFee)
         end
 
-        -- Annual report: record revolving interest (drawn interest + commitment fee)
         if self.annualReport ~= nil then
             local currentYear = g_currentMission.environment.currentYear
             self.annualReport:recordInterest(loan.farmId, currentYear, totalCharge)
@@ -283,7 +281,6 @@ function LoanService:collectMonthlyPayment(loan)
     self.bankService:onInterestReceived(interestPortion)
     self.bankService:onRepaymentReceived(principalPortion, loan.riskLevel)
 
-    -- Annual report: record interest, principal, and loan closure
     if self.annualReport ~= nil then
         local currentYear = g_currentMission.environment.currentYear
         self.annualReport:recordInterest(loan.farmId, currentYear, interestPortion)
@@ -362,7 +359,6 @@ function LoanService:earlyRepayment(loan, amount)
 
     self.bankService:onRepaymentReceived(amount, loan.riskLevel)
 
-    -- Annual report: record principal repaid (+ penalty as interest) and potential closure
     if self.annualReport ~= nil then
         local currentYear = g_currentMission.environment.currentYear
         self.annualReport:recordPrincipal(loan.farmId, currentYear, amount)
@@ -444,7 +440,6 @@ function LoanService:repayRevolving(loan, amount)
 
     self.bankService:onRepaymentReceived(amount, loan.riskLevel)
 
-    -- Annual report: record revolving principal repaid
     if self.annualReport ~= nil then
         local currentYear = g_currentMission.environment.currentYear
         self.annualReport:recordPrincipal(loan.farmId, currentYear, amount)
@@ -471,7 +466,6 @@ function LoanService:closeRevolving(loan)
 
     loan.paidOff = true
 
-    -- Annual report: record revolving line closure
     if self.annualReport ~= nil then
         local currentYear = g_currentMission.environment.currentYear
         self.annualReport:recordLoanClosed(loan.farmId, currentYear)

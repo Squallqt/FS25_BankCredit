@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Rasio leverage" />
         <e k="bank_toolTip_leverageRatio" v="Menentukan pengganda utang maksimum relatif terhadap ekuitas yang tersedia. Contoh 10x → max. kredit = 10× ekuitas." />
         <e k="bank_setting_dynamicRate" v="Suku bunga dinamis" />
-        <e k="bank_toolTip_dynamicRate" v="Aktif: suku bunga dasar berubah setiap tahun (±0,25%, rentang 1–12%). Premi risiko selalu berlaku." />
+        <e k="bank_toolTip_dynamicRate" v="Aktif: suku bunga dasar mengikuti tren bulanan. Suku bunga dapat tetap stabil atau berubah 0,25%, 0,50%, dan sesekali 0,75%. Premi risiko selalu berlaku." />
         <e k="bank_setting_baseInterestRate" v="Suku bunga dasar" />
         <e k="bank_toolTip_baseInterestRate" v="Suku bunga tahunan dasar yang diterapkan pada semua pinjaman sebelum premi risiko." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Penalti pelunasan awal" />

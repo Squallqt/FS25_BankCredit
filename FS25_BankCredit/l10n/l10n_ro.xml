@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Efect de levier" />
         <e k="bank_toolTip_leverageRatio" v="Definește multiplicatorul maxim de îndatorare față de capitalul propriu disponibil. Ex. 10x → credit max. = 10× capital propriu." />
         <e k="bank_setting_dynamicRate" v="Rată dinamică" />
-        <e k="bank_toolTip_dynamicRate" v="Activat: rata de bază se modifică anual (±0,25%, interval 1–12%). Primele de risc se aplică întotdeauna." />
+        <e k="bank_toolTip_dynamicRate" v="Activat: rata de bază urmează tendințe lunare. Poate rămâne stabilă sau varia cu 0,25%, 0,50% și, în mod excepțional, cu 0,75%. Primele de risc se aplică întotdeauna." />
         <e k="bank_setting_baseInterestRate" v="Rată de bază" />
         <e k="bank_toolTip_baseInterestRate" v="Rata anuală de bază aplicată tuturor împrumuturilor înainte de prima de risc." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Penalitate rambursare anticipată" />
