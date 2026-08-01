@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Settings schema, InGameMenu control injection, and server-authoritative apply/broadcast for bank parameters.
+---Provides bank settings, InGameMenu controls, and authoritative synchronization.
 BankSettings = {}
 BankSettings.CONTROLS = {}
 BankSettings._menuInjected = false
@@ -12,7 +12,11 @@ BankSettings.menuItems = {
     'earlyRepaymentPenalty',
 }
 
--- Build ordered value tables from numeric ranges
+---Creates an integer range
+-- @param integer from First value
+-- @param integer to Last value
+-- @param integer step Increment between values
+-- @return table values Integer values
 local function intRange(from, to, step)
     local t = {}
     for v = from, to, step do
@@ -21,6 +25,11 @@ local function intRange(from, to, step)
     return t
 end
 
+---Creates a floating-point range
+-- @param float from First value
+-- @param float to Last value
+-- @param float step Increment between values
+-- @return table values Floating-point values
 local function floatRange(from, to, step)
     local t = {}
     local n = math.floor((to - from) / step + 0.5) + 1
@@ -32,7 +41,7 @@ end
 
 local capitalValues  = intRange(100000, 5000000, 100000)   -- 50 entries; index 5  = 500 000
 local leverageValues = intRange(5, 20, 1)                   -- 16 entries; index 6  = 10
-local rateValues     = floatRange(1.0, 12.0, 0.25)          -- 45 entries; index 11 = 3.50
+local rateValues     = floatRange(InterestRateModel.MIN_RATE, InterestRateModel.MAX_RATE, 0.25)
 local penaltyValues  = floatRange(0.0, 5.0, 0.5)            -- 11 entries; index 1  = 0.0
 
 local capitalStrings, leverageStrings, rateStrings, penaltyStrings = {}, {}, {}, {}
@@ -68,7 +77,7 @@ BankSettings.SETTINGS.dynamicRate = {
 }
 
 BankSettings.SETTINGS.baseInterestRate = {
-    ['default']    = 11,
+    ['default']    = 10,       -- index 10 = 3.50
     ['serverOnly'] = true,
     ['type']       = 'multi',
     ['values']     = rateValues,
@@ -110,14 +119,37 @@ function BankSettings.getStateIndex(id, value)
     return BankSettings.SETTINGS[id].default
 end
 
+---Apply the effects of a base-rate or dynamic-rate setting change.
+-- @param float previousBaseRate Base rate before applying the settings
+-- @param boolean previousDynamicRate Dynamic-rate state before applying the settings
+-- @param boolean forceStaticRate Restore a disabled dynamic rate during initial load
+function BankSettings.applyRateConfiguration(previousBaseRate, previousDynamicRate, forceStaticRate)
+    local manager = BankCredit.manager
+    local settings = g_currentMission.bankSettings
+    local baseRateChanged = settings.baseInterestRate ~= previousBaseRate
+    local dynamicRateChanged = settings.dynamicRate ~= previousDynamicRate
+    local resetRate = baseRateChanged
+        or (not settings.dynamicRate and (dynamicRateChanged or forceStaticRate))
+
+    if resetRate then
+        manager.rateModel:resetToRate(
+            settings.baseInterestRate,
+            g_currentMission.environment.currentYear
+        )
+    end
+end
+
 BankSettingsControls = {}
 
 ---Called when a menu option changes, applies locally and broadcasts to server
+-- @param table self Settings callback target
 -- @param integer state New state index
 -- @param table menuOption Menu option element
 function BankSettingsControls.onMenuOptionChanged(self, state, menuOption)
     local id = menuOption.id
     local value = BankSettings.SETTINGS[id].values[state]
+    local previousBaseRate = g_currentMission.bankSettings.baseInterestRate
+    local previousDynamicRate = g_currentMission.bankSettings.dynamicRate
 
     if value ~= nil and g_currentMission ~= nil and g_currentMission.bankSettings ~= nil then
         g_currentMission.bankSettings[id] = value
@@ -127,8 +159,7 @@ function BankSettingsControls.onMenuOptionChanged(self, state, menuOption)
         g_client:getServerConnection():sendEvent(BankSettingsEvent.new(g_currentMission.bankSettings))
     end
 
-    -- Admin client is excluded from the server's rebroadcast, so apply locally.
-    -- applyInitialCapitalDelta is idempotent: safe on host (will also fire via event loopback).
+    -- The sender is excluded from the server rebroadcast, so apply both effects locally.
     if id == 'initialCapital' and value ~= nil then
         local bs = BankCredit.manager ~= nil and BankCredit.manager.bankService or nil
         if bs ~= nil then
@@ -136,24 +167,8 @@ function BankSettingsControls.onMenuOptionChanged(self, state, menuOption)
         end
     end
 
-    -- Admin client is excluded from the server's rebroadcast, so apply locally.
-    -- dynamicRate=OFF : baseInterestRate becomes the live rate immediately.
-    -- dynamicRate=ON  : baseInterestRate is the mean-reversion anchor AND forces currentRate as new starting point.
-    local ms = g_currentMission ~= nil and g_currentMission.bankSettings or nil
-    if id == 'baseInterestRate' and ms ~= nil and ms.baseInterestRate ~= nil then
-        local rm = BankCredit.manager ~= nil and BankCredit.manager.rateModel or nil
-        if rm ~= nil then
-            local prev = rm.currentRate
-            rm.currentRate = ms.baseInterestRate
-            if rm.currentRate ~= prev then
-                local year = g_currentMission ~= nil and g_currentMission.environment ~= nil
-                    and g_currentMission.environment.currentYear or 0
-                table.insert(rm.rateHistory, { year = year, rate = rm.currentRate })
-                while #rm.rateHistory > rm.HISTORY_MAX do
-                    table.remove(rm.rateHistory, 1)
-                end
-            end
-        end
+    if BankCredit.manager ~= nil then
+        BankSettings.applyRateConfiguration(previousBaseRate, previousDynamicRate, false)
     end
     if g_currentMission ~= nil and g_currentMission.bankFrame ~= nil then
         g_currentMission.bankFrame:refreshDashboard()
@@ -168,6 +183,8 @@ function BankSettings:applySettings(newSettings, isAuthoritative)
 
     g_currentMission.bankSettings = g_currentMission.bankSettings or {}
     local s = g_currentMission.bankSettings
+    local previousBaseRate = s.baseInterestRate
+    local previousDynamicRate = s.dynamicRate
 
     for _, id in ipairs(self.menuItems) do
         local def = self.SETTINGS[id]
@@ -199,12 +216,12 @@ function BankSettings:applySettings(newSettings, isAuthoritative)
     end
 
     if BankCredit.manager ~= nil then
-        -- Apply the delta between the new and previously recorded initial capital to live equity.
-        -- This allows the admin to recapitalize the bank at any time during the save.
+        -- Applying only the delta lets administrators recapitalize a live bank.
         local bs = BankCredit.manager.bankService
         if bs ~= nil and s.initialCapital ~= nil then
             bs:applyInitialCapitalDelta(s.initialCapital)
         end
+        BankSettings.applyRateConfiguration(previousBaseRate, previousDynamicRate, not s.dynamicRate)
     end
 
     if isAuthoritative and g_currentMission:getIsServer() then
@@ -245,6 +262,8 @@ function BankSettings:injectMenu()
     BankSettings._menuInjected = true
     BankSettingsControls.name = settingsPage.name
 
+    ---Adds a multi-value bank setting control
+    -- @param string id Setting identifier
     local function addMultiMenuOption(id)
         local i18n_title   = "bank_setting_" .. id
         local i18n_tooltip = "bank_toolTip_" .. id
@@ -285,6 +304,8 @@ function BankSettings:injectMenu()
         self.CONTROLS[id] = menuMultiOption
     end
 
+    ---Adds a binary bank setting control
+    -- @param string id Setting identifier
     local function addBinaryMenuOption(id)
         local i18n_title   = "bank_setting_" .. id
         local i18n_tooltip = "bank_toolTip_" .. id
@@ -293,7 +314,6 @@ function BankSettings:injectMenu()
         menuOptionBox:loadProfile(g_gui:getProfile("fs25_multiTextOptionContainer"), true)
 
         local menuBinaryOption = BinaryOptionElement.new()
-        menuBinaryOption.useYesNoTexts = true
         menuBinaryOption:loadProfile(g_gui:getProfile("fs25_settingsBinaryOption"), true)
         menuBinaryOption.id     = id
         menuBinaryOption.target = BankSettingsControls
@@ -324,7 +344,6 @@ function BankSettings:injectMenu()
         self.CONTROLS[id] = menuBinaryOption
     end
 
-    -- Section header
     local sectionTitle = TextElement.new()
     sectionTitle.name = "sectionHeader"
     sectionTitle:loadProfile(g_gui:getProfile("fs25_settingsSectionHeader"), true)

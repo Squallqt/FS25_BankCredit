@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Two-step dialog guiding the player through loan configuration and recap / confirm.
+---Two-step dialog for loan configuration and confirmation.
 TakeLoanWizard = {}
 local TakeLoanWizard_mt = Class(TakeLoanWizard, MessageDialog)
 
@@ -8,7 +8,6 @@ TakeLoanWizard.CONTROLS = {
     "titleSep",
     "stepPanel1",
     "stepPanel2",
-    -- Step 1
     "optLoanType",
     "textTypeDescription",
     "inputAmount",
@@ -18,7 +17,6 @@ TakeLoanWizard.CONTROLS = {
     "textMonthlyPreview",
     "textTotalCostPreview",
     "textTotalInterestPreview",
-    -- Step 2 — values
     "textRecapBaseRate",
     "textRecapTypeSurcharge",
     "textRecapSurcharge",
@@ -32,7 +30,6 @@ TakeLoanWizard.CONTROLS = {
     "textRecapWarning",
     "textRecapHint",
     "textAmountComparison",
-    -- Step 2 — clickable labels
     "btnRecapRates",
     "btnRecapBaseRate",
     "btnRecapTypeSpread",
@@ -46,13 +43,11 @@ TakeLoanWizard.CONTROLS = {
     "btnRecapMonthly",
     "btnRecapTotalInterest",
     "btnRecapTotalCost",
-    -- Buttons
     "btnPrev",
     "btnNext",
     "btnConfirm",
     "sepLeft",
     "sepRight",
-    -- Dialog root (for dynamic resize)
     "dialogElement",
 }
 
@@ -75,7 +70,7 @@ TakeLoanWizard.DURATION_MIN_YEARS = 1
 TakeLoanWizard.DURATION_MAX_YEARS = 20
 
 ---Creates new take-loan wizard dialog instance
--- @param target Parent target element
+-- @param table target Parent target element
 -- @param table? customMt Optional custom metatable
 -- @return TakeLoanWizard instance
 function TakeLoanWizard.new(target, customMt)
@@ -120,6 +115,7 @@ function TakeLoanWizard:onGuiSetupFinished()
     end
 end
 
+---Called when dialog opens
 function TakeLoanWizard:onOpen()
     TakeLoanWizard:superClass().onOpen(self)
     self:resizeTitleSep()
@@ -134,6 +130,7 @@ function TakeLoanWizard:onOpen()
     end
 end
 
+---Resizes title separator to match title text width
 function TakeLoanWizard:resizeTitleSep()
     if self.titleSep == nil or self.mainTitleText == nil then return end
 
@@ -151,6 +148,7 @@ function TakeLoanWizard:resizeTitleSep()
     end
 end
 
+---Closes the dialog and clears input focus
 function TakeLoanWizard:onClose()
     if self.inputAmount ~= nil then
         self.inputAmount:abortIme()
@@ -170,8 +168,6 @@ function TakeLoanWizard:onClose()
 
     TakeLoanWizard:superClass().onClose(self)
 end
-
--- ===================== PREFIXED DATA LABELS =====================
 
 TakeLoanWizard.DATA_LABELS = {
     {id = "btnRecapBaseRate",      key = "bank_wizard_recap_baseRate"},
@@ -253,13 +249,10 @@ function TakeLoanWizard:updateDialogSize()
     end
 end
 
--- ===================== STEP 1 — TYPE + AMOUNT + DURATION =====================
-
 ---Updates step 1 dynamic labels (type description, amount limit, duration/monthly preview)
 function TakeLoanWizard:updateStep1()
     local isRevolving = (self.selectedType == Loan.TYPE.REVOLVING)
 
-    -- Type description
     if self.textTypeDescription then
         local descKey
         if self.selectedType == Loan.TYPE.ANNUITY then
@@ -284,20 +277,17 @@ function TakeLoanWizard:updateStep1()
         self.textTypeDescription:setText(desc)
     end
 
-    -- Amount limit
     if self.textAmountLimit then
         self.textAmountLimit:setText(string.format(
             g_i18n:getText("bank_wizard_limit"),
             g_i18n:formatMoney(self.amountLimit, 0, true, false)))
     end
 
-    -- Duration card visibility (hidden for Revolving) + dialog resize
     if self.cardDuration then
         self.cardDuration:setVisible(not isRevolving)
     end
     self:updateDialogSize()
 
-    -- Monthly preview (live update)
     if self.textMonthlyPreview and not isRevolving then
         local manager = g_currentMission.bankManager
         if manager ~= nil and self.selectedAmount > 0 then
@@ -308,7 +298,6 @@ function TakeLoanWizard:updateStep1()
                 g_i18n:getText("bank_wizard_monthlyPreview"),
                 g_i18n:formatMoney(monthly, 0, true, false)))
 
-            -- Total cost preview
             local totalCost     = monthly * self.durationMonths
             local totalInterest = math.max(0, totalCost - self.selectedAmount)
             if self.textTotalCostPreview then
@@ -375,8 +364,6 @@ function TakeLoanWizard:onDurationEnterPressed(element)
     element:setText(tostring(clamped))
     self:updateStep1()
 end
-
--- ===================== STEP 2 — RECAP + CONFIRM =====================
 
 ---Evaluates the loan request and populates recap labels
 function TakeLoanWizard:updateStep2()
@@ -472,7 +459,6 @@ function TakeLoanWizard:updateStep2()
         self.textRecapRisk:setTextColor(unpack(color))
     end
 
-    -- Warnings & confirm availability
     local warningText = ""
     local canConfirm  = check.ok
     if not check.ok then
@@ -504,7 +490,6 @@ function TakeLoanWizard:updateStep2()
         end
     end
 
-    -- Amount cap comparison block
     if self.textAmountComparison then
         local isCapped = evaluation.effectiveAmount < self.selectedAmount
         self.textAmountComparison:setVisible(isCapped)
@@ -521,8 +506,6 @@ function TakeLoanWizard:updateStep2()
     end
 
 end
-
--- ===================== NAVIGATION =====================
 
 ---Advances to the next step
 function TakeLoanWizard:onClickNext()
@@ -593,8 +576,6 @@ function TakeLoanWizard:onClickBack()
     self:close()
 end
 
--- ===================== STEP 2 — INFO CLICK HANDLERS =====================
-
 ---Opens an InfoDialog with localized text and resets hover/press state on all recap info buttons
 -- @param string textKey l10n key to display
 function TakeLoanWizard:showRecapInfo(textKey)
@@ -618,40 +599,32 @@ function TakeLoanWizard:showRecapInfo(textKey)
     InfoDialog.show(g_i18n:getText(textKey))
 end
 
--- ===================== SECTION TITLES =====================
-
----Shows info dialog for the Rates section header
+---Opens the rate recap information dialog
 function TakeLoanWizard:onClickInfoRecapRates() self:showRecapInfo("bank_wizard_info_rates") end
----Shows info dialog for the Risk section header
+---Opens the risk recap information dialog
 function TakeLoanWizard:onClickInfoRecapRiskSection() self:showRecapInfo("bank_wizard_info_risk_section") end
----Shows info dialog for the Cost section header
+---Opens the cost recap information dialog
 function TakeLoanWizard:onClickInfoRecapCost() self:showRecapInfo("bank_wizard_info_cost") end
 
--- ===================== RATES DATA =====================
-
----Shows info dialog explaining the base rate
+---Opens the base rate information dialog
 function TakeLoanWizard:onClickInfoRecapBaseRate() self:showRecapInfo("bank_wizard_info_baseRate") end
----Shows info dialog explaining the product-type spread
+---Opens the loan type spread information dialog
 function TakeLoanWizard:onClickInfoRecapTypeSpread() self:showRecapInfo("bank_wizard_info_typeSpread") end
----Shows info dialog explaining the risk surcharge
+---Opens the risk surcharge information dialog
 function TakeLoanWizard:onClickInfoRecapSurcharge() self:showRecapInfo("bank_wizard_info_surcharge") end
----Shows info dialog explaining the effective rate (TEG)
+---Opens the effective rate information dialog
 function TakeLoanWizard:onClickInfoRecapEffRate() self:showRecapInfo("bank_wizard_info_effectiveRate") end
 
--- ===================== RISK DATA =====================
-
----Shows info dialog explaining the DSCR metric
+---Opens the debt service coverage ratio information dialog
 function TakeLoanWizard:onClickInfoRecapDSCR() self:showRecapInfo("bank_detail_info_dscr") end
----Shows info dialog explaining the LTV metric
+---Opens the loan-to-value information dialog
 function TakeLoanWizard:onClickInfoRecapLTV() self:showRecapInfo("bank_detail_info_ltv") end
----Shows info dialog explaining the risk level
+---Opens the risk level information dialog
 function TakeLoanWizard:onClickInfoRecapRisk() self:showRecapInfo("bank_detail_info_risk") end
 
--- ===================== COST DATA =====================
-
----Shows info dialog explaining the monthly payment
+---Opens the monthly payment information dialog
 function TakeLoanWizard:onClickInfoRecapMonthly() self:showRecapInfo("bank_wizard_info_monthly") end
----Shows info dialog explaining the total interest
+---Opens the total interest information dialog
 function TakeLoanWizard:onClickInfoRecapTotalInterest() self:showRecapInfo("bank_wizard_info_totalInterest") end
----Shows info dialog explaining the total cost
+---Opens the total cost information dialog
 function TakeLoanWizard:onClickInfoRecapTotalCost() self:showRecapInfo("bank_wizard_info_totalCost") end

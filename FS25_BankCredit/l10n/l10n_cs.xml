@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="杠杆比率" />
         <e k="bank_toolTip_leverageRatio" v="定义相对于净资产的最大借贷倍数。例：10倍 → 最大信贷 = 净资产的10倍。" />
         <e k="bank_setting_dynamicRate" v="动态利率" />
-        <e k="bank_toolTip_dynamicRate" v="启用后：基准利率每年变动（±0.25%，范围1–12%）。风险附加费始终适用。" />
+        <e k="bank_toolTip_dynamicRate" v="启用后：基准利率遵循月度趋势。利率可能保持稳定，或变动0.25%、0.50%，特殊情况下变动0.75%。风险附加费始终适用。" />
         <e k="bank_setting_baseInterestRate" v="基准利率" />
         <e k="bank_toolTip_baseInterestRate" v="适用于所有贷款的年基准利率，不含风险附加费。" />
         <e k="bank_setting_earlyRepaymentPenalty" v="提前还款罚金" />

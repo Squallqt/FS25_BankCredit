@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Hefboomverhouding" />
         <e k="bank_toolTip_leverageRatio" v="Bepaalt de maximale schuldvermenigvuldiger ten opzichte van het beschikbare eigen vermogen. Bijv. 10x → max. krediet = 10× eigen vermogen." />
         <e k="bank_setting_dynamicRate" v="Dynamische rente" />
-        <e k="bank_toolTip_dynamicRate" v="Ingeschakeld: de basisrente wijzigt jaarlijks (±0,25%, bereik 1–12%). Risicopremies gelden altijd." />
+        <e k="bank_toolTip_dynamicRate" v="Ingeschakeld: de basisrente volgt maandelijkse trends. Ze kan stabiel blijven of wijzigen met 0,25%, 0,50% en uitzonderlijk 0,75%. Risicopremies gelden altijd." />
         <e k="bank_setting_baseInterestRate" v="Basisrente" />
         <e k="bank_toolTip_baseInterestRate" v="De jaarlijkse basisrente toegepast op alle leningen vóór de risicopremie." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Boete vervroegde aflossing" />

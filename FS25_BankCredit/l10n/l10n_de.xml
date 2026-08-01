@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Verschuldungsgrad" />
         <e k="bank_toolTip_leverageRatio" v="Legt das maximale Verschuldungsvielfache des verfügbaren Eigenkapitals fest. z.B. 10x → Maximalkredit = 10× das Eigenkapital." />
         <e k="bank_setting_dynamicRate" v="Dynamischer Zinssatz" />
-        <e k="bank_toolTip_dynamicRate" v="Aktiviert: Der Basiszinssatz ändert sich jedes Jahr (±0,25 %, Bereich 1–12 %). Risikoaufschläge gelten immer." />
+        <e k="bank_toolTip_dynamicRate" v="Aktiviert: Der Basiszinssatz folgt monatlichen Trends. Er kann stabil bleiben oder sich um 0,25 %, 0,50 % und ausnahmsweise 0,75 % ändern. Risikoaufschläge gelten immer." />
         <e k="bank_setting_baseInterestRate" v="Basiszinssatz" />
         <e k="bank_toolTip_baseInterestRate" v="Jährlicher Basiszinssatz, der auf alle Darlehen angewendet wird, vor Risikoaufschlag." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Vorfälligkeitsentschädigung" />

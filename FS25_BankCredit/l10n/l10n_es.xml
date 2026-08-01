@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Ratio de apalancamiento" />
         <e k="bank_toolTip_leverageRatio" v="Define el múltiplo máximo de endeudamiento respecto a los fondos propios. Ej.: 10x → crédito máximo = 10× el capital propio." />
         <e k="bank_setting_dynamicRate" v="Tasa dinámica" />
-        <e k="bank_toolTip_dynamicRate" v="Activado: la tasa base evoluciona anualmente (±0,25 %, límites 1–12 %). Los recargos de riesgo siempre se aplican." />
+        <e k="bank_toolTip_dynamicRate" v="Activado: la tasa base sigue tendencias mensuales. Puede mantenerse estable o variar un 0,25 %, un 0,50 % y, excepcionalmente, un 0,75 %. Los recargos de riesgo siempre se aplican." />
         <e k="bank_setting_baseInterestRate" v="Tasa de interés base" />
         <e k="bank_toolTip_baseInterestRate" v="Tasa de interés anual base aplicada a todos los préstamos, antes del recargo por riesgo." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Penalización por reembolso anticipado" />

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Core banking operations: reserve management, equity growth, and interest accrual.
+---Provides bank capacity, equity, provision, and portfolio operations.
 BankService = {}
 local BankService_mt = Class(BankService)
 

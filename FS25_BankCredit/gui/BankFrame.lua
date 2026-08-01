@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- InGameMenu frame: bank dashboard (equity, capacity, rate, coverage) and scrollable loans list.
+---InGameMenu frame for the bank dashboard and loan lists.
 BankFrame = {}
 BankFrame._mt = Class(BankFrame, TabbedMenuFrameElement)
 
@@ -42,8 +42,6 @@ function BankFrame.new(i18n, messageCenter)
     self.currentTab    = BankFrame.TAB.ACTIVE
     self.selectedLoan  = nil
     self.loansList     = {}
-
-
 
     return self
 end
@@ -194,6 +192,8 @@ function BankFrame:onFrameClose()
     g_currentMission.bankFrame = nil
 end
 
+---Updates the frame and docked slider positions
+-- @param float dt Elapsed time in milliseconds
 function BankFrame:update(dt)
     BankFrame:superClass().update(self, dt)
     self:updateScreenEdgeSliders()
@@ -215,8 +215,6 @@ end
 function BankFrame:onFarmlandOwnerChanged()
     self:refreshDashboard()
 end
-
--- ===================== TAB SWITCHING =====================
 
 ---Switches to active loans tab
 function BankFrame:onClickTabActive()
@@ -241,8 +239,6 @@ function BankFrame:updateSubCategoryPages()
     self:refreshList()
     self:setMenuButtonInfoDirty()
 end
-
--- ===================== DASHBOARD =====================
 
 ---Returns the current player farm ID
 -- @return integer farmId
@@ -271,17 +267,14 @@ function BankFrame:refreshDashboard()
     local rateModel     = manager.rateModel
     local farmId        = self:getCurrentFarmId()
 
-    -- Effective lending ceiling: shared between available credit card and outstanding sub-label
     local bankAvail      = bankService:getAvailableCapacity()
     local effectiveLimit = creditService:getEffectiveLimit(farmId, bankAvail, manager.repository, bankService)
     local farmExposure   = bankService:getFarmExposure(farmId, manager.repository)
 
-    -- Available credit
     if self.dashAvailableValue then
         self.dashAvailableValue:setText(g_i18n:formatMoney(effectiveLimit, 0, true, false))
     end
 
-    -- Outstanding (player-centric: current farm only)
     if self.dashOutstandingValue then
         self.dashOutstandingValue:setText(g_i18n:formatMoney(farmExposure, 0, true, false))
     end
@@ -294,7 +287,6 @@ function BankFrame:refreshDashboard()
         self.dashOutstandingSubValue:setText(string.format(g_i18n:getText("bank_dash_outstanding_sub"), math.floor(pct + 0.5)))
     end
 
-    -- Total monthly payment
     if self.dashMonthlyTotalValue then
         local total = 0
         local allLoans = manager.repository:getByFarm(farmId)
@@ -312,7 +304,6 @@ function BankFrame:refreshDashboard()
         self.dashMonthlyTotalValue:setText(g_i18n:formatMoney(total, 0, true, false))
     end
 
-    -- Current rate
     if self.dashRateValue then
         self.dashRateValue:setText(string.format("%.2f%% %s", rateModel:getRate(), rateModel:getDirection()))
     end
@@ -338,8 +329,6 @@ function BankFrame:updateBalanceDisplay()
         end
     end
 end
-
--- ===================== LOANS LIST (SHARED BY ACTIVE AND PAID TABS) =====================
 
 ---Reloads loan list for current farm based on active tab
 function BankFrame:refreshList()
@@ -389,6 +378,7 @@ function BankFrame:refreshList()
     self:updateSliderVisibility()
 end
 
+---Refreshes the loan list slider bindings
 function BankFrame:refreshLoanSliders()
     if self.loansSlider ~= nil and self.listLoans ~= nil then
         self.loansSlider:onBindUpdate(self.listLoans)
@@ -408,6 +398,7 @@ function BankFrame:updateSliderVisibility()
     end
 end
 
+---Positions docked loan sliders at the screen edge
 function BankFrame:updateScreenEdgeSliders()
     local sliderBoxes = {
         self.loansSliderBox,
@@ -478,8 +469,6 @@ function BankFrame:updateButtonStates()
 
     self:setMenuButtonInfoDirty()
 end
-
--- ===================== SMOOTHLIST DATA SOURCE / DELEGATE (LOANS TABLE) =====================
 
 ---Returns number of list sections
 -- @return integer count Always 1
@@ -599,8 +588,6 @@ function BankFrame:onListSelectionChanged(list, section, index)
     self:updateButtonStates()
 end
 
--- ===================== BUTTON HANDLERS =====================
-
 ---Opens the annual report dialog
 function BankFrame:onClickReport()
     local dialog = g_gui:showDialog("AnnualReportDialog")
@@ -656,7 +643,6 @@ function BankFrame:onClickEarlyRepay()
 
     local loan = self.selectedLoan
 
-    -- Revolving: partial repay via NumericInputDialog
     if loan.type == Loan.TYPE.REVOLVING then
         if loan.restAmount <= 0 then return end
         local maxRepay = math.floor(loan.restAmount)
@@ -668,7 +654,6 @@ function BankFrame:onClickEarlyRepay()
         return
     end
 
-    -- Non-revolving: ask how much principal to repay early, then confirm
     local minRepay = math.floor(loan.amount * 0.10)
     local maxRepay = math.floor(loan.restAmount)
     local minValue = loan.restAmount > minRepay and minRepay or nil
@@ -865,8 +850,6 @@ function BankFrame:onCloseLineConfirmed(confirmed)
     self:refreshDashboard()
     self:refreshList()
 end
-
--- ===================== UTILITY =====================
 
 ---Copies frame attributes from source element
 -- @param table src Source element

@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="槓桿比率" />
         <e k="bank_toolTip_leverageRatio" v="定義相對於淨資產的最大借貸倍數。例：10倍 → 最大信貸 = 淨資產的10倍。" />
         <e k="bank_setting_dynamicRate" v="動態利率" />
-        <e k="bank_toolTip_dynamicRate" v="啟用後：基準利率每年變動（±0.25%，範圍1–12%）。風險附加費始終適用。" />
+        <e k="bank_toolTip_dynamicRate" v="啟用後：基準利率遵循月度趨勢。利率可能保持穩定，或變動0.25%、0.50%，特殊情況下變動0.75%。風險附加費始終適用。" />
         <e k="bank_setting_baseInterestRate" v="基準利率" />
         <e k="bank_toolTip_baseInterestRate" v="適用於所有貸款的年基準利率，不含風險附加費。" />
         <e k="bank_setting_earlyRepaymentPenalty" v="提前還款罰金" />

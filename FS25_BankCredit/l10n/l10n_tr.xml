@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Kaldıraç oranı" />
         <e k="bank_toolTip_leverageRatio" v="Mevcut özkaynaklara göre maksimum borç çarpanını belirler. Örn. 10x → maks. kredi = özkaynak × 10." />
         <e k="bank_setting_dynamicRate" v="Dinamik faiz oranı" />
-        <e k="bank_toolTip_dynamicRate" v="Etkin: baz oran her yıl değişir (±%0,25, aralık %1–12). Risk primleri her zaman uygulanır." />
+        <e k="bank_toolTip_dynamicRate" v="Etkin: baz oran aylık eğilimleri izler. Sabit kalabilir veya %0,25, %0,50 ve istisnai olarak %0,75 değişebilir. Risk primleri her zaman uygulanır." />
         <e k="bank_setting_baseInterestRate" v="Baz oran" />
         <e k="bank_toolTip_baseInterestRate" v="Risk priminden önce tüm kredilere uygulanan yıllık baz oran." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Erken ödeme cezası" />

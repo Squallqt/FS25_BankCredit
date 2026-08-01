@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Dźwignia finansowa" />
         <e k="bank_toolTip_leverageRatio" v="Określa maksymalny mnożnik zadłużenia w stosunku do dostępnego kapitału własnego. Np. 10x → maks. kredyt = 10× kapitał własny." />
         <e k="bank_setting_dynamicRate" v="Dynamiczne oprocentowanie" />
-        <e k="bank_toolTip_dynamicRate" v="Włączone: stopa bazowa zmienia się co roku (±0,25%, zakres 1–12%). Premie za ryzyko zawsze obowiązują." />
+        <e k="bank_toolTip_dynamicRate" v="Włączone: stopa bazowa podąża za trendami miesięcznymi. Może pozostać stabilna lub zmienić się o 0,25%, 0,50% i wyjątkowo 0,75%. Premie za ryzyko zawsze obowiązują." />
         <e k="bank_setting_baseInterestRate" v="Stopa bazowa" />
         <e k="bank_toolTip_baseInterestRate" v="Roczna stopa bazowa stosowana do wszystkich pożyczek przed premią za ryzyko." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Kara za wcześniejszą spłatę" />

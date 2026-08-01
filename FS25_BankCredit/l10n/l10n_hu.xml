@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Tőkeáttételi arány" />
         <e k="bank_toolTip_leverageRatio" v="Meghatározza a rendelkezésre álló saját tőkéhez viszonyított maximális adóssági szorzót. Pl. 10x → max. hitel = a saját tőke 10-szerese." />
         <e k="bank_setting_dynamicRate" v="Dinamikus kamatláb" />
-        <e k="bank_toolTip_dynamicRate" v="Bekapcsolva: az alapkamatláb évente változik (±0,25%, tartomány 1–12%). A kockázati felárak mindig érvényesek." />
+        <e k="bank_toolTip_dynamicRate" v="Bekapcsolva: az alapkamatláb havi trendeket követ. Maradhat stabil, vagy változhat 0,25%-kal, 0,50%-kal és kivételesen 0,75%-kal. A kockázati felárak mindig érvényesek." />
         <e k="bank_setting_baseInterestRate" v="Alapkamatláb" />
         <e k="bank_toolTip_baseInterestRate" v="Az összes kölcsönre alkalmazott éves alapkamatláb a kockázati felár előtt." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Előtörlesztési díj" />

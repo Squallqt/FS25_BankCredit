@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="レバレッジ比率" />
         <e k="bank_toolTip_leverageRatio" v="利用可能な自己資本に対する最大負債乗数を定義します。例：10倍→最大与信＝自己資本の10倍。" />
         <e k="bank_setting_dynamicRate" v="動的金利" />
-        <e k="bank_toolTip_dynamicRate" v="有効：基本金利が毎年変動します（±0.25%、範囲1〜12%）。リスクプレミアムは常に適用されます。" />
+        <e k="bank_toolTip_dynamicRate" v="有効：基本金利は毎月の傾向に従います。安定する場合や0.25%、0.50%、例外的に0.75%変動する場合があります。リスクプレミアムは常に適用されます。" />
         <e k="bank_setting_baseInterestRate" v="基本金利" />
         <e k="bank_toolTip_baseInterestRate" v="リスクプレミアム前に全ローンに適用される年間基本金利。" />
         <e k="bank_setting_earlyRepaymentPenalty" v="繰上返済違約金" />

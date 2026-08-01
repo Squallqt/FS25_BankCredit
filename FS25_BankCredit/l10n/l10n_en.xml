@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Leverage Ratio" />
         <e k="bank_toolTip_leverageRatio" v="Defines the maximum borrowing multiple of available equity. E.g., 10x means max credit = 10× equity." />
         <e k="bank_setting_dynamicRate" v="Dynamic Rate" />
-        <e k="bank_toolTip_dynamicRate" v="When enabled, the base rate shifts each year (±0.25%, range 1–12%). Risk surcharges always apply." />
+        <e k="bank_toolTip_dynamicRate" v="When enabled, the base rate follows monthly trends. It may remain stable or move by 0.25%, 0.50%, and exceptionally 0.75%. Risk surcharges always apply." />
         <e k="bank_setting_baseInterestRate" v="Base Interest Rate" />
         <e k="bank_toolTip_baseInterestRate" v="Annual base interest rate applied to all loans, before risk surcharge." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Early Repayment Penalty" />

@@ -32,4 +32,5 @@ temp/
 *.orig
 *.swp
 
-FS25_BankCredit_Projet.md
+# Working docs
+*.md

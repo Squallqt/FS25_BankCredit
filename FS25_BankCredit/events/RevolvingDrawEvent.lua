@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event: client requests a draw on a revolving credit line; server validates and executes.
+---Network event for authoritative revolving credit draw and close requests.
 RevolvingDrawEvent = {}
 local RevolvingDrawEvent_mt = Class(RevolvingDrawEvent, Event)
 
@@ -79,7 +79,7 @@ function RevolvingDrawEvent:run(connection)
         manager.loanService:drawRevolving(loan, self.amount)
     end
 
-    -- broadcastEvent(false) does not loop back to the server player; refresh the host GUI explicitly
+    -- The server applies the request locally, so refresh its GUI after the change.
     if BankCredit.frame ~= nil and BankCredit.frame.refreshList ~= nil then
         BankCredit.frame:refreshList()
     end

@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Velkaantumisaste" />
         <e k="bank_toolTip_leverageRatio" v="Määrittää maksimilainakerroin suhteessa omaan pääomaan. Esim. 10x → maksimiluotto = 10× oma pääoma." />
         <e k="bank_setting_dynamicRate" v="Dynaaminen korko" />
-        <e k="bank_toolTip_dynamicRate" v="Käytössä: peruskorko muuttuu vuosittain (±0,25 %, alue 1–12 %). Riskipreemiot ovat aina voimassa." />
+        <e k="bank_toolTip_dynamicRate" v="Käytössä: peruskorko seuraa kuukausittaisia trendejä. Se voi pysyä vakaana tai muuttua 0,25 %, 0,50 % ja poikkeuksellisesti 0,75 %. Riskipreemiot ovat aina voimassa." />
         <e k="bank_setting_baseInterestRate" v="Peruskorko" />
         <e k="bank_toolTip_baseInterestRate" v="Kaikkiin lainoihin sovellettava vuotuinen peruskorko ennen riskipreemiota." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Ennenaikaisen takaisinmaksun sanktio" />
