@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Belåningsgrad" />
         <e k="bank_toolTip_leverageRatio" v="Definierar den maximala skuldmultiplikatorn i förhållande till tillgängligt eget kapital. T.ex. 10x → max kredit = 10× eget kapital." />
         <e k="bank_setting_dynamicRate" v="Dynamisk ränta" />
-        <e k="bank_toolTip_dynamicRate" v="Aktiverad: grundräntan ändras varje år (±0,25%, intervall 1–12%). Risktillägg tillämpas alltid." />
+        <e k="bank_toolTip_dynamicRate" v="Aktiverad: grundräntan följer månatliga trender. Den kan vara stabil eller ändras med 0,25 %, 0,50 % och undantagsvis 0,75 %. Risktillägg tillämpas alltid." />
         <e k="bank_setting_baseInterestRate" v="Grundränta" />
         <e k="bank_toolTip_baseInterestRate" v="Den årliga grundräntan som tillämpas på alla lån före risktillägg." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Förtidslösenavgift" />

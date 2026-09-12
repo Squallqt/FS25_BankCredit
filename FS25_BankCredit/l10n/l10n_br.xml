@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Índice de alavancagem" />
         <e k="bank_toolTip_leverageRatio" v="Define o múltiplo máximo de endividamento em relação ao patrimônio. Ex.: 10x → crédito máximo = 10× o patrimônio." />
         <e k="bank_setting_dynamicRate" v="Taxa dinâmica" />
-        <e k="bank_toolTip_dynamicRate" v="Ativado: a taxa base evolui anualmente (±0,25%, limites 1–12%). As sobretaxas de risco permanecem ativas." />
+        <e k="bank_toolTip_dynamicRate" v="Ativado: a taxa base segue tendências mensais. Pode permanecer estável ou variar 0,25%, 0,50% e, excepcionalmente, 0,75%. As sobretaxas de risco permanecem ativas." />
         <e k="bank_setting_baseInterestRate" v="Taxa de juros base" />
         <e k="bank_toolTip_baseInterestRate" v="Taxa de juros anual base aplicada a todos os empréstimos, antes da sobretaxa de risco." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Multa por amortização antecipada" />

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Annual report dialog showing yearly financial summary.
+---Annual report dialog showing yearly financial summary.
 AnnualReportDialog = {}
 local AnnualReportDialog_mt = Class(AnnualReportDialog, MessageDialog)
 

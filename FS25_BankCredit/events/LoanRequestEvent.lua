@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event: client requests loan disbursement; server validates and disburses authoritatively.
+---Network event for authoritative loan disbursement requests.
 LoanRequestEvent = {}
 local LoanRequestEvent_mt = Class(LoanRequestEvent, Event)
 

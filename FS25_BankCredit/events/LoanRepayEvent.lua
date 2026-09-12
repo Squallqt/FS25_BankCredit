@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event: client requests early repayment on a loan; server processes authoritatively.
+---Network event for authoritative early repayment requests.
 LoanRepayEvent = {}
 local LoanRepayEvent_mt = Class(LoanRepayEvent, Event)
 
@@ -60,7 +60,7 @@ function LoanRepayEvent:run(connection)
         return
     end
 
-    -- Verify that the loan belongs to the requesting player's farm
+    -- Never trust loan ownership from the client request.
     local player = g_currentMission.connectionsToPlayer[connection]
     if player == nil then return end
     local farmId = player.farmId
@@ -77,7 +77,7 @@ function LoanRepayEvent:run(connection)
         manager.loanService:earlyRepayment(loan, self.amount)
     end
 
-    -- broadcastEvent(false) does not loop back to the server player; refresh the host GUI explicitly
+    -- The server applies the request locally, so refresh its GUI after the change.
     if BankCredit.frame ~= nil and BankCredit.frame.refreshList ~= nil then
         BankCredit.frame:refreshList()
     end

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Per-farm annual statistics: interest paid, principal repaid, loans opened/closed.
+---Per-farm annual statistics for interest, principal, and loan activity.
 AnnualReport = {}
 local AnnualReport_mt = Class(AnnualReport)
 

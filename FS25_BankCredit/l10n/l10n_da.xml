@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Gearingsgrad" />
         <e k="bank_toolTip_leverageRatio" v="Definerer den maksimale gældsgrad i forhold til egenkapitalen. F.eks. 10x → maks. kredit = 10× egenkapitalen." />
         <e k="bank_setting_dynamicRate" v="Dynamisk rente" />
-        <e k="bank_toolTip_dynamicRate" v="Aktiveret: grundrenten ændres hvert år (±0,25 %, interval 1–12 %). Risikotillæg er altid aktive." />
+        <e k="bank_toolTip_dynamicRate" v="Aktiveret: grundrenten følger månedlige tendenser. Den kan forblive stabil eller ændres med 0,25 %, 0,50 % og undtagelsesvis 0,75 %. Risikotillæg er altid aktive." />
         <e k="bank_setting_baseInterestRate" v="Grundrentesats" />
         <e k="bank_toolTip_baseInterestRate" v="Årlig grundrentesats gældende for alle lån, før risikotillæg." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Gebyr for førtidig indfrielse" />

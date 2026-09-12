@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event for synchronizing the annual report state to clients.
+---Network event for synchronizing the annual report state to clients.
 AnnualReportSyncEvent = {}
 local AnnualReportSyncEvent_mt = Class(AnnualReportSyncEvent, Event)
 
@@ -24,6 +24,8 @@ end
 -- @param integer streamId Network stream identifier
 -- @param Connection connection Network connection
 function AnnualReportSyncEvent:readStream(streamId, connection)
+    if not connection:getIsServer() then return end
+
     local annualReport = AnnualReport.new()
     annualReport:readStream(streamId)
 

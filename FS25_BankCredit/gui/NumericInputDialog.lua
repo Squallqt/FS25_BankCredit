@@ -1,4 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
+---Numeric-only input dialog with optional minimum and maximum bounds.
 NumericInputDialog = {}
 local NumericInputDialog_mt = Class(NumericInputDialog, MessageDialog)
 
@@ -8,6 +9,10 @@ NumericInputDialog.CONTROLS = {
     "btnOk",
 }
 
+---Creates new numeric input dialog instance
+-- @param table target Parent target element
+-- @param table? customMt Optional custom metatable
+-- @return NumericInputDialog instance The new dialog instance
 function NumericInputDialog.new(target, customMt)
     local self = MessageDialog.new(target, customMt or NumericInputDialog_mt)
     self.callback        = nil
@@ -17,11 +22,13 @@ function NumericInputDialog.new(target, customMt)
     return self
 end
 
+---Loads dialog controls
 function NumericInputDialog:onLoad()
     NumericInputDialog:superClass().onLoad(self)
     self:registerControls(NumericInputDialog.CONTROLS)
 end
 
+---Called when dialog opens
 function NumericInputDialog:onOpen()
     NumericInputDialog:superClass().onOpen(self)
     self.callback       = self.pendingCallback
@@ -55,6 +62,7 @@ function NumericInputDialog:onInputTextChanged(element, text)
     if filtered ~= text then element:setText(filtered) end
 end
 
+---Confirms the clamped numeric value
 function NumericInputDialog:onClickOk()
     local raw = math.floor(tonumber(self.inputField ~= nil and self.inputField:getText() or "") or 0)
     if raw > 0 then
@@ -67,6 +75,7 @@ function NumericInputDialog:onClickOk()
     if cb ~= nil then cb(tgt, tostring(raw), true) end
 end
 
+---Closes the dialog without confirmation
 function NumericInputDialog:onClickBack()
     local cb  = self.callback
     local tgt = self.callbackTarget
@@ -74,14 +83,16 @@ function NumericInputDialog:onClickBack()
     if cb ~= nil then cb(tgt, "", false) end
 end
 
--- Drop-in for TextInputDialog.show — same parameter order.
+---Shows the numeric dialog using the same parameter order as TextInputDialog.show.
 -- @param function callback       Called as callback(callbackTarget, text, confirmed)
 -- @param table   callbackTarget  Passed as first arg to callback
 -- @param string  defaultText     Pre-filled value
 -- @param string  promptText      Label displayed above the input
--- @param any     _               Unused (placeholder, mirrors TextInputDialog.show signature)
+-- @param any?    _               Unused placeholder for the TextInputDialog.show signature
 -- @param integer maxChars        Max character count
 -- @param string  confirmBtnText  Confirm button label
+-- @param number? minValue        Optional minimum positive value
+-- @param number? maxValue        Optional maximum value
 function NumericInputDialog.show(callback, callbackTarget, defaultText, promptText, _, maxChars, confirmBtnText, minValue, maxValue)
     local gui = g_gui.guis["NumericInputDialog"]
     if gui == nil then return end

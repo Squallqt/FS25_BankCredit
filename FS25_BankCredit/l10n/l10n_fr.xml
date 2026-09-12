@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Ratio de levier" />
         <e k="bank_toolTip_leverageRatio" v="Définit le multiple maximal d'endettement par rapport aux fonds propres. Ex. : 10x → crédit max = 10× l'équité." />
         <e k="bank_setting_dynamicRate" v="Taux dynamique" />
-        <e k="bank_toolTip_dynamicRate" v="Activé : le taux de base évolue annuellement (±0,25%, bornes 1–12%). Les majorations restent actives." />
+        <e k="bank_toolTip_dynamicRate" v="Activé : le taux de base suit des tendances mensuelles. Il peut rester stable ou varier de 0,25%, 0,50% et exceptionnellement 0,75%. Les majorations restent actives." />
         <e k="bank_setting_baseInterestRate" v="Taux de base" />
         <e k="bank_toolTip_baseInterestRate" v="Taux d'intérêt annuel de base appliqué sur tous les emprunts, avant majoration de risque." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Pénalité de remboursement anticipé" />

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event for broadcasting a loan repayment delta to all clients.
+---Network event for broadcasting a loan repayment delta to all clients.
 LoanPaymentEvent = {}
 local LoanPaymentEvent_mt = Class(LoanPaymentEvent, Event)
 
@@ -20,7 +20,7 @@ end
 -- @param float interestPortion Interest portion of the payment
 -- @param float principalPortion Principal portion of the payment (always ≥ 0)
 -- @param integer riskLevel Risk tier of the loan
--- @param float|nil drawAmount Revolving draw amount; when > 0 this is a disbursement, not a repayment
+-- @param float? drawAmount Revolving draw amount; values above zero identify a disbursement
 -- @return LoanPaymentEvent instance The new event instance
 function LoanPaymentEvent.new(loanId, newRestAmount, newRestDuration, paidOff, interestPortion, principalPortion, riskLevel, drawAmount)
     local self = LoanPaymentEvent.emptyNew()
@@ -67,6 +67,8 @@ end
 ---Applies payment delta to the local loan record and updates the bank ledger
 -- @param Connection connection Network connection
 function LoanPaymentEvent:run(connection)
+    if not connection:getIsServer() then return end
+
     local manager = BankCredit.manager
     if manager == nil then return end
 

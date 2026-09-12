@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="레버리지 비율" />
         <e k="bank_toolTip_leverageRatio" v="이용 가능한 자기자본 대비 최대 부채 배수를 정의합니다. 예: 10배→최대 여신＝자기자본의 10배." />
         <e k="bank_setting_dynamicRate" v="동적 금리" />
-        <e k="bank_toolTip_dynamicRate" v="활성화: 기본 금리가 매년 변동합니다（±0.25%, 범위 1~12%）. 리스크 가산 금리는 항상 적용됩니다." />
+        <e k="bank_toolTip_dynamicRate" v="활성화: 기본 금리는 월별 추세를 따릅니다. 안정적으로 유지되거나 0.25%, 0.50%, 예외적으로 0.75% 변동할 수 있습니다. 리스크 가산 금리는 항상 적용됩니다." />
         <e k="bank_setting_baseInterestRate" v="기본 금리" />
         <e k="bank_toolTip_baseInterestRate" v="리스크 가산 금리 전 모든 대출에 적용되는 연간 기본 금리." />
         <e k="bank_setting_earlyRepaymentPenalty" v="조기 상환 위약금" />

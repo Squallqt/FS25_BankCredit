@@ -1,6 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Broadcast from server to all clients at each PERIOD_CHANGED.
--- Syncs rateModel state and full income history so DSCR and the rate dashboard stay accurate.
+---Network event for synchronizing rate-model state and income history after each period change.
 BankPeriodSyncEvent = {}
 local BankPeriodSyncEvent_mt = Class(BankPeriodSyncEvent, Event)
 
@@ -22,6 +21,8 @@ end
 -- @param integer streamId Network stream identifier
 -- @param Connection connection Network connection
 function BankPeriodSyncEvent:readStream(streamId, connection)
+    if not connection:getIsServer() then return end
+
     local rateModel = InterestRateModel.new()
     rateModel:readStream(streamId)
 
@@ -31,8 +32,7 @@ function BankPeriodSyncEvent:readStream(streamId, connection)
     local manager = BankCredit.manager
     if manager == nil then return end
 
-    manager.rateModel.currentRate = rateModel.currentRate
-    manager.rateModel.rateHistory = rateModel.rateHistory
+    manager.rateModel:copyFrom(rateModel)
 
     manager.incomeTracker.history = incomeTracker.history
 

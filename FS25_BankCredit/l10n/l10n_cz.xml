@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Pákový poměr" />
         <e k="bank_toolTip_leverageRatio" v="Definuje maximální násobek zadlužení vůči vlastnímu kapitálu. Např. 10x → max. úvěr = 10× vlastní kapitál." />
         <e k="bank_setting_dynamicRate" v="Dynamická sazba" />
-        <e k="bank_toolTip_dynamicRate" v="Zapnuto: základní sazba se každoročně mění (±0,25 %, rozsah 1–12 %). Rizikové příplatky zůstávají aktivní." />
+        <e k="bank_toolTip_dynamicRate" v="Zapnuto: základní sazba sleduje měsíční trendy. Může zůstat stabilní nebo se změnit o 0,25 %, 0,50 % a výjimečně o 0,75 %. Rizikové příplatky zůstávají aktivní." />
         <e k="bank_setting_baseInterestRate" v="Základní úroková sazba" />
         <e k="bank_toolTip_baseInterestRate" v="Roční základní úroková sazba uplatněná na všechny půjčky před rizikovým příplatkem." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Poplatek za předčasné splacení" />

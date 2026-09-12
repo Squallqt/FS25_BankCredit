@@ -222,7 +222,7 @@
         <e k="bank_setting_leverageRatio" v="Đòn bẩy tài chính" />
         <e k="bank_toolTip_leverageRatio" v="Xác định hệ số nợ tối đa so với vốn chủ sở hữu khả dụng. Ví dụ: 10x → tín dụng tối đa = 10× vốn chủ sở hữu." />
         <e k="bank_setting_dynamicRate" v="Lãi suất động" />
-        <e k="bank_toolTip_dynamicRate" v="Bật: lãi suất cơ bản thay đổi hàng năm (±0,25%, khoảng 1–12%). Phần bù rủi ro luôn được áp dụng." />
+        <e k="bank_toolTip_dynamicRate" v="Bật: lãi suất cơ bản đi theo xu hướng hàng tháng. Lãi suất có thể ổn định hoặc thay đổi 0,25%, 0,50% và hiếm khi 0,75%. Phần bù rủi ro luôn được áp dụng." />
         <e k="bank_setting_baseInterestRate" v="Lãi suất cơ bản" />
         <e k="bank_toolTip_baseInterestRate" v="Lãi suất cơ bản hàng năm áp dụng cho tất cả các khoản vay trước phần bù rủi ro." />
         <e k="bank_setting_earlyRepaymentPenalty" v="Phạt trả nợ sớm" />

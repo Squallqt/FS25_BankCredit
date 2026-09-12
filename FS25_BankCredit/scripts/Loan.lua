@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Data model for a single loan contract (principal, rate, schedule, status).
+---Models a loan contract and its serialized state.
 Loan = {}
 local Loan_mt = Class(Loan)
 
@@ -7,6 +7,10 @@ Loan.TYPE = { ANNUITY = 1, BULLET = 2, REVOLVING = 3 }
 Loan.RISK = { LOW = 1, MODERATE = 2, HIGH = 3, CRITICAL = 4, REFUSED = 5 }
 Loan.PAYOFF_EPSILON = 1
 
+---Checks whether a payment clears the remaining principal within the payoff tolerance
+-- @param number restAmount Remaining principal
+-- @param number amount Payment amount
+-- @return boolean isPayoff True when the payment clears the balance
 function Loan.isPayoffAmount(restAmount, amount)
     return restAmount ~= nil and amount ~= nil and (amount >= restAmount or restAmount - amount < Loan.PAYOFF_EPSILON)
 end
@@ -35,6 +39,8 @@ function Loan.new(customMt)
     return self
 end
 
+---Clears a residual balance below the payoff tolerance
+-- @return number clearedAmount Residual principal cleared
 function Loan:normalizeResidualBalance()
     if self.restAmount > 0 and self.restAmount < Loan.PAYOFF_EPSILON then
         local clearedAmount = self.restAmount
@@ -70,7 +76,7 @@ function Loan:writeToXML(xmlFile, key)
 end
 
 ---Deserialize loan from XML file
--- @param XMLFile xmlFile XML file handle
+-- @param integer xmlFile XML file handle
 -- @param string key XML key path
 function Loan:readFromXML(xmlFile, key)
     self.id             = getXMLInt(xmlFile,   key .. "#id")             or 0

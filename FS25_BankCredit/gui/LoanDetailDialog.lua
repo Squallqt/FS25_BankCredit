@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Dialog showing loan summary header and full amortization schedule.
+---Loan detail dialog for summaries, amortization schedules, revolving status, and actions.
 LoanDetailDialog = {}
 local LoanDetailDialog_mt = Class(LoanDetailDialog, MessageDialog)
 
@@ -21,7 +21,6 @@ LoanDetailDialog.CONTROLS = {
     "listSchedule",
     "sliderBox",
     "scheduleHeaders",
-    -- Revolving panel
     "revolvingPanel",
     "revBarFill",
     "textRevUtilPct",
@@ -47,7 +46,6 @@ LoanDetailDialog.CONTROLS = {
     "btnRevPayment",
     "textRevPayment",
     "mainHint",
-    -- Revolving action buttons
     "btnRevRepay",
     "sepRevRepay",
     "btnRevClose",
@@ -165,10 +163,8 @@ function LoanDetailDialog:setLoan(loan)
         end
     end
 
-    -- Reset revolving action buttons (dialog is reused across loans)
     self:resetRevolvingButtons()
 
-    -- Revolving: show structured panel instead of schedule
     if loan.type == Loan.TYPE.REVOLVING then
         if self.listSchedule    then self.listSchedule:setVisible(false) end
         if self.sliderBox       then self.sliderBox:setVisible(false) end
@@ -269,8 +265,6 @@ function LoanDetailDialog:buildSchedule()
     self.currentRowIdx = currentPeriod
 end
 
--- ===================== SMOOTHLIST DATA SOURCE / DELEGATE =====================
-
 ---Returns number of list sections
 -- @return integer count Always 1
 function LoanDetailDialog:getNumberOfSections()
@@ -346,8 +340,6 @@ end
 function LoanDetailDialog:onListSelectionChanged(list, section, index)
 end
 
--- ===================== INFO HELPER =====================
-
 ---Opens an InfoDialog with localized text and resets hover/press state on all info buttons
 -- @param string textKey l10n key to display
 function LoanDetailDialog:showInfo(textKey)
@@ -367,20 +359,18 @@ function LoanDetailDialog:showInfo(textKey)
     InfoDialog.show(g_i18n:getText(textKey))
 end
 
----Shows info dialog explaining the loan amount
+---Opens the loan amount information dialog
 function LoanDetailDialog:onClickInfoAmount()   self:showInfo("bank_detail_info_amount") end
----Shows info dialog explaining the interest rate
+---Opens the interest rate information dialog
 function LoanDetailDialog:onClickInfoRate()     self:showInfo("bank_detail_info_rate")   end
----Shows info dialog explaining the loan type
+---Opens the loan type information dialog
 function LoanDetailDialog:onClickInfoType()     self:showInfo("bank_detail_info_type")   end
----Shows info dialog explaining the risk level
+---Opens the risk information dialog
 function LoanDetailDialog:onClickInfoRisk()     self:showInfo("bank_detail_info_risk")   end
----Shows info dialog explaining the DSCR metric
+---Opens the debt service coverage ratio information dialog
 function LoanDetailDialog:onClickInfoDSCR()     self:showInfo("bank_detail_info_dscr")   end
----Shows info dialog explaining the LTV metric
+---Opens the loan-to-value information dialog
 function LoanDetailDialog:onClickInfoLTV()      self:showInfo("bank_detail_info_ltv")    end
-
--- ===================== REVOLVING PANEL =====================
 
 LoanDetailDialog.REV_BULLET_LABELS = {
     {id = "btnRevLimit",         key = "bank_detail_revolving_limit"},
@@ -414,7 +404,6 @@ function LoanDetailDialog:updateRevolvingPanel(loan)
     local interestYear  = loan.restAmount * (loan.interestRate / 100)
     local interestMonth = interestYear / 12
 
-    -- Data values
     if self.textRevLimit        then self.textRevLimit:setText(g_i18n:formatMoney(loan.amount, 0, true, false)) end
     if self.textRevDrawn        then self.textRevDrawn:setText(g_i18n:formatMoney(loan.restAmount, 0, true, false)) end
     if self.textRevAvailable    then self.textRevAvailable:setText(g_i18n:formatMoney(available, 0, true, false)) end
@@ -427,7 +416,6 @@ function LoanDetailDialog:updateRevolvingPanel(loan)
     if self.textRevDuration      then self.textRevDuration:setText(g_i18n:getText("bank_revolving_noDuration")) end
     if self.textRevPayment      then self.textRevPayment:setText(g_i18n:getText("bank_revolving_variablePayment")) end
 
-    -- Progress bar: fill width & color
     if self.revBarFill then
         local maxWidth = 397 * g_pixelSizeScaledX
         local fillWidth = maxWidth * math.min(1, utilPct / 100)
@@ -438,35 +426,32 @@ function LoanDetailDialog:updateRevolvingPanel(loan)
         self.revBarFill:setSize(fillWidth, self.revBarFill._baseHeight)
     end
 
-    -- Progress bar percentage text
     if self.textRevUtilPct then
         self.textRevUtilPct:setText(string.format("%.0f%%", utilPct))
     end
 end
 
--- ===================== REVOLVING CLICK HANDLERS =====================
-
----Shows info dialog explaining revolving utilization
+---Opens the revolving utilization information dialog
 function LoanDetailDialog:onClickInfoRevUtil()      self:showInfo("bank_detail_info_rev_utilization") end
----Shows info dialog explaining revolving credit limit
+---Opens the revolving limit information dialog
 function LoanDetailDialog:onClickInfoRevLimit()      self:showInfo("bank_detail_info_rev_limit") end
----Shows info dialog explaining revolving drawn amount
+---Opens the drawn amount information dialog
 function LoanDetailDialog:onClickInfoRevDrawn()      self:showInfo("bank_detail_info_rev_drawn") end
----Shows info dialog explaining revolving available amount
+---Opens the available amount information dialog
 function LoanDetailDialog:onClickInfoRevAvail()      self:showInfo("bank_detail_info_rev_available") end
----Shows info dialog explaining revolving conditions section
+---Opens the revolving conditions information dialog
 function LoanDetailDialog:onClickInfoRevCond()       self:showInfo("bank_detail_info_rev_conditions") end
----Shows info dialog explaining the interest rate
+---Opens the revolving rate information dialog
 function LoanDetailDialog:onClickInfoRevRate()       self:showInfo("bank_detail_info_rate") end
----Shows info dialog explaining revolving monthly interest estimate
+---Opens the monthly interest information dialog
 function LoanDetailDialog:onClickInfoRevIntMonth()   self:showInfo("bank_detail_info_rev_interest_month") end
----Shows info dialog explaining revolving yearly interest estimate
+---Opens the annual interest information dialog
 function LoanDetailDialog:onClickInfoRevIntYear()       self:showInfo("bank_detail_info_rev_interest_year") end
----Shows info dialog explaining revolving commitment fee
+---Opens the commitment fee information dialog
 function LoanDetailDialog:onClickInfoRevCommitmentFee() self:showInfo("bank_detail_info_rev_commitment_fee") end
----Shows info dialog explaining revolving duration (no fixed term)
+---Opens the revolving duration information dialog
 function LoanDetailDialog:onClickInfoRevDuration()   self:showInfo("bank_detail_info_rev_duration") end
----Shows info dialog explaining revolving payment model
+---Opens the revolving payment information dialog
 function LoanDetailDialog:onClickInfoRevPayment()    self:showInfo("bank_detail_info_rev_payment") end
 
 ---Resets all revolving action buttons to hidden

@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Network event: server notifies a client that its vanilla loan was cleared.
+---Network event for notifying a client that its vanilla loan was cleared.
 VanillaLoanClearedEvent = {}
 local VanillaLoanClearedEvent_mt = Class(VanillaLoanClearedEvent, Event)
 
@@ -25,7 +25,7 @@ end
 
 ---Reads event payload from the network stream and runs the handler
 -- @param integer streamId Network stream id
--- @param table connection Sending connection
+-- @param Connection connection Sending connection
 function VanillaLoanClearedEvent:readStream(streamId, connection)
     self.farmId = streamReadInt32(streamId)
     self.amount = streamReadFloat32(streamId)
@@ -34,16 +34,14 @@ end
 
 ---Writes event payload to the network stream
 -- @param integer streamId Network stream id
--- @param table connection Receiving connection
+-- @param Connection connection Receiving connection
 function VanillaLoanClearedEvent:writeStream(streamId, connection)
     streamWriteInt32(streamId, self.farmId)
     streamWriteFloat32(streamId, self.amount)
 end
 
----Handles the event on the client: shows the vanilla-loan popup.
--- No farmId guard: the server sends this event only to the targeted connection.
--- getFarmId() is unreliable at receive time (client may not have processed PlayerSetFarmAnswerEvent yet).
--- @param table connection Sending connection (must be server)
+---Shows the vanilla-loan popup on the targeted client
+-- @param Connection connection Sending connection (must be server)
 function VanillaLoanClearedEvent:run(connection)
     if not connection:getIsServer() then
         return

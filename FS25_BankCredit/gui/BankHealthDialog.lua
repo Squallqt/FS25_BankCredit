@@ -1,5 +1,5 @@
 -- Copyright © 2026 Squallqt. All rights reserved.
--- Compact info dialog showing bank health indicators.
+---Compact information dialog showing bank health indicators.
 BankHealthDialog = {}
 local BankHealthDialog_mt = Class(BankHealthDialog, MessageDialog)
 
@@ -35,8 +35,6 @@ function BankHealthDialog:onClickBack()
     self:close()
 end
 
--- ===================== PREFIXED DATA LABELS =====================
-
 BankHealthDialog.DATA_LABELS = {
     {id = "btnEquity",      key = "bank_dash_equity"},
     {id = "btnCapacity",    key = "bank_dash_capacity"},
@@ -56,8 +54,6 @@ function BankHealthDialog:applyBulletLabels()
         end
     end
 end
-
--- ===================== DYNAMIC TITLE SEPARATOR =====================
 
 ---Resizes title separator to match title text width
 function BankHealthDialog:resizeTitleSep()
@@ -81,11 +77,8 @@ function BankHealthDialog:resizeTitleSep()
     end
 end
 
--- ===================== INFO HELPER =====================
--- Moves focus to btnClose BEFORE showing InfoDialog.
--- FocusManager:unsetFocus() does NOT clear focusElement from focusData,
--- so using setFocus(btnClose) to properly redirect the saved state.
--- When InfoDialog closes, Gui restores focus to btnClose (clean behavior).
+-- unsetFocus leaves currentFocusData.focusElement unchanged, so move focus
+-- before Gui caches and restores it around InfoDialog.
 
 ---Opens an InfoDialog with localized text and resets hover/press state on all info buttons
 -- @param string textKey l10n key to display
@@ -109,56 +102,52 @@ function BankHealthDialog:showInfo(textKey)
     InfoDialog.show(g_i18n:getText(textKey))
 end
 
--- ===================== SECTION INFO CLICK HANDLERS =====================
-
----Shows info dialog for the Balance Sheet section header
+---Opens the balance information dialog
 function BankHealthDialog:onClickInfoBalance()
     self:showInfo("bank_info_balance")
 end
 
----Shows info dialog for the Portfolio & Risk section header
+---Opens the risk information dialog
 function BankHealthDialog:onClickInfoRisk()
     self:showInfo("bank_info_risk")
 end
 
----Shows info dialog for the Portfolio Distribution section header
+---Opens the portfolio information dialog
 function BankHealthDialog:onClickInfoPortfolio()
     self:showInfo("bank_info_portfolio")
 end
 
--- ===================== INDIVIDUAL INDICATOR CLICK HANDLERS =====================
-
----Shows info dialog explaining bank equity
+---Opens the equity information dialog
 function BankHealthDialog:onClickInfoEquity()
     self:showInfo("bank_info_equity")
 end
 
----Shows info dialog explaining total lending capacity
+---Opens the capacity information dialog
 function BankHealthDialog:onClickInfoCapacity()
     self:showInfo("bank_info_capacity")
 end
 
----Shows info dialog explaining total outstanding loans
+---Opens the outstanding credit information dialog
 function BankHealthDialog:onClickInfoOutstanding()
     self:showInfo("bank_info_outstanding")
 end
 
----Shows info dialog explaining capacity utilization
+---Opens the utilization information dialog
 function BankHealthDialog:onClickInfoUtilization()
     self:showInfo("bank_info_utilization")
 end
 
----Shows info dialog explaining leverage ratio
+---Opens the leverage information dialog
 function BankHealthDialog:onClickInfoLeverage()
     self:showInfo("bank_info_leverage")
 end
 
----Shows info dialog explaining coverage ratio
+---Opens the coverage information dialog
 function BankHealthDialog:onClickInfoCoverage()
     self:showInfo("bank_info_coverage")
 end
 
----Shows info dialog explaining loss provision
+---Opens the provision information dialog
 function BankHealthDialog:onClickInfoProvision()
     self:showInfo("bank_info_provision")
 end
@@ -170,8 +159,6 @@ function BankHealthDialog:refresh()
 
     local ledger      = manager.ledger
     local bankService = manager.bankService
-
-    -- ===================== SECTION: BALANCE SHEET =====================
 
     if self.healthEquityValue then
         self.healthEquityValue:setText(g_i18n:formatMoney(ledger.equity, 0, true, false))
@@ -207,8 +194,6 @@ function BankHealthDialog:refresh()
         self.healthLeverageValue:setText(string.format("%dx", bankService:getLeverageRatio()))
     end
 
-    -- ===================== SECTION: PORTFOLIO & RISK =====================
-
     if self.healthCoverageValue then
         local ratio = bankService:getCoverageRatio()
         local text, color
@@ -233,16 +218,13 @@ function BankHealthDialog:refresh()
         self.healthProvisionValue:setText(g_i18n:formatMoney(bankService:getLossProvision(), 0, true, false))
     end
 
-    -- ===================== SECTION: PORTFOLIO DISTRIBUTION =====================
-
     local health = bankService:getPortfolioHealth()
     local lowVal  = math.floor((health.low or 0) + 0.5)
     local modVal  = math.floor((health.moderate or 0) + 0.5)
     local highVal = math.floor((health.high or 0) + 0.5)
     local critVal = math.floor((health.critical or 0) + 0.5)
 
-    -- Weighted health score: low=100pts, mod=60pts, high=20pts, crit=0pts
-    -- 100 = fully healthy portfolio  |  0 = fully critical portfolio
+    -- Weighted health score: low=100, moderate=60, high=20, critical=0.
     local score = math.floor((lowVal * 100 + modVal * 60 + highVal * 20) / 100 + 0.5)
 
     -- Bar fill uses (100 - score)% of the bar width: full = critical, empty = safe
@@ -255,7 +237,6 @@ function BankHealthDialog:refresh()
         end
     end
 
-    -- Status label: tier name + color thresholded on weighted score
     local statusKey, statusColor
     if score >= 80 then
         statusKey   = "bank_risk_low"
